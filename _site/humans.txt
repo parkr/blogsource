@@ -1,0 +1,10 @@
+Created with love by:
+	Parker Moore
+	Contact: me [at] parkr.me
+	Twitter: @parkr
+	From: Rochester, New York, USA
+	
+Thanks to:
+	The Jekyll Team (http://jekyllrb.com/)
+	The Google Webfonts Team (http://www.google.com/webfonts)
+	Quirks Mode (http://www.quirksmode.org/js/cookies.html)

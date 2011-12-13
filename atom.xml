@@ -1,0 +1,27 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>The Blog of Parker Moore</title>
+ <link href="http://blog.parkermoore.de/atom.xml" rel="self"/>
+ <link href="http://blog.parkermoore.de/"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>http://blog.parkermoore.de/</id>
+ <author>
+   <name>Parker J. Moore</name>
+   <email>parkrmoore@gmail.com</email>
+ </author>
+
+ {% for post in site.posts %}
+ <entry>
+   <title>{{ post.title }}</title>
+   <link href="http://blog.parkermoore.de{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>http://blog.parkermoore.de{{ post.id }}</id>
+   <content type="html">{{ post.excerpt | post.content | xml_escape }}</content>
+ </entry>
+ {% endfor %}
+ 
+</feed>

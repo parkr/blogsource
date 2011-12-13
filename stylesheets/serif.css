@@ -1,0 +1,263 @@
+@font-face {
+  font-family: 'Podkova';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Podkova"), url("http://themes.googleusercontent.com/static/fonts/podkova/v3/kr_ENTtdlqQbrdQMb3BZtgLUuEpTyoUstqEm5AMlJo4.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'News Cycle';
+  font-style: normal;
+  font-weight: normal;
+  src: local("News Cycle"), local("NewsCycle"), url("http://themes.googleusercontent.com/static/fonts/newscycle/v3/9Xe8dq6pQDsPyVH2D3tMQr3hpw3pgy2gAi-Ip7WPMi0.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Quattrocento';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Quattrocento Roman Regular"), local("QuattrocentoRoman"), url("http://themes.googleusercontent.com/static/fonts/quattrocento/v2/WZDISdyil4HsmirlOdBRFKRDOzjiPcYnFooOUGCOsRk.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Cardo';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Cardo Bold"), local("Cardo-Bold"), url("http://themes.googleusercontent.com/static/fonts/cardo/v4/F1qbHkftp3Y2INXu_OV8PXYhjbSpvc47ee6xR_80Hnw.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Cardo';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Cardo"), local("Cardo-Regular"), url("http://themes.googleusercontent.com/static/fonts/cardo/v4/jRlnAkkwSO-sHIk6eXBl6KCWcynf_cDxXwCLxiixG1c.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Cardo';
+  font-style: italic;
+  font-weight: 400;
+  src: local("Cardo Italic"), local("Cardo-Italic"), url("http://themes.googleusercontent.com/static/fonts/cardo/v4/_o7PiXlzRzaHLUF33hOI6ALUuEpTyoUstqEm5AMlJo4.woff") format("woff");
+}
+
+/* line 12, ../_sass/serif.scss */
+html {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 14, ../_sass/serif.scss */
+body {
+  font-family: "Cardo", Times, serif;
+  font-size: 18px;
+  line-height: 1.3em;
+  color: #3D3D3D;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 23, ../_sass/serif.scss */
+#wrapper {
+  width: 640px;
+  margin: 0 auto;
+}
+
+/* line 28, ../_sass/serif.scss */
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 30, ../_sass/serif.scss */
+a {
+  color: #3a5252;
+  text-decoration: none;
+  /*text-shadow: #CBCBCB 1px 1px 10px;*/
+}
+
+/* line 31, ../_sass/serif.scss */
+a:hover {
+  text-decoration: underline;
+}
+
+/* line 32, ../_sass/serif.scss */
+a:visited {
+  color: #294141;
+}
+
+/* line 34, ../_sass/serif.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Cardo", Times, serif;
+}
+
+/* line 38, ../_sass/serif.scss */
+h1 {
+  font-size: 36px;
+  line-height: 1em;
+}
+
+/* line 39, ../_sass/serif.scss */
+h2 {
+  font-size: 33px;
+  line-height: 1em;
+}
+
+/* line 40, ../_sass/serif.scss */
+h3 {
+  font-size: 28px;
+  line-height: 1em;
+}
+
+/* line 41, ../_sass/serif.scss */
+h4 {
+  font-size: 24px;
+  line-height: 1em;
+}
+
+/* line 42, ../_sass/serif.scss */
+h5 {
+  font-size: 18px;
+  line-height: 1em;
+}
+
+/* line 43, ../_sass/serif.scss */
+h6 {
+  font-size: 14px;
+  line-height: 1em;
+}
+
+/* line 45, ../_sass/serif.scss */
+header {
+  display: block;
+  font-family: "Cardo", Times, serif;
+  font-size: 50px;
+  font-weight: lighter;
+  text-align: center;
+  line-height: 1.5em;
+  color: #6fae79 !important;
+  margin: 20px 0 0 0;
+}
+/* line 55, ../_sass/serif.scss */
+header a {
+  text-decoration: none;
+  color: #6fae79 !important;
+}
+/* line 58, ../_sass/serif.scss */
+header a:hover {
+  text-decoration: underline;
+  color: #6fae79 !important;
+}
+
+/* line 65, ../_sass/serif.scss */
+div.post h2.post-title {
+  color: #282828;
+  text-align: center;
+  text-shadow: #CBCBCB 0px 0px 10px;
+}
+
+/* line 68, ../_sass/serif.scss */
+div.content p {
+  /*text-indent: 30px;*/
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+/* line 73, ../_sass/serif.scss */
+div.content a {
+  font-weight: bolder;
+}
+
+/* line 76, ../_sass/serif.scss */
+div.line-break {
+  border-bottom: #A2A2A2 1px solid;
+}
+
+/* line 80, ../_sass/serif.scss */
+blockquote {
+  background-color: #f2f2f2;
+  padding: 10px 15px 7px 15px;
+}
+/* line 83, ../_sass/serif.scss */
+blockquote blockquote {
+  margin: 0px 0px 0px 20px;
+  padding: 0px 0px 0px 0px;
+}
+/* line 87, ../_sass/serif.scss */
+blockquote p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* line 93, ../_sass/serif.scss */
+.source {
+  color: #aaa;
+  margin-left: 30px;
+  text-indent: -30px;
+  display: inline-block;
+  font-size: 15px;
+}
+
+/* line 101, ../_sass/serif.scss */
+.source-page {
+  color: #bbb;
+  font-size: 15px;
+  text-align: right;
+  display: inline-block;
+  width: 100%;
+}
+
+/* line 109, ../_sass/serif.scss */
+.date {
+  color: #bbb;
+  text-align: center;
+  text-shadow: #ccc 0px 0px 2px;
+  font-size: 15px;
+}
+
+/* line 116, ../_sass/serif.scss */
+footer {
+  display: block;
+  font-family: "Podkova", Courier, serif;
+  font-size: 15px;
+  font-weight: lighter;
+  color: #a2a2a2;
+  text-align: center;
+  padding: 10px 0 5px 0;
+  text-shadow: #ccc 0px 0px 1px;
+}
+/* line 125, ../_sass/serif.scss */
+footer a {
+  color: #a2a2a2;
+}
+/* line 127, ../_sass/serif.scss */
+footer a:hover {
+  color: #a2a2a2;
+}
+/* line 129, ../_sass/serif.scss */
+footer span.serif {
+  font-family: "Podkova", Courier, serif;
+}
+/* line 131, ../_sass/serif.scss */
+footer span.serif:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+/* line 133, ../_sass/serif.scss */
+footer span.sans-serif {
+  font-family: "News Cycle", Arial, sans-serif;
+}
+/* line 135, ../_sass/serif.scss */
+footer span.sans-serif:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* line 139, ../_sass/serif.scss */
+ul#archive {
+  margin-left: 50px;
+  font-size: 22px;
+  margin-bottom: 24px;
+}
+/* line 143, ../_sass/serif.scss */
+ul#archive li {
+  list-style-type: none;
+}
