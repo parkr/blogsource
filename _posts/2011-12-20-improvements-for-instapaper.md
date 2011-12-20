@@ -27,7 +27,9 @@ I would like to see a `<select>` menu on the "+ Add" page that autofills with wh
 
 This is actually my biggest grievance. I find the inability to search through my (>1000) articles to be quite annoying. Oftentimes, I will read an article, refer to it in a conversation and have no way to find it and send it to the person(s) with whom I discussed the article, because it is buried deeply in my archive. If there were a search bar at the top, I might be able to type in the first few words of the title or perhaps the site url (e.g., "http://www.nytimes.com/", or just "nytimes.com") and have a list of articles show up -- a _much_ easier pile of articles through which to search!
 
-This could be relatively easy to implement: when a new article is saved from the iOS app or via a bookmarklet, then the Instapaper engine could construct a few keywords or tags that identify the page. For example, if "NYTimes" is in the title, it is safe to assume that the article is either from the _New York Times_ or somehow relates to the _Times_. In addition to this, we could have the option of adding our own, custom tags to a saved page both via "Edit" and when using "+ Add" to add the page. 
+This could be relatively easy to implement: when a new article is saved from the iOS app or via a bookmarklet, then the Instapaper engine could construct a few keywords or tags that identify the page. For example, if "NYTimes" is in the title, it is safe to assume that the article is either from the _New York Times_ or somehow relates to the _Times_. In addition to this, we could have the option of adding our own, custom tags to a saved page both via "Edit" and when using "+ Add" to add the page.
+
+EDIT: Some search functionality is available for subscribers.
 
 ### 3: Listed Articles are HUGE
 
