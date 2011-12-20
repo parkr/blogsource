@@ -1,20 +1,23 @@
+require 'rake'
+
 namespace :post do
   desc "Creates a new post."
-  task :new, *ARGV do
-    #!/usr/bin/env ruby -wKU
+  task :new, do
+
+    args = ARGV
 
     require 'uri'
     require 'date'
 
     today = Date.today.to_s
     
-    if ARGV.include? "post:new"
-      ARGV.delete("post:new")
+    if args.include? "post:new"
+      args.delete("post:new")
     end
 
-    unless ARGV.empty?
+    unless args.empty?
       title = ""
-      ARGV.each do |arg|
+      args.each do |arg|
         title << arg.capitalize.strip
         title << " "
       end

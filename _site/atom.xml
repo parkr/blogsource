@@ -4,7 +4,7 @@
  <title>The Blog of Parker Moore</title>
  <link href="http://blog.parkermoore.de/atom.xml" rel="self"/>
  <link href="http://blog.parkermoore.de/"/>
- <updated>2011-12-13T17:14:41-05:00</updated>
+ <updated>2011-12-20T14:22:03-05:00</updated>
  <id>http://blog.parkermoore.de/</id>
  <author>
    <name>Parker J. Moore</name>
@@ -13,130 +13,138 @@
 
  
  <entry>
+   <title>Improvements For Instapaper</title>
+   <link href="http://blog.parkermoore.de/2011/12/improvements-for-instapaper.html"/>
+   <updated>2011-12-20T12:44:36-05:00</updated>
+   <id>http://blog.parkermoore.de/2011/12/improvements-for-instapaper</id>
+   <content type="html">Liquid error: undefined method `gsub' for nil:NilClass</content>
+ </entry>
+ 
+ <entry>
    <title>Success, or Failure?</title>
-   <link href="http://blog.parkermoore.de/2011/12/12/success-or-failure.html"/>
+   <link href="http://blog.parkermoore.de/2011/12/success-or-failure.html"/>
    <updated>2011-12-12T11:14:24-05:00</updated>
-   <id>http://blog.parkermoore.de/2011/12/12/success-or-failure</id>
+   <id>http://blog.parkermoore.de/2011/12/success-or-failure</id>
    <content type="html">Parker looks back at his previous semester at Cornell University and interprets his failures and successes.</content>
  </entry>
  
  <entry>
    <title>Hacker Newsletter</title>
-   <link href="http://blog.parkermoore.de/2011/11/28/hacker-newsletter.html"/>
+   <link href="http://blog.parkermoore.de/2011/11/hacker-newsletter.html"/>
    <updated>2011-11-28T03:55:04-05:00</updated>
-   <id>http://blog.parkermoore.de/2011/11/28/hacker-newsletter</id>
+   <id>http://blog.parkermoore.de/2011/11/hacker-newsletter</id>
    <content type="html">Liquid error: undefined method `gsub' for nil:NilClass</content>
  </entry>
  
  <entry>
    <title>Life Without the Internet</title>
-   <link href="http://blog.parkermoore.de/2011/11/16/life-without-the-internet.html"/>
+   <link href="http://blog.parkermoore.de/2011/11/life-without-the-internet.html"/>
    <updated>2011-11-16T01:13:08-05:00</updated>
-   <id>http://blog.parkermoore.de/2011/11/16/life-without-the-internet</id>
+   <id>http://blog.parkermoore.de/2011/11/life-without-the-internet</id>
    <content type="html">Liquid error: undefined method `gsub' for nil:NilClass</content>
  </entry>
  
  <entry>
    <title>What The #Occupy Movement Means to Me</title>
-   <link href="http://blog.parkermoore.de/2011/10/27/what-occupy-movement-means.html"/>
+   <link href="http://blog.parkermoore.de/2011/10/what-occupy-movement-means.html"/>
    <updated>2011-10-27T02:59:00-04:00</updated>
-   <id>http://blog.parkermoore.de/2011/10/27/what-occupy-movement-means</id>
+   <id>http://blog.parkermoore.de/2011/10/what-occupy-movement-means</id>
    <content type="html">Liquid error: undefined method `gsub' for nil:NilClass</content>
  </entry>
  
  <entry>
    <title>Textmate - Better Than Paper</title>
-   <link href="http://blog.parkermoore.de/2011/10/04/textmate-better-than-paper.html"/>
+   <link href="http://blog.parkermoore.de/2011/10/textmate-better-than-paper.html"/>
    <updated>2011-10-04T13:59:33-04:00</updated>
-   <id>http://blog.parkermoore.de/2011/10/04/textmate-better-than-paper</id>
+   <id>http://blog.parkermoore.de/2011/10/textmate-better-than-paper</id>
    <content type="html">Liquid error: undefined method `gsub' for nil:NilClass</content>
  </entry>
  
  <entry>
    <title>Student Entrepreneurs: Don't Over-burden Yourselves</title>
-   <link href="http://blog.parkermoore.de/2011/10/02/dont-over-burden-yourselves.html"/>
+   <link href="http://blog.parkermoore.de/2011/10/dont-over-burden-yourselves.html"/>
    <updated>2011-10-02T22:50:27-04:00</updated>
-   <id>http://blog.parkermoore.de/2011/10/02/dont-over-burden-yourselves</id>
+   <id>http://blog.parkermoore.de/2011/10/dont-over-burden-yourselves</id>
    <content type="html">Wherein Parker argues against having a smartphone in class.</content>
  </entry>
  
  <entry>
    <title>Paul Irish's Guide to the Chrome Console</title>
-   <link href="http://blog.parkermoore.de/2011/10/01/paul-irish-s-guide-to-chrome-console.html"/>
+   <link href="http://blog.parkermoore.de/2011/10/paul-irish-s-guide-to-chrome-console.html"/>
    <updated>2011-10-01T13:52:43-04:00</updated>
-   <id>http://blog.parkermoore.de/2011/10/01/paul-irish-s-guide-to-chrome-console</id>
+   <id>http://blog.parkermoore.de/2011/10/paul-irish-s-guide-to-chrome-console</id>
    <content type="html">Paul Irish shows us the ropes of some new functions in the Google Chrome console.</content>
  </entry>
  
  <entry>
    <title>On The Future</title>
-   <link href="http://blog.parkermoore.de/2011/09/25/on-the-future.html"/>
+   <link href="http://blog.parkermoore.de/2011/09/on-the-future.html"/>
    <updated>2011-09-25T13:11:10-04:00</updated>
-   <id>http://blog.parkermoore.de/2011/09/25/on-the-future</id>
+   <id>http://blog.parkermoore.de/2011/09/on-the-future</id>
    <content type="html">Parker discusses his future at Cornell University and what it all means.</content>
  </entry>
  
  <entry>
    <title>Getting Busy At Cornell</title>
-   <link href="http://blog.parkermoore.de/2011/08/30/getting-busy-at-cornell.html"/>
+   <link href="http://blog.parkermoore.de/2011/08/getting-busy-at-cornell.html"/>
    <updated>2011-08-30T14:21:56-04:00</updated>
-   <id>http://blog.parkermoore.de/2011/08/30/getting-busy-at-cornell</id>
+   <id>http://blog.parkermoore.de/2011/08/getting-busy-at-cornell</id>
    <content type="html">Gettin' busy, gettin' busy. Parker describes his life at Cornell U thus far.</content>
  </entry>
  
  <entry>
    <title>I Code In PHP</title>
-   <link href="http://blog.parkermoore.de/2011/08/15/i-code-in-php.html"/>
+   <link href="http://blog.parkermoore.de/2011/08/i-code-in-php.html"/>
    <updated>2011-08-15T13:58:00-04:00</updated>
-   <id>http://blog.parkermoore.de/2011/08/15/i-code-in-php</id>
+   <id>http://blog.parkermoore.de/2011/08/i-code-in-php</id>
    <content type="html">PHP is awesome, don't deny it.</content>
  </entry>
  
  <entry>
    <title>Google+'s Terms of Service</title>
-   <link href="http://blog.parkermoore.de/2011/07/07/google-plus-terms-of-service.html"/>
+   <link href="http://blog.parkermoore.de/2011/07/google-plus-terms-of-service.html"/>
    <updated>2011-07-07T12:57:23-04:00</updated>
-   <id>http://blog.parkermoore.de/2011/07/07/google-plus-terms-of-service</id>
+   <id>http://blog.parkermoore.de/2011/07/google-plus-terms-of-service</id>
    <content type="html">I'm very weary of Google+'s Terms of Service. I already gave my soul to Facebook - need I give it to Google as well?</content>
  </entry>
  
  <entry>
    <title>Git Cheat-Sheet</title>
-   <link href="http://blog.parkermoore.de/2011/05/30/git.html"/>
+   <link href="http://blog.parkermoore.de/2011/05/git.html"/>
    <updated>2011-05-30T00:00:00-04:00</updated>
-   <id>http://blog.parkermoore.de/2011/05/30/git</id>
+   <id>http://blog.parkermoore.de/2011/05/git</id>
    <content type="html">Just a quick git cheet-sheet. I know these too well to every look back, but hey.</content>
  </entry>
  
  <entry>
    <title>A Walt Whitman Night</title>
-   <link href="http://blog.parkermoore.de/2011/05/26/walt-whitman-night.html"/>
+   <link href="http://blog.parkermoore.de/2011/05/walt-whitman-night.html"/>
    <updated>2011-05-26T02:23:21-04:00</updated>
-   <id>http://blog.parkermoore.de/2011/05/26/walt-whitman-night</id>
+   <id>http://blog.parkermoore.de/2011/05/walt-whitman-night</id>
    <content type="html">Walt Whitman's words leave me feeling quite happy.</content>
  </entry>
  
  <entry>
    <title>Oh, To Be Young</title>
-   <link href="http://blog.parkermoore.de/2011/05/25/oh-to-be-young.html"/>
+   <link href="http://blog.parkermoore.de/2011/05/oh-to-be-young.html"/>
    <updated>2011-05-25T05:23:21-04:00</updated>
-   <id>http://blog.parkermoore.de/2011/05/25/oh-to-be-young</id>
+   <id>http://blog.parkermoore.de/2011/05/oh-to-be-young</id>
    <content type="html">Enjoy it!</content>
  </entry>
  
  <entry>
    <title>Finding Inspiration in Classical Music</title>
-   <link href="http://blog.parkermoore.de/2011/05/24/finding-inspiration-in-classical-music.html"/>
+   <link href="http://blog.parkermoore.de/2011/05/finding-inspiration-in-classical-music.html"/>
    <updated>2011-05-24T02:16:42-04:00</updated>
-   <id>http://blog.parkermoore.de/2011/05/24/finding-inspiration-in-classical-music</id>
+   <id>http://blog.parkermoore.de/2011/05/finding-inspiration-in-classical-music</id>
    <content type="html">Inspiration is sometimes hard to find. next time you're struggling, try classical music. Works like a charm.</content>
  </entry>
  
  <entry>
    <title>On Sleep and Restoration</title>
-   <link href="http://blog.parkermoore.de/2011/05/23/on-sleep-and-restoration.html"/>
+   <link href="http://blog.parkermoore.de/2011/05/on-sleep-and-restoration.html"/>
    <updated>2011-05-23T05:11:54-04:00</updated>
-   <id>http://blog.parkermoore.de/2011/05/23/on-sleep-and-restoration</id>
+   <id>http://blog.parkermoore.de/2011/05/on-sleep-and-restoration</id>
    <content type="html">My thoughts on sleep and restoration. And why both are so vital to one's life. An installment in the &quot;5-in-the-Morning Series&quot;.</content>
  </entry>
  
