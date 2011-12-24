@@ -4,13 +4,21 @@
  <title>The Blog of Parker Moore</title>
  <link href="http://blog.parkermoore.de/atom.xml" rel="self"/>
  <link href="http://blog.parkermoore.de/"/>
- <updated>2011-12-20T16:30:15-05:00</updated>
+ <updated>2011-12-23T23:54:43-05:00</updated>
  <id>http://blog.parkermoore.de/</id>
  <author>
    <name>Parker J. Moore</name>
    <email>parkrmoore@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>How To Write Passwords</title>
+   <link href="http://blog.parkermoore.de/2011/12/how-to-write-passwords.html"/>
+   <updated>2011-12-20T19:00:32-05:00</updated>
+   <id>http://blog.parkermoore.de/2011/12/how-to-write-passwords</id>
+   <content type="html">Liquid error: undefined method `gsub' for nil:NilClass</content>
+ </entry>
  
  <entry>
    <title>Improvements For Instapaper</title>
@@ -26,6 +34,14 @@
    <updated>2011-12-12T11:14:24-05:00</updated>
    <id>http://blog.parkermoore.de/2011/12/success-or-failure</id>
    <content type="html">Parker looks back at his previous semester at Cornell University and interprets his failures and successes.</content>
+ </entry>
+ 
+ <entry>
+   <title>Waleshark, Waleshark, WALEShark</title>
+   <link href="http://blog.parkermoore.de/2011/12/Waleshark-Waleshark-WALEShark.html"/>
+   <updated>2011-12-09T11:25:32-05:00</updated>
+   <id>http://blog.parkermoore.de/2011/12/Waleshark-Waleshark-WALEShark</id>
+   <content type="html">Liquid error: undefined method `gsub' for nil:NilClass</content>
  </entry>
  
  <entry>
