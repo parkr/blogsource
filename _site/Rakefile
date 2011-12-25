@@ -4,23 +4,29 @@ namespace :post do
   desc "Creates a new post."
   task :new, do
 
-    args = ARGV
-
     require 'uri'
     require 'date'
 
     today = Date.today.to_s
     
-    if args.include? "post:new"
-      args.delete("post:new")
+    if ARGV.include? "post:new"
+      ARGV.delete("post:new")
     end
 
-    unless args.empty?
+    unless ARGV.empty?
       title = ""
-      args.each do |arg|
+      #args.each do |arg|
+      #  title << arg.capitalize.strip
+      #  title << " "
+      #end
+      
+      ARGV.delete_if do |arg|
         title << arg.capitalize.strip
         title << " "
+        
+        true
       end
+      
       title.strip!
 
       lower_title = title.downcase
