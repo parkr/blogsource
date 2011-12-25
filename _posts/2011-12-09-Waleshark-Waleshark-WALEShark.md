@@ -16,7 +16,7 @@ This post is merely to preserve a moment in history. On December 9th, 2011 at 11
 > Well, ain't a that good news!
 >
 > -- <br>
-> [names redacted] <br>
+> \[ names redacted \] <br>
 > International Tour Managers <br>
 > Cornell University Glee Club
 
