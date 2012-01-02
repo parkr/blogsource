@@ -4,13 +4,21 @@
  <title>The Blog of Parker Moore</title>
  <link href="http://blog.parkermoore.de/atom.xml" rel="self"/>
  <link href="http://blog.parkermoore.de/"/>
- <updated>2011-12-25T03:51:42-05:00</updated>
+ <updated>2012-01-02T04:07:09-05:00</updated>
  <id>http://blog.parkermoore.de/</id>
  <author>
    <name>Parker J. Moore</name>
    <email>parkrmoore@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Paul Irish On HTML 5</title>
+   <link href="http://blog.parkermoore.de/2012/01/paul-irish-on-html-5.html"/>
+   <updated>2012-01-02T03:56:20-05:00</updated>
+   <id>http://blog.parkermoore.de/2012/01/paul-irish-on-html-5</id>
+   <content type="html">Liquid error: undefined method `gsub' for nil:NilClass</content>
+ </entry>
  
  <entry>
    <title>How To Write Passwords</title>
