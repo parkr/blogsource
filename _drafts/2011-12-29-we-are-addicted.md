@@ -1,3 +1,8 @@
+---
+title: "We're Addicted"
+date: "2011-12-29"
+---
+
 We're Addicted
 
 We're addicted: to our Facebook and Twitter feeds, to our electronics, to our electronic reading. We're addicted to sharing. The appeal of sharing the small and otherwise inconsequential moments in our lives has grown to such a degree that my generation, Generation-Y, is so used to sharing our whole lives, that it is somewhat second nature now to tweet every thought and post every silly photo we have ever taken.
