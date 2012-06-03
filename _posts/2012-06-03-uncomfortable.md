@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Uncomfortable"
+date: 2012-06-03 15:10:34 EST
+category: musings, religion, glee club
+---
+
 Members of the Cornell University Glee Club and Chorus were asked to perform at a wedding on campus yesterday, and as a member of the Glee Club, I volunteered to sing. This wedding, being a Catholic one, was quite traditional, and left me feeling quite uneasy about my participation in the ceremony.
 
 I have renounced any belief in the Judeo-Christian God for about 8 years. I grew up in an Episcopalian church in Rochester, NY and it was quite a liberal experience. Though I appreciate what religion can do for many around the world, I find it stifling, and often quite demeaning. As I listened to the prayers, I was overwhelmed by a feeling of unease. Questions filled my head: _How can anyone subject themselves to complete obedience to something of which they know so little? How can anyone find this comforting, to relinquish control to some "being" that most likely does not exist? Why do members of our society, despite incredible evidence against it, continue to believe in such an archaic set of beliefs?_
