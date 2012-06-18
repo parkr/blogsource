@@ -2,7 +2,8 @@
 layout: post
 title: "Uncomfortable"
 date: 2012-06-03 15:10:34 EST
-category: musings, religion, glee club
+category: story
+tags: musings, religion, glee club
 ---
 
 Members of the Cornell University Glee Club and Chorus were asked to perform at a wedding on campus yesterday, and as a member of the Glee Club, I volunteered to sing. This wedding, being a Catholic one, was quite traditional, and left me feeling quite uneasy about my participation in the ceremony.

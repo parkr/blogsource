@@ -1,6 +1,8 @@
 ---
 title: "Thank my lucky stars"
 date: "2012-05-30"
+category: story
+tags: rochester, car-trouble, gratitude
 ---
 
 Last night, I experienced the most significant car trouble that has ever occurred while I was driving. As I and a couple friends were leaving the city of Rochester for home in our respective suburbs, I ran over a pothole that was quite large (it is Spring in a city which experiences incredible snowfall, so they are to be expected) and heard a thud and a "whooooosshhh". I stopped the car.
