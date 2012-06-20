@@ -1,15 +1,15 @@
-@import "common";
+@import "after-eight/common";
 // @import "http://fonts.googleapis.com/css?family=Quattrocento&subset=latin,latin-ext";
-@import "fonts/quattrocento";
+@import "after-eight/fonts/quattrocento";
 // @import "http://fonts.googleapis.com/css?family=Cardo:400,400italic,700&subset=latin,latin-ext";
-@import "fonts/cardo";
+@import "after-eight/fonts/cardo";
 
-@import "variables";
+@import "after-eight/variables";
 
 $title-font-stack: "Cardo", Times, serif;
 $body-font-stack:  "Quattrocento", Times, serif;
 
-html { margin:0; padding:0;}
+html { margin:0; padding:0; }
 
 body {
 	font-family: $title-font-stack;
