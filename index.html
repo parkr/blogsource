@@ -2,18 +2,10 @@
 layout: home
 ---
 
-{% for post in site.posts limit: 10 %}
-	<div class="post">
-	  <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-	  <div class="content">
-			{% if post.video %}
-				<p>{{ post.excerpt }}</p>
-			{% else %}
-				{{ post.content }}
-			{% endif %}
-	  </div>
-	  <div class="line-break"></div>
-	</div>
+{% for post in site.posts %}
+    <div class="post-list">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+    </div>
 {% endfor %}
 
 {% if site.posts.size == 0 %}

@@ -11,7 +11,7 @@ layout: nil
  <id>http://blog.parkermoore.de/</id>
  <author>
    <name>Parker J. Moore</name>
-   <email>parkrmoore@gmail.com</email>
+   <email>desk@parkermoore.de</email>
  </author>
 
  {% for post in site.posts %}

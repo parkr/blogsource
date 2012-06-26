@@ -2,6 +2,8 @@
 <html>
 <head>
 	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
 	<title>{% if page.title %}{{page.title}} &mdash; {% endif %}The Blog of Parker Moore</title>
 	<link href="/humans.txt" rel="author" type="text/plain">
 	<link href="/parker.png" rel="shortcut icon" type="image/png">
@@ -27,16 +29,22 @@
 </head>
 <body>
 <div id="wrapper">
-  <header><a href="/">The Blog of Parker Moore</a></header>
-  <div class="line-break"></div>
+    <header><a href="/">Parker J. Moore</a></header>
+    <div class="line-break"></div>
 
-  {{ content }}
+    <p class="site-description">
+        A web developer from Ithaca, NY.
+    </p>
 
-	<footer>
+    <div class="line-break"></div>
+    
+    {{ content }}
+
+    <footer>
         The Blog of Parker Moore&nbsp;
-		<span class="special">&bull;</span>&nbsp;
-		<a href="/archive/">Archive</a>&nbsp;
-	</footer>
+        <span class="special">-</span>&nbsp;
+        <a href="/archive/">Archive</a>&nbsp;
+    </footer>
 </div>
 </body>
 </html>

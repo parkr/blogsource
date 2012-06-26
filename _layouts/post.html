@@ -5,6 +5,6 @@ layout: home
 <div class="post lone">
   <h2 class="post-title"><a href="{{page.url}}">{{ page.title }}</a></h2>
   <div class="content">{{ content }}</div>
-	<div class="date">Posted on {{ page.date }}</div>
+	<div class="date">Posted on {{ page.date | date: "%B %d, %y at %H:%M" }}</div>
   <div class="line-break"></div>
 </div>
