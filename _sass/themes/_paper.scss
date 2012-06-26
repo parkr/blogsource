@@ -1,0 +1,48 @@
+//
+// 'Paper' Theme
+//
+
+//@import "paper/fonts/cagliostro";
+@import "paper/fonts/pontano-sans";
+
+$font-color: #2f3e46;
+
+html {
+  background-color: #f4f2e8;
+  color: $font-color;
+  font-family: 'Pontano Sans', Verdana, Helvetica, Arial, sans-serif;
+}
+
+#wrapper {
+  margin: 0.5em;
+}
+
+a {
+  text-decoration: none;
+  color: #c40c33;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+header {
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+.line-break {
+  width: 100%;
+  border-bottom: 1px #cbcbcb solid;
+}
+
+.site-description {
+  margin: 0.5em 0;
+}
+
+footer {
+  margin: 0.7em 0;
+}
+
+@import "paper/individual";
+@import "paper/listing";
+@import "paper/archive";
