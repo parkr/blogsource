@@ -1,3 +1,0 @@
-Ich habe ein Video von Steve (von LingQ) gesehen, und ich glaube, dass er gute Punkte hat. Er sagt, dass man nicht frustriert werden muss, wenn er Sprachen schwer zu lernen findet. Meiner Meinung nach seiner Grund ist, dass man macht zu viel Angst vor dem Sprachenlernen. Es ist schwer für alle - Kinder auch! Wir müssen die Sprache verwenden und die Probleme bei dem Lernen vergessen. Ich hoffe, dass ich mein deutsch hier üben kann, mit dem Ergebnis von guter Deutsch! 
-
-Bitte, wünschen mir Glück!
