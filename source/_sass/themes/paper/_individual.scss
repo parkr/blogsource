@@ -1,0 +1,36 @@
+@import "compass/css3/border-radius";
+
+.content {
+  p {
+    margin: 0.7em 0;
+    line-height: 1.4;
+  }
+}
+
+.date {
+  margin: 0.7em 0;
+  color: #cbcbcb;
+  font-size: 0.8em;
+}
+
+pre, code {
+  padding: 0 5px;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  @include border-radius(3px);
+  font-family: "Inconsolata-dz", "Inconsolata", "Courier New", Courier, monospace;
+  font-size: 0.75em;
+}
+
+em, blockquote {
+  font-style: italic;
+}
+
+ol {
+  list-style: decimal;
+  margin-left: 30px;
+  li {
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+}

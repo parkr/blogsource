@@ -1,0 +1,146 @@
+@import "after-eight/common";
+// @import "http://fonts.googleapis.com/css?family=Quattrocento&subset=latin,latin-ext";
+@import "after-eight/fonts/quattrocento";
+// @import "http://fonts.googleapis.com/css?family=Cardo:400,400italic,700&subset=latin,latin-ext";
+@import "after-eight/fonts/cardo";
+
+@import "after-eight/variables";
+
+$title-font-stack: "Cardo", Times, serif;
+$body-font-stack:  "Quattrocento", Times, serif;
+
+html { margin:0; padding:0; }
+
+body {
+	font-family: $title-font-stack;
+	font-size: 18px;
+	line-height: 1.3em;
+	color: #3D3D3D;
+	margin: 0;
+	padding: 0;
+}
+
+#wrapper {
+  width: 640px;
+  margin: 0 auto;
+}
+
+ul { padding: 0; margin: 0; }
+
+a { color: $link-colour; text-decoration: none; /*text-shadow: #CBCBCB 1px 1px 10px;*/ }
+a:hover { text-decoration: underline; }
+a:visited { color: $link-colour-dark; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $title-font-stack;
+}
+
+h1 { font-size: 36px; line-height: 1em; }
+h2 { font-size: 33px; line-height: 1em; }
+h3 { font-size: 28px; line-height: 1em; }
+h4 { font-size: 24px; line-height: 1em; }
+h5 { font-size: 18px; line-height: 1em; }
+h6 { font-size: 14px; line-height: 1em; }
+
+header {
+  display: block;
+  font-family: $title-font-stack;
+  font-size: 50px;
+  font-weight: lighter;
+  text-align: center;
+	line-height: 1.5em;
+	color: $header-colour !important;
+	margin: 20px 0 0 0;
+	//border-top: 1px solid #A2A2A2;
+	a {
+    text-decoration: none;
+		color: $header-colour !important;
+		&:hover {
+			text-decoration: underline;
+			color: $header-colour !important;
+		}
+  }
+}
+
+div.post h2.post-title { color: #282828; text-align: center; text-shadow: #CBCBCB 0px 0px 10px; }
+
+div.content {
+	p {
+		/*text-indent: 30px;*/
+		margin-bottom: 15px;
+		padding-bottom: 10px;
+	}
+	a { font-weight: bolder; }
+}
+
+div.line-break {
+  border-bottom: #A2A2A2 1px solid;
+}
+
+blockquote { 
+	background-color: #f2f2f2;
+	padding: 10px 15px 7px 15px;
+	blockquote {
+		margin: 0px 0px 0px 20px;
+		padding: 0px 0px 0px 0px;
+	}
+	p {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+}
+
+.source {
+	color: #aaa;
+	margin-left: 30px;
+	text-indent: -30px;
+	display: inline-block;
+	font-size: 15px;
+}
+
+.source-page {
+	color: #bbb;
+	font-size: 15px;
+	text-align: right;
+	display: inline-block;
+	width: 100%;
+}
+
+.date {
+	color: #bbb;
+	text-align: center;
+	text-shadow: #ccc 0px 0px 2px;
+	font-size: 15px;
+}
+
+footer {
+	display: block;
+	font-family: "Podkova", Courier, serif;
+	font-size: 15px;
+	font-weight: lighter;
+	color: #a2a2a2;
+	text-align: center;
+	padding: 10px 0 5px 0;
+	text-shadow: #ccc 0px 0px 1px;
+	a {
+		color: #a2a2a2;
+		&:hover { color: #a2a2a2; }
+	}
+	span.serif {
+		font-family: "Podkova", Courier, serif;
+		&:hover { cursor: pointer; text-decoration: underline; }
+	}
+	span.sans-serif {
+		font-family: "News Cycle", Arial, sans-serif;
+		&:hover { cursor: pointer; text-decoration: underline; }
+	}
+}
+
+ul#archive {
+	margin-left: 50px;
+	font-size: 22px;
+	margin-bottom: 24px;
+	li {
+		list-style-type: none;
+	}
+}
