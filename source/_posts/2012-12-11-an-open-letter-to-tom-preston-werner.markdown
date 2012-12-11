@@ -3,7 +3,7 @@ layout: post
 title: "An Open Letter to Tom Preston-Werner"
 date: 2012-12-11 17:03
 comments: false
-categories: open-source, jekyll, github, tech
+categories: open-source jekyll github tech
 ---
 
 I'm a huge advocate of static site generators and have always favoured [Jekyll][] as my go-to static site generator.
