@@ -13,8 +13,8 @@ Transit Service](http://tcatbus.com), or "TCAT" for short. Advertisements are
 placed on the side of these buses, and I saw one the other day which advertised for
 Palantir. It struck my interest (I definitely like to program, so "code," "ship,"
 and other exciting dev buzzwords got my attention) and I looked them up. They
-advertised that they used Java. _Java_. __JAVA!__ "Good Lord," I thought, "How can
-any respectable developer use Java in today's world? Much better options exist."
+advertised that they used Java. _Java_. __JAVA!__ _"Good Lord,"_ I thought, _"How can
+any respectable developer use Java in today's world? Much better options exist."_
 
 So, I tweeted my thoughts:
 
