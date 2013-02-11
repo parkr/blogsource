@@ -30,3 +30,8 @@ to gauge how awesome a service is: if it goes down and people are upset, then
 the service is probably worth trying out (once it goes back up again). If the
 service goes down and no one cares, then it probably isn't worth your time.
 
+So next time you see angry tweets, write down the name of that service and
+check it out once everything is back in order. In all likelihood, you will
+like the service, too, and you'll be angrily tweeting next time it goes down.
+
+It's all about perspective.
