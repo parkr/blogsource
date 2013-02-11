@@ -3,6 +3,7 @@ layout: post
 title: "On Failing and Failure"
 date: 2013-01-06 01:05
 comments: false
+published: false
 categories: personal 
 ---
 
@@ -35,4 +36,3 @@ better (due to the fact that the previous outcome was fixed).
 So what would you rather see happen: would you rather be a failure and know that
 someone can solve the mistakes you made, or have failed and leave the situation
 possibly irreversibly worse than the status quo?
-
