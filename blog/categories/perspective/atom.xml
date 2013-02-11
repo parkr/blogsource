@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: perspective | Musings of Parker J. Moore]]></title>
+  <link href="http://blog.parkermoore.de/blog/categories/perspective/atom.xml" rel="self"/>
+  <link href="http://blog.parkermoore.de/"/>
+  <updated>2013-02-11T22:56:10+01:00</updated>
+  <id>http://blog.parkermoore.de/</id>
+  <author>
+    <name><![CDATA[Parker J. Moore]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Downtime is Good]]></title>
+    <link href="http://blog.parkermoore.de/2013/02/11/downtime-is-good/"/>
+    <updated>2013-02-11T22:43:00+01:00</updated>
+    <id>http://blog.parkermoore.de/2013/02/11/downtime-is-good</id>
+    <content type="html"><![CDATA[<p>I just started working as an intern at 6Wunderkinder a couple weeks ago.
+I am by no means an expert in devops (hell, I have only dabbled with a little
+sysadmin in the past - nothing too serious) and I don't really know what goes
+into keeping a huge series of server up and running. I can say, however, that
+I know the customer's side of things. I know what it's like to be a user of a
+service which periodically goes through downtimes of noticable lengths. (I know
+I'm not the only one here so you will probably relate to this observation as
+well.</p>
+
+<p>So today there was a blip of downtime for Wunderlist, a really awesome task-
+management application by 6Wunderkinder. During this downtime, it occurred to
+me: downtime can help the visibility of an application or service.</p>
+
+<p>Hear me out: when the service is running smoothly, few will actually talk about
+it. When it goes down, Twitter blows up with complaints and "ZOMG MY LIFE IS
+OVER" tweets. These tweets, in a way, promote the service. The more frustrated
+the tweet, the more apparent it is that the tweeter cares about this service.</p>
+
+<p>As one who sees these frustrated tweets often about many services, I can only
+conclude that a little downtime here and there is a great way for outsiders
+to gauge how awesome a service is: if it goes down and people are upset, then
+the service is probably worth trying out (once it goes back up again). If the
+service goes down and no one cares, then it probably isn't worth your time.</p>
+
+<p>So next time you see angry tweets, write down the name of that service and
+check it out once everything is back in order. In all likelihood, you will
+like the service, too, and you'll be angrily tweeting next time it goes down.</p>
+
+<p>It's all about perspective.</p>
+]]></content>
+  </entry>
+  
+</feed>
