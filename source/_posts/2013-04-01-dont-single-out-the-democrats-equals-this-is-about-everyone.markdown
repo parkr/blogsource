@@ -11,7 +11,7 @@ categories:
 
 I just read an [appalling story by _Upworthy_][1] that singles out 10 Democratic
 senators who do not support full marriage equality for gays and lesbians. This
-article is an absolute disgrace. Upworthy (and the _Huffington Post_ for that
+article is an absolute disgrace. _Upworthy_ (and the _Huffington Post_ for that
 matter) should not be singling out Democrats who do not believe in same-sex
 marriage as though it's some unnatural digression from the widely-accepted
 democratic platform. No, they should be listing **every** senator that does
