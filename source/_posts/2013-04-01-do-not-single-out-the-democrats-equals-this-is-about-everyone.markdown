@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Don't Single Out the Democrats - This is About Everyone"
+title: "Do Not Single Out the Democrats - This is About Everyone"
 date: 2013-04-01 00:23
 comments: false
 categories:
