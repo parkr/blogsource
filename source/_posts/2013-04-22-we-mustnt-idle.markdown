@@ -2,6 +2,8 @@
 layout: post
 title: We Mustn't Idle
 date: 2013-04-22 02:12:12 CET
+comments: false
+categories: politics advocacy repost
 ---
 
 Our legacies on this Beautiful Earth are inextricably tied to the work we do, the
