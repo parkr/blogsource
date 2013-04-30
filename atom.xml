@@ -4,7 +4,7 @@
   <title><![CDATA[Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2013-04-28T03:08:06+02:00</updated>
+  <updated>2013-04-30T20:48:13+02:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -12,6 +12,50 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[An Afterlife?]]></title>
+    <link href="http://blog.parkermoore.de/2013/04/30/an-afterlife/"/>
+    <updated>2013-04-30T19:00:00+02:00</updated>
+    <id>http://blog.parkermoore.de/2013/04/30/an-afterlife</id>
+    <content type="html"><![CDATA[<p>I am not a religious man, yet I find myself curious about the prospect of an afterlife. Is
+there something beyond this life, in this dimension, in this universe? While I don&#8217;t believe
+in the traditional conception of an afterlife (one&#8217;s soul ascends to a blissful place, where
+it inhabits all space and time for eternity), I do like to think we live on beyond the
+time we take our last breath.</p>
+
+<p>In ninth grade, I graduated to a Sunday School class which resembled a forum &mdash;
+discussion-based learning. A retired history teacher, a Public Defender, and a social
+worker led the discussions in this class. The dialogue probed our most deeply held beliefs
+and asked profound questions about  life, spirituality, goodness, happiness, beauty, and
+other similar topics.</p>
+
+<p>One day, we were discussing the afterlife. The normal answers dominated the conversation:
+&#8220;When one dies, one&#8217;s soul ascends into Heaven to be with one&#8217;s family members and with
+God,&#8221; and &#8220;We exist everywhere and with everyone. We watch over those we love and help
+them live good lives.&#8221; When the question came to me, I wasn&#8217;t sure how to respond. Can an
+atheist believe in an afterlife? If so, did I?</p>
+
+<p>I hadn&#8217;t given it much thought before, but I pondered it for a moment and concluded, &#8220;An
+individual&#8217;s afterlife is the culmination of the memories others have of the individual.
+It is the legacy that individual leaves behind and the impact that individual had on those
+he or she encountered.&#8221;</p>
+
+<p>The more I thought about it, the more it made sense. If we don&#8217;t have souls, how do we
+explain this legacy of the afterlife concretely? The afterlife is not something experienced
+by the deceased individual, but by everyone else he or she impacted.</p>
+
+<p><span class='pullquote-right' data-pullquote='&#8220;They say you die twice, once when your
+heart stops beating, and again when your name is said for the last time.&#8221;'>
+I have not yet met anyone else who holds this belief I hold, but I invite you to explore
+it and see of you can reconcile it with your beliefs about the afterlife. Banksy once
+famously said (paraphrased by Chris Wolfson): &#8220;They say you die twice, once when your
+heart stops beating, and again when your name is said for the last time.&#8221; I can&#8217;t
+believe there is something I will experience beyond my death, but I can believe that
+others will experience their memories of me beyond my departure from this world.
+</span></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[We Mustn't Idle]]></title>
@@ -734,45 +778,6 @@ they were there to help. Thank my lucky stars.</p>
 <p>So thanks for reading. These are my improvements for <a href="http://www.instapaper.com/">Instapaper</a>, one of the greatest webapps of all time. A huge &#8220;thank you&#8221; to <a href="http://www.marco.org/">Marco</a>, who had the forethought to create something that the rest of us didn&#8217;t even know we needed, and now, can&#8217;t imagine living without. Thanks!</p>
 
 <p>Also, Marco, I&#8217;m free this summer to help out with implementing improvements such as these. I&#8217;m a webdev with a lot of experience with PHP-heavy apps, and have used CakePHP and CodeIgniter before, which is what I believe you have written this webapp with. But take a quick look at my <a href="http://www.parkermoore.de/">online resumé</a> for a more detailed description of my qualifications.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Success, or Failure?]]></title>
-    <link href="http://blog.parkermoore.de/2011/12/12/success-or-failure/"/>
-    <updated>2011-12-12T12:14:24+01:00</updated>
-    <id>http://blog.parkermoore.de/2011/12/12/success-or-failure</id>
-    <content type="html"><![CDATA[<p>I can&#8217;t decide whether this semester was a success or a failure. There are so many things about which I should be proud, and an almost equal number of things about which I should be ashamed or disappointed.</p>
-
-<p>I&#8217;ll start with the good news first. Right as the semester began, I was accepted into the Cornell University Glee Club and The Class Notes. I am very proud to be a member of both groups and have found the members of each group to be kind, considerate, and, most of all, accepting. We have made some beautiful music this semester, and I am especially excited to compete with the Glee Club at the 2012 Choirs of the World festival in Wales this summer.</p>
-
-<p>I have also had a relatively successful semester in terms of web development. After working on the total Leacock&#8217;s redesign this summer, I didn&#8217;t have a whole lot to do except for implement changes and the Photosets feature in the Photos section. I pursued other avenues through which I could expand my webdev experience, and was fortunate enough to have been chosen as this year&#8217;s Information Technology Manager for Hotel Ezra Cornell 87. It has been a truly rewarding experience to work with the impassioned Board of Directors to create something for HEC which is new and innovative.</p>
-
-<p>I was also lucky enough to have been chosen to work with Terran Exchange this semester, which was the first time I had ever dabbled in a Rails application that meant something to someone. I have worked on a few projects to learn Ruby and Rails, but never had I worked on a project that was, for lack of a better term, <em>legit</em>. It was a pleasure to work with the TE team and to contribute, ever so slightly, to the project.</p>
-
-<p>Those who know me well, know that I struggled in High School with acceptance and personal issues that posed social challenges. Knowing that I have historically struggled with this, I have been delightfully surprised with the remarkable turn-around I have shown this semester. I feel I have connected astonishingly well with those around me on campus this semester. Last year, at McGill, I did not emphasize the importance of social interaction enough, and therefore had a less-than-optimal time at McGill. But I seem to be relishing in this new institution, with its delightfully brilliant population.</p>
-
-<p>I have talked enough about the good; consequently, it is only fitting that I discuss the bad. I am quite disappointed in my grades this semester. I have talked it over with many here and they seem to disagree. They feel that I am doing average, or even better than average in my classes. That being said, I don&#8217;t have the 3.75 that I achieved last year at McGill. I imagine that this discrepancy is merely the result of the increased difficulty of the school at which I am currently enrolled, but I definitely feel inferior to my classmates. I&#8217;m hoping it is all in my head.</p>
-
-<p>I am disappointed in my display (or lack) of personal self- control this semester. I have certainly skipped many-a party to work on homework, but issues like timeliness still bug me to this day. For some very strange reason, getting to a meeting, a class, a rehearsal on time are still bugging me.</p>
-
-<p>So I have told you enough about my life interesting/strange semester. Now let me offer you my solutions:</p>
-
-<ol>
-<li>ALWAYS be on time.</li>
-<li>Write down and UTILIZE office hours.</li>
-<li>Focus on your schoolwork - it is the reason you are here.</li>
-<li>Strive to fully understand what you are learning - don&#8217;t just commit to rote memory.</li>
-<li>Find balance between challenging and not-so-challenging courses so as not to overload yourself.</li>
-<li>Develop a routine and stick with it.</li>
-<li>Be happy with who you are and always strive to work your very hardest. You are capable of succeeding at Cornell, you just need to be more comprehensive in your approach.</li>
-<li>DO NOT SQUANDER AWAY TIME.</li>
-<li>Limit the number of blogs you subscribe to. &#8220;Lifehacker&#8221; will not actually help you in school. Just glance at their  highlights when and if you have a free minute.</li>
-<li>Sleep. If you organize and schedule your time appropriately, this will not be an issue.</li>
-</ol>
-
-
-<p>There you have it. A couple personal goals for me to work toward next semester. Thanks for reading.</p>
 ]]></content>
   </entry>
   
