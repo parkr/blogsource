@@ -25,6 +25,9 @@ Some quick highlights:
 
 ... and [so much more](https://github.com/mojombo/jekyll/blob/v1.0.0/History.txt)!
 
+We also have an [Upgrading](http://jekyllrb.com/docs/upgrading/) page that clarifies
+some breaking changes and tips for upgrading to Jekyll 1.0.
+
 As many of you know, Jekyll lay mostly stagnant for quite some time. At 0.11.2 and
 0.12.0, it was pretty stable. It had some annoying bugs, but nothing much that
 couldn't be worked around or monkey-patched.
