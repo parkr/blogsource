@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tech | Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/blog/categories/tech/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2013-04-30T20:49:09+02:00</updated>
+  <updated>2013-05-06T10:56:31+02:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -12,6 +12,53 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Jekyll 1.0 Released]]></title>
+    <link href="http://blog.parkermoore.de/2013/05/06/jekyll-1-dot-0-released/"/>
+    <updated>2013-05-06T00:59:00+02:00</updated>
+    <id>http://blog.parkermoore.de/2013/05/06/jekyll-1-dot-0-released</id>
+    <content type="html"><![CDATA[<p>Today, I'm proud to announce the release of Jekyll 1.0. There are a million
+goodies and fixes to enjoy, and we're (the still-active Jekyll core team
+members: Tom, Matt and I) really excited to share this first major release
+with you. Be sure to follow <a href="http://twitter.com/jekyllrb">@jekyllrb</a> for
+updates on future releases and links to cool plugins.</p>
+
+<p>Some quick highlights:</p>
+
+<ul>
+<li>New subcommands: new, build, serve, and import</li>
+<li>Amazing new docs at http://jekyllrb.com (thanks to @cobyism)</li>
+<li><code>jekyll new</code> creates a new scaffold so you can get blogging even faster</li>
+<li>Drafts, i.e. posts without dates</li>
+<li>New "excerpt" feature on posts</li>
+<li>Timezone configuration</li>
+<li>'gist' liquid tag</li>
+<li>Source directory protection</li>
+</ul>
+
+
+<p>... and <a href="https://github.com/mojombo/jekyll/blob/v1.0.0/History.txt">so much more</a>!</p>
+
+<p>We also have an <a href="http://jekyllrb.com/docs/upgrading/">Upgrading</a> page that clarifies
+some breaking changes and tips for upgrading to Jekyll 1.0.</p>
+
+<p>As many of you know, Jekyll lay mostly stagnant for quite some time. At 0.11.2 and
+0.12.0, it was pretty stable. It had some annoying bugs, but nothing much that
+couldn't be worked around or monkey-patched.</p>
+
+<p>After using Jekyll last summer to help build
+<a href="http://cals.cornell.edu">Cornell's College of Agriculture and Life Sciences website</a>,
+I took a renewed interest in seeing this project move forward. Last December,
+Tom answered my offers to help with the development of Jekyll by adding me as
+a contributor. I'm happy to say that it has come a long way since then, and
+I'm very proud to be a part of a team that has pushed this project to new heights.</p>
+
+<p>Thank you to everyone who submitted a pull request, and/or gave me advice along
+the way. It has been great fun so far, and I look forward to working with you
+all to push out future versions!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Downtime is Good]]></title>
@@ -294,31 +341,6 @@ Parker Moore</p></blockquote>
 <p>My only real wish for this app is to allow double-spaced print-outs. That's it. I want to be able to edit my papers double-spaced.</p>
 
 <p>So what say you, Information Architects? Think it's possible? I'd really appreciate it.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[A Brief Adventure]]></title>
-    <link href="http://blog.parkermoore.de/2012/11/30/a-brief-adventure/"/>
-    <updated>2012-11-30T21:23:00+01:00</updated>
-    <id>http://blog.parkermoore.de/2012/11/30/a-brief-adventure</id>
-    <content type="html"><![CDATA[<p>I've decided to take next semester off (Spring 2013) to pursue an internship at <a href="http://6wunderkinder.com">6Wunderkinder</a> in Berlin, Germany. I'll be starting work at the end of January and returning to the U.S. around the middle of August. I'm very excited that 6Wunderkinder extended their offer for an internship to me and were down with a 6-7 month internship. I'm pumped to be working with such awesome web and app devs.</p>
-
-<p>So how did this happen? It's a long story that I'll talk about later, but for now I'll give you the abridged version.</p>
-
-<p>In the bleak winter of 2011, I emailed 6W about the possibility of a 3-month summer internship (May, June, July) in 2013. They replied very kindly, basically saying that it was way too early to say whether that was a possibility.</p>
-
-<p>This Fall, I sent them a follow-up email asking if they were still interested. They replied saying that it was a definite possibility and asked that I send along some projects I had worked on. After reviewing my email "project resume", they offered me an interview. Thanksgiving morning, I woke up bright and early to meet Ben on Skype. Great fun, and got to meet Isaac and Alex of the 6W API team, too. Ben followed up with an email offering a second interview.</p>
-
-<p>During the time between the first and second interviews, I decided that I needed a break from my studies - Cornell is a particularly rigorous place and has a tendency to be demoralizing. So it was time for a break so that I could return in the Fall with new energy and vigor. I shot Ben an email indicating my interest in starting to work for them as early as the end of January, and to my surprise, were very interested in having me earlier.</p>
-
-<p>During the second interview, I talked with Isaac and Ben more about what my role at 6Wunderkinder would be and how life in Berlin would look for me. All seemed really cool. When Ben officially made the offer to have me as an intern, I gladly accepted and we discussed logistics.</p>
-
-<p>So there it is! It's amazing what an email can do nowadays when you have congruent interests and a cool, responsive company like 6W.</p>
-
-<p>I'm going to really miss <a href="http://theclassnotes.com">The Class Notes</a>, the <a href="http://gleeclub.com">Glee Club</a> (no, not like the show "Glee"), and my other friends here, and the ease of college life. That being said, I'm really grateful for this amazing opportunity abroad with a one-of-a-kind start-up like 6W.</p>
-
-<p>Many thanks to Ben Braun, Isaac Wolkerstorfer, Alex Koppel, and the whole 6Wunderkinder team for giving me the opportunity. Thanks, guys!</p>
 ]]></content>
   </entry>
   
