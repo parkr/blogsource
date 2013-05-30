@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tech | Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/blog/categories/tech/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2013-05-09T18:40:29+02:00</updated>
+  <updated>2013-05-30T17:45:29+02:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -12,6 +12,75 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dealing with Distraction]]></title>
+    <link href="http://blog.parkermoore.de/2013/05/30/dealing-with-distraction/"/>
+    <updated>2013-05-30T15:56:00+02:00</updated>
+    <id>http://blog.parkermoore.de/2013/05/30/dealing-with-distraction</id>
+    <content type="html"><![CDATA[<p>Dealing with distraction for those of us who live with AD(H)D is a constant struggle, and
+can be especially difficult for those of us who must daily solve large, complex problems.
+This post describes what it is like to be a programmer with ADD and some strategies I've
+developed to help make myself more effective.</p>
+
+<p>To solve complex problems by programmatic means, one needs to be able to focus. To find
+the best solution to any problem, one needs to be able to focus. In short, an effective
+worker is one who can focus.</p>
+
+<p>For those of us who live with the difficulties of AD(H)D every day, this fact - this
+dependence upon a kind of mental discipline - is glaringly obvious. Our constant struggle
+to focus means we are not as efficient as our non-ADD peers when asked to complete a
+single task. We get distracted by the sound of the wind, the tap of a colleague's fingers
+on his desk, or the sound of people talking walking past our window. The slightest noise
+or change (by a separate entity) in the visual landscape will cause us to loose our train
+of thought nearly immediately.</p>
+
+<p>For those of you who can focus relatively easily in distracting environments, I offer this
+metaphor to help you understand a bit more of how it is it live with such an affliction.
+Imagine you are swimming in a lake with a basketball. The depth at which you swim is your
+level of concentration - the deeper you swim, the more focused you are and thus the less
+susceptible to distraction you are. Imagine further that a day's worth of work is like
+swimming the length of the lake, and your goal is to swim as deeply as possible for as
+far as possible. The problem is that you have to do all this while holding onto the
+fully-inflated basketball. The longer you swim underwater, the harder it is to keep the
+ball (and yourself) deep underwater. During your swim from one end of the lake to the
+other, you are pulled up to the surface very frequently, only able to keep the ball
+underground for a short while at a time. This is what it's like to live and work with ADD.</p>
+
+<p>The inability to focus on a given problem for more than a few minutes at a time causes
+severe problems for all employees with ADD, but especially for developers who have to
+delve into a problem, process it, and produce a solution quickly and efficiently.</p>
+
+<p>The effectiveness of various solutions will vary person to person, but these helped me:</p>
+
+<ul>
+<li>Find a quiet, solitary place to work (avoid working in a place where people socialize)</li>
+<li>Turn off all notifications when working (fetch updates at will instead)</li>
+<li>Play calm, simple music without words, or work in a place where the background noise
+doesn't change</li>
+<li>Keep the room cool in temperature</li>
+<li>Work on one thing at a time and work until it is completed</li>
+<li>Plan out finer details for a large project</li>
+<li>Get enough sleep</li>
+<li>Medicate with some sort of stimulant</li>
+<li>Keep your workspace empty of clutter and visual distraction</li>
+<li>Keep snacks by your desk (like almonds or dried fruits) to keep your energy up
+throughout the day</li>
+<li>Exercise to exhaustion at least every other day</li>
+<li>Consciously avoid doing several things at once, like listening to a YouTube Lecture and
+checking your Twitter feed on your phone at the same time</li>
+<li>Avoid depressants like alcohol</li>
+<li>Write or engage in a creative, exciting activity which asks for your full concentration</li>
+</ul>
+
+
+<p>Following all of these with ADD can even be a challenge, but limiting the frequency of
+distracting stimuli goes a long way to achieving focus and increasing your productivity.</p>
+
+<p>If you have other suggestions, hit me up on <a href="http://alpha.app.net/parkr">ADN</a> or
+<a href="http://twitter.com/parkr">Twitter</a>. How do you cope with distractions?</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Jekyll 1.0 Released]]></title>
@@ -320,27 +389,6 @@ way to interface with Twitter on any Apple device.</p>
 
 <p>Warm Regards,<br>
 Parker Moore</p></blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[iA Writer Needs Print Configuration]]></title>
-    <link href="http://blog.parkermoore.de/2012/12/11/ia-writer-needs-print-configuration/"/>
-    <updated>2012-12-11T16:41:00+01:00</updated>
-    <id>http://blog.parkermoore.de/2012/12/11/ia-writer-needs-print-configuration</id>
-    <content type="html"><![CDATA[<p>I have really adored iA Writer and use the app obsessively on my iPhone, iPad and Mac. It's arguably one of my most oft-used apps. I write all sorts of things with the app: blog posts/ideas (like this one), essays, lab reports -- even the occasional code snippet. It's my writing tool of choice, and I thank Information Architects for writing such an awesome app.</p>
-
-<p>I also print out a lot of my writing. I like to edit by hand with a pen and paper. I like the beautiful typeface that iA Writer provides and the margins on 8.5" x 11" paper (US) are amazing. I've really enjoyed the almost typewriter-like essence of the print-outs which iA Writer provides.</p>
-
-<p>I'd really love some more configuration options for printing, however. While I will undoubtedly hear the argument that iA Writer offers no configuration <em>on purpose</em>, I will argue that the "No Configuration Rule" must only apply to in-app writing, not to the manifestation of this writing in paper form.</p>
-
-<p>The No Configuration Rule is supported by the fact that configuration and modification of the working environment is often a hindrance to one's ability to write awesome content. It's a distraction. But it's a distraction only when <em>writing</em>, not when printing. I'd say this No Configuration Rule thus can only be justified for writing, i.e. on;y be justified for the look and feel of the writing experience in the app.</p>
-
-<p>But that's an argument with too many implications. Let's make it a bit smaller, to the size of a wish:</p>
-
-<p>My only real wish for this app is to allow double-spaced print-outs. That's it. I want to be able to edit my papers double-spaced.</p>
-
-<p>So what say you, Information Architects? Think it's possible? I'd really appreciate it.</p>
 ]]></content>
   </entry>
   
