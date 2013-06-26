@@ -10,12 +10,12 @@ The late comedian George Carlin was never skiddish about sharing his opinion of 
 country and of the human race. "It's all going downhill," he would say. The decline of
 objective rationality sewed our fate: we're fucked.
 
-We're fucked on foreign relations.
-We're fucked on domestic freedoms.
-We're fucked on freedom from discrimination.
-We're fucked on climate change.
-We're fucked on economic prosperity.
-We're fucked on everything, because objective rationality is dead.
+We're fucked on foreign relations.<br />
+We're fucked on domestic freedoms.<br />
+We're fucked on freedom from discrimination.<br />
+We're fucked on climate change.<br />
+We're fucked on economic prosperity.<br />
+We're fucked on everything, because objective rationality is dead.<br />
 
 We haven't done right by each other and we haven't done right by our planet.
 We're the scourge of the Earth and it's weeks like this one that make me wish we had blown
