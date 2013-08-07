@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: rails | Musings of Parker J. Moore]]></title>
+  <link href="http://blog.parkermoore.de/blog/categories/rails/atom.xml" rel="self"/>
+  <link href="http://blog.parkermoore.de/"/>
+  <updated>2013-08-07T20:40:14+02:00</updated>
+  <id>http://blog.parkermoore.de/</id>
+  <author>
+    <name><![CDATA[Parker J. Moore]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Launching a Rails Console with Capistrano]]></title>
+    <link href="http://blog.parkermoore.de/2013/08/07/launching-a-rails-console-with-capistrano/"/>
+    <updated>2013-08-07T20:36:00+02:00</updated>
+    <id>http://blog.parkermoore.de/2013/08/07/launching-a-rails-console-with-capistrano</id>
+    <content type="html"><![CDATA[<p>If you're using the popular Capistrano web deployment framework, you will likely
+have wished you had an easy way to perform a quick task in the production rails
+console on one of your servers. Many thanks to
+<a href="https://github.com/colszowka">@colszowka</a> for <a href="https://gist.github.com/benedikt/1115513#comment-576015">this
+solution</a>:</p>
+
+<p>```ruby
+namespace :rails do
+  desc "Remote console"
+  task :console, :roles => :app do</p>
+
+<pre><code>run_interactively "bundle exec rails console #{rails_env}"
+</code></pre>
+
+<p>  end</p>
+
+<p>  desc "Remote dbconsole"
+  task :dbconsole, :roles => :app do</p>
+
+<pre><code>run_interactively "bundle exec rails dbconsole #{rails_env}"
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>def run_interactively(command, server=nil)
+  server ||= find_servers_for_task(current_task).first
+  exec %Q(ssh #{server.host} -t 'cd #{current_path} &amp;&amp; #{command}')
+end
+```</p>
+
+<p>And, <em>vòila</em>! Run <code>cap rails:console</code> and you're in business.</p>
+]]></content>
+  </entry>
+  
+</feed>

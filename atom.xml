@@ -4,7 +4,7 @@
   <title><![CDATA[Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2013-06-26T12:59:43+02:00</updated>
+  <updated>2013-08-07T20:40:14+02:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -12,6 +12,56 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Launching a Rails Console with Capistrano]]></title>
+    <link href="http://blog.parkermoore.de/2013/08/07/launching-a-rails-console-with-capistrano/"/>
+    <updated>2013-08-07T20:36:00+02:00</updated>
+    <id>http://blog.parkermoore.de/2013/08/07/launching-a-rails-console-with-capistrano</id>
+    <content type="html"><![CDATA[<p>If you&#8217;re using the popular Capistrano web deployment framework, you will likely
+have wished you had an easy way to perform a quick task in the production rails
+console on one of your servers. Many thanks to
+<a href="https://github.com/colszowka">@colszowka</a> for <a href="https://gist.github.com/benedikt/1115513#comment-576015">this
+solution</a>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">namespace</span> <span class="ss">:rails</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">desc</span> <span class="s2">&quot;Remote console&quot;</span>
+</span><span class='line'>  <span class="n">task</span> <span class="ss">:console</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">run_interactively</span> <span class="s2">&quot;bundle exec rails console </span><span class="si">#{</span><span class="n">rails_env</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">desc</span> <span class="s2">&quot;Remote dbconsole&quot;</span>
+</span><span class='line'>  <span class="n">task</span> <span class="ss">:dbconsole</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">run_interactively</span> <span class="s2">&quot;bundle exec rails dbconsole </span><span class="si">#{</span><span class="n">rails_env</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">run_interactively</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">server</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">server</span> <span class="o">||=</span> <span class="n">find_servers_for_task</span><span class="p">(</span><span class="n">current_task</span><span class="p">)</span><span class="o">.</span><span class="n">first</span>
+</span><span class='line'>  <span class="nb">exec</span> <span class="sx">%Q(ssh </span><span class="si">#{</span><span class="n">server</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="sx"> -t &#39;cd </span><span class="si">#{</span><span class="n">current_path</span><span class="si">}</span><span class="sx"> &amp;&amp; </span><span class="si">#{</span><span class="n">command</span><span class="si">}</span><span class="sx">&#39;)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And, <em>vòila</em>! Run <code>cap rails:console</code> and you&#8217;re in business.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Carlin Was Right]]></title>
@@ -853,23 +903,6 @@ Netanyahu, is just about ready to kill off every non-Israeli in the Gaza Strip.<
 <p>I recently worked on a project for <a href="https://www.mhusa.com/contact-tools/login.asp?c">Moët &amp; Chandon USA</a> that was built upon the CakePHP framework, and I was not nearly as excited about returning to this framework as I expected to be, given my incredible comfort with the language and the framework.</p>
 
 <p>But my work at Think Topography has changed me &#8211; I&#8217;m a Rails guy for sure.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Uncomfortable]]></title>
-    <link href="http://blog.parkermoore.de/2012/06/03/uncomfortable/"/>
-    <updated>2012-06-03T17:10:34+02:00</updated>
-    <id>http://blog.parkermoore.de/2012/06/03/uncomfortable</id>
-    <content type="html"><![CDATA[<p>Members of the Cornell University Glee Club and Chorus were asked to perform at a wedding on campus yesterday, and as a member of the Glee Club, I volunteered to sing. This wedding, being a Catholic one, was quite traditional, and left me feeling quite uneasy about my participation in the ceremony.</p>
-
-<p>I have renounced any belief in the Judeo-Christian God for about 8 years. I grew up in an Episcopalian church in Rochester, NY and it was quite a liberal experience. Though I appreciate what religion can do for many around the world, I find it stifling, and often quite demeaning. As I listened to the prayers, I was overwhelmed by a feeling of unease. Questions filled my head: <em>How can anyone subject themselves to complete obedience to something of which they know so little? How can anyone find this comforting, to relinquish control to some &#8220;being&#8221; that most likely does not exist? Why do members of our society, despite incredible evidence against it, continue to believe in such an archaic set of beliefs?</em></p>
-
-<p>I found myself wishing I could get up and leave. My heart began to race, fueled by the &#8220;fight-or-flight&#8221; instinct. I felt threatened, not only personally, but also I felt a threat to our entire society. We see, on a practically <em>daily</em> basis, how the Abrahamic religions are holding us back in many different ways. We are paralyzed by our fear that disbelief will mean condemnation, but all forget that the concepts of hell and purgatory are Medieval conceptions fabricated by the Roman Catholic Church to provoke incredible fear. These conceptions are just as despicable, just as reprehensible, as the tithe. These conceptions invoke a fear that is very real, but it has been seen time and time again that obedience caused by means of fear always falls.</p>
-
-<p>There is hope. The population of &#8220;non-believers&#8221;, those who do not profess a belief in the God of Abraham, is growing rapidly. With the ability of science to definitively answer questions that were historically answered by religious doctrines, we are able to let our belief in the Judeo-Christian God go. We no longer need a priest, an imam or a rabbi to interpret the scriptures for us &mdash; we have scientists that can do this for us! Our scientists, their theories based upon facts (things we <em>know</em> to be true, not just a guess or a belief), have given us verifiable beliefs. Skepticism is welcomed. It is a wonderful thing to be a part of the scientific world!</p>
-
-<p>Listening to the prayers professing ultimate devotion to some being no one actually knows, I became uneasy. Our society can do better than this. We must be determined to live in a more fact-based society… <em>we must</em>.</p>
 ]]></content>
   </entry>
   

@@ -9,8 +9,8 @@
   <meta name="author" content="Parker J. Moore">
 
   
-  <meta name="description" content="The late comedian George Carlin was never skiddish about sharing his opinion of the
-country and of the human race. &#8220;It&#8217;s all going &hellip;">
+  <meta name="description" content="If you&#8217;re using the popular Capistrano web deployment framework, you will likely
+have wished you had an easy way to perform a quick task in the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,83 @@ country and of the human race. &#8220;It&#8217;s all going &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/08/07/launching-a-rails-console-with-capistrano/">Launching a Rails Console With Capistrano</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-07T20:36:00+02:00" pubdate data-updated="true">Aug 7<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you&#8217;re using the popular Capistrano web deployment framework, you will likely
+have wished you had an easy way to perform a quick task in the production rails
+console on one of your servers. Many thanks to
+<a href="https://github.com/colszowka">@colszowka</a> for <a href="https://gist.github.com/benedikt/1115513#comment-576015">this
+solution</a>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">namespace</span> <span class="ss">:rails</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">desc</span> <span class="s2">&quot;Remote console&quot;</span>
+</span><span class='line'>  <span class="n">task</span> <span class="ss">:console</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">run_interactively</span> <span class="s2">&quot;bundle exec rails console </span><span class="si">#{</span><span class="n">rails_env</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">desc</span> <span class="s2">&quot;Remote dbconsole&quot;</span>
+</span><span class='line'>  <span class="n">task</span> <span class="ss">:dbconsole</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">run_interactively</span> <span class="s2">&quot;bundle exec rails dbconsole </span><span class="si">#{</span><span class="n">rails_env</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">run_interactively</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">server</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">server</span> <span class="o">||=</span> <span class="n">find_servers_for_task</span><span class="p">(</span><span class="n">current_task</span><span class="p">)</span><span class="o">.</span><span class="n">first</span>
+</span><span class='line'>  <span class="nb">exec</span> <span class="sx">%Q(ssh </span><span class="si">#{</span><span class="n">server</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="sx"> -t &#39;cd </span><span class="si">#{</span><span class="n">current_path</span><span class="si">}</span><span class="sx"> &amp;&amp; </span><span class="si">#{</span><span class="n">command</span><span class="si">}</span><span class="sx">&#39;)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And, <em>vòila</em>! Run <code>cap rails:console</code> and you&#8217;re in business.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -700,62 +777,6 @@ MRI. Just copy it and run it.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/2013/01/30/connect-to-3g-on-simyo-in-germany/">Connect to 3G on Simyo in Germany</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-30T18:10:00+01:00" pubdate data-updated="true">Jan 30<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I recently signed up for simyo, a German cell provider. After installing the Nano SIM into my phone,
-I noticed that the 3G connection to the mobile data network was failing. Got a weird error that said
-I was not subscribed to a mobile data network. Which was obviously false.</p>
-
-<p>So, I tweeted about it. Expecting a several-day delay in my support query from simyo, I totally resigned
-to wait on mobile data until they got back to me. But luckily this new 6W family &amp; friends totally came
-to my rescue. <a href="http://rafifyalda.id.au/">Rafif Yalda</a>, a former Wunderkind, totally came to my rescue in
-<a href="https://twitter.com/rafifyalda/status/296664474885165056">a tweet</a>.</p>
-
-<p>So if you ever run into a problem with your mobile network, ensure that your APN settings are correct.
-In this case:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>APN: internet.eplus.de
-</span><span class='line'>username: simyo
-</span><span class='line'>password: simyo</span></code></pre></td></tr></table></div></figure>
-
-
-<p>THANK YOU RAFIF. This surely saved me many hours of frustration.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -771,6 +792,10 @@ In this case:</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/08/07/launching-a-rails-console-with-capistrano/">Launching a Rails Console with Capistrano</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/06/26/carlin-was-right/">Carlin Was Right</a>
       </li>
     
@@ -784,10 +809,6 @@ In this case:</p>
     
       <li class="post">
         <a href="/2013/05/06/jekyll-1-dot-0-released/">Jekyll 1.0 Released</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2013/04/30/an-afterlife/">An Afterlife?</a>
       </li>
     
   </ul>
