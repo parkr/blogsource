@@ -4,7 +4,7 @@
   <title><![CDATA[Category: github | Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/blog/categories/github/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2013-08-07T20:40:14+02:00</updated>
+  <updated>2013-09-16T21:26:59-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[An Open Letter to Tom Preston-Werner]]></title>
     <link href="http://blog.parkermoore.de/2012/12/11/an-open-letter-to-tom-preston-werner/"/>
-    <updated>2012-12-11T17:03:00+01:00</updated>
+    <updated>2012-12-11T17:03:00-05:00</updated>
     <id>http://blog.parkermoore.de/2012/12/11/an-open-letter-to-tom-preston-werner</id>
     <content type="html"><![CDATA[<p>I'm a huge advocate of static site generators and have always favoured <a href="https://github.com/mojombo/jekyll">Jekyll</a> as my go-to static site generator.</p>
 

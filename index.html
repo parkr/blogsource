@@ -9,8 +9,8 @@
   <meta name="author" content="Parker J. Moore">
 
   
-  <meta name="description" content="If you&#8217;re using the popular Capistrano web deployment framework, you will likely
-have wished you had an easy way to perform a quick task in the &hellip;">
+  <meta name="description" content="This post was originally written as an assignment for INFO 2450: Communication
+&amp; Technology taught by Professors Jeff Hancock and Drew Margolin &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +83,116 @@ have wished you had an easy way to perform a quick task in the &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/2013/09/16/its-just-semantics-app-dot-net-alpha/">It&#8217;s Just Semantics: App.net Alpha</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-16T19:53:00-04:00" pubdate data-updated="true">Sep 16<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This post was <a href="http://2450fall2013.ning.com/groups/red-2450/blog/it-s-just-semantics-app-net-alpha">originally written</a> as an assignment for <a href="http://courses.cornell.edu/preview_course.php?catoid=12&amp;coid=90680">INFO 2450: Communication
+&amp; Technology</a> taught by Professors <a href="http://infosci.cornell.edu/faculty/jeffrey-hancock">Jeff Hancock</a> and <a href="http://communication.cals.cornell.edu/people/drew-margolin">Drew Margolin</a> in
+Fall 2013. The course focuses heavily on design of technologies. The assignment
+asked for an evaluation of an online application or product based on the
+principles outlined in Donald Norman&#8217;s <a href="http://www.amazon.com/Design-Everyday-Things-Donald-Norman/dp/0465067107">&#8220;The Design of Everyday Things&#8221;</a>. It&#8217;s
+a very basic look at the technology, but I thought I&#8217;d share it anyhow.</p>
+
+<hr />
+
+<p>App.net is a social platform designed from the beginning to be nothing more than
+a platform for developers to build great social apps upon. This blog post will
+be about the very first application built upon App.net, called Alpha. App.net
+will henceforth be referred to as &#8220;ADN.&#8221;</p>
+
+<p>The main purpose of Alpha is to demonstrate the ADN API in a somewhat familiar
+way. Alpha behaves much the way Twitter does: a user creates posts, users can
+follow other users and interact with them in the familiar way. The divergence
+from Twitter (and other &#8220;microblogging&#8221; social applications) is twofold: a user
+pays for his or her account, and the posts may be longer.</p>
+
+<p>By asking the user to pay for an ADN account (which is used by Alpha as the
+poster&#8217;s identity), the normal business incentives shift from building an
+application (or platform) which optimizes for advertisement revenue to an
+application (or platform) which optimizes for the happiness of the user (if
+users like to use the service, they will continue to pay the $5/month or
+$32/year). Twitter, Facebook, and Google are well-known for accepting user
+detriment (in terms of the virtual design of the products) for greater
+advertisement revenue. This is not the case with ADN (and by extension, with
+Alpha).</p>
+
+<p>On Alpha, posts may be up to 256 characters long and users can choose to attach
+media to their posts. The &#8220;@&#8221; symbol is used to mention another user (the other
+user receives a notification when this happens) and the &#8220;#&#8221; is used to denote
+topics. With the longer character limit, one could easily surmise that Alpha is
+attempting to make having asynchronous, open conversations online a bit easier.
+The openness of being able to write anyone (divergence from Facebook) coupled
+with the 256 character limit (a physical constraint) (divergence from Facebook,
+and extension of Twitter&#8217;s idea that a post should be &#8220;bite-sized&#8221;) produce a
+fantastic application for having chats with anyone about anything in a way
+conducive to conciseness and to expressiveness. One common frustration with
+Twitter is that conversations on it are very challenging, as 140 characters is
+far too few to really say anything substantive. ADN hopes to remedy this
+problem, and in my experience, arguments (and general discussions, for that
+matter) have been incredibly easy and productive.</p>
+
+<p><img src="/images/app-net/app-net-alpha-feed.png" alt="Screenshot of alpha.app.net" /></p>
+
+<p>Above, you see the home screen of Alpha (namely, mine). This shows the user&#8217;s
+stream. The search box and post box (based on their physical attributes) afford
+writing. The change of the &#8220;POST&#8221; button from grey to a nice deep red-orange
+highlights a change of the mapping from a button that may not be pressed to one
+that may be pressed (I would consider the change itself feedback). As the user
+types in a post, the number (shown here as &#8220;256&#8221;) decreases by one for each
+character that is typed into the box above it, providing very valuable feedback
+about the user&#8217;s actions. This number&#8217;s presence also provides visibility for
+the physical constraint placed on the size of the posts allowed in the service.
+The buttons on the right of each post afford clicking and change color
+(feedback) when clicked. All of the aforementioned design elements, in addition
+to the placement of the post box at the top, suggest that the application is
+trying to get the user to submit content to his or her stream. The feed below
+seems to indicate that the application wishes for perusal and interaction of
+other users&#8217; posts by the logged-in user.</p>
+
+<p><img src="/images/app-net/app-net-alpha-post.png" alt="Screenshot of a singular post" /></p>
+
+<p>As you saw above, each post is given its own box. There are 5 interactions which
+only show up when the user mouses-over the post: &#8220;Discussion,&#8221; &#8220;Reply,&#8221; &#8220;via
+(app),&#8221; &#8220;Mute User,&#8221; and &#8220;Report&#8221;. In order to better facilitate the app&#8217;s goal
+of interaction, it would make sense for the &#8220;Discussion&#8221; and &#8220;Reply&#8221; buttons to
+always be shown. This would improve the visibility of the interaction paradigms
+and afford interaction without the user making the first move (to mouseover).</p>
+
+<hr />
+
+<p>That&#8217;s it.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/2013/08/07/launching-a-rails-console-with-capistrano/">Launching a Rails Console With Capistrano</a></h1>
     
     
@@ -99,7 +209,7 @@ have wished you had an easy way to perform a quick task in the &hellip;">
   
 
 
-<time datetime="2013-08-07T20:36:00+02:00" pubdate data-updated="true">Aug 7<span>th</span>, 2013</time>
+<time datetime="2013-08-07T20:36:00-04:00" pubdate data-updated="true">Aug 7<span>th</span>, 2013</time>
         
       </p>
     
@@ -176,7 +286,7 @@ solution</a>:</p>
   
 
 
-<time datetime="2013-06-26T12:48:00+02:00" pubdate data-updated="true">Jun 26<span>th</span>, 2013</time>
+<time datetime="2013-06-26T12:48:00-04:00" pubdate data-updated="true">Jun 26<span>th</span>, 2013</time>
         
       </p>
     
@@ -226,7 +336,7 @@ caretakers of this world than we are.</p>
   
 
 
-<time datetime="2013-05-30T15:56:00+02:00" pubdate data-updated="true">May 30<span>th</span>, 2013</time>
+<time datetime="2013-05-30T15:56:00-04:00" pubdate data-updated="true">May 30<span>th</span>, 2013</time>
         
       </p>
     
@@ -322,7 +432,7 @@ distracting stimuli goes a long way to achieving focus and increasing your produ
   
 
 
-<time datetime="2013-05-09T18:17:00+02:00" pubdate data-updated="true">May 9<span>th</span>, 2013</time>
+<time datetime="2013-05-09T18:17:00-04:00" pubdate data-updated="true">May 9<span>th</span>, 2013</time>
         
       </p>
     
@@ -405,7 +515,7 @@ Constituent</p></blockquote>
   
 
 
-<time datetime="2013-05-06T00:59:00+02:00" pubdate data-updated="true">May 6<span>th</span>, 2013</time>
+<time datetime="2013-05-06T00:59:00-04:00" pubdate data-updated="true">May 6<span>th</span>, 2013</time>
         
       </p>
     
@@ -479,7 +589,7 @@ all to push out future versions!</p>
   
 
 
-<time datetime="2013-04-30T19:00:00+02:00" pubdate data-updated="true">Apr 30<span>th</span>, 2013</time>
+<time datetime="2013-04-30T19:00:00-04:00" pubdate data-updated="true">Apr 30<span>th</span>, 2013</time>
         
       </p>
     
@@ -534,7 +644,7 @@ others will experience their memories of me beyond my departure from this world.
       
   <header>
     
-      <h1 class="entry-title"><a href="/2013/04/22/we-mustnt-idle/">We Mustn&#8217;t Idle</a></h1>
+      <h1 class="entry-title"><a href="/2013/04/21/we-mustnt-idle/">We Mustn&#8217;t Idle</a></h1>
     
     
       <p class="meta">
@@ -550,7 +660,7 @@ others will experience their memories of me beyond my departure from this world.
   
 
 
-<time datetime="2013-04-22T04:12:12+02:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2013</time>
+<time datetime="2013-04-21T22:12:12-04:00" pubdate data-updated="true">Apr 21<span>st</span>, 2013</time>
         
       </p>
     
@@ -613,7 +723,7 @@ much gnashing of teeth for what we believe in and what we know is right.</p>
   
 
 
-<time datetime="2013-04-01T00:23:00+02:00" pubdate data-updated="true">Apr 1<span>st</span>, 2013</time>
+<time datetime="2013-04-01T00:23:00-04:00" pubdate data-updated="true">Apr 1<span>st</span>, 2013</time>
         
       </p>
     
@@ -661,7 +771,7 @@ law.</p>
   
 
 
-<time datetime="2013-02-11T22:43:00+01:00" pubdate data-updated="true">Feb 11<span>th</span>, 2013</time>
+<time datetime="2013-02-11T22:43:00-05:00" pubdate data-updated="true">Feb 11<span>th</span>, 2013</time>
         
       </p>
     
@@ -704,79 +814,6 @@ like the service, too, and you&#8217;ll be angrily tweeting next time it goes do
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/2013/02/06/install-rbenv-on-ubuntu-12-dot-04/">Install Rbenv on Ubuntu 12.04</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-02-06T21:31:00+01:00" pubdate data-updated="true">Feb 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>So, I&#8217;ll admit it: I absolutely adore rbenv.</p>
-
-<p>In light of this, I&#8217;ve been using it at my work at 6Wunderkinder the past couple weeks.
-6W uses AWS like nobody&#8217;s business, and the Ubuntu EC2 instances I&#8217;ve been interacting
-with are really bare-bones. So I wanted to write this script for you, the Ubuntu &amp; Ruby
-user, in order for you to very quickly get up and running with rbenv &amp; the latest Ruby
-MRI. Just copy it and run it.</p>
-
-<figure class='code'><figcaption><span>Installing rbenv on Ubuntu 12.04</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install zlib1g-dev openssl libopenssl-ruby1.9.1 libssl-dev libruby1.9.1 libreadline-dev git-core make make-doc
-</span><span class='line'><span class="nb">cd</span> ~
-</span><span class='line'>git clone git://github.com/sstephenson/rbenv.git .rbenv
-</span><span class='line'><span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;&#39;</span> &gt;&gt; ~/.bashrc
-</span><span class='line'><span class="nb">echo</span> <span class="s1">&#39;eval &quot;$(rbenv init -)&quot;&#39;</span> &gt;&gt; ~/.bashrc
-</span><span class='line'><span class="nb">exec</span> <span class="nv">$SHELL</span> <span class="c"># Restart the shell</span>
-</span><span class='line'>mkdir -p ~/.rbenv/plugins
-</span><span class='line'><span class="nb">cd</span> ~/.rbenv/plugins
-</span><span class='line'>git clone git://github.com/sstephenson/ruby-build.git
-</span><span class='line'>git clone git://github.com/sstephenson/rbenv-gem-rehash.git
-</span><span class='line'>rbenv install 1.9.3-p362
-</span><span class='line'>rbenv rehash
-</span><span class='line'>rbenv global 1.9.3-p362
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -792,6 +829,10 @@ MRI. Just copy it and run it.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/09/16/its-just-semantics-app-dot-net-alpha/">It&#8217;s Just Semantics: App.net Alpha</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/08/07/launching-a-rails-console-with-capistrano/">Launching a Rails Console with Capistrano</a>
       </li>
     
@@ -805,10 +846,6 @@ MRI. Just copy it and run it.</p>
     
       <li class="post">
         <a href="/2013/05/09/get-rid-of-senate-prayer/">Get Rid of Senate Prayer</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2013/05/06/jekyll-1-dot-0-released/">Jekyll 1.0 Released</a>
       </li>
     
   </ul>
@@ -845,16 +882,6 @@ MRI. Just copy it and run it.</p>
 
 
 <section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("parkr", 4, false);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
   
     <a href="http://twitter.com/parkr" class="twitter-follow-button" data-show-count="false">Follow @parkr</a>
   

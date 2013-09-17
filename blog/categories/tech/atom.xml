@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tech | Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/blog/categories/tech/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2013-08-07T20:40:14+02:00</updated>
+  <updated>2013-09-16T21:26:59-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Dealing with Distraction]]></title>
     <link href="http://blog.parkermoore.de/2013/05/30/dealing-with-distraction/"/>
-    <updated>2013-05-30T15:56:00+02:00</updated>
+    <updated>2013-05-30T15:56:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/05/30/dealing-with-distraction</id>
     <content type="html"><![CDATA[<p>Dealing with distraction for those of us who live with AD(H)D is a constant struggle, and
 can be especially difficult for those of us who must daily solve large, complex problems.
@@ -85,7 +85,7 @@ distracting stimuli goes a long way to achieving focus and increasing your produ
   <entry>
     <title type="html"><![CDATA[Jekyll 1.0 Released]]></title>
     <link href="http://blog.parkermoore.de/2013/05/06/jekyll-1-dot-0-released/"/>
-    <updated>2013-05-06T00:59:00+02:00</updated>
+    <updated>2013-05-06T00:59:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/05/06/jekyll-1-dot-0-released</id>
     <content type="html"><![CDATA[<p>Today, I'm proud to announce the release of Jekyll 1.0. There are a million
 goodies and fixes to enjoy, and we're (the still-active Jekyll core team
@@ -132,7 +132,7 @@ all to push out future versions!</p>
   <entry>
     <title type="html"><![CDATA[Downtime is Good]]></title>
     <link href="http://blog.parkermoore.de/2013/02/11/downtime-is-good/"/>
-    <updated>2013-02-11T22:43:00+01:00</updated>
+    <updated>2013-02-11T22:43:00-05:00</updated>
     <id>http://blog.parkermoore.de/2013/02/11/downtime-is-good</id>
     <content type="html"><![CDATA[<p>I just started working as an intern at 6Wunderkinder a couple weeks ago.
 I am by no means an expert in devops (hell, I have only dabbled with a little
@@ -169,7 +169,7 @@ like the service, too, and you'll be angrily tweeting next time it goes down.</p
   <entry>
     <title type="html"><![CDATA[My Favourite Apps in 2012]]></title>
     <link href="http://blog.parkermoore.de/2013/01/03/my-favourite-apps-in-2012/"/>
-    <updated>2013-01-03T01:36:00+01:00</updated>
+    <updated>2013-01-03T01:36:00-05:00</updated>
     <id>http://blog.parkermoore.de/2013/01/03/my-favourite-apps-in-2012</id>
     <content type="html"><![CDATA[<p>Below is a list of the apps I wouldn't have wanted to live without this year.
 To be fair to everyone, I've listed them in alphabetical order.</p>
@@ -353,7 +353,7 @@ way to interface with Twitter on any Apple device.</p>
   <entry>
     <title type="html"><![CDATA[An Open Letter to Tom Preston-Werner]]></title>
     <link href="http://blog.parkermoore.de/2012/12/11/an-open-letter-to-tom-preston-werner/"/>
-    <updated>2012-12-11T17:03:00+01:00</updated>
+    <updated>2012-12-11T17:03:00-05:00</updated>
     <id>http://blog.parkermoore.de/2012/12/11/an-open-letter-to-tom-preston-werner</id>
     <content type="html"><![CDATA[<p>I'm a huge advocate of static site generators and have always favoured <a href="https://github.com/mojombo/jekyll">Jekyll</a> as my go-to static site generator.</p>
 

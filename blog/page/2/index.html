@@ -9,8 +9,8 @@
   <meta name="author" content="Parker J. Moore">
 
   
-  <meta name="description" content="I recently signed up for simyo, a German cell provider. After installing the Nano SIM into my phone,
-I noticed that the 3G connection to the mobile &hellip;">
+  <meta name="description" content="So, I&#8217;ll admit it: I absolutely adore rbenv. In light of this, I&#8217;ve been using it at my work at 6Wunderkinder the past couple weeks.
+6W &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +83,79 @@ I noticed that the 3G connection to the mobile &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/2013/02/06/install-rbenv-on-ubuntu-12-dot-04/">Install Rbenv on Ubuntu 12.04</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-06T21:31:00-05:00" pubdate data-updated="true">Feb 6<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>So, I&#8217;ll admit it: I absolutely adore rbenv.</p>
+
+<p>In light of this, I&#8217;ve been using it at my work at 6Wunderkinder the past couple weeks.
+6W uses AWS like nobody&#8217;s business, and the Ubuntu EC2 instances I&#8217;ve been interacting
+with are really bare-bones. So I wanted to write this script for you, the Ubuntu &amp; Ruby
+user, in order for you to very quickly get up and running with rbenv &amp; the latest Ruby
+MRI. Just copy it and run it.</p>
+
+<figure class='code'><figcaption><span>Installing rbenv on Ubuntu 12.04</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install zlib1g-dev openssl libopenssl-ruby1.9.1 libssl-dev libruby1.9.1 libreadline-dev git-core make make-doc
+</span><span class='line'><span class="nb">cd</span> ~
+</span><span class='line'>git clone git://github.com/sstephenson/rbenv.git .rbenv
+</span><span class='line'><span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;&#39;</span> &gt;&gt; ~/.bashrc
+</span><span class='line'><span class="nb">echo</span> <span class="s1">&#39;eval &quot;$(rbenv init -)&quot;&#39;</span> &gt;&gt; ~/.bashrc
+</span><span class='line'><span class="nb">exec</span> <span class="nv">$SHELL</span> <span class="c"># Restart the shell</span>
+</span><span class='line'>mkdir -p ~/.rbenv/plugins
+</span><span class='line'><span class="nb">cd</span> ~/.rbenv/plugins
+</span><span class='line'>git clone git://github.com/sstephenson/ruby-build.git
+</span><span class='line'>git clone git://github.com/sstephenson/rbenv-gem-rehash.git
+</span><span class='line'>rbenv install 1.9.3-p362
+</span><span class='line'>rbenv rehash
+</span><span class='line'>rbenv global 1.9.3-p362
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/2013/01/30/connect-to-3g-on-simyo-in-germany/">Connect to 3G on Simyo in Germany</a></h1>
     
     
@@ -99,7 +172,7 @@ I noticed that the 3G connection to the mobile &hellip;">
   
 
 
-<time datetime="2013-01-30T18:10:00+01:00" pubdate data-updated="true">Jan 30<span>th</span>, 2013</time>
+<time datetime="2013-01-30T18:10:00-05:00" pubdate data-updated="true">Jan 30<span>th</span>, 2013</time>
         
       </p>
     
@@ -155,7 +228,7 @@ In this case:</p>
   
 
 
-<time datetime="2013-01-03T01:36:00+01:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2013</time>
+<time datetime="2013-01-03T01:36:00-05:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2013</time>
         
       </p>
     
@@ -366,7 +439,7 @@ way to interface with Twitter on any Apple device.</p>
   
 
 
-<time datetime="2012-12-18T18:33:00+01:00" pubdate data-updated="true">Dec 18<span>th</span>, 2012</time>
+<time datetime="2012-12-18T18:33:00-05:00" pubdate data-updated="true">Dec 18<span>th</span>, 2012</time>
         
       </p>
     
@@ -447,7 +520,7 @@ I hope you&#8217;re as excited as we are to get this project back on its feet.</
   
 
 
-<time datetime="2012-12-12T02:05:00+01:00" pubdate data-updated="true">Dec 12<span>th</span>, 2012</time>
+<time datetime="2012-12-12T02:05:00-05:00" pubdate data-updated="true">Dec 12<span>th</span>, 2012</time>
         
       </p>
     
@@ -456,7 +529,7 @@ I hope you&#8217;re as excited as we are to get this project back on its feet.</
 
   <div class="entry-content"><p>Email notifications from web apps have been annoying us for months now. Ever since Twitter, Facebook and other notification-heavy apps began automatically sending notifications to us (alas, without our consent), public opinion seems to have developed a hatred for email notifications. But, I implore you, understand the flipside:</p>
 
-<div class='embed tweet'><blockquote class="twitter-tweet" lang="de"><p>I really don’t need your web service to keep another inbox of messages and notifications for me.</p>&mdash; Marco Arment (@marcoarment) <a href="https://twitter.com/marcoarment/status/278705209507721217">12. Dezember 2012</a></blockquote>
+<div class='embed tweet'><blockquote class="twitter-tweet"><p>I really don’t need your web service to keep another inbox of messages and notifications for me.</p>&mdash; Marco Arment (@marcoarment) <a href="https://twitter.com/marcoarment/statuses/278705209507721217">December 12, 2012</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 
 
@@ -493,7 +566,7 @@ I hope you&#8217;re as excited as we are to get this project back on its feet.</
   
 
 
-<time datetime="2012-12-11T17:03:00+01:00" pubdate data-updated="true">Dec 11<span>th</span>, 2012</time>
+<time datetime="2012-12-11T17:03:00-05:00" pubdate data-updated="true">Dec 11<span>th</span>, 2012</time>
         
       </p>
     
@@ -562,7 +635,7 @@ Parker Moore</p></blockquote>
   
 
 
-<time datetime="2012-12-11T16:41:00+01:00" pubdate data-updated="true">Dec 11<span>th</span>, 2012</time>
+<time datetime="2012-12-11T16:41:00-05:00" pubdate data-updated="true">Dec 11<span>th</span>, 2012</time>
         
       </p>
     
@@ -610,7 +683,7 @@ Parker Moore</p></blockquote>
   
 
 
-<time datetime="2012-11-30T21:23:00+01:00" pubdate data-updated="true">Nov 30<span>th</span>, 2012</time>
+<time datetime="2012-11-30T21:23:00-05:00" pubdate data-updated="true">Nov 30<span>th</span>, 2012</time>
         
       </p>
     
@@ -662,7 +735,7 @@ Parker Moore</p></blockquote>
   
 
 
-<time datetime="2012-11-16T18:12:00+01:00" pubdate data-updated="true">Nov 16<span>th</span>, 2012</time>
+<time datetime="2012-11-16T18:12:00-05:00" pubdate data-updated="true">Nov 16<span>th</span>, 2012</time>
         
       </p>
     
@@ -710,7 +783,7 @@ Netanyahu, is just about ready to kill off every non-Israeli in the Gaza Strip.<
       
   <header>
     
-      <h1 class="entry-title"><a href="/2012/08/06/maintaining-inbox-zero/">Maintaining Inbox Zero</a></h1>
+      <h1 class="entry-title"><a href="/2012/08/05/maintaining-inbox-zero/">Maintaining Inbox Zero</a></h1>
     
     
       <p class="meta">
@@ -726,7 +799,7 @@ Netanyahu, is just about ready to kill off every non-Israeli in the Gaza Strip.<
   
 
 
-<time datetime="2012-08-06T00:18:00+02:00" pubdate data-updated="true">Aug 6<span>th</span>, 2012</time>
+<time datetime="2012-08-05T18:18:00-04:00" pubdate data-updated="true">Aug 5<span>th</span>, 2012</time>
         
       </p>
     
@@ -764,54 +837,6 @@ Netanyahu, is just about ready to kill off every non-Israeli in the Gaza Strip.<
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/2012/06/26/ruby-and-rails/">Ruby and Rails</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-26T05:38:00+02:00" pubdate data-updated="true">Jun 26<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>So there&#8217;s been a lot of hype about <a href="http://www.ruby-lang.org/en/">Ruby</a> over the past several years. For those of you who are interested in programming and programming languages, you heard about it right from the start, as its beautiful syntax and ease of use lured many programmers into its use.</p>
-
-<p>While Ruby is wonderful, it wouldn&#8217;t be what it is today without the existence of <a href="http://rubyonrails.org/">Ruby on Rails</a>. This web framework posed the first real threat to PHP. Rails was powerful and agile, and helped web devs create incredbile web apps with incredible ease. The generators that came along with this gem made it possible to get a completely functional website up in a matter of <em>hours</em>, rather than days. That was incredible.</p>
-
-<p>I used Rails on and off, switching between it and CakePHP. I didn&#8217;t really understand Rails&#8217; routes and wanted something like CakePHP&#8217;s <code>bake</code> functionality which creates an entire scaffold with styling and everything. I didn&#8217;t object to the un-RESTful CakePHP nature of using just <code>GET</code> and <code>POST</code> requests, as I didn&#8217;t need the RESTful functionality for any of the sites I was creating. I used Rails for a couple projects, but it always felt like I was coding more than was necessary.</p>
-
-<p>I started working at <a href="http://www.thinktopography.com">Think Topography</a> this summer and was tasked with building the new <a href="http://www.ithacahours.com">Ithaca Hours</a> mobile web app that would facilitate the use of Ithaca Hours. My boss had always used Rails and suggested that I use Rails for the API end of this project. It seemed like the best choice, given the requirements of the project, and so it began: I dove back into Rails.</p>
-
-<p>Once I wrapped my head around routes and the devise/warden authentication framework, I was truckin&#8217;. I was making huge progress on this API and learning gobs of information along the way. I was loving Rails and appreciating its incredible power. I was writing tests in rspec, which was a joy when combined with factory_girl.</p>
-
-<p>I recently worked on a project for <a href="https://www.mhusa.com/contact-tools/login.asp?c">Moët &amp; Chandon USA</a> that was built upon the CakePHP framework, and I was not nearly as excited about returning to this framework as I expected to be, given my incredible comfort with the language and the framework.</p>
-
-<p>But my work at Think Topography has changed me &#8211; I&#8217;m a Rails guy for sure.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -829,6 +854,10 @@ Netanyahu, is just about ready to kill off every non-Israeli in the Gaza Strip.<
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/09/16/its-just-semantics-app-dot-net-alpha/">It&#8217;s Just Semantics: App.net Alpha</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/08/07/launching-a-rails-console-with-capistrano/">Launching a Rails Console with Capistrano</a>
       </li>
     
@@ -842,10 +871,6 @@ Netanyahu, is just about ready to kill off every non-Israeli in the Gaza Strip.<
     
       <li class="post">
         <a href="/2013/05/09/get-rid-of-senate-prayer/">Get Rid of Senate Prayer</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2013/05/06/jekyll-1-dot-0-released/">Jekyll 1.0 Released</a>
       </li>
     
   </ul>
@@ -882,16 +907,6 @@ Netanyahu, is just about ready to kill off every non-Israeli in the Gaza Strip.<
 
 
 <section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("parkr", 4, false);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
   
     <a href="http://twitter.com/parkr" class="twitter-follow-button" data-show-count="false">Follow @parkr</a>
   

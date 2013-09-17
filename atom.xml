@@ -4,7 +4,7 @@
   <title><![CDATA[Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2013-08-07T20:40:14+02:00</updated>
+  <updated>2013-09-16T21:26:59-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -14,9 +14,92 @@
 
   
   <entry>
+    <title type="html"><![CDATA[It's Just Semantics: App.net Alpha]]></title>
+    <link href="http://blog.parkermoore.de/2013/09/16/its-just-semantics-app-dot-net-alpha/"/>
+    <updated>2013-09-16T19:53:00-04:00</updated>
+    <id>http://blog.parkermoore.de/2013/09/16/its-just-semantics-app-dot-net-alpha</id>
+    <content type="html"><![CDATA[<p>This post was <a href="http://2450fall2013.ning.com/groups/red-2450/blog/it-s-just-semantics-app-net-alpha">originally written</a> as an assignment for <a href="http://courses.cornell.edu/preview_course.php?catoid=12&amp;coid=90680">INFO 2450: Communication
+&amp; Technology</a> taught by Professors <a href="http://infosci.cornell.edu/faculty/jeffrey-hancock">Jeff Hancock</a> and <a href="http://communication.cals.cornell.edu/people/drew-margolin">Drew Margolin</a> in
+Fall 2013. The course focuses heavily on design of technologies. The assignment
+asked for an evaluation of an online application or product based on the
+principles outlined in Donald Norman&#8217;s <a href="http://www.amazon.com/Design-Everyday-Things-Donald-Norman/dp/0465067107">&#8220;The Design of Everyday Things&#8221;</a>. It&#8217;s
+a very basic look at the technology, but I thought I&#8217;d share it anyhow.</p>
+
+<hr />
+
+<p>App.net is a social platform designed from the beginning to be nothing more than
+a platform for developers to build great social apps upon. This blog post will
+be about the very first application built upon App.net, called Alpha. App.net
+will henceforth be referred to as &#8220;ADN.&#8221;</p>
+
+<p>The main purpose of Alpha is to demonstrate the ADN API in a somewhat familiar
+way. Alpha behaves much the way Twitter does: a user creates posts, users can
+follow other users and interact with them in the familiar way. The divergence
+from Twitter (and other &#8220;microblogging&#8221; social applications) is twofold: a user
+pays for his or her account, and the posts may be longer.</p>
+
+<p>By asking the user to pay for an ADN account (which is used by Alpha as the
+poster&#8217;s identity), the normal business incentives shift from building an
+application (or platform) which optimizes for advertisement revenue to an
+application (or platform) which optimizes for the happiness of the user (if
+users like to use the service, they will continue to pay the $5/month or
+$32/year). Twitter, Facebook, and Google are well-known for accepting user
+detriment (in terms of the virtual design of the products) for greater
+advertisement revenue. This is not the case with ADN (and by extension, with
+Alpha).</p>
+
+<p>On Alpha, posts may be up to 256 characters long and users can choose to attach
+media to their posts. The &#8220;@&#8221; symbol is used to mention another user (the other
+user receives a notification when this happens) and the &#8220;#&#8221; is used to denote
+topics. With the longer character limit, one could easily surmise that Alpha is
+attempting to make having asynchronous, open conversations online a bit easier.
+The openness of being able to write anyone (divergence from Facebook) coupled
+with the 256 character limit (a physical constraint) (divergence from Facebook,
+and extension of Twitter&#8217;s idea that a post should be &#8220;bite-sized&#8221;) produce a
+fantastic application for having chats with anyone about anything in a way
+conducive to conciseness and to expressiveness. One common frustration with
+Twitter is that conversations on it are very challenging, as 140 characters is
+far too few to really say anything substantive. ADN hopes to remedy this
+problem, and in my experience, arguments (and general discussions, for that
+matter) have been incredibly easy and productive.</p>
+
+<p><img src="http://blog.parkermoore.de/images/app-net/app-net-alpha-feed.png" alt="Screenshot of alpha.app.net" /></p>
+
+<p>Above, you see the home screen of Alpha (namely, mine). This shows the user&#8217;s
+stream. The search box and post box (based on their physical attributes) afford
+writing. The change of the &#8220;POST&#8221; button from grey to a nice deep red-orange
+highlights a change of the mapping from a button that may not be pressed to one
+that may be pressed (I would consider the change itself feedback). As the user
+types in a post, the number (shown here as &#8220;256&#8221;) decreases by one for each
+character that is typed into the box above it, providing very valuable feedback
+about the user&#8217;s actions. This number&#8217;s presence also provides visibility for
+the physical constraint placed on the size of the posts allowed in the service.
+The buttons on the right of each post afford clicking and change color
+(feedback) when clicked. All of the aforementioned design elements, in addition
+to the placement of the post box at the top, suggest that the application is
+trying to get the user to submit content to his or her stream. The feed below
+seems to indicate that the application wishes for perusal and interaction of
+other users&#8217; posts by the logged-in user.</p>
+
+<p><img src="http://blog.parkermoore.de/images/app-net/app-net-alpha-post.png" alt="Screenshot of a singular post" /></p>
+
+<p>As you saw above, each post is given its own box. There are 5 interactions which
+only show up when the user mouses-over the post: &#8220;Discussion,&#8221; &#8220;Reply,&#8221; &#8220;via
+(app),&#8221; &#8220;Mute User,&#8221; and &#8220;Report&#8221;. In order to better facilitate the app&#8217;s goal
+of interaction, it would make sense for the &#8220;Discussion&#8221; and &#8220;Reply&#8221; buttons to
+always be shown. This would improve the visibility of the interaction paradigms
+and afford interaction without the user making the first move (to mouseover).</p>
+
+<hr />
+
+<p>That&#8217;s it.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Launching a Rails Console with Capistrano]]></title>
     <link href="http://blog.parkermoore.de/2013/08/07/launching-a-rails-console-with-capistrano/"/>
-    <updated>2013-08-07T20:36:00+02:00</updated>
+    <updated>2013-08-07T20:36:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/08/07/launching-a-rails-console-with-capistrano</id>
     <content type="html"><![CDATA[<p>If you&#8217;re using the popular Capistrano web deployment framework, you will likely
 have wished you had an easy way to perform a quick task in the production rails
@@ -66,7 +149,7 @@ solution</a>:</p>
   <entry>
     <title type="html"><![CDATA[Carlin Was Right]]></title>
     <link href="http://blog.parkermoore.de/2013/06/26/carlin-was-right/"/>
-    <updated>2013-06-26T12:48:00+02:00</updated>
+    <updated>2013-06-26T12:48:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/06/26/carlin-was-right</id>
     <content type="html"><![CDATA[<p>The late comedian George Carlin was never skiddish about sharing his opinion of the
 country and of the human race. &#8220;It&#8217;s all going downhill,&#8221; he would say. The decline of
@@ -89,7 +172,7 @@ caretakers of this world than we are.</p>
   <entry>
     <title type="html"><![CDATA[Dealing with Distraction]]></title>
     <link href="http://blog.parkermoore.de/2013/05/30/dealing-with-distraction/"/>
-    <updated>2013-05-30T15:56:00+02:00</updated>
+    <updated>2013-05-30T15:56:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/05/30/dealing-with-distraction</id>
     <content type="html"><![CDATA[<p>Dealing with distraction for those of us who live with AD(H)D is a constant struggle, and
 can be especially difficult for those of us who must daily solve large, complex problems.
@@ -158,7 +241,7 @@ distracting stimuli goes a long way to achieving focus and increasing your produ
   <entry>
     <title type="html"><![CDATA[Get Rid of Senate Prayer]]></title>
     <link href="http://blog.parkermoore.de/2013/05/09/get-rid-of-senate-prayer/"/>
-    <updated>2013-05-09T18:17:00+02:00</updated>
+    <updated>2013-05-09T18:17:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/05/09/get-rid-of-senate-prayer</id>
     <content type="html"><![CDATA[<p>Earlier today, I was watching a <a href="http://www.c-spanvideo.org/program/SenateSession4967">C-SPAN video</a> of a U.S. Senate session on
 February 1, 2012. This was the first time I had ever watched a Senate session
@@ -214,7 +297,7 @@ Constituent</p></blockquote>
   <entry>
     <title type="html"><![CDATA[Jekyll 1.0 Released]]></title>
     <link href="http://blog.parkermoore.de/2013/05/06/jekyll-1-dot-0-released/"/>
-    <updated>2013-05-06T00:59:00+02:00</updated>
+    <updated>2013-05-06T00:59:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/05/06/jekyll-1-dot-0-released</id>
     <content type="html"><![CDATA[<p>Today, I&#8217;m proud to announce the release of Jekyll 1.0. There are a million
 goodies and fixes to enjoy, and we&#8217;re (the still-active Jekyll core team
@@ -261,7 +344,7 @@ all to push out future versions!</p>
   <entry>
     <title type="html"><![CDATA[An Afterlife?]]></title>
     <link href="http://blog.parkermoore.de/2013/04/30/an-afterlife/"/>
-    <updated>2013-04-30T19:00:00+02:00</updated>
+    <updated>2013-04-30T19:00:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/04/30/an-afterlife</id>
     <content type="html"><![CDATA[<p>I am not a religious man, yet I find myself curious about the prospect of an afterlife. Is
 there something beyond this life, in this dimension, in this universe? While I don&#8217;t believe
@@ -304,9 +387,9 @@ others will experience their memories of me beyond my departure from this world.
   
   <entry>
     <title type="html"><![CDATA[We Mustn't Idle]]></title>
-    <link href="http://blog.parkermoore.de/2013/04/22/we-mustnt-idle/"/>
-    <updated>2013-04-22T04:12:12+02:00</updated>
-    <id>http://blog.parkermoore.de/2013/04/22/we-mustnt-idle</id>
+    <link href="http://blog.parkermoore.de/2013/04/21/we-mustnt-idle/"/>
+    <updated>2013-04-21T22:12:12-04:00</updated>
+    <id>http://blog.parkermoore.de/2013/04/21/we-mustnt-idle</id>
     <content type="html"><![CDATA[<p>Our legacies on this Beautiful Earth are inextricably tied to the work we do, the
 principles we stand for and the messages we spread. The apathetic nature of many of my
 peers nowadays is heresy to the nth degree, and we can no longer stand idly by and watch
@@ -341,7 +424,7 @@ much gnashing of teeth for what we believe in and what we know is right.</p>
   <entry>
     <title type="html"><![CDATA[Do Not Single Out the Democrats - This is About Everyone]]></title>
     <link href="http://blog.parkermoore.de/2013/04/01/do-not-single-out-the-democrats-equals-this-is-about-everyone/"/>
-    <updated>2013-04-01T00:23:00+02:00</updated>
+    <updated>2013-04-01T00:23:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/04/01/do-not-single-out-the-democrats-equals-this-is-about-everyone</id>
     <content type="html"><![CDATA[<p>I just read an <a href="http://www.upworthy.com/omg-google-tucker-carlson-and-gay-marriage?c=fea">appalling story by <em>Upworthy</em></a> that singles out 10 Democratic
 senators who do not support full marriage equality for gays and lesbians. This
@@ -362,7 +445,7 @@ law.</p>
   <entry>
     <title type="html"><![CDATA[Downtime is Good]]></title>
     <link href="http://blog.parkermoore.de/2013/02/11/downtime-is-good/"/>
-    <updated>2013-02-11T22:43:00+01:00</updated>
+    <updated>2013-02-11T22:43:00-05:00</updated>
     <id>http://blog.parkermoore.de/2013/02/11/downtime-is-good</id>
     <content type="html"><![CDATA[<p>I just started working as an intern at 6Wunderkinder a couple weeks ago.
 I am by no means an expert in devops (hell, I have only dabbled with a little
@@ -399,7 +482,7 @@ like the service, too, and you&#8217;ll be angrily tweeting next time it goes do
   <entry>
     <title type="html"><![CDATA[Install rbenv on Ubuntu 12.04]]></title>
     <link href="http://blog.parkermoore.de/2013/02/06/install-rbenv-on-ubuntu-12-dot-04/"/>
-    <updated>2013-02-06T21:31:00+01:00</updated>
+    <updated>2013-02-06T21:31:00-05:00</updated>
     <id>http://blog.parkermoore.de/2013/02/06/install-rbenv-on-ubuntu-12-dot-04</id>
     <content type="html"><![CDATA[<p>So, I&#8217;ll admit it: I absolutely adore rbenv.</p>
 
@@ -445,7 +528,7 @@ MRI. Just copy it and run it.</p>
   <entry>
     <title type="html"><![CDATA[Connect to 3G on simyo in Germany]]></title>
     <link href="http://blog.parkermoore.de/2013/01/30/connect-to-3g-on-simyo-in-germany/"/>
-    <updated>2013-01-30T18:10:00+01:00</updated>
+    <updated>2013-01-30T18:10:00-05:00</updated>
     <id>http://blog.parkermoore.de/2013/01/30/connect-to-3g-on-simyo-in-germany</id>
     <content type="html"><![CDATA[<p>I recently signed up for simyo, a German cell provider. After installing the Nano SIM into my phone,
 I noticed that the 3G connection to the mobile data network was failing. Got a weird error that said
@@ -474,7 +557,7 @@ In this case:</p>
   <entry>
     <title type="html"><![CDATA[My Favourite Apps in 2012]]></title>
     <link href="http://blog.parkermoore.de/2013/01/03/my-favourite-apps-in-2012/"/>
-    <updated>2013-01-03T01:36:00+01:00</updated>
+    <updated>2013-01-03T01:36:00-05:00</updated>
     <id>http://blog.parkermoore.de/2013/01/03/my-favourite-apps-in-2012</id>
     <content type="html"><![CDATA[<p>Below is a list of the apps I wouldn&#8217;t have wanted to live without this year.
 To be fair to everyone, I&#8217;ve listed them in alphabetical order.</p>
@@ -658,7 +741,7 @@ way to interface with Twitter on any Apple device.</p>
   <entry>
     <title type="html"><![CDATA[The Immediate Future of Jekyll]]></title>
     <link href="http://blog.parkermoore.de/2012/12/18/the-immediate-future-of-jekyll/"/>
-    <updated>2012-12-18T18:33:00+01:00</updated>
+    <updated>2012-12-18T18:33:00-05:00</updated>
     <id>http://blog.parkermoore.de/2012/12/18/the-immediate-future-of-jekyll</id>
     <content type="html"><![CDATA[<p><a href="http://github.com/mojombo/jekyll">Jekyll</a> is a static blog generator created by <a href="https://github.com/mojombo">Tom Preston-Werner</a>, the
 current CEO of <a href="https://github.com">GitHub</a> and one of GitHub&#8217;s co-founders, and by <a href="https://github.com/qrush">Nick Quaranto</a>,
@@ -712,11 +795,11 @@ I hope you&#8217;re as excited as we are to get this project back on its feet.</
   <entry>
     <title type="html"><![CDATA[Email Notifications in Web Apps]]></title>
     <link href="http://blog.parkermoore.de/2012/12/12/email-notifications-in-web-apps/"/>
-    <updated>2012-12-12T02:05:00+01:00</updated>
+    <updated>2012-12-12T02:05:00-05:00</updated>
     <id>http://blog.parkermoore.de/2012/12/12/email-notifications-in-web-apps</id>
     <content type="html"><![CDATA[<p>Email notifications from web apps have been annoying us for months now. Ever since Twitter, Facebook and other notification-heavy apps began automatically sending notifications to us (alas, without our consent), public opinion seems to have developed a hatred for email notifications. But, I implore you, understand the flipside:</p>
 
-<div class='embed tweet'><blockquote class="twitter-tweet" lang="de"><p>I really don’t need your web service to keep another inbox of messages and notifications for me.</p>&mdash; Marco Arment (@marcoarment) <a href="https://twitter.com/marcoarment/status/278705209507721217">12. Dezember 2012</a></blockquote>
+<div class='embed tweet'><blockquote class="twitter-tweet"><p>I really don’t need your web service to keep another inbox of messages and notifications for me.</p>&mdash; Marco Arment (@marcoarment) <a href="https://twitter.com/marcoarment/statuses/278705209507721217">December 12, 2012</a></blockquote>
 <script async src="http://blog.parkermoore.de//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 
 
@@ -731,7 +814,7 @@ I hope you&#8217;re as excited as we are to get this project back on its feet.</
   <entry>
     <title type="html"><![CDATA[An Open Letter to Tom Preston-Werner]]></title>
     <link href="http://blog.parkermoore.de/2012/12/11/an-open-letter-to-tom-preston-werner/"/>
-    <updated>2012-12-11T17:03:00+01:00</updated>
+    <updated>2012-12-11T17:03:00-05:00</updated>
     <id>http://blog.parkermoore.de/2012/12/11/an-open-letter-to-tom-preston-werner</id>
     <content type="html"><![CDATA[<p>I&#8217;m a huge advocate of static site generators and have always favoured <a href="https://github.com/mojombo/jekyll">Jekyll</a> as my go-to static site generator.</p>
 
@@ -773,7 +856,7 @@ Parker Moore</p></blockquote>
   <entry>
     <title type="html"><![CDATA[iA Writer Needs Print Configuration]]></title>
     <link href="http://blog.parkermoore.de/2012/12/11/ia-writer-needs-print-configuration/"/>
-    <updated>2012-12-11T16:41:00+01:00</updated>
+    <updated>2012-12-11T16:41:00-05:00</updated>
     <id>http://blog.parkermoore.de/2012/12/11/ia-writer-needs-print-configuration</id>
     <content type="html"><![CDATA[<p>I have really adored iA Writer and use the app obsessively on my iPhone, iPad and Mac. It&#8217;s arguably one of my most oft-used apps. I write all sorts of things with the app: blog posts/ideas (like this one), essays, lab reports &#8211; even the occasional code snippet. It&#8217;s my writing tool of choice, and I thank Information Architects for writing such an awesome app.</p>
 
@@ -794,7 +877,7 @@ Parker Moore</p></blockquote>
   <entry>
     <title type="html"><![CDATA[A Brief Adventure]]></title>
     <link href="http://blog.parkermoore.de/2012/11/30/a-brief-adventure/"/>
-    <updated>2012-11-30T21:23:00+01:00</updated>
+    <updated>2012-11-30T21:23:00-05:00</updated>
     <id>http://blog.parkermoore.de/2012/11/30/a-brief-adventure</id>
     <content type="html"><![CDATA[<p>I&#8217;ve decided to take next semester off (Spring 2013) to pursue an internship at <a href="http://6wunderkinder.com">6Wunderkinder</a> in Berlin, Germany. I&#8217;ll be starting work at the end of January and returning to the U.S. around the middle of August. I&#8217;m very excited that 6Wunderkinder extended their offer for an internship to me and were down with a 6-7 month internship. I&#8217;m pumped to be working with such awesome web and app devs.</p>
 
@@ -819,7 +902,7 @@ Parker Moore</p></blockquote>
   <entry>
     <title type="html"><![CDATA[Israel &amp; Hamas]]></title>
     <link href="http://blog.parkermoore.de/2012/11/16/israel-and-hamas/"/>
-    <updated>2012-11-16T18:12:00+01:00</updated>
+    <updated>2012-11-16T18:12:00-05:00</updated>
     <id>http://blog.parkermoore.de/2012/11/16/israel-and-hamas</id>
     <content type="html"><![CDATA[<p>You may have heard about the recent eruption of violence in Israel and the
 Gaza Strip. You may have your opinions set, but just hear me out.</p>
@@ -855,9 +938,9 @@ Netanyahu, is just about ready to kill off every non-Israeli in the Gaza Strip.<
   
   <entry>
     <title type="html"><![CDATA[Maintaining Inbox Zero]]></title>
-    <link href="http://blog.parkermoore.de/2012/08/06/maintaining-inbox-zero/"/>
-    <updated>2012-08-06T00:18:00+02:00</updated>
-    <id>http://blog.parkermoore.de/2012/08/06/maintaining-inbox-zero</id>
+    <link href="http://blog.parkermoore.de/2012/08/05/maintaining-inbox-zero/"/>
+    <updated>2012-08-05T18:18:00-04:00</updated>
+    <id>http://blog.parkermoore.de/2012/08/05/maintaining-inbox-zero</id>
     <content type="html"><![CDATA[<p>I just finished up reading <a href="http://mattgemmell.com/2012/08/05/managing-email-realistically/">Matt Gemmell&#8217;s post on email management</a>. If you haven&#8217;t read it, you&#8217;ll want to do make sure you head over to his site and give it a quick read before continuing.</p>
 
 <p>Firstly, I should say that I am a manager, a developer, a web developer and a university student. I get a shit-ton of emails, so don&#8217;t think I don&#8217;t know what I&#8217;m talking about.</p>
@@ -882,27 +965,6 @@ Netanyahu, is just about ready to kill off every non-Israeli in the Gaza Strip.<
 <p>Moral of the story: more frequently going through your emails throughout the work day (but in set times that make sense) is the best route. Three is good enough for me on a normal work day, but it&#8217;s more like 45 times during the school year. So many freaking emails.</p>
 
 <p>At the end of the day, forget you have any technology whatsoever, cuddle up with schnookums (your retarded cat) and read a novel. What a great day you just had.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ruby and Rails]]></title>
-    <link href="http://blog.parkermoore.de/2012/06/26/ruby-and-rails/"/>
-    <updated>2012-06-26T05:38:00+02:00</updated>
-    <id>http://blog.parkermoore.de/2012/06/26/ruby-and-rails</id>
-    <content type="html"><![CDATA[<p>So there&#8217;s been a lot of hype about <a href="http://www.ruby-lang.org/en/">Ruby</a> over the past several years. For those of you who are interested in programming and programming languages, you heard about it right from the start, as its beautiful syntax and ease of use lured many programmers into its use.</p>
-
-<p>While Ruby is wonderful, it wouldn&#8217;t be what it is today without the existence of <a href="http://rubyonrails.org/">Ruby on Rails</a>. This web framework posed the first real threat to PHP. Rails was powerful and agile, and helped web devs create incredbile web apps with incredible ease. The generators that came along with this gem made it possible to get a completely functional website up in a matter of <em>hours</em>, rather than days. That was incredible.</p>
-
-<p>I used Rails on and off, switching between it and CakePHP. I didn&#8217;t really understand Rails&#8217; routes and wanted something like CakePHP&#8217;s <code>bake</code> functionality which creates an entire scaffold with styling and everything. I didn&#8217;t object to the un-RESTful CakePHP nature of using just <code>GET</code> and <code>POST</code> requests, as I didn&#8217;t need the RESTful functionality for any of the sites I was creating. I used Rails for a couple projects, but it always felt like I was coding more than was necessary.</p>
-
-<p>I started working at <a href="http://www.thinktopography.com">Think Topography</a> this summer and was tasked with building the new <a href="http://www.ithacahours.com">Ithaca Hours</a> mobile web app that would facilitate the use of Ithaca Hours. My boss had always used Rails and suggested that I use Rails for the API end of this project. It seemed like the best choice, given the requirements of the project, and so it began: I dove back into Rails.</p>
-
-<p>Once I wrapped my head around routes and the devise/warden authentication framework, I was truckin&#8217;. I was making huge progress on this API and learning gobs of information along the way. I was loving Rails and appreciating its incredible power. I was writing tests in rspec, which was a joy when combined with factory_girl.</p>
-
-<p>I recently worked on a project for <a href="https://www.mhusa.com/contact-tools/login.asp?c">Moët &amp; Chandon USA</a> that was built upon the CakePHP framework, and I was not nearly as excited about returning to this framework as I expected to be, given my incredible comfort with the language and the framework.</p>
-
-<p>But my work at Think Topography has changed me &#8211; I&#8217;m a Rails guy for sure.</p>
 ]]></content>
   </entry>
   
