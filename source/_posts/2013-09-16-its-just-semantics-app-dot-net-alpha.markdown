@@ -10,7 +10,7 @@ categories:
 - design
 ---
 
-This post was originally written as an assignment for [INFO 2450: Communication
+This post was [originally written][] as an assignment for [INFO 2450: Communication
 & Technology][] taught by Professors [Jeff Hancock][] and [Drew Margolin][] in
 Fall 2013. The course focuses heavily on design of technologies. The assignment
 asked for an evaluation of an online application or product based on the
@@ -86,6 +86,7 @@ and afford interaction without the user making the first move (to mouseover).
 
 That's it.
 
+[originally written]: http://2450fall2013.ning.com/groups/red-2450/blog/it-s-just-semantics-app-net-alpha
 [INFO 2450: Communication & Technology]: http://courses.cornell.edu/preview_course.php?catoid=12&coid=90680
 [Jeff Hancock]: http://infosci.cornell.edu/faculty/jeffrey-hancock
 [Drew Margolin]: http://communication.cals.cornell.edu/people/drew-margolin
