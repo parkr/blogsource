@@ -4,6 +4,7 @@ title: "iOS 7: A Norman Nightmare"
 date: 2013-09-20 11:55
 comments: false
 categories: ios7 apple design
+published: false
 ---
 
 iOS 7 has sparked a fantastic amount of controversy in the design world. Is the
