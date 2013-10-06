@@ -4,7 +4,7 @@
   <title><![CDATA[Category: documentation | Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/blog/categories/documentation/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2013-09-16T21:26:59-04:00</updated>
+  <updated>2013-10-05T22:18:12-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -30,11 +30,10 @@ to my rescue. <a href="http://rafifyalda.id.au/">Rafif Yalda</a>, a former Wunde
 <p>So if you ever run into a problem with your mobile network, ensure that your APN settings are correct.
 In this case:</p>
 
-<p><code>
-APN: internet.eplus.de
+<pre><code>APN: internet.eplus.de
 username: simyo
 password: simyo
-</code></p>
+</code></pre>
 
 <p>THANK YOU RAFIF. This surely saved me many hours of frustration.</p>
 ]]></content>
