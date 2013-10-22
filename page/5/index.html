@@ -9,7 +9,7 @@
   <meta name="author" content="Parker J. Moore">
 
   
-  <meta name="description" content="Oh, what joy! What rapture! We are young and unafraid; let all of christendom rejoice with us, for we are young! Sometimes I think that being young &hellip;">
+  <meta name="description" content="I was recently cleaning out my room at home (I&#8217;m back from college for the summer) and found an old git cheat-sheet. I thought I would &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,70 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2011/05/30/git/">Git Cheat-Sheet</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-30T00:00:00-04:00" pubdate data-updated="true">May 30<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I was recently cleaning out my room at home (I&#8217;m back from college for the summer) and found an old <code>git</code> cheat-sheet. I thought I would electronically log it for future reference (as though I don&#8217;t use git every day or something&#8230;).</p>
+
+<pre><code>git init
+git clone git://github.com/username/repo.git
+git add filename
+git status [-s]
+git diff [--cached] [HEAD] [--stat]
+git commit [-a] [-m "commit message"]
+git reset [HEAD]
+git rm [--cached] filename 
+    # (by adding --cached, the file that's deleted 
+    # will be left in your local directory)
+
+git branch branchname
+git checkout branchname
+git checkout -b branchname
+git branch -d branchname # (delete)
+
+git merge branchname # (merges 'branchname' to current branch)
+git mv file newfile
+git log [--oneline] [--graph] [branchname] [^compared_branch_name]
+git tag -a msg commit_shortcode
+
+git remote [-v]
+git remote add alias git@github.com:username/repo.git
+git fetch alias
+</code></pre>
+
+<p>Well, there it is.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -183,6 +247,10 @@ Darn it.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/10/22/fix-the-government-open-source-legislation/">Fix the Government: Open-Source Legislation</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/09/16/its-just-semantics-app-dot-net-alpha/">It&#8217;s Just Semantics: App.net Alpha</a>
       </li>
     
@@ -196,10 +264,6 @@ Darn it.</p>
     
       <li class="post">
         <a href="/2013/05/30/dealing-with-distraction/">Dealing with Distraction</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2013/05/09/get-rid-of-senate-prayer/">Get Rid of Senate Prayer</a>
       </li>
     
   </ul>
