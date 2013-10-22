@@ -7,7 +7,7 @@ categories: [government, politics, legislation, open-source]
 ---
 
 _The following post was first written for a class at Cornell University taught
-by Phoebe Sengers called _Designing Technologies for Social Impact_._
+by Phoebe Sengers called "Designing Technologies for Social Impact"._
 
 ---
 
