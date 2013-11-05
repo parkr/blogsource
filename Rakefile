@@ -246,7 +246,7 @@ multitask :push do
   (Dir["#{deploy_dir}/*"]).each { |f| rm_rf(f) }
   Rake::Task[:copydot].invoke(public_dir, deploy_dir)
 
-  source_repo = "https://github.com/octopress/docs"
+  source_repo = "https://github.com/parkr/blogsource"
   latest_revision = `git log --format='%H' -1`
 
   puts "\n## copying #{public_dir} to #{deploy_dir}"
