@@ -4,7 +4,7 @@
   <title><![CDATA[Category: howto | Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/blog/categories/howto/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2013-10-22T19:53:44-04:00</updated>
+  <updated>2013-11-05T17:32:33-05:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -24,24 +24,23 @@ console on one of your servers. Many thanks to
 <a href="https://github.com/colszowka">@colszowka</a> for <a href="https://gist.github.com/benedikt/1115513#comment-576015">this
 solution</a>:</p>
 
-<p>```ruby
-namespace :rails do
+<pre><code class="ruby">namespace :rails do
   desc "Remote console"
-  task :console, :roles => :app do
+  task :console, :roles =&gt; :app do
     run_interactively "bundle exec rails console #{rails_env}"
-  end</p>
+  end
 
-<p>  desc "Remote dbconsole"
-  task :dbconsole, :roles => :app do
+  desc "Remote dbconsole"
+  task :dbconsole, :roles =&gt; :app do
     run_interactively "bundle exec rails dbconsole #{rails_env}"
   end
-end</p>
+end
 
-<p>def run_interactively(command, server=nil)
+def run_interactively(command, server=nil)
   server ||= find_servers_for_task(current_task).first
   exec %Q(ssh #{server.host} -t 'cd #{current_path} &amp;&amp; #{command}')
 end
-```</p>
+</code></pre>
 
 <p>And, <em>vòila</em>! Run <code>cap rails:console</code> and you're in business.</p>
 ]]></content>

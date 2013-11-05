@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tech | Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/blog/categories/tech/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2013-10-22T19:53:44-04:00</updated>
+  <updated>2013-11-05T17:32:33-05:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -12,6 +12,98 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Taking Over Someone Else's Open-Source Project]]></title>
+    <link href="http://blog.parkermoore.de/2013/11/04/taking-over-someone-elses-open-source-project/"/>
+    <updated>2013-11-04T21:23:00-05:00</updated>
+    <id>http://blog.parkermoore.de/2013/11/04/taking-over-someone-elses-open-source-project</id>
+    <content type="html"><![CDATA[<p>Last December (2012), <a href="http://tom.preston-werner.com">Tom Preston-Werner</a> granted me <a href="/images/mojombo-added-parkr-to-jekyll.png">push &amp; pull access to
+mojombo/jekyll</a>. I had written a <a href="/2012/12/11/an-open-letter-to-tom-preston-werner/">letter to Tom about the future of Jekyll</a>
+and after a bit of persistence on my part, he relented:</p>
+
+<p><img src="/images/mojombo-added-parkr-to-jekyll.png" alt="mojombo added parkr to mojombo/jekyll" /></p>
+
+<p>After a somewhat lengthy (and <a href="/images/jekyll-shall-inherit-the-earth.png">amusing</a>) conversation via Skype, I knew what
+Tom's priorities were for the project and where I could help. I started off
+trimming down the number of open issues. At the time, they numbered just over 300.
+After a quick visit to Buffalo to tackle some issues with <a href="http://quaran.to">Nick Quaranto</a> at a
+Buffalo <a href="http://openhack.github.io">OpenHack</a> meetup at <a href="http://coworkbuffalo.com">CoworkBuffalo</a>, we were down to fewer than 200
+open issues. I continued to work through them (much to my parents' dismay) all
+through Winter Break. I was making good progress in the triage process: I knew
+what many of the problems were with v0.12.1 and was formulating ideas about how
+we might go about fixing them.</p>
+
+<p><img src="/images/jekyll-shall-inherit-the-earth.png" alt="jekyll shall inherit the earth" /></p>
+
+<p>In January, I flew out to San Francisco to visit my sister for a week. I setup a
+meeting with Tom to talk more about Jekyll and a plan for moving forward to a
+v1.0.0 release. After about an hour or so at GitHub's office in SoMa, talking
+through various PR's, Tom said I could start merging pull requests.</p>
+
+<p>Consultation with Tom was challenging (he runs a multi-million dollar company
+after all), as it was increasingly difficult for him to find time for Jekyll.
+Despite <a href="https://github.com/mojombo/jekyll/issues/578#issuecomment-11414645">announcing that he was going to commit some of his "20% time" to Jekyll</a>,
+he eventually abandoned that as impractical. As time went on, I received fewer
+replies to my emails and eventually stopped sending anything that didn't
+absolutely <em>require</em> Tom's input.</p>
+
+<p>In March, I knew I needed more help. Tom wasn't able to give much time and I
+was trying to tackle this project alone. I had noticed that <a href="http://mattr.info">Matt Rogers</a>
+shared my vision for Jekyll, so I asked Tom to add him on as a contributor to
+the repo. By v1.0.3, he had started merging pull requests like a BAW$ and was
+the sanity to my ridiculously-obsessed, inexperienced mind. Since Matt joined, I
+haven't really heard much from Tom. I write the occasional email and get the
+occasional reply but he's essentially phased out of the normal development of
+Jekyll. Matt &amp; I have essentially taken over the project altogether.</p>
+
+<p>By May, we were ready to ship v1.0.0. With the help of all the amazing
+contributors, Matt, and my many mentors along the way, I finally ran
+<code>rake release</code> for 1.0. The project was ours.</p>
+
+<p>Since realizing that this product has few constraints outside of those I've
+constructed for it in my mind (no one is going to tell me, "No, you may not
+implement that feature or add that enhancement" without a valid argument as to
+my solution's invalidity), I've been thinking about what it means to take over
+someone else's project. <a href="https://github.com/mojombo/jekyll/commit/d189e05d236769c1e5594af9db4d6eacb86fc16e">Jekyll is 5 years old.</a> I wasn't there in 2008 when
+it was first born as <code>autoblog</code>. Jekyll has changed a lot, as has its vision and
+purpose. It's used by lots of people now, whether via <a href="http://pages.github.com">GitHub Pages</a> or
+locally.</p>
+
+<p>Taking over someone else's project takes a deep understanding of what the
+project is and what it should be. As much as I wish Jekyll could make me
+kräuterquark, that's outside the scope of the project. Developing that lens is
+crucial when taking over someone else's project.</p>
+
+<p>Mentoring on the part of the original owner/previous maintainer(s) is
+exceedingly significant in the development of this critical lens. I am so
+grateful that I was able to meet up with Tom back in January and to have some
+amount of input from him as I understood what the project should be.</p>
+
+<p>It would be ill-advised to take over someone else's project without a partner.
+Once Matt joined the team, Tom was able to step back into a much lesser role.
+If I had tried to do what I did without any guidance (or at least sanity
+checks), Jekyll v1.0.0 would have been a complete shit-show.</p>
+
+<p>Trust in the community must also be earned. If people highly doubted my ability
+to handle Jekyll, Tom would have likely removed me and found a replacement. I
+argued a lot and got into some pretty heated debates at the beginning. There
+were a couple people who didn't share the vision that I had inherited from Tom
+and stopped contributing to the project altogether. I feel like we now have a
+pretty great community around Jekyll and are able to help each other out and
+share cool plugins and sites that we made for/with Jekyll.</p>
+
+<p>Taking over someone else's open-source project was new terrain for me in
+December, and still is today. It can be successful with the right amount of
+mentoring and gradual removal of trusted feedback by the previous maintainer(s).</p>
+
+<p>With some old projects that are brought back to life by the passing of the
+torch, the new maintainers are able to experience the added bonus of feeling
+like Frankenstein, which, I will say, is a pretty cool feeling.</p>
+
+<p><img src="/images/it-lives.jpg" alt="igor" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dealing with Distraction]]></title>
@@ -347,48 +439,6 @@ redesign), but really wanted CloudApp support. Tweetbot was the natural alternat
 and everyone raved about it. After a couple weeks of using Tweetbot on a daily
 basis, I deleted Twitter for iPhone without hesitation. Tweetbot is the best
 way to interface with Twitter on any Apple device.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[An Open Letter to Tom Preston-Werner]]></title>
-    <link href="http://blog.parkermoore.de/2012/12/11/an-open-letter-to-tom-preston-werner/"/>
-    <updated>2012-12-11T17:03:00-05:00</updated>
-    <id>http://blog.parkermoore.de/2012/12/11/an-open-letter-to-tom-preston-werner</id>
-    <content type="html"><![CDATA[<p>I'm a huge advocate of static site generators and have always favoured <a href="https://github.com/mojombo/jekyll">Jekyll</a> as my go-to static site generator.</p>
-
-<p>Unfortunately, it's fallen out of active development. I've been trying to contact Tom Preston-Werner (<a href="https://github.com/mojombo">@mojombo</a>) about it, but so far: nothing. (To be fair, I have gotten two replies, but they were not productive other than saying that he was looking for new maintainers. That was May 2012.)</p>
-
-<p>So here's my open letter to you, Tom, about saving   Jekyll from open-source oblivion.</p>
-
-<blockquote><p>Tom,</p>
-
-<p>Hope you had a pleasant weekend.</p>
-
-<p>Here's what I wish to see happen with Jekyll:</p>
-
-<ol>
-<li>Start an Org on Github and move the Jekyll repo to that org</li>
-<li>Add several maintainers to that org (I'd be happy to help out as a maintainer!)</li>
-<li>Add another author or two to the Jekyll gem so that we can gem push and release new versions.</li>
-<li>Give at least one other person access to push to the source of jekyllrb.com so that the docs can be updated</li>
-</ol>
-
-
-<p>Problem I'm trying to solve:</p>
-
-<blockquote><p>Jekyll is incredibly popular and is an incredibly powerful tool, but is not being actively maintained centrally, so though the world around it is evolving, it is staying stagnant and plagued by the same issues it has been for the last four years.</p></blockquote>
-
-<p>Solution:</p>
-
-<blockquote><p>Add maintainers to Jekyll to help deal with issues, push new versions, and update the documentation when you don't have the time.</p></blockquote>
-
-<p>The great thing about version control systems is that changes can always be reverted.</p>
-
-<p>Thanks in advance for your attention to this problem and willingness to help it continue growing.</p>
-
-<p>Warm Regards,<br>
-Parker Moore</p></blockquote>
 ]]></content>
   </entry>
   

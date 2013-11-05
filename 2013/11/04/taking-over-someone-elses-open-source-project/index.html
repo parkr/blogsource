@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Taking Over Someone Else's Open-Source Project - Musings of Parker J. Moore</title>
+  <meta name="author" content="Parker J. Moore">
+
+  
+  <meta name="description" content="Last December (2012), Tom Preston-Werner granted me push &amp; pull access to
+mojombo/jekyll. I had written a letter to Tom about the future of &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.parkermoore.de/2013/11/04/taking-over-someone-elses-open-source-project/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Musings of Parker J. Moore" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24416132-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Musings of Parker J. Moore</a></h1>
+  
+    <h2>Developer, avid runner, photographer and musician.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.parkermoore.de" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Taking Over Someone Else's Open-Source Project</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-04T21:23:00-05:00" pubdate data-updated="true">Nov 4<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Last December (2012), <a href="http://tom.preston-werner.com">Tom Preston-Werner</a> granted me <a href="/images/mojombo-added-parkr-to-jekyll.png">push &amp; pull access to
+mojombo/jekyll</a>. I had written a <a href="/2012/12/11/an-open-letter-to-tom-preston-werner/">letter to Tom about the future of Jekyll</a>
+and after a bit of persistence on my part, he relented:</p>
+
+<p><img src="/images/mojombo-added-parkr-to-jekyll.png" alt="mojombo added parkr to mojombo/jekyll" /></p>
+
+<p>After a somewhat lengthy (and <a href="/images/jekyll-shall-inherit-the-earth.png">amusing</a>) conversation via Skype, I knew what
+Tom&#8217;s priorities were for the project and where I could help. I started off
+trimming down the number of open issues. At the time, they numbered just over 300.
+After a quick visit to Buffalo to tackle some issues with <a href="http://quaran.to">Nick Quaranto</a> at a
+Buffalo <a href="http://openhack.github.io">OpenHack</a> meetup at <a href="http://coworkbuffalo.com">CoworkBuffalo</a>, we were down to fewer than 200
+open issues. I continued to work through them (much to my parents&#8217; dismay) all
+through Winter Break. I was making good progress in the triage process: I knew
+what many of the problems were with v0.12.1 and was formulating ideas about how
+we might go about fixing them.</p>
+
+<p><img src="/images/jekyll-shall-inherit-the-earth.png" alt="jekyll shall inherit the earth" /></p>
+
+<p>In January, I flew out to San Francisco to visit my sister for a week. I setup a
+meeting with Tom to talk more about Jekyll and a plan for moving forward to a
+v1.0.0 release. After about an hour or so at GitHub&#8217;s office in SoMa, talking
+through various PR&#8217;s, Tom said I could start merging pull requests.</p>
+
+<p>Consultation with Tom was challenging (he runs a multi-million dollar company
+after all), as it was increasingly difficult for him to find time for Jekyll.
+Despite <a href="https://github.com/mojombo/jekyll/issues/578#issuecomment-11414645">announcing that he was going to commit some of his &#8220;20% time&#8221; to Jekyll</a>,
+he eventually abandoned that as impractical. As time went on, I received fewer
+replies to my emails and eventually stopped sending anything that didn&#8217;t
+absolutely <em>require</em> Tom&#8217;s input.</p>
+
+<p>In March, I knew I needed more help. Tom wasn&#8217;t able to give much time and I
+was trying to tackle this project alone. I had noticed that <a href="http://mattr.info">Matt Rogers</a>
+shared my vision for Jekyll, so I asked Tom to add him on as a contributor to
+the repo. By v1.0.3, he had started merging pull requests like a BAW$ and was
+the sanity to my ridiculously-obsessed, inexperienced mind. Since Matt joined, I
+haven&#8217;t really heard much from Tom. I write the occasional email and get the
+occasional reply but he&#8217;s essentially phased out of the normal development of
+Jekyll. Matt &amp; I have essentially taken over the project altogether.</p>
+
+<p>By May, we were ready to ship v1.0.0. With the help of all the amazing
+contributors, Matt, and my many mentors along the way, I finally ran
+<code>rake release</code> for 1.0. The project was ours.</p>
+
+<p>Since realizing that this product has few constraints outside of those I&#8217;ve
+constructed for it in my mind (no one is going to tell me, &#8220;No, you may not
+implement that feature or add that enhancement&#8221; without a valid argument as to
+my solution&#8217;s invalidity), I&#8217;ve been thinking about what it means to take over
+someone else&#8217;s project. <a href="https://github.com/mojombo/jekyll/commit/d189e05d236769c1e5594af9db4d6eacb86fc16e">Jekyll is 5 years old.</a> I wasn&#8217;t there in 2008 when
+it was first born as <code>autoblog</code>. Jekyll has changed a lot, as has its vision and
+purpose. It&#8217;s used by lots of people now, whether via <a href="http://pages.github.com">GitHub Pages</a> or
+locally.</p>
+
+<p>Taking over someone else&#8217;s project takes a deep understanding of what the
+project is and what it should be. As much as I wish Jekyll could make me
+kräuterquark, that&#8217;s outside the scope of the project. Developing that lens is
+crucial when taking over someone else&#8217;s project.</p>
+
+<p>Mentoring on the part of the original owner/previous maintainer(s) is
+exceedingly significant in the development of this critical lens. I am so
+grateful that I was able to meet up with Tom back in January and to have some
+amount of input from him as I understood what the project should be.</p>
+
+<p>It would be ill-advised to take over someone else&#8217;s project without a partner.
+Once Matt joined the team, Tom was able to step back into a much lesser role.
+If I had tried to do what I did without any guidance (or at least sanity
+checks), Jekyll v1.0.0 would have been a complete shit-show.</p>
+
+<p>Trust in the community must also be earned. If people highly doubted my ability
+to handle Jekyll, Tom would have likely removed me and found a replacement. I
+argued a lot and got into some pretty heated debates at the beginning. There
+were a couple people who didn&#8217;t share the vision that I had inherited from Tom
+and stopped contributing to the project altogether. I feel like we now have a
+pretty great community around Jekyll and are able to help each other out and
+share cool plugins and sites that we made for/with Jekyll.</p>
+
+<p>Taking over someone else&#8217;s open-source project was new terrain for me in
+December, and still is today. It can be successful with the right amount of
+mentoring and gradual removal of trusted feedback by the previous maintainer(s).</p>
+
+<p>With some old projects that are brought back to life by the passing of the
+torch, the new maintainers are able to experience the added bonus of feeling
+like Frankenstein, which, I will say, is a pretty cool feeling.</p>
+
+<p><img src="/images/it-lives.jpg" alt="igor" /></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Parker J. Moore</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-04T21:23:00-05:00" pubdate data-updated="true">Nov 4<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/jekyll/'>jekyll</a>, <a class='category' href='/blog/categories/open-source/'>open-source</a>, <a class='category' href='/blog/categories/tech/'>tech</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.parkermoore.de/2013/11/04/taking-over-someone-elses-open-source-project/" data-via="parkr" data-counturl="http://blog.parkermoore.de/2013/11/04/taking-over-someone-elses-open-source-project/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2013/10/22/fix-the-government-open-source-legislation/" title="Previous Post: Fix the Government: Open-Source Legislation">&laquo; Fix the Government: Open-Source Legislation</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2013/11/04/taking-over-someone-elses-open-source-project/">Taking Over Someone Else's Open-Source Project</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/10/22/fix-the-government-open-source-legislation/">Fix the Government: Open-Source Legislation</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/09/16/its-just-semantics-app-dot-net-alpha/">It's Just Semantics: App.net Alpha</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/08/07/launching-a-rails-console-with-capistrano/">Launching a Rails Console with Capistrano</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/06/26/carlin-was-right/">Carlin Was Right</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/parkr">@parkr</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'parkr',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  
+    <a href="http://twitter.com/parkr" class="twitter-follow-button" data-show-count="false">Follow @parkr</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Parker J. Moore -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

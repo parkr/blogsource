@@ -4,7 +4,7 @@
   <title><![CDATA[Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2013-10-22T19:53:44-04:00</updated>
+  <updated>2013-11-05T17:32:33-05:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -12,6 +12,98 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Taking Over Someone Else's Open-Source Project]]></title>
+    <link href="http://blog.parkermoore.de/2013/11/04/taking-over-someone-elses-open-source-project/"/>
+    <updated>2013-11-04T21:23:00-05:00</updated>
+    <id>http://blog.parkermoore.de/2013/11/04/taking-over-someone-elses-open-source-project</id>
+    <content type="html"><![CDATA[<p>Last December (2012), <a href="http://tom.preston-werner.com">Tom Preston-Werner</a> granted me <a href="http://blog.parkermoore.de/images/mojombo-added-parkr-to-jekyll.png">push &amp; pull access to
+mojombo/jekyll</a>. I had written a <a href="http://blog.parkermoore.de/2012/12/11/an-open-letter-to-tom-preston-werner/">letter to Tom about the future of Jekyll</a>
+and after a bit of persistence on my part, he relented:</p>
+
+<p><img src="http://blog.parkermoore.de/images/mojombo-added-parkr-to-jekyll.png" alt="mojombo added parkr to mojombo/jekyll" /></p>
+
+<p>After a somewhat lengthy (and <a href="http://blog.parkermoore.de/images/jekyll-shall-inherit-the-earth.png">amusing</a>) conversation via Skype, I knew what
+Tom&#8217;s priorities were for the project and where I could help. I started off
+trimming down the number of open issues. At the time, they numbered just over 300.
+After a quick visit to Buffalo to tackle some issues with <a href="http://quaran.to">Nick Quaranto</a> at a
+Buffalo <a href="http://openhack.github.io">OpenHack</a> meetup at <a href="http://coworkbuffalo.com">CoworkBuffalo</a>, we were down to fewer than 200
+open issues. I continued to work through them (much to my parents&#8217; dismay) all
+through Winter Break. I was making good progress in the triage process: I knew
+what many of the problems were with v0.12.1 and was formulating ideas about how
+we might go about fixing them.</p>
+
+<p><img src="http://blog.parkermoore.de/images/jekyll-shall-inherit-the-earth.png" alt="jekyll shall inherit the earth" /></p>
+
+<p>In January, I flew out to San Francisco to visit my sister for a week. I setup a
+meeting with Tom to talk more about Jekyll and a plan for moving forward to a
+v1.0.0 release. After about an hour or so at GitHub&#8217;s office in SoMa, talking
+through various PR&#8217;s, Tom said I could start merging pull requests.</p>
+
+<p>Consultation with Tom was challenging (he runs a multi-million dollar company
+after all), as it was increasingly difficult for him to find time for Jekyll.
+Despite <a href="https://github.com/mojombo/jekyll/issues/578#issuecomment-11414645">announcing that he was going to commit some of his &#8220;20% time&#8221; to Jekyll</a>,
+he eventually abandoned that as impractical. As time went on, I received fewer
+replies to my emails and eventually stopped sending anything that didn&#8217;t
+absolutely <em>require</em> Tom&#8217;s input.</p>
+
+<p>In March, I knew I needed more help. Tom wasn&#8217;t able to give much time and I
+was trying to tackle this project alone. I had noticed that <a href="http://mattr.info">Matt Rogers</a>
+shared my vision for Jekyll, so I asked Tom to add him on as a contributor to
+the repo. By v1.0.3, he had started merging pull requests like a BAW$ and was
+the sanity to my ridiculously-obsessed, inexperienced mind. Since Matt joined, I
+haven&#8217;t really heard much from Tom. I write the occasional email and get the
+occasional reply but he&#8217;s essentially phased out of the normal development of
+Jekyll. Matt &amp; I have essentially taken over the project altogether.</p>
+
+<p>By May, we were ready to ship v1.0.0. With the help of all the amazing
+contributors, Matt, and my many mentors along the way, I finally ran
+<code>rake release</code> for 1.0. The project was ours.</p>
+
+<p>Since realizing that this product has few constraints outside of those I&#8217;ve
+constructed for it in my mind (no one is going to tell me, &#8220;No, you may not
+implement that feature or add that enhancement&#8221; without a valid argument as to
+my solution&#8217;s invalidity), I&#8217;ve been thinking about what it means to take over
+someone else&#8217;s project. <a href="https://github.com/mojombo/jekyll/commit/d189e05d236769c1e5594af9db4d6eacb86fc16e">Jekyll is 5 years old.</a> I wasn&#8217;t there in 2008 when
+it was first born as <code>autoblog</code>. Jekyll has changed a lot, as has its vision and
+purpose. It&#8217;s used by lots of people now, whether via <a href="http://pages.github.com">GitHub Pages</a> or
+locally.</p>
+
+<p>Taking over someone else&#8217;s project takes a deep understanding of what the
+project is and what it should be. As much as I wish Jekyll could make me
+kräuterquark, that&#8217;s outside the scope of the project. Developing that lens is
+crucial when taking over someone else&#8217;s project.</p>
+
+<p>Mentoring on the part of the original owner/previous maintainer(s) is
+exceedingly significant in the development of this critical lens. I am so
+grateful that I was able to meet up with Tom back in January and to have some
+amount of input from him as I understood what the project should be.</p>
+
+<p>It would be ill-advised to take over someone else&#8217;s project without a partner.
+Once Matt joined the team, Tom was able to step back into a much lesser role.
+If I had tried to do what I did without any guidance (or at least sanity
+checks), Jekyll v1.0.0 would have been a complete shit-show.</p>
+
+<p>Trust in the community must also be earned. If people highly doubted my ability
+to handle Jekyll, Tom would have likely removed me and found a replacement. I
+argued a lot and got into some pretty heated debates at the beginning. There
+were a couple people who didn&#8217;t share the vision that I had inherited from Tom
+and stopped contributing to the project altogether. I feel like we now have a
+pretty great community around Jekyll and are able to help each other out and
+share cool plugins and sites that we made for/with Jekyll.</p>
+
+<p>Taking over someone else&#8217;s open-source project was new terrain for me in
+December, and still is today. It can be successful with the right amount of
+mentoring and gradual removal of trusted feedback by the previous maintainer(s).</p>
+
+<p>With some old projects that are brought back to life by the passing of the
+torch, the new maintainers are able to experience the added bonus of feeling
+like Frankenstein, which, I will say, is a pretty cool feeling.</p>
+
+<p><img src="http://blog.parkermoore.de/images/it-lives.jpg" alt="igor" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Fix the Government: Open-Source Legislation]]></title>
@@ -509,9 +601,9 @@ others will experience their memories of me beyond my departure from this world.
   
   <entry>
     <title type="html"><![CDATA[We Mustn't Idle]]></title>
-    <link href="http://blog.parkermoore.de/2013/04/21/we-mustnt-idle/"/>
-    <updated>2013-04-21T21:12:12-04:00</updated>
-    <id>http://blog.parkermoore.de/2013/04/21/we-mustnt-idle</id>
+    <link href="http://blog.parkermoore.de/2013/04/22/we-mustnt-idle/"/>
+    <updated>2013-04-22T02:12:12-04:00</updated>
+    <id>http://blog.parkermoore.de/2013/04/22/we-mustnt-idle</id>
     <content type="html"><![CDATA[<p>Our legacies on this Beautiful Earth are inextricably tied to the work we do, the
 principles we stand for and the messages we spread. The apathetic nature of many of my
 peers nowadays is heresy to the nth degree, and we can no longer stand idly by and watch
@@ -1018,43 +1110,6 @@ Parker Moore</p></blockquote>
 <p>I&#8217;m going to really miss <a href="http://theclassnotes.com">The Class Notes</a>, the <a href="http://gleeclub.com">Glee Club</a> (no, not like the show &#8220;Glee&#8221;), and my other friends here, and the ease of college life. That being said, I&#8217;m really grateful for this amazing opportunity abroad with a one-of-a-kind start-up like 6W.</p>
 
 <p>Many thanks to Ben Braun, Isaac Wolkerstorfer, Alex Koppel, and the whole 6Wunderkinder team for giving me the opportunity. Thanks, guys!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Israel &amp; Hamas]]></title>
-    <link href="http://blog.parkermoore.de/2012/11/16/israel-and-hamas/"/>
-    <updated>2012-11-16T18:12:00-05:00</updated>
-    <id>http://blog.parkermoore.de/2012/11/16/israel-and-hamas</id>
-    <content type="html"><![CDATA[<p>You may have heard about the recent eruption of violence in Israel and the
-Gaza Strip. You may have your opinions set, but just hear me out.</p>
-
-<p>So the way the story goes is that Gaza has been firing lots of rockets
-into Israel and Israel has decided to retaliate by firing its own rockets
-and otherwise bombarding the Gaza Strip with explosives. So, fire and fire
-are at work here.</p>
-
-<p>This is wrong. Hamas (the current leaders of Gaza) is wrong and Israel is
-wrong. There is nothing morally justifiable about what either party is doing.</p>
-
-<p>Many have expressed sympathy with Israel and an acquaintance of mine even
-posted <a href="">a video produced by the Israel Defense Forces about why it has the
-right to retaliate</a> on Facebook. There is absolutely no &#8220;right&#8221; to kill
-anyone. No one can justifiably kill anyone else.</p>
-
-<p>Enter: moral excusability. While killing another human being is <em>never</em> morally
-justifiable, it is often viewed as morally excusable. That is, it is not
-<em>right</em> to kill another human being, but it isn&#8217;t wrong (given the circumstances)
-either. Well, that&#8217;s bullshit. If something isn&#8217;t morally justifiable, don&#8217;t do
-it.</p>
-
-<p>This eye-for-an-eye thing is getting out of hand. Both parties need to stop
-hurting each other and begin discussing what can be done to peacefull coexist.
-Unless Israel kills all the Palestinians in the Gaza Strip, there will never
-be peace. Unfortunately, it seems like their hawkish Prime Minister, Benjamin
-Netanyahu, is just about ready to kill off every non-Israeli in the Gaza Strip.</p>
-
-<p>This whole situation is just despicable.</p>
 ]]></content>
   </entry>
   
