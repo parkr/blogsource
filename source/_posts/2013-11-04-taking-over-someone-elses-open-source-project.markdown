@@ -36,10 +36,7 @@ he eventually abandoned that as impractical. As time went on, I received fewer
 replies to my emails and eventually stopped sending anything that didn't
 absolutely _require_ Tom's input.
 
-By May, I was ready to ship v1.0.0. With the help of all the amazing
-contributors and my many mentors along the way, I finally ran `rake release`.
-
-After v1.0.0 hit, I knew I needed help. Tom wasn't able to give much time and I
+In March, I knew I needed more help. Tom wasn't able to give much time and I
 was trying to tackle this project alone. I had noticed that [Matt Rogers][]
 shared my vision for Jekyll, so I asked Tom to add him on as a contributor to
 the repo. By v1.0.3, he had started merging pull requests like a BAW$ and was
@@ -47,6 +44,10 @@ the sanity to my ridiculously-obsessed, inexperienced mind. Since Matt joined, I
 haven't really heard much from Tom. I write the occasional email and get the
 occasional reply but he's essentially phased out of the normal development of
 Jekyll. Matt & I have essentially taken over the project altogether.
+
+By May, we were ready to ship v1.0.0. With the help of all the amazing
+contributors, Matt, and my many mentors along the way, I finally ran
+`rake release` for 1.0. The project was ours.
 
 Since realizing that this product has few constraints outside of those I've
 constructed for it in my mind (no one is going to tell me, "No, you may not
