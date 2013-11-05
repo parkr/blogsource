@@ -16,7 +16,7 @@ After a somewhat lengthy (and [amusing][]) conversation via Skype, I knew what
 Tom's priorities were for the project and where I could help. I started off
 trimming down the number of open issues. At the time, they numbered just over 300.
 After a quick visit to Buffalo to tackle some issues with [Nick Quaranto][] at a
-Buffalo [OpenHack][] meetup at [CoworkBuffalo][], we were down to less than 200
+Buffalo [OpenHack][] meetup at [CoworkBuffalo][], we were down to fewer than 200
 open issues. I continued to work through them (much to my parents' dismay) all
 through Winter Break. I was making good progress in the triage process: I knew
 what many of the problems were with v0.12.1 and was formulating ideas about how
