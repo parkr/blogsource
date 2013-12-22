@@ -9,8 +9,8 @@
   <meta name="author" content="Parker J. Moore">
 
   
-  <meta name="description" content="Last December (2012), Tom Preston-Werner granted me push &amp; pull access to
-mojombo/jekyll. I had written a letter to Tom about the future of &hellip;">
+  <meta name="description" content="As many other Heroku customers, I rejoiced when Dokku was released. To have
+complete freedom to host as many apps with whatever databases or other &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,88 @@ mojombo/jekyll. I had written a letter to Tom about the future of &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/12/21/fixing-memory-issues-in-dokku-hosted-on-digitalocean-512mb-droplet/">Fixing Memory Issues in Dokku Hosted on DigitalOcean 512MB Droplet</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-21T12:23:00-05:00" pubdate data-updated="true">Dec 21<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>As many other Heroku customers, I rejoiced when <a href="https://github.com/progrium/dokku">Dokku</a> was released. To have
+complete freedom to host as many apps with whatever databases or other plugins
+I wanted &#8211; all for the cost of a small VM &#8211; was wonderful news.</p>
+
+<p>I decided, for cost&#8217;s sake, to boot up one of those famed $5 <a href="https://digitalocean.com">DigitalOcean</a>
+Droplets. I didn&#8217;t see that DigitalOcean provides an &#8220;app&#8221; for Dokku, so I
+created a vanilla box of Ubuntu 13.04 and pressed on. I got everything up and
+running and went to go deploy my first app, only to see this when I ran
+<code>git push</code>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>runtime: panic before malloc heap initialized
+</span><span class='line'>fatal error: runtime: cannot allocate heap metadata
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Well, golly, that sure is unhelpful. Looks like 512MB doesn&#8217;t cut it. Luckily,
+we can avoid paying the extra $5/mo for the 1GB version by running the following
+as <code>root</code>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/extraswap <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span>512
+</span><span class='line'>mkswap /extraswap
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then adding the following to your <code>/etc/fstab</code> file so the swap persists between
+reboots:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>/extraswap         none            swap    sw                0       0
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then run this to enable <code>/extraswap</code> for swapping:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>swapon -a
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Boom. Now re-run <code>git push</code> and you&#8217;re in business. Magic!</p>
+
+<p>Credit goes to the brilliant <a href="https://github.com/dhassler">@dhassler</a> for <a href="https://github.com/dotcloud/docker/issues/1555#issuecomment-22874190">the idea and the code</a>. Just
+thought I&#8217;d share and preserve for my own benefit in the future.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -907,69 +989,6 @@ others will experience their memories of me beyond my departure from this world.
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/2013/04/22/we-mustnt-idle/">We Mustn&#8217;t Idle</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-22T02:12:12-04:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Our legacies on this Beautiful Earth are inextricably tied to the work we do, the
-principles we stand for and the messages we spread. The apathetic nature of many of my
-peers nowadays is heresy to the nth degree, and we can no longer stand idly by and watch
-young people refusing to talk about the hard issues. If we’re to make any progress and
-maintain this More Perfect Union, we had better get our act together and stand and fight
-for the things we believe in.</p>
-
-<p>It comes with a price, however. We must be informed. We must read the arguments of the
-other side, debate them and reformulate our stance given the new evidence. In the same
-way Newton used this inductive methods to formulate his three famous Natural Laws, we
-must start with a problem we observe in our society, generalize a solution in the form
-of legislation, judicial action or grassroots campaigning, and revise our message as new
-information becomes available.</p>
-
-<p>It is not enough to let Gov majors, English majors and law students run the country,
-making sweeping decisions about how we may live our lives. It is not enough to defer to
-those with means and wealth – those with the ability to run a traditional campaign for
-public office and influence those in public office – in fact, it is the worst offense to
-this Great Nation to allow the aristocracy of special interets to continue determining
-the rule of law. We must stand up, as citizens, and fight for what sparks fire in our
-bellies! We must stand up, as citizens, and say “enough is enough” to special interests
-and lobbyists who control Washington. Now is our time. If our country is to change for
-the better, it will be because we – the citizens – made our voices heard and fought with
-much gnashing of teeth for what we believe in and what we know is right.</p>
-
-<p>This is the imperative of our generation. Let us act!</p>
-
-<p>This post was originally published on <a href="https://medium.com/i-m-h-o/d5bf40927b1a">Medium</a>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/page/2">&larr; Older</a>
@@ -985,6 +1004,10 @@ much gnashing of teeth for what we believe in and what we know is right.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/12/21/fixing-memory-issues-in-dokku-hosted-on-digitalocean-512mb-droplet/">Fixing Memory Issues in Dokku hosted on DigitalOcean 512MB Droplet</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/11/04/taking-over-someone-elses-open-source-project/">Taking Over Someone Else&#8217;s Open-Source Project</a>
       </li>
     
@@ -998,10 +1021,6 @@ much gnashing of teeth for what we believe in and what we know is right.</p>
     
       <li class="post">
         <a href="/2013/08/07/launching-a-rails-console-with-capistrano/">Launching a Rails Console with Capistrano</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2013/06/26/carlin-was-right/">Carlin Was Right</a>
       </li>
     
   </ul>

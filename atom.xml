@@ -4,7 +4,7 @@
   <title><![CDATA[Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2013-11-05T17:32:33-05:00</updated>
+  <updated>2013-12-22T00:37:33-05:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -12,6 +12,61 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Fixing Memory Issues in Dokku hosted on DigitalOcean 512MB Droplet]]></title>
+    <link href="http://blog.parkermoore.de/2013/12/21/fixing-memory-issues-in-dokku-hosted-on-digitalocean-512mb-droplet/"/>
+    <updated>2013-12-21T12:23:00-05:00</updated>
+    <id>http://blog.parkermoore.de/2013/12/21/fixing-memory-issues-in-dokku-hosted-on-digitalocean-512mb-droplet</id>
+    <content type="html"><![CDATA[<p>As many other Heroku customers, I rejoiced when <a href="https://github.com/progrium/dokku">Dokku</a> was released. To have
+complete freedom to host as many apps with whatever databases or other plugins
+I wanted &#8211; all for the cost of a small VM &#8211; was wonderful news.</p>
+
+<p>I decided, for cost&#8217;s sake, to boot up one of those famed $5 <a href="https://digitalocean.com">DigitalOcean</a>
+Droplets. I didn&#8217;t see that DigitalOcean provides an &#8220;app&#8221; for Dokku, so I
+created a vanilla box of Ubuntu 13.04 and pressed on. I got everything up and
+running and went to go deploy my first app, only to see this when I ran
+<code>git push</code>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>runtime: panic before malloc heap initialized
+</span><span class='line'>fatal error: runtime: cannot allocate heap metadata
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Well, golly, that sure is unhelpful. Looks like 512MB doesn&#8217;t cut it. Luckily,
+we can avoid paying the extra $5/mo for the 1GB version by running the following
+as <code>root</code>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/extraswap <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span>512
+</span><span class='line'>mkswap /extraswap
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then adding the following to your <code>/etc/fstab</code> file so the swap persists between
+reboots:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>/extraswap         none            swap    sw                0       0
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then run this to enable <code>/extraswap</code> for swapping:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>swapon -a
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Boom. Now re-run <code>git push</code> and you&#8217;re in business. Magic!</p>
+
+<p>Credit goes to the brilliant <a href="https://github.com/dhassler">@dhassler</a> for <a href="https://github.com/dotcloud/docker/issues/1555#issuecomment-22874190">the idea and the code</a>. Just
+thought I&#8217;d share and preserve for my own benefit in the future.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Taking Over Someone Else's Open-Source Project]]></title>
@@ -1085,31 +1140,6 @@ Parker Moore</p></blockquote>
 <p>My only real wish for this app is to allow double-spaced print-outs. That&#8217;s it. I want to be able to edit my papers double-spaced.</p>
 
 <p>So what say you, Information Architects? Think it&#8217;s possible? I&#8217;d really appreciate it.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[A Brief Adventure]]></title>
-    <link href="http://blog.parkermoore.de/2012/11/30/a-brief-adventure/"/>
-    <updated>2012-11-30T21:23:00-05:00</updated>
-    <id>http://blog.parkermoore.de/2012/11/30/a-brief-adventure</id>
-    <content type="html"><![CDATA[<p>I&#8217;ve decided to take next semester off (Spring 2013) to pursue an internship at <a href="http://6wunderkinder.com">6Wunderkinder</a> in Berlin, Germany. I&#8217;ll be starting work at the end of January and returning to the U.S. around the middle of August. I&#8217;m very excited that 6Wunderkinder extended their offer for an internship to me and were down with a 6-7 month internship. I&#8217;m pumped to be working with such awesome web and app devs.</p>
-
-<p>So how did this happen? It&#8217;s a long story that I&#8217;ll talk about later, but for now I&#8217;ll give you the abridged version.</p>
-
-<p>In the bleak winter of 2011, I emailed 6W about the possibility of a 3-month summer internship (May, June, July) in 2013. They replied very kindly, basically saying that it was way too early to say whether that was a possibility.</p>
-
-<p>This Fall, I sent them a follow-up email asking if they were still interested. They replied saying that it was a definite possibility and asked that I send along some projects I had worked on. After reviewing my email &#8220;project resume&#8221;, they offered me an interview. Thanksgiving morning, I woke up bright and early to meet Ben on Skype. Great fun, and got to meet Isaac and Alex of the 6W API team, too. Ben followed up with an email offering a second interview.</p>
-
-<p>During the time between the first and second interviews, I decided that I needed a break from my studies - Cornell is a particularly rigorous place and has a tendency to be demoralizing. So it was time for a break so that I could return in the Fall with new energy and vigor. I shot Ben an email indicating my interest in starting to work for them as early as the end of January, and to my surprise, were very interested in having me earlier.</p>
-
-<p>During the second interview, I talked with Isaac and Ben more about what my role at 6Wunderkinder would be and how life in Berlin would look for me. All seemed really cool. When Ben officially made the offer to have me as an intern, I gladly accepted and we discussed logistics.</p>
-
-<p>So there it is! It&#8217;s amazing what an email can do nowadays when you have congruent interests and a cool, responsive company like 6W.</p>
-
-<p>I&#8217;m going to really miss <a href="http://theclassnotes.com">The Class Notes</a>, the <a href="http://gleeclub.com">Glee Club</a> (no, not like the show &#8220;Glee&#8221;), and my other friends here, and the ease of college life. That being said, I&#8217;m really grateful for this amazing opportunity abroad with a one-of-a-kind start-up like 6W.</p>
-
-<p>Many thanks to Ben Braun, Isaac Wolkerstorfer, Alex Koppel, and the whole 6Wunderkinder team for giving me the opportunity. Thanks, guys!</p>
 ]]></content>
   </entry>
   
