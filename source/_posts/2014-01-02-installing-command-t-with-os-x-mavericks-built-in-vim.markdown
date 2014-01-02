@@ -3,7 +3,7 @@ layout: post
 title: "Installing Command-T with OS X Maverick's Built-In Vim"
 date: 2014-01-02 01:03
 comments: false
-categories: 
+categories: tech ruby vim plugin osx mavericks
 ---
 
 I was fortunate enough to, just today, pick up a new computer. My first hardware
