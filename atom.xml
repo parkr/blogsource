@@ -4,7 +4,7 @@
   <title><![CDATA[Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2013-12-22T00:37:33-05:00</updated>
+  <updated>2014-01-02T01:21:14-08:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -14,9 +14,76 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Installing Command-T with OS X Maverick's Built-In Vim]]></title>
+    <link href="http://blog.parkermoore.de/2014/01/02/installing-command-t-with-os-x-mavericks-built-in-vim/"/>
+    <updated>2014-01-02T01:03:00-08:00</updated>
+    <id>http://blog.parkermoore.de/2014/01/02/installing-command-t-with-os-x-mavericks-built-in-vim</id>
+    <content type="html"><![CDATA[<p>I was fortunate enough to, just today, pick up a new computer. My first hardware
+in over 4 years, I had been holding off. Once my trusty MacBook Pro bit the dust
+last night and I found out the repair cost was extraordinary, I bit the bullet.</p>
+
+<p>So, you&#8217;re probably in a similar place. You relatively recently got a shiny new
+Macintosh and you&#8217;re so excited to start writing code and making a difference
+with those skillz of yours. Except one this is missing: <a href="https://github.com/wincent/Command-T">Command-T</a>.</p>
+
+<p>Lucky for you, sir, I am here to help. OS X Maverick&#8217;s built-in vim distribution
+comes with Ruby support already (which it needs for Command-T) so you&#8217;re good
+there. Now you need to download and compile Command-T. Should be easy, right?
+Well, not quite.</p>
+
+<p>Mavericks was notable for Ruby users because it ships with Ruby 2.0. All
+previous versions that I had ever used shipped with 1.8.7 so this was a huge
+bonus. Problem is, your pre-installed vim wasn&#8217;t compiled with 2.0.0, it was
+compiled with 1.8.7.</p>
+
+<p>To check this, run the following in vim in NORMAL mode:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>:ruby puts &quot;#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}&quot;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>For me, that output <code>1.8.7-p358</code>. So that means the Ruby verison that vim is
+using is <code>1.8.7-p358</code>, and we need to compile Command-T with that version. To do
+so, install it:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rbenv install 1.8.7-p358
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Boom! Now download and install Command-T:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git clone https://github.com/wincent/Command-T.git ~/.vim/bundle/Command-T
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd</span> ~/.vim/bundle/Command-T <span class="c"># for tpope&#39;s Pathogen</span>
+</span><span class='line'><span class="nv">$ </span>rbenv <span class="nb">local </span>1.8.7-p358
+</span><span class='line'><span class="nv">$ </span>rbenv rehash
+</span><span class='line'><span class="nv">$ </span>gem install bundler
+</span><span class='line'><span class="nv">$ </span>bundle install
+</span><span class='line'><span class="nv">$ </span>bundle <span class="nb">exec </span>rake make
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Aaaaand boom, you&#8217;re done. Open up <code>vim</code> and type your leaderkey then <code>t</code> (for
+me, that&#8217;s <code>,t</code>) to launch the prompt.</p>
+
+<p>If you get a weird SIGTERM error when you launch <code>vim</code>, then you installed
+Command-T with the wrong Ruby version. Remove <code>ruby/command-t/ext.bundle</code> and
+try again.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Fixing Memory Issues in Dokku hosted on DigitalOcean 512MB Droplet]]></title>
     <link href="http://blog.parkermoore.de/2013/12/21/fixing-memory-issues-in-dokku-hosted-on-digitalocean-512mb-droplet/"/>
-    <updated>2013-12-21T12:23:00-05:00</updated>
+    <updated>2013-12-21T12:23:00-08:00</updated>
     <id>http://blog.parkermoore.de/2013/12/21/fixing-memory-issues-in-dokku-hosted-on-digitalocean-512mb-droplet</id>
     <content type="html"><![CDATA[<p>As many other Heroku customers, I rejoiced when <a href="https://github.com/progrium/dokku">Dokku</a> was released. To have
 complete freedom to host as many apps with whatever databases or other plugins
@@ -71,7 +138,7 @@ thought I&#8217;d share and preserve for my own benefit in the future.</p>
   <entry>
     <title type="html"><![CDATA[Taking Over Someone Else's Open-Source Project]]></title>
     <link href="http://blog.parkermoore.de/2013/11/04/taking-over-someone-elses-open-source-project/"/>
-    <updated>2013-11-04T21:23:00-05:00</updated>
+    <updated>2013-11-04T21:23:00-08:00</updated>
     <id>http://blog.parkermoore.de/2013/11/04/taking-over-someone-elses-open-source-project</id>
     <content type="html"><![CDATA[<p>Last December (2012), <a href="http://tom.preston-werner.com">Tom Preston-Werner</a> granted me <a href="http://blog.parkermoore.de/images/mojombo-added-parkr-to-jekyll.png">push &amp; pull access to
 mojombo/jekyll</a>. I had written a <a href="http://blog.parkermoore.de/2012/12/11/an-open-letter-to-tom-preston-werner/">letter to Tom about the future of Jekyll</a>
@@ -163,7 +230,7 @@ like Frankenstein, which, I will say, is a pretty cool feeling.</p>
   <entry>
     <title type="html"><![CDATA[Fix the Government: Open-Source Legislation]]></title>
     <link href="http://blog.parkermoore.de/2013/10/22/fix-the-government-open-source-legislation/"/>
-    <updated>2013-10-22T19:45:00-04:00</updated>
+    <updated>2013-10-22T19:45:00-07:00</updated>
     <id>http://blog.parkermoore.de/2013/10/22/fix-the-government-open-source-legislation</id>
     <content type="html"><![CDATA[<p><em>The following post was first written for a class at Cornell University taught
 by Phoebe Sengers called &#8220;Designing Technologies for Social Impact&#8221;.</em></p>
@@ -285,7 +352,7 @@ job done&#8221; efficiently and accurately.</p>
   <entry>
     <title type="html"><![CDATA[It's Just Semantics: App.net Alpha]]></title>
     <link href="http://blog.parkermoore.de/2013/09/16/its-just-semantics-app-dot-net-alpha/"/>
-    <updated>2013-09-16T19:53:00-04:00</updated>
+    <updated>2013-09-16T19:53:00-07:00</updated>
     <id>http://blog.parkermoore.de/2013/09/16/its-just-semantics-app-dot-net-alpha</id>
     <content type="html"><![CDATA[<p>This post was <a href="http://2450fall2013.ning.com/groups/red-2450/blog/it-s-just-semantics-app-net-alpha">originally written</a> as an assignment for <a href="http://courses.cornell.edu/preview_course.php?catoid=12&amp;coid=90680">INFO 2450: Communication
 &amp; Technology</a> taught by Professors <a href="http://infosci.cornell.edu/faculty/jeffrey-hancock">Jeff Hancock</a> and <a href="http://communication.cals.cornell.edu/people/drew-margolin">Drew Margolin</a> in
@@ -368,7 +435,7 @@ and afford interaction without the user making the first move (to mouseover).</p
   <entry>
     <title type="html"><![CDATA[Launching a Rails Console with Capistrano]]></title>
     <link href="http://blog.parkermoore.de/2013/08/07/launching-a-rails-console-with-capistrano/"/>
-    <updated>2013-08-07T20:36:00-04:00</updated>
+    <updated>2013-08-07T20:36:00-07:00</updated>
     <id>http://blog.parkermoore.de/2013/08/07/launching-a-rails-console-with-capistrano</id>
     <content type="html"><![CDATA[<p>If you&#8217;re using the popular Capistrano web deployment framework, you will likely
 have wished you had an easy way to perform a quick task in the production rails
@@ -418,7 +485,7 @@ solution</a>:</p>
   <entry>
     <title type="html"><![CDATA[Carlin Was Right]]></title>
     <link href="http://blog.parkermoore.de/2013/06/26/carlin-was-right/"/>
-    <updated>2013-06-26T12:48:00-04:00</updated>
+    <updated>2013-06-26T12:48:00-07:00</updated>
     <id>http://blog.parkermoore.de/2013/06/26/carlin-was-right</id>
     <content type="html"><![CDATA[<p>The late comedian George Carlin was never skiddish about sharing his opinion of the
 country and of the human race. &#8220;It&#8217;s all going downhill,&#8221; he would say. The decline of
@@ -441,7 +508,7 @@ caretakers of this world than we are.</p>
   <entry>
     <title type="html"><![CDATA[Dealing with Distraction]]></title>
     <link href="http://blog.parkermoore.de/2013/05/30/dealing-with-distraction/"/>
-    <updated>2013-05-30T15:56:00-04:00</updated>
+    <updated>2013-05-30T15:56:00-07:00</updated>
     <id>http://blog.parkermoore.de/2013/05/30/dealing-with-distraction</id>
     <content type="html"><![CDATA[<p>Dealing with distraction for those of us who live with AD(H)D is a constant struggle, and
 can be especially difficult for those of us who must daily solve large, complex problems.
@@ -510,7 +577,7 @@ distracting stimuli goes a long way to achieving focus and increasing your produ
   <entry>
     <title type="html"><![CDATA[Get Rid of Senate Prayer]]></title>
     <link href="http://blog.parkermoore.de/2013/05/09/get-rid-of-senate-prayer/"/>
-    <updated>2013-05-09T18:17:00-04:00</updated>
+    <updated>2013-05-09T18:17:00-07:00</updated>
     <id>http://blog.parkermoore.de/2013/05/09/get-rid-of-senate-prayer</id>
     <content type="html"><![CDATA[<p>Earlier today, I was watching a <a href="http://www.c-spanvideo.org/program/SenateSession4967">C-SPAN video</a> of a U.S. Senate session on
 February 1, 2012. This was the first time I had ever watched a Senate session
@@ -566,7 +633,7 @@ Constituent</p></blockquote>
   <entry>
     <title type="html"><![CDATA[Jekyll 1.0 Released]]></title>
     <link href="http://blog.parkermoore.de/2013/05/06/jekyll-1-dot-0-released/"/>
-    <updated>2013-05-06T00:59:00-04:00</updated>
+    <updated>2013-05-06T00:59:00-07:00</updated>
     <id>http://blog.parkermoore.de/2013/05/06/jekyll-1-dot-0-released</id>
     <content type="html"><![CDATA[<p>Today, I&#8217;m proud to announce the release of Jekyll 1.0. There are a million
 goodies and fixes to enjoy, and we&#8217;re (the still-active Jekyll core team
@@ -613,7 +680,7 @@ all to push out future versions!</p>
   <entry>
     <title type="html"><![CDATA[An Afterlife?]]></title>
     <link href="http://blog.parkermoore.de/2013/04/30/an-afterlife/"/>
-    <updated>2013-04-30T19:00:00-04:00</updated>
+    <updated>2013-04-30T19:00:00-07:00</updated>
     <id>http://blog.parkermoore.de/2013/04/30/an-afterlife</id>
     <content type="html"><![CDATA[<p>I am not a religious man, yet I find myself curious about the prospect of an afterlife. Is
 there something beyond this life, in this dimension, in this universe? While I don&#8217;t believe
@@ -657,7 +724,7 @@ others will experience their memories of me beyond my departure from this world.
   <entry>
     <title type="html"><![CDATA[We Mustn't Idle]]></title>
     <link href="http://blog.parkermoore.de/2013/04/22/we-mustnt-idle/"/>
-    <updated>2013-04-22T02:12:12-04:00</updated>
+    <updated>2013-04-22T02:12:12-07:00</updated>
     <id>http://blog.parkermoore.de/2013/04/22/we-mustnt-idle</id>
     <content type="html"><![CDATA[<p>Our legacies on this Beautiful Earth are inextricably tied to the work we do, the
 principles we stand for and the messages we spread. The apathetic nature of many of my
@@ -693,7 +760,7 @@ much gnashing of teeth for what we believe in and what we know is right.</p>
   <entry>
     <title type="html"><![CDATA[Do Not Single Out the Democrats - This is About Everyone]]></title>
     <link href="http://blog.parkermoore.de/2013/04/01/do-not-single-out-the-democrats-equals-this-is-about-everyone/"/>
-    <updated>2013-04-01T00:23:00-04:00</updated>
+    <updated>2013-04-01T00:23:00-07:00</updated>
     <id>http://blog.parkermoore.de/2013/04/01/do-not-single-out-the-democrats-equals-this-is-about-everyone</id>
     <content type="html"><![CDATA[<p>I just read an <a href="http://www.upworthy.com/omg-google-tucker-carlson-and-gay-marriage?c=fea">appalling story by <em>Upworthy</em></a> that singles out 10 Democratic
 senators who do not support full marriage equality for gays and lesbians. This
@@ -714,7 +781,7 @@ law.</p>
   <entry>
     <title type="html"><![CDATA[Downtime is Good]]></title>
     <link href="http://blog.parkermoore.de/2013/02/11/downtime-is-good/"/>
-    <updated>2013-02-11T22:43:00-05:00</updated>
+    <updated>2013-02-11T22:43:00-08:00</updated>
     <id>http://blog.parkermoore.de/2013/02/11/downtime-is-good</id>
     <content type="html"><![CDATA[<p>I just started working as an intern at 6Wunderkinder a couple weeks ago.
 I am by no means an expert in devops (hell, I have only dabbled with a little
@@ -751,7 +818,7 @@ like the service, too, and you&#8217;ll be angrily tweeting next time it goes do
   <entry>
     <title type="html"><![CDATA[Install rbenv on Ubuntu 12.04]]></title>
     <link href="http://blog.parkermoore.de/2013/02/06/install-rbenv-on-ubuntu-12-dot-04/"/>
-    <updated>2013-02-06T21:31:00-05:00</updated>
+    <updated>2013-02-06T21:31:00-08:00</updated>
     <id>http://blog.parkermoore.de/2013/02/06/install-rbenv-on-ubuntu-12-dot-04</id>
     <content type="html"><![CDATA[<p>So, I&#8217;ll admit it: I absolutely adore rbenv.</p>
 
@@ -797,7 +864,7 @@ MRI. Just copy it and run it.</p>
   <entry>
     <title type="html"><![CDATA[Connect to 3G on simyo in Germany]]></title>
     <link href="http://blog.parkermoore.de/2013/01/30/connect-to-3g-on-simyo-in-germany/"/>
-    <updated>2013-01-30T18:10:00-05:00</updated>
+    <updated>2013-01-30T18:10:00-08:00</updated>
     <id>http://blog.parkermoore.de/2013/01/30/connect-to-3g-on-simyo-in-germany</id>
     <content type="html"><![CDATA[<p>I recently signed up for simyo, a German cell provider. After installing the Nano SIM into my phone,
 I noticed that the 3G connection to the mobile data network was failing. Got a weird error that said
@@ -826,7 +893,7 @@ In this case:</p>
   <entry>
     <title type="html"><![CDATA[My Favourite Apps in 2012]]></title>
     <link href="http://blog.parkermoore.de/2013/01/03/my-favourite-apps-in-2012/"/>
-    <updated>2013-01-03T01:36:00-05:00</updated>
+    <updated>2013-01-03T01:36:00-08:00</updated>
     <id>http://blog.parkermoore.de/2013/01/03/my-favourite-apps-in-2012</id>
     <content type="html"><![CDATA[<p>Below is a list of the apps I wouldn&#8217;t have wanted to live without this year.
 To be fair to everyone, I&#8217;ve listed them in alphabetical order.</p>
@@ -1010,7 +1077,7 @@ way to interface with Twitter on any Apple device.</p>
   <entry>
     <title type="html"><![CDATA[The Immediate Future of Jekyll]]></title>
     <link href="http://blog.parkermoore.de/2012/12/18/the-immediate-future-of-jekyll/"/>
-    <updated>2012-12-18T18:33:00-05:00</updated>
+    <updated>2012-12-18T18:33:00-08:00</updated>
     <id>http://blog.parkermoore.de/2012/12/18/the-immediate-future-of-jekyll</id>
     <content type="html"><![CDATA[<p><a href="http://github.com/mojombo/jekyll">Jekyll</a> is a static blog generator created by <a href="https://github.com/mojombo">Tom Preston-Werner</a>, the
 current CEO of <a href="https://github.com">GitHub</a> and one of GitHub&#8217;s co-founders, and by <a href="https://github.com/qrush">Nick Quaranto</a>,
@@ -1064,7 +1131,7 @@ I hope you&#8217;re as excited as we are to get this project back on its feet.</
   <entry>
     <title type="html"><![CDATA[Email Notifications in Web Apps]]></title>
     <link href="http://blog.parkermoore.de/2012/12/12/email-notifications-in-web-apps/"/>
-    <updated>2012-12-12T02:05:00-05:00</updated>
+    <updated>2012-12-12T02:05:00-08:00</updated>
     <id>http://blog.parkermoore.de/2012/12/12/email-notifications-in-web-apps</id>
     <content type="html"><![CDATA[<p>Email notifications from web apps have been annoying us for months now. Ever since Twitter, Facebook and other notification-heavy apps began automatically sending notifications to us (alas, without our consent), public opinion seems to have developed a hatred for email notifications. But, I implore you, understand the flipside:</p>
 
@@ -1083,7 +1150,7 @@ I hope you&#8217;re as excited as we are to get this project back on its feet.</
   <entry>
     <title type="html"><![CDATA[An Open Letter to Tom Preston-Werner]]></title>
     <link href="http://blog.parkermoore.de/2012/12/11/an-open-letter-to-tom-preston-werner/"/>
-    <updated>2012-12-11T17:03:00-05:00</updated>
+    <updated>2012-12-11T17:03:00-08:00</updated>
     <id>http://blog.parkermoore.de/2012/12/11/an-open-letter-to-tom-preston-werner</id>
     <content type="html"><![CDATA[<p>I&#8217;m a huge advocate of static site generators and have always favoured <a href="https://github.com/mojombo/jekyll">Jekyll</a> as my go-to static site generator.</p>
 
@@ -1119,27 +1186,6 @@ I hope you&#8217;re as excited as we are to get this project back on its feet.</
 
 <p>Warm Regards,<br>
 Parker Moore</p></blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[iA Writer Needs Print Configuration]]></title>
-    <link href="http://blog.parkermoore.de/2012/12/11/ia-writer-needs-print-configuration/"/>
-    <updated>2012-12-11T16:41:00-05:00</updated>
-    <id>http://blog.parkermoore.de/2012/12/11/ia-writer-needs-print-configuration</id>
-    <content type="html"><![CDATA[<p>I have really adored iA Writer and use the app obsessively on my iPhone, iPad and Mac. It&#8217;s arguably one of my most oft-used apps. I write all sorts of things with the app: blog posts/ideas (like this one), essays, lab reports &#8211; even the occasional code snippet. It&#8217;s my writing tool of choice, and I thank Information Architects for writing such an awesome app.</p>
-
-<p>I also print out a lot of my writing. I like to edit by hand with a pen and paper. I like the beautiful typeface that iA Writer provides and the margins on 8.5&#8221; x 11&#8221; paper (US) are amazing. I&#8217;ve really enjoyed the almost typewriter-like essence of the print-outs which iA Writer provides.</p>
-
-<p>I&#8217;d really love some more configuration options for printing, however. While I will undoubtedly hear the argument that iA Writer offers no configuration <em>on purpose</em>, I will argue that the &#8220;No Configuration Rule&#8221; must only apply to in-app writing, not to the manifestation of this writing in paper form.</p>
-
-<p>The No Configuration Rule is supported by the fact that configuration and modification of the working environment is often a hindrance to one&#8217;s ability to write awesome content. It&#8217;s a distraction. But it&#8217;s a distraction only when <em>writing</em>, not when printing. I&#8217;d say this No Configuration Rule thus can only be justified for writing, i.e. on;y be justified for the look and feel of the writing experience in the app.</p>
-
-<p>But that&#8217;s an argument with too many implications. Let&#8217;s make it a bit smaller, to the size of a wish:</p>
-
-<p>My only real wish for this app is to allow double-spaced print-outs. That&#8217;s it. I want to be able to edit my papers double-spaced.</p>
-
-<p>So what say you, Information Architects? Think it&#8217;s possible? I&#8217;d really appreciate it.</p>
 ]]></content>
   </entry>
   

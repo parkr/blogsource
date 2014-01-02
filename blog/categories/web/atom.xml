@@ -4,7 +4,7 @@
   <title><![CDATA[Category: web | Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/blog/categories/web/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2013-12-22T00:37:33-05:00</updated>
+  <updated>2014-01-02T01:21:14-08:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Launching a Rails Console with Capistrano]]></title>
     <link href="http://blog.parkermoore.de/2013/08/07/launching-a-rails-console-with-capistrano/"/>
-    <updated>2013-08-07T20:36:00-04:00</updated>
+    <updated>2013-08-07T20:36:00-07:00</updated>
     <id>http://blog.parkermoore.de/2013/08/07/launching-a-rails-console-with-capistrano</id>
     <content type="html"><![CDATA[<p>If you're using the popular Capistrano web deployment framework, you will likely
 have wished you had an easy way to perform a quick task in the production rails

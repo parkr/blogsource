@@ -9,7 +9,7 @@
   <meta name="author" content="Parker J. Moore">
 
   
-  <meta name="description" content="I can&#8217;t decide whether this semester was a success or a failure. There are so many things about which I should be proud, and an almost equal &hellip;">
+  <meta name="description" content="I am a heavy user of Instapaper, an app that allows one to save webpages to read later. I am a subscriber, and I have chosen to keep the ads turned &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,6 +82,86 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/2011/12/20/improvements-for-instapaper/">Improvements for Instapaper</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-20T12:44:36Z" pubdate data-updated="true">Dec 20<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I am a heavy user of <a href="http://www.instapaper.com/">Instapaper</a>, an app that allows one to save webpages to read later. I am a subscriber, and I have chosen to keep the ads turned on, to support the creator and sole developer, <a href="http://www.marco.org/">Marco Arment</a>, because, well, he&#8217;s a great guy and he deserves it. Marco works tirelessly to not only create something that he finds useful, but also something that might be useful to others. Thus far, Marco has done a fantastic job with Instapaper, as we have seen with his <a href="http://www.marco.org/2011/10/17/instapaper-4-released">4.0 release</a>. He has added much-asked-for features, and nixed features that customers didn&#8217;t feel were useful, or downright hated. The <a href="http://itunes.apple.com/us/app/instapaper/id288545208?mt=8%3FpartnerId%3D30">iPhone and iPad app</a> is absolutely fantastic, no doubt about that. Today, however, my gripe is with the <a href="http://www.instapaper.com/">Instapaper Webapp</a>.</p>
+
+<p>The Instapaper Webapp, the preferred way to access one&#8217;s Instapaper account from a computer, is, it is sad to say, sub-par. Being a web developer myself, I can imagine that much sophistication lies behind the webapp, but it doesn&#8217;t appear to &#8220;just work&#8221;. There are several actions which have non-intuitive outcomes, and others which are very clunky. Along this same vein, I would like to suggest improvements to the webapp that I believe to be quite reasonable, as well as necessary.</p>
+
+<p>In the interest of time, I provide for you a list of &#8220;gripes&#8221; that I have with the Instapaper webapp:</p>
+
+<ol>
+<li>When clicking &#8220;+ Add&#8221; from a folder, it does not add the new item to the folder, but to the general &#8220;Unread&#8221; folder</li>
+<li>No way to search through folders or one&#8217;s entire Instapaper library</li>
+<li>Articles (as list items) are too large, therefore causing the issue that an &#8220;at-a-glance&#8221; view of the page shows only about 4 or 5 articles (MBP 15&#8221;, 1440x900 screen res)</li>
+<li>No &#8220;label&#8221; concept</li>
+</ol>
+
+
+<h3>1: Adding an Article using &#8220;+ Add&#8221;</h3>
+
+<p>I have a folder called &#8220;News to Read&#8221;, where I store news articles as they arrive in my inbox from various daily news digests. I was adding an article I had found to what I <em>thought</em> was this folder (I navigated to the folder, and clicked &#8220;+ Add&#8221;), and, after it didn&#8217;t appear in the folder, I was a little confused. I navigated back to &#8220;Unread&#8221;, and there it was. Needless to say, I was irked.</p>
+
+<p>I would like to see a <code>&lt;select&gt;</code> menu on the &#8220;+ Add&#8221; page that autofills with whichever folder referred me (though allows for a change, if the user desires), and that article be added to whichever folder is listed in this <code>&lt;select&gt;</code> menu. That&#8217;d be great.</p>
+
+<h3>2:  No Searching</h3>
+
+<p>This is actually my biggest grievance. I find the inability to search through my (>1000) articles to be quite annoying. Oftentimes, I will read an article, refer to it in a conversation and have no way to find it and send it to the person(s) with whom I discussed the article, because it is buried deeply in my archive. If there were a search bar at the top, I might be able to type in the first few words of the title or perhaps the site url (e.g., &#8220;http://www.nytimes.com/&#8221;, or just &#8220;nytimes.com&#8221;) and have a list of articles show up &#8211; a <em>much</em> easier pile of articles through which to search!</p>
+
+<p>This could be relatively easy to implement: when a new article is saved from the iOS app or via a bookmarklet, then the Instapaper engine could construct a few keywords or tags that identify the page. For example, if &#8220;NYTimes&#8221; is in the title, it is safe to assume that the article is either from the <em>New York Times</em> or somehow relates to the <em>Times</em>. In addition to this, we could have the option of adding our own, custom tags to a saved page both via &#8220;Edit&#8221; and when using &#8220;+ Add&#8221; to add the page.</p>
+
+<p>EDIT: Some search functionality is available for subscribers.</p>
+
+<h3>3: Listed Articles are HUGE</h3>
+
+<p>In this case, we want to diverge from <a href="http://www.youtube.com/watch?v=DXRaboSo70A">Billy Fucillo&#8217;s famous line</a>, and go for &#8220;small&#8221;. The fact that I can presently see only about 4 or 5 articles in my viewport at once does not allow for any ability to scan. I tend to do this &#8211; I will scan through article titles and find something of interest and read that.</p>
+
+<p>Here&#8217;s an idea: why not try creating a skin for Instapaper that looks a little like <a href="http://www.cravingtech.com/gmail-gets-compact-layout-and-better-search.html">Gmail&#8217;s new compact view</a>? Given the large number of articles I have (386 in my Unread folder, 1500 articles not in my Archive), I would love a way to perform <strong>mass actions</strong> (like &#8220;archive&#8221;, &#8220;move to folder&#8221;, &#8220;apply tags&#8221;) to various articles, and to see far more (maybe 25 or 50?) at once.</p>
+
+<h3>4: No Concept of &#8220;Labels&#8221;</h3>
+
+<p>This one is more a &#8220;nice-to-have&#8221; feature, but would be <em>fantastic</em>. I think Google really pioneered a different way of thinking about folders when they introduced the concept of labels into Gmail. This is a nice way to search and organize, because it is typical for one to have an article that applied to several topics they may have labeled for folders (e.g., &#8220;Tech&#8221; and &#8220;WebDev&#8221;), and allows for <em>both</em> of these labels to &#8220;house&#8221; the article. This also makes finding articles in the Archive <em>far</em> easier, because I can go to a label, click &#8220;View Archived Articles with this Label&#8221;, and see all of the archived articles with this particular label! <em>Parfait.</em></p>
+
+<p>You would have to change <a href="http://www.instapaper.com/api/full">Instapaper&#8217;s API</a> to return an array of folders for any given bookmark, but that&#8217;s very doable. And, when getting a list of the bookmarks in a particular folder, as long as that folder&#8217;s ID is in the bookmark&#8217;s <code>belongs_to</code> array, then add it. But that&#8217;s a no-brainer.</p>
+
+<h3>Thanks</h3>
+
+<p>So thanks for reading. These are my improvements for <a href="http://www.instapaper.com/">Instapaper</a>, one of the greatest webapps of all time. A huge &#8220;thank you&#8221; to <a href="http://www.marco.org/">Marco</a>, who had the forethought to create something that the rest of us didn&#8217;t even know we needed, and now, can&#8217;t imagine living without. Thanks!</p>
+
+<p>Also, Marco, I&#8217;m free this summer to help out with implementing improvements such as these. I&#8217;m a webdev with a lot of experience with PHP-heavy apps, and have used CakePHP and CodeIgniter before, which is what I believe you have written this webapp with. But take a quick look at my <a href="http://www.parkermoore.de/">online resumé</a> for a more detailed description of my qualifications.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/2011/12/12/success-or-failure/">Success, or Failure?</a></h1>
     
     
@@ -98,7 +178,7 @@
   
 
 
-<time datetime="2011-12-12T11:14:24-05:00" pubdate data-updated="true">Dec 12<span>th</span>, 2011</time>
+<time datetime="2011-12-12T08:14:24-08:00" pubdate data-updated="true">Dec 12<span>th</span>, 2011</time>
         
       </p>
     
@@ -164,7 +244,7 @@
   
 
 
-<time datetime="2011-12-09T11:25:32-05:00" pubdate data-updated="true">Dec 9<span>th</span>, 2011</time>
+<time datetime="2011-12-09T08:25:32-08:00" pubdate data-updated="true">Dec 9<span>th</span>, 2011</time>
         
       </p>
     
@@ -417,7 +497,7 @@ Cornell University Glee Club</p></blockquote>
   
 
 
-<time datetime="2011-10-01T13:52:43-04:00" pubdate data-updated="true">Oct 1<span>st</span>, 2011</time>
+<time datetime="2011-10-01T10:52:43-07:00" pubdate data-updated="true">Oct 1<span>st</span>, 2011</time>
         
       </p>
     
@@ -456,7 +536,7 @@ Cornell University Glee Club</p></blockquote>
   
 
 
-<time datetime="2011-09-25T13:11:10-04:00" pubdate data-updated="true">Sep 25<span>th</span>, 2011</time>
+<time datetime="2011-09-25T10:11:10-07:00" pubdate data-updated="true">Sep 25<span>th</span>, 2011</time>
         
       </p>
     
@@ -470,70 +550,6 @@ Cornell University Glee Club</p></blockquote>
 <p>Writing this, however, and having been a philosophy/political science/linguistics major last year at McGill, I can&#8217;t help by wonder if it&#8217;s all worth it. Our society dictates a certain path for future success. Those who are successful have earned a degree from an accredited institution such as Cornell, have perhaps pursued a graduate degree and go off to find a job that pays well. If only we valued our own happiness as much as our salaries, the world might be a better place. I hear talk of hopes to be millionaires and billionaires from students on campus and something about that appalls me while simultaneously exciting me. Wouldn&#8217;t it be great to have a net worth of over one million dollars? But we mustn&#8217;t forget that some of the happiest people on Earth live on a couple dollars a day. I wish to discover what it is they have that we are so lacking. Quality relationships with our families (the divorce rate is sky-high and I hear stories left and right about parents abandoning their children), perhaps? Or possibly an overwhelming sense of self-worth that our magazines and tabloids deny from us? If we are to have a happier future, collectively, then surely we must figure this out.</p>
 
 <p>Pondering my future is a constant source of worry; not because I don&#8217;t think I will be able to find a job, but because I don&#8217;t wish to be a slave to my job nor dislike it. Do you know what I mean?</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/2011/08/30/getting-busy-at-cornell/">Getting Busy at Cornell</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-08-30T14:21:56Z" pubdate data-updated="true">Aug 30<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&#8217;ve been at <a href="http://www.cornell.edu/">Cornell</a> for a little over a week and I can honestly admit I&#8217;ve never been this busy. Thanks to my time at McGill, I have been able to manage my time well, but this is a new level of busy for me!</p>
-
-<p>Coursework has been relatively do-able; I&#8217;ve had 3 assignments and 7 readings to do. All in all, not too bad for 3 days of classes. Judging from what I know at this moment, <a href="http://courses.cornell.edu/preview_course.php?catoid=12&amp;coid=90911"><strong>CS2110</strong></a> is probably going to be the most work. Much of the theory behind the algorithms and mathematical problems is new to me and I suspect that will be the most difficult aspect of this class. <a href="http://www.infosci.cornell.edu/ugrad/CalsMajor.htm"><strong>INFO1300</strong></a> (Intro to Web Design), if I can&#8217;t obtain an exemption from the course, will be a cinch. I really don&#8217;t expect any issues with that class at all. <a href="http://courses.cornell.edu/preview_course.php?catoid=12&amp;coid=93470"><strong>INFO 2040</strong></a> will be lots of work, but the concepts we&#8217;re learning don&#8217;t seem too difficult to grasp. It&#8217;s also a huge class, so there&#8217;s plenty of opportunity to ask questions to others. It has a good reputation, too. <a href="http://courses.cornell.edu/preview_course.php?catoid=12&amp;coid=91639"><strong>EDUC2710</strong></a> is already turning out to be one of my favourite classes. Going to be a <em>lot</em> of work, but it&#8217;ll be worth it. I was recently given permission to enroll in <a href="http://courses.cornell.edu/preview_course.php?catoid=12&amp;coid=90949&amp;print"><strong>CS4999</strong></a>, a class where I conduct research and write web apps for college credit. All in all, a good deal.</p>
-
-<p>Cornell offers wonderful academics, but I would argue that the extracurricular opportunities rival those in the academic world. I have chosen to get involved in the music scene here, having been accepted into the <a href="http://www.gleeclub.com/">Cornell Glee Club</a> just last night! A Cappella auditions are this week, and I&#8217;m still working on those. I&#8217;m also hoping to get involved with the <a href="http://www.cornellsun.com/">Cornell Daily Sun</a> as a web developer. There are a couple other clubs I&#8217;m looking into, but those are sort of on hold while auditions ensue.</p>
-
-<p>In addition to all of this, I am a free-lance web developer/designer. I&#8217;m really excited to continue my Cornell experience. It&#8217;s amazing here and I don&#8217;t want to waste even one minute. Let&#8217;s end in song:</p>
-
-<blockquote><p>  Far above Cayuga&#8217;s waters,<br />
-  With its waves of blue,<br />
-  Stands our noble Alma Mater,<br />
-  Glorious to view.<br />
-  <br />
-  Lift the chorus, speed it onward,<br />
-  Loud her praises tell;<br />
-  Hail to thee, our Alma Mater!<br />
-  Hail, all hail, Cornell!<br />
-  <br />
-  Far above the busy humming<br />
-  Of the bustling town,<br />
-  Reared against the arch of heaven,<br />
-  Looks she proudly down.<br />
-  <br />
-  Lift the chorus, speed it onward,<br />
-  Loud her praises tell;<br />
-  Hail to thee, our Alma Mater!<br />
-  Hail, all hail, Cornell!</p></blockquote>
-
-<p>I look forward to sharing more with you about Cornell and my experiences here.</p>
 </div>
   
   
@@ -558,6 +574,10 @@ Cornell University Glee Club</p></blockquote>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2014/01/02/installing-command-t-with-os-x-mavericks-built-in-vim/">Installing Command-T with OS X Maverick&#8217;s Built-In Vim</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/12/21/fixing-memory-issues-in-dokku-hosted-on-digitalocean-512mb-droplet/">Fixing Memory Issues in Dokku hosted on DigitalOcean 512MB Droplet</a>
       </li>
     
@@ -571,10 +591,6 @@ Cornell University Glee Club</p></blockquote>
     
       <li class="post">
         <a href="/2013/09/16/its-just-semantics-app-dot-net-alpha/">It&#8217;s Just Semantics: App.net Alpha</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2013/08/07/launching-a-rails-console-with-capistrano/">Launching a Rails Console with Capistrano</a>
       </li>
     
   </ul>
@@ -626,7 +642,7 @@ Cornell University Glee Club</p></blockquote>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Parker J. Moore -
+  Copyright &copy; 2014 - Parker J. Moore -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

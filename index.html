@@ -9,8 +9,8 @@
   <meta name="author" content="Parker J. Moore">
 
   
-  <meta name="description" content="As many other Heroku customers, I rejoiced when Dokku was released. To have
-complete freedom to host as many apps with whatever databases or other &hellip;">
+  <meta name="description" content="I was fortunate enough to, just today, pick up a new computer. My first hardware
+in over 4 years, I had been holding off. Once my trusty MacBook Pro &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +83,100 @@ complete freedom to host as many apps with whatever databases or other &hellip;"
       
   <header>
     
+      <h1 class="entry-title"><a href="/2014/01/02/installing-command-t-with-os-x-mavericks-built-in-vim/">Installing Command-T With OS X Maverick&#8217;s Built-In Vim</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-02T01:03:00-08:00" pubdate data-updated="true">Jan 2<span>nd</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I was fortunate enough to, just today, pick up a new computer. My first hardware
+in over 4 years, I had been holding off. Once my trusty MacBook Pro bit the dust
+last night and I found out the repair cost was extraordinary, I bit the bullet.</p>
+
+<p>So, you&#8217;re probably in a similar place. You relatively recently got a shiny new
+Macintosh and you&#8217;re so excited to start writing code and making a difference
+with those skillz of yours. Except one this is missing: <a href="https://github.com/wincent/Command-T">Command-T</a>.</p>
+
+<p>Lucky for you, sir, I am here to help. OS X Maverick&#8217;s built-in vim distribution
+comes with Ruby support already (which it needs for Command-T) so you&#8217;re good
+there. Now you need to download and compile Command-T. Should be easy, right?
+Well, not quite.</p>
+
+<p>Mavericks was notable for Ruby users because it ships with Ruby 2.0. All
+previous versions that I had ever used shipped with 1.8.7 so this was a huge
+bonus. Problem is, your pre-installed vim wasn&#8217;t compiled with 2.0.0, it was
+compiled with 1.8.7.</p>
+
+<p>To check this, run the following in vim in NORMAL mode:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>:ruby puts &quot;#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}&quot;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>For me, that output <code>1.8.7-p358</code>. So that means the Ruby verison that vim is
+using is <code>1.8.7-p358</code>, and we need to compile Command-T with that version. To do
+so, install it:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rbenv install 1.8.7-p358
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Boom! Now download and install Command-T:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git clone https://github.com/wincent/Command-T.git ~/.vim/bundle/Command-T
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd</span> ~/.vim/bundle/Command-T <span class="c"># for tpope&#39;s Pathogen</span>
+</span><span class='line'><span class="nv">$ </span>rbenv <span class="nb">local </span>1.8.7-p358
+</span><span class='line'><span class="nv">$ </span>rbenv rehash
+</span><span class='line'><span class="nv">$ </span>gem install bundler
+</span><span class='line'><span class="nv">$ </span>bundle install
+</span><span class='line'><span class="nv">$ </span>bundle <span class="nb">exec </span>rake make
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Aaaaand boom, you&#8217;re done. Open up <code>vim</code> and type your leaderkey then <code>t</code> (for
+me, that&#8217;s <code>,t</code>) to launch the prompt.</p>
+
+<p>If you get a weird SIGTERM error when you launch <code>vim</code>, then you installed
+Command-T with the wrong Ruby version. Remove <code>ruby/command-t/ext.bundle</code> and
+try again.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/2013/12/21/fixing-memory-issues-in-dokku-hosted-on-digitalocean-512mb-droplet/">Fixing Memory Issues in Dokku Hosted on DigitalOcean 512MB Droplet</a></h1>
     
     
@@ -99,7 +193,7 @@ complete freedom to host as many apps with whatever databases or other &hellip;"
   
 
 
-<time datetime="2013-12-21T12:23:00-05:00" pubdate data-updated="true">Dec 21<span>st</span>, 2013</time>
+<time datetime="2013-12-21T12:23:00-08:00" pubdate data-updated="true">Dec 21<span>st</span>, 2013</time>
         
       </p>
     
@@ -181,7 +275,7 @@ thought I&#8217;d share and preserve for my own benefit in the future.</p>
   
 
 
-<time datetime="2013-11-04T21:23:00-05:00" pubdate data-updated="true">Nov 4<span>th</span>, 2013</time>
+<time datetime="2013-11-04T21:23:00-08:00" pubdate data-updated="true">Nov 4<span>th</span>, 2013</time>
         
       </p>
     
@@ -300,7 +394,7 @@ like Frankenstein, which, I will say, is a pretty cool feeling.</p>
   
 
 
-<time datetime="2013-10-22T19:45:00-04:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2013</time>
+<time datetime="2013-10-22T19:45:00-07:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2013</time>
         
       </p>
     
@@ -449,7 +543,7 @@ job done&#8221; efficiently and accurately.</p>
   
 
 
-<time datetime="2013-09-16T19:53:00-04:00" pubdate data-updated="true">Sep 16<span>th</span>, 2013</time>
+<time datetime="2013-09-16T19:53:00-07:00" pubdate data-updated="true">Sep 16<span>th</span>, 2013</time>
         
       </p>
     
@@ -559,7 +653,7 @@ and afford interaction without the user making the first move (to mouseover).</p
   
 
 
-<time datetime="2013-08-07T20:36:00-04:00" pubdate data-updated="true">Aug 7<span>th</span>, 2013</time>
+<time datetime="2013-08-07T20:36:00-07:00" pubdate data-updated="true">Aug 7<span>th</span>, 2013</time>
         
       </p>
     
@@ -636,7 +730,7 @@ solution</a>:</p>
   
 
 
-<time datetime="2013-06-26T12:48:00-04:00" pubdate data-updated="true">Jun 26<span>th</span>, 2013</time>
+<time datetime="2013-06-26T12:48:00-07:00" pubdate data-updated="true">Jun 26<span>th</span>, 2013</time>
         
       </p>
     
@@ -686,7 +780,7 @@ caretakers of this world than we are.</p>
   
 
 
-<time datetime="2013-05-30T15:56:00-04:00" pubdate data-updated="true">May 30<span>th</span>, 2013</time>
+<time datetime="2013-05-30T15:56:00-07:00" pubdate data-updated="true">May 30<span>th</span>, 2013</time>
         
       </p>
     
@@ -782,7 +876,7 @@ distracting stimuli goes a long way to achieving focus and increasing your produ
   
 
 
-<time datetime="2013-05-09T18:17:00-04:00" pubdate data-updated="true">May 9<span>th</span>, 2013</time>
+<time datetime="2013-05-09T18:17:00-07:00" pubdate data-updated="true">May 9<span>th</span>, 2013</time>
         
       </p>
     
@@ -865,7 +959,7 @@ Constituent</p></blockquote>
   
 
 
-<time datetime="2013-05-06T00:59:00-04:00" pubdate data-updated="true">May 6<span>th</span>, 2013</time>
+<time datetime="2013-05-06T00:59:00-07:00" pubdate data-updated="true">May 6<span>th</span>, 2013</time>
         
       </p>
     
@@ -918,77 +1012,6 @@ all to push out future versions!</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/2013/04/30/an-afterlife/">An Afterlife?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-30T19:00:00-04:00" pubdate data-updated="true">Apr 30<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I am not a religious man, yet I find myself curious about the prospect of an afterlife. Is
-there something beyond this life, in this dimension, in this universe? While I don&#8217;t believe
-in the traditional conception of an afterlife (one&#8217;s soul ascends to a blissful place, where
-it inhabits all space and time for eternity), I do like to think we live on beyond the
-time we take our last breath.</p>
-
-<p>In ninth grade, I graduated to a Sunday School class which resembled a forum &mdash;
-discussion-based learning. A retired history teacher, a Public Defender, and a social
-worker led the discussions in this class. The dialogue probed our most deeply held beliefs
-and asked profound questions about  life, spirituality, goodness, happiness, beauty, and
-other similar topics.</p>
-
-<p>One day, we were discussing the afterlife. The normal answers dominated the conversation:
-&#8220;When one dies, one&#8217;s soul ascends into Heaven to be with one&#8217;s family members and with
-God,&#8221; and &#8220;We exist everywhere and with everyone. We watch over those we love and help
-them live good lives.&#8221; When the question came to me, I wasn&#8217;t sure how to respond. Can an
-atheist believe in an afterlife? If so, did I?</p>
-
-<p>I hadn&#8217;t given it much thought before, but I pondered it for a moment and concluded, &#8220;An
-individual&#8217;s afterlife is the culmination of the memories others have of the individual.
-It is the legacy that individual leaves behind and the impact that individual had on those
-he or she encountered.&#8221;</p>
-
-<p>The more I thought about it, the more it made sense. If we don&#8217;t have souls, how do we
-explain this legacy of the afterlife concretely? The afterlife is not something experienced
-by the deceased individual, but by everyone else he or she impacted.</p>
-
-<p><span class='pullquote-right' data-pullquote='&#8220;They say you die twice, once when your
-heart stops beating, and again when your name is said for the last time.&#8221;'>
-I have not yet met anyone else who holds this belief I hold, but I invite you to explore
-it and see of you can reconcile it with your beliefs about the afterlife. Banksy once
-famously said (paraphrased by a friend): &#8220;They say you die twice, once when your
-heart stops beating, and again when your name is said for the last time.&#8221; I can&#8217;t
-believe there is something I will experience beyond my death, but I can believe that
-others will experience their memories of me beyond my departure from this world.
-</span></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/page/2">&larr; Older</a>
@@ -1004,6 +1027,10 @@ others will experience their memories of me beyond my departure from this world.
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2014/01/02/installing-command-t-with-os-x-mavericks-built-in-vim/">Installing Command-T with OS X Maverick&#8217;s Built-In Vim</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/12/21/fixing-memory-issues-in-dokku-hosted-on-digitalocean-512mb-droplet/">Fixing Memory Issues in Dokku hosted on DigitalOcean 512MB Droplet</a>
       </li>
     
@@ -1017,10 +1044,6 @@ others will experience their memories of me beyond my departure from this world.
     
       <li class="post">
         <a href="/2013/09/16/its-just-semantics-app-dot-net-alpha/">It&#8217;s Just Semantics: App.net Alpha</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2013/08/07/launching-a-rails-console-with-capistrano/">Launching a Rails Console with Capistrano</a>
       </li>
     
   </ul>
@@ -1072,7 +1095,7 @@ others will experience their memories of me beyond my departure from this world.
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Parker J. Moore -
+  Copyright &copy; 2014 - Parker J. Moore -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

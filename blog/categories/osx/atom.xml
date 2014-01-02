@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: osx | Musings of Parker J. Moore]]></title>
+  <link href="http://blog.parkermoore.de/blog/categories/osx/atom.xml" rel="self"/>
+  <link href="http://blog.parkermoore.de/"/>
+  <updated>2014-01-02T01:21:14-08:00</updated>
+  <id>http://blog.parkermoore.de/</id>
+  <author>
+    <name><![CDATA[Parker J. Moore]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Installing Command-T with OS X Maverick's Built-In Vim]]></title>
+    <link href="http://blog.parkermoore.de/2014/01/02/installing-command-t-with-os-x-mavericks-built-in-vim/"/>
+    <updated>2014-01-02T01:03:00-08:00</updated>
+    <id>http://blog.parkermoore.de/2014/01/02/installing-command-t-with-os-x-mavericks-built-in-vim</id>
+    <content type="html"><![CDATA[<p>I was fortunate enough to, just today, pick up a new computer. My first hardware
+in over 4 years, I had been holding off. Once my trusty MacBook Pro bit the dust
+last night and I found out the repair cost was extraordinary, I bit the bullet.</p>
+
+<p>So, you're probably in a similar place. You relatively recently got a shiny new
+Macintosh and you're so excited to start writing code and making a difference
+with those skillz of yours. Except one this is missing: <a href="https://github.com/wincent/Command-T">Command-T</a>.</p>
+
+<p>Lucky for you, sir, I am here to help. OS X Maverick's built-in vim distribution
+comes with Ruby support already (which it needs for Command-T) so you're good
+there. Now you need to download and compile Command-T. Should be easy, right?
+Well, not quite.</p>
+
+<p>Mavericks was notable for Ruby users because it ships with Ruby 2.0. All
+previous versions that I had ever used shipped with 1.8.7 so this was a huge
+bonus. Problem is, your pre-installed vim wasn't compiled with 2.0.0, it was
+compiled with 1.8.7.</p>
+
+<p>To check this, run the following in vim in NORMAL mode:</p>
+
+<pre><code class="text">:ruby puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"
+</code></pre>
+
+<p>For me, that output <code>1.8.7-p358</code>. So that means the Ruby verison that vim is
+using is <code>1.8.7-p358</code>, and we need to compile Command-T with that version. To do
+so, install it:</p>
+
+<pre><code class="bash">$ rbenv install 1.8.7-p358
+</code></pre>
+
+<p>Boom! Now download and install Command-T:</p>
+
+<pre><code class="bash">$ git clone https://github.com/wincent/Command-T.git ~/.vim/bundle/Command-T
+$ cd ~/.vim/bundle/Command-T # for tpope's Pathogen
+$ rbenv local 1.8.7-p358
+$ rbenv rehash
+$ gem install bundler
+$ bundle install
+$ bundle exec rake make
+</code></pre>
+
+<p>Aaaaand boom, you're done. Open up <code>vim</code> and type your leaderkey then <code>t</code> (for
+me, that's <code>,t</code>) to launch the prompt.</p>
+
+<p>If you get a weird SIGTERM error when you launch <code>vim</code>, then you installed
+Command-T with the wrong Ruby version. Remove <code>ruby/command-t/ext.bundle</code> and
+try again.</p>
+]]></content>
+  </entry>
+  
+</feed>

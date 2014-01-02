@@ -4,7 +4,7 @@
   <title><![CDATA[Category: release | Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/blog/categories/release/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2013-12-22T00:37:33-05:00</updated>
+  <updated>2014-01-02T01:21:14-08:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Jekyll 1.0 Released]]></title>
     <link href="http://blog.parkermoore.de/2013/05/06/jekyll-1-dot-0-released/"/>
-    <updated>2013-05-06T00:59:00-04:00</updated>
+    <updated>2013-05-06T00:59:00-07:00</updated>
     <id>http://blog.parkermoore.de/2013/05/06/jekyll-1-dot-0-released</id>
     <content type="html"><![CDATA[<p>Today, I'm proud to announce the release of Jekyll 1.0. There are a million
 goodies and fixes to enjoy, and we're (the still-active Jekyll core team
