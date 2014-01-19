@@ -69,7 +69,7 @@ twitter_tweet_count: 4
 twitter_show_replies: false
 twitter_follow_button: true
 twitter_show_follower_count: false
-twitter_tweet_button: true
+twitter_tweet_button: false
 
 # Google +1
 google_plus_one: false
