@@ -8,7 +8,7 @@ categories:
 
 Email notifications from web apps have been annoying us for months now. Ever since Twitter, Facebook and other notification-heavy apps began automatically sending notifications to us (alas, without our consent), public opinion seems to have developed a hatred for email notifications. But, I implore you, understand the flipside:
 
-{% tweet https://twitter.com/marcoarment/status/278705209507721217 %}
+[![Tweet by Marco Arment](/images/tweet-by-marco-arment.png)](https://twitter.com/marcoarment/status/278705209507721217)
 
 Email notifications in web apps is a way of unifying one's virtual "inbox". Dealing with too many is overwhelming.
 
