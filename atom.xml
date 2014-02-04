@@ -4,7 +4,7 @@
   <title><![CDATA[Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-01-18T22:28:41-08:00</updated>
+  <updated>2014-02-04T00:48:49-05:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -14,9 +14,127 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Fixing Common Mistakes when working with EC2]]></title>
+    <link href="http://blog.parkermoore.de/2014/02/04/fixing-common-mistakes-when-working-with-ec2/"/>
+    <updated>2014-02-04T00:30:00-05:00</updated>
+    <id>http://blog.parkermoore.de/2014/02/04/fixing-common-mistakes-when-working-with-ec2</id>
+    <content type="html"><![CDATA[<p>I&#8217;m lucky enough this semester to be taking CS 5300 at Cornell, a class entitled
+&#8220;The Architecture of Large-Scale Information Systems.&#8221; For this class, we will
+need to know our way around Amazon&#8217;s Web Services. I learned a lot about AWS
+when I worked at 6Wunderkinder last year, so I was feeling up to the challenge.
+Little did I know that the tooling 6W had created around its ops was far
+superior to anything else out there.</p>
+
+<p>I already had an AWS account, so my first step was to find a good CLI. I did the
+logical thing, and asked Google. Turns out, Amazon ships its own <code>aws</code> client,
+written in Python and shipped via <code>pip</code>. Marvelous! I ran <code>pip install aws</code>,
+<code>aws configure</code> and presto, I was in business.</p>
+
+<p>Our first question asked us to launch an instance of the AMI <code>ami-bba18dd2</code>, a
+simple Fedora distribution. After asking for the man pages for <code>aws</code> in 6
+different ways, I got them. I discovered I would need to specify the instance
+type and security group as well. So I created a security group and went ahead:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>aws ec2 run-instances <span class="se">\</span>
+</span><span class='line'>  --image-id ami-bba18dd2 <span class="se">\</span>
+</span><span class='line'>  --instance-type t1.micro <span class="se">\</span>
+</span><span class='line'>  --security-group-ids sg-sgsga888
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Yay, it worked! Ok, now I need to ssh into this bad boy.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ssh ec2-la-la-la.amazonaws.com
+</span><span class='line'>Access denied <span class="o">(</span>publickey<span class="o">)</span>.
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Huh? What&#8217;s that all about? I had created a key pair from previous messing
+around with EC2. Hm&#8230; After a few minutes of puzzlement, I realized I needed
+to pass another option to my <code>aws ec2</code> command. Let&#8217;s try this again:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># don&#39;t forget to terminate old instances!</span>
+</span><span class='line'><span class="nv">$ </span>aws ec2 terminate-instances --instance-ids i-1111111
+</span><span class='line'><span class="c"># now, create the new one</span>
+</span><span class='line'><span class="nv">$ </span>aws ec2 run-instances <span class="se">\</span>
+</span><span class='line'>  --image-id ami-bba18dd2 <span class="se">\</span>
+</span><span class='line'>  --instance-type t1.micro <span class="se">\</span>
+</span><span class='line'>  --security-group-ids sg-sgsga888 <span class="se">\</span>
+</span><span class='line'>  --key-name parker
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Booted! Now, let&#8217;s try to ssh again:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ssh ec2-li-la-le.amazonaws.com
+</span><span class='line'>Access denied <span class="o">(</span>publickey<span class="o">)</span>.
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Bollocks! Looks like I am still missing something&#8230;</p>
+
+<p>Ah! After taking a look at a tutorial, I realize I need to login as <code>ec2-user</code>.
+Let&#8217;s give this one more try:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ssh ec2-user@ec2-li-la-le.amazonaws.com
+</span><span class='line'>Last login: Tue Feb  4 05:13:24 2014 from cpe-88-88-88-88.twcny.res.rr.com
+</span><span class='line'>
+</span><span class='line'>       __<span class="p">|</span>  __<span class="p">|</span>_  <span class="o">)</span>
+</span><span class='line'>       _<span class="p">|</span>  <span class="o">(</span>     /   Amazon Linux AMI
+</span><span class='line'>      ___<span class="p">|</span><span class="se">\_</span>__<span class="p">|</span>___<span class="p">|</span>
+</span><span class='line'>
+</span><span class='line'>https://aws.amazon.com/amazon-linux-ami/2013.09-release-notes/
+</span><span class='line'>7 package<span class="o">(</span>s<span class="o">)</span> needed <span class="k">for </span>security, out of 25 available
+</span><span class='line'>Run <span class="s2">&quot;sudo yum update&quot;</span> to apply all updates.
+</span><span class='line'><span class="o">[</span>ec2-user@ip-10-9-162-71 ~<span class="o">]</span><span class="err">$</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>YES! I did it. Ok, so lessons:</p>
+
+<ol>
+<li>Login as <code>ec2-user</code>, not as <code>albie</code> or any other name.</li>
+<li>Make sure you specify the <code>key-name</code> for the instance(s) you want to launch.</li>
+<li>Always err on the side of being more specific. Defaults can be bad.</li>
+<li>Always terminate once you&#8217;re done using the box.</li>
+</ol>
+
+
+<p>Simple fixes for problems that seem so intractible.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Installing Command-T with OS X Maverick's Built-In Vim]]></title>
     <link href="http://blog.parkermoore.de/2014/01/02/installing-command-t-with-os-x-mavericks-built-in-vim/"/>
-    <updated>2014-01-02T01:03:00-08:00</updated>
+    <updated>2014-01-02T01:03:00-05:00</updated>
     <id>http://blog.parkermoore.de/2014/01/02/installing-command-t-with-os-x-mavericks-built-in-vim</id>
     <content type="html"><![CDATA[<p>I was fortunate enough to, just today, pick up a new computer. My first hardware
 in over 4 years, I had been holding off. Once my trusty MacBook Pro bit the dust
@@ -83,7 +201,7 @@ try again.</p>
   <entry>
     <title type="html"><![CDATA[Fixing Memory Issues in Dokku hosted on DigitalOcean 512MB Droplet]]></title>
     <link href="http://blog.parkermoore.de/2013/12/21/fixing-memory-issues-in-dokku-hosted-on-digitalocean-512mb-droplet/"/>
-    <updated>2013-12-21T12:23:00-08:00</updated>
+    <updated>2013-12-21T12:23:00-05:00</updated>
     <id>http://blog.parkermoore.de/2013/12/21/fixing-memory-issues-in-dokku-hosted-on-digitalocean-512mb-droplet</id>
     <content type="html"><![CDATA[<p>As many other Heroku customers, I rejoiced when <a href="https://github.com/progrium/dokku">Dokku</a> was released. To have
 complete freedom to host as many apps with whatever databases or other plugins
@@ -138,7 +256,7 @@ thought I&#8217;d share and preserve for my own benefit in the future.</p>
   <entry>
     <title type="html"><![CDATA[Taking Over Someone Else's Open-Source Project]]></title>
     <link href="http://blog.parkermoore.de/2013/11/04/taking-over-someone-elses-open-source-project/"/>
-    <updated>2013-11-04T21:23:00-08:00</updated>
+    <updated>2013-11-04T21:23:00-05:00</updated>
     <id>http://blog.parkermoore.de/2013/11/04/taking-over-someone-elses-open-source-project</id>
     <content type="html"><![CDATA[<p>Last December (2012), <a href="http://tom.preston-werner.com">Tom Preston-Werner</a> granted me <a href="http://blog.parkermoore.de/images/mojombo-added-parkr-to-jekyll.png">push &amp; pull access to
 mojombo/jekyll</a>. I had written a <a href="http://blog.parkermoore.de/2012/12/11/an-open-letter-to-tom-preston-werner/">letter to Tom about the future of Jekyll</a>
@@ -230,7 +348,7 @@ like Frankenstein, which, I will say, is a pretty cool feeling.</p>
   <entry>
     <title type="html"><![CDATA[Fix the Government: Open-Source Legislation]]></title>
     <link href="http://blog.parkermoore.de/2013/10/22/fix-the-government-open-source-legislation/"/>
-    <updated>2013-10-22T19:45:00-07:00</updated>
+    <updated>2013-10-22T19:45:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/10/22/fix-the-government-open-source-legislation</id>
     <content type="html"><![CDATA[<p><em>The following post was first written for a class at Cornell University taught
 by Phoebe Sengers called &#8220;Designing Technologies for Social Impact&#8221;.</em></p>
@@ -352,7 +470,7 @@ job done&#8221; efficiently and accurately.</p>
   <entry>
     <title type="html"><![CDATA[It's Just Semantics: App.net Alpha]]></title>
     <link href="http://blog.parkermoore.de/2013/09/16/its-just-semantics-app-dot-net-alpha/"/>
-    <updated>2013-09-16T19:53:00-07:00</updated>
+    <updated>2013-09-16T19:53:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/09/16/its-just-semantics-app-dot-net-alpha</id>
     <content type="html"><![CDATA[<p>This post was <a href="http://2450fall2013.ning.com/groups/red-2450/blog/it-s-just-semantics-app-net-alpha">originally written</a> as an assignment for <a href="http://courses.cornell.edu/preview_course.php?catoid=12&amp;coid=90680">INFO 2450: Communication
 &amp; Technology</a> taught by Professors <a href="http://infosci.cornell.edu/faculty/jeffrey-hancock">Jeff Hancock</a> and <a href="http://communication.cals.cornell.edu/people/drew-margolin">Drew Margolin</a> in
@@ -435,7 +553,7 @@ and afford interaction without the user making the first move (to mouseover).</p
   <entry>
     <title type="html"><![CDATA[Launching a Rails Console with Capistrano]]></title>
     <link href="http://blog.parkermoore.de/2013/08/07/launching-a-rails-console-with-capistrano/"/>
-    <updated>2013-08-07T20:36:00-07:00</updated>
+    <updated>2013-08-07T20:36:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/08/07/launching-a-rails-console-with-capistrano</id>
     <content type="html"><![CDATA[<p>If you&#8217;re using the popular Capistrano web deployment framework, you will likely
 have wished you had an easy way to perform a quick task in the production rails
@@ -485,7 +603,7 @@ solution</a>:</p>
   <entry>
     <title type="html"><![CDATA[Carlin Was Right]]></title>
     <link href="http://blog.parkermoore.de/2013/06/26/carlin-was-right/"/>
-    <updated>2013-06-26T12:48:00-07:00</updated>
+    <updated>2013-06-26T12:48:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/06/26/carlin-was-right</id>
     <content type="html"><![CDATA[<p>The late comedian George Carlin was never skiddish about sharing his opinion of the
 country and of the human race. &#8220;It&#8217;s all going downhill,&#8221; he would say. The decline of
@@ -508,7 +626,7 @@ caretakers of this world than we are.</p>
   <entry>
     <title type="html"><![CDATA[Dealing with Distraction]]></title>
     <link href="http://blog.parkermoore.de/2013/05/30/dealing-with-distraction/"/>
-    <updated>2013-05-30T15:56:00-07:00</updated>
+    <updated>2013-05-30T15:56:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/05/30/dealing-with-distraction</id>
     <content type="html"><![CDATA[<p>Dealing with distraction for those of us who live with AD(H)D is a constant struggle, and
 can be especially difficult for those of us who must daily solve large, complex problems.
@@ -577,7 +695,7 @@ distracting stimuli goes a long way to achieving focus and increasing your produ
   <entry>
     <title type="html"><![CDATA[Get Rid of Senate Prayer]]></title>
     <link href="http://blog.parkermoore.de/2013/05/09/get-rid-of-senate-prayer/"/>
-    <updated>2013-05-09T18:17:00-07:00</updated>
+    <updated>2013-05-09T18:17:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/05/09/get-rid-of-senate-prayer</id>
     <content type="html"><![CDATA[<p>Earlier today, I was watching a <a href="http://www.c-spanvideo.org/program/SenateSession4967">C-SPAN video</a> of a U.S. Senate session on
 February 1, 2012. This was the first time I had ever watched a Senate session
@@ -633,7 +751,7 @@ Constituent</p></blockquote>
   <entry>
     <title type="html"><![CDATA[Jekyll 1.0 Released]]></title>
     <link href="http://blog.parkermoore.de/2013/05/06/jekyll-1-dot-0-released/"/>
-    <updated>2013-05-06T00:59:00-07:00</updated>
+    <updated>2013-05-06T00:59:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/05/06/jekyll-1-dot-0-released</id>
     <content type="html"><![CDATA[<p>Today, I&#8217;m proud to announce the release of Jekyll 1.0. There are a million
 goodies and fixes to enjoy, and we&#8217;re (the still-active Jekyll core team
@@ -680,7 +798,7 @@ all to push out future versions!</p>
   <entry>
     <title type="html"><![CDATA[An Afterlife?]]></title>
     <link href="http://blog.parkermoore.de/2013/04/30/an-afterlife/"/>
-    <updated>2013-04-30T19:00:00-07:00</updated>
+    <updated>2013-04-30T19:00:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/04/30/an-afterlife</id>
     <content type="html"><![CDATA[<p>I am not a religious man, yet I find myself curious about the prospect of an afterlife. Is
 there something beyond this life, in this dimension, in this universe? While I don&#8217;t believe
@@ -724,7 +842,7 @@ others will experience their memories of me beyond my departure from this world.
   <entry>
     <title type="html"><![CDATA[We Mustn't Idle]]></title>
     <link href="http://blog.parkermoore.de/2013/04/22/we-mustnt-idle/"/>
-    <updated>2013-04-22T02:12:12-07:00</updated>
+    <updated>2013-04-22T02:12:12-04:00</updated>
     <id>http://blog.parkermoore.de/2013/04/22/we-mustnt-idle</id>
     <content type="html"><![CDATA[<p>Our legacies on this Beautiful Earth are inextricably tied to the work we do, the
 principles we stand for and the messages we spread. The apathetic nature of many of my
@@ -760,7 +878,7 @@ much gnashing of teeth for what we believe in and what we know is right.</p>
   <entry>
     <title type="html"><![CDATA[Do Not Single Out the Democrats - This is About Everyone]]></title>
     <link href="http://blog.parkermoore.de/2013/04/01/do-not-single-out-the-democrats-equals-this-is-about-everyone/"/>
-    <updated>2013-04-01T00:23:00-07:00</updated>
+    <updated>2013-04-01T00:23:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/04/01/do-not-single-out-the-democrats-equals-this-is-about-everyone</id>
     <content type="html"><![CDATA[<p>I just read an <a href="http://www.upworthy.com/omg-google-tucker-carlson-and-gay-marriage?c=fea">appalling story by <em>Upworthy</em></a> that singles out 10 Democratic
 senators who do not support full marriage equality for gays and lesbians. This
@@ -781,7 +899,7 @@ law.</p>
   <entry>
     <title type="html"><![CDATA[Downtime is Good]]></title>
     <link href="http://blog.parkermoore.de/2013/02/11/downtime-is-good/"/>
-    <updated>2013-02-11T22:43:00-08:00</updated>
+    <updated>2013-02-11T22:43:00-05:00</updated>
     <id>http://blog.parkermoore.de/2013/02/11/downtime-is-good</id>
     <content type="html"><![CDATA[<p>I just started working as an intern at 6Wunderkinder a couple weeks ago.
 I am by no means an expert in devops (hell, I have only dabbled with a little
@@ -818,7 +936,7 @@ like the service, too, and you&#8217;ll be angrily tweeting next time it goes do
   <entry>
     <title type="html"><![CDATA[Install rbenv on Ubuntu 12.04]]></title>
     <link href="http://blog.parkermoore.de/2013/02/06/install-rbenv-on-ubuntu-12-dot-04/"/>
-    <updated>2013-02-06T21:31:00-08:00</updated>
+    <updated>2013-02-06T21:31:00-05:00</updated>
     <id>http://blog.parkermoore.de/2013/02/06/install-rbenv-on-ubuntu-12-dot-04</id>
     <content type="html"><![CDATA[<p>So, I&#8217;ll admit it: I absolutely adore rbenv.</p>
 
@@ -864,7 +982,7 @@ MRI. Just copy it and run it.</p>
   <entry>
     <title type="html"><![CDATA[Connect to 3G on simyo in Germany]]></title>
     <link href="http://blog.parkermoore.de/2013/01/30/connect-to-3g-on-simyo-in-germany/"/>
-    <updated>2013-01-30T18:10:00-08:00</updated>
+    <updated>2013-01-30T18:10:00-05:00</updated>
     <id>http://blog.parkermoore.de/2013/01/30/connect-to-3g-on-simyo-in-germany</id>
     <content type="html"><![CDATA[<p>I recently signed up for simyo, a German cell provider. After installing the Nano SIM into my phone,
 I noticed that the 3G connection to the mobile data network was failing. Got a weird error that said
@@ -893,7 +1011,7 @@ In this case:</p>
   <entry>
     <title type="html"><![CDATA[My Favourite Apps in 2012]]></title>
     <link href="http://blog.parkermoore.de/2013/01/03/my-favourite-apps-in-2012/"/>
-    <updated>2013-01-03T01:36:00-08:00</updated>
+    <updated>2013-01-03T01:36:00-05:00</updated>
     <id>http://blog.parkermoore.de/2013/01/03/my-favourite-apps-in-2012</id>
     <content type="html"><![CDATA[<p>Below is a list of the apps I wouldn&#8217;t have wanted to live without this year.
 To be fair to everyone, I&#8217;ve listed them in alphabetical order.</p>
@@ -1077,7 +1195,7 @@ way to interface with Twitter on any Apple device.</p>
   <entry>
     <title type="html"><![CDATA[The Immediate Future of Jekyll]]></title>
     <link href="http://blog.parkermoore.de/2012/12/18/the-immediate-future-of-jekyll/"/>
-    <updated>2012-12-18T18:33:00-08:00</updated>
+    <updated>2012-12-18T18:33:00-05:00</updated>
     <id>http://blog.parkermoore.de/2012/12/18/the-immediate-future-of-jekyll</id>
     <content type="html"><![CDATA[<p><a href="http://github.com/mojombo/jekyll">Jekyll</a> is a static blog generator created by <a href="https://github.com/mojombo">Tom Preston-Werner</a>, the
 current CEO of <a href="https://github.com">GitHub</a> and one of GitHub&#8217;s co-founders, and by <a href="https://github.com/qrush">Nick Quaranto</a>,
@@ -1131,7 +1249,7 @@ I hope you&#8217;re as excited as we are to get this project back on its feet.</
   <entry>
     <title type="html"><![CDATA[Email Notifications in Web Apps]]></title>
     <link href="http://blog.parkermoore.de/2012/12/12/email-notifications-in-web-apps/"/>
-    <updated>2012-12-12T02:05:00-08:00</updated>
+    <updated>2012-12-12T02:05:00-05:00</updated>
     <id>http://blog.parkermoore.de/2012/12/12/email-notifications-in-web-apps</id>
     <content type="html"><![CDATA[<p>Email notifications from web apps have been annoying us for months now. Ever since Twitter, Facebook and other notification-heavy apps began automatically sending notifications to us (alas, without our consent), public opinion seems to have developed a hatred for email notifications. But, I implore you, understand the flipside:</p>
 
@@ -1142,48 +1260,6 @@ I hope you&#8217;re as excited as we are to get this project back on its feet.</
 <p>Keep email notifications around.</p>
 
 <p>(But, for pete&#8217;s sake, <em>ask</em> your users whether they want email notifications before you activate them for their accounts.)</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[An Open Letter to Tom Preston-Werner]]></title>
-    <link href="http://blog.parkermoore.de/2012/12/11/an-open-letter-to-tom-preston-werner/"/>
-    <updated>2012-12-11T17:03:00-08:00</updated>
-    <id>http://blog.parkermoore.de/2012/12/11/an-open-letter-to-tom-preston-werner</id>
-    <content type="html"><![CDATA[<p>I&#8217;m a huge advocate of static site generators and have always favoured <a href="https://github.com/mojombo/jekyll">Jekyll</a> as my go-to static site generator.</p>
-
-<p>Unfortunately, it&#8217;s fallen out of active development. I&#8217;ve been trying to contact Tom Preston-Werner (<a href="https://github.com/mojombo">@mojombo</a>) about it, but so far: nothing. (To be fair, I have gotten two replies, but they were not productive other than saying that he was looking for new maintainers. That was May 2012.)</p>
-
-<p>So here&#8217;s my open letter to you, Tom, about saving   Jekyll from open-source oblivion.</p>
-
-<blockquote><p>Tom,</p>
-
-<p>Hope you had a pleasant weekend.</p>
-
-<p>Here&#8217;s what I wish to see happen with Jekyll:</p>
-
-<ol>
-<li>Start an Org on Github and move the Jekyll repo to that org</li>
-<li>Add several maintainers to that org (I&#8217;d be happy to help out as a maintainer!)</li>
-<li>Add another author or two to the Jekyll gem so that we can gem push and release new versions.</li>
-<li>Give at least one other person access to push to the source of jekyllrb.com so that the docs can be updated</li>
-</ol>
-
-
-<p>Problem I&#8217;m trying to solve:</p>
-
-<blockquote><p>Jekyll is incredibly popular and is an incredibly powerful tool, but is not being actively maintained centrally, so though the world around it is evolving, it is staying stagnant and plagued by the same issues it has been for the last four years.</p></blockquote>
-
-<p>Solution:</p>
-
-<blockquote><p>Add maintainers to Jekyll to help deal with issues, push new versions, and update the documentation when you don&#8217;t have the time.</p></blockquote>
-
-<p>The great thing about version control systems is that changes can always be reverted.</p>
-
-<p>Thanks in advance for your attention to this problem and willingness to help it continue growing.</p>
-
-<p>Warm Regards,<br>
-Parker Moore</p></blockquote>
 ]]></content>
   </entry>
   

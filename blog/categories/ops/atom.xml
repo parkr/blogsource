@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ops | Musings of Parker J. Moore]]></title>
+  <link href="http://blog.parkermoore.de/blog/categories/ops/atom.xml" rel="self"/>
+  <link href="http://blog.parkermoore.de/"/>
+  <updated>2014-02-04T00:48:49-05:00</updated>
+  <id>http://blog.parkermoore.de/</id>
+  <author>
+    <name><![CDATA[Parker J. Moore]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Fixing Common Mistakes when working with EC2]]></title>
+    <link href="http://blog.parkermoore.de/2014/02/04/fixing-common-mistakes-when-working-with-ec2/"/>
+    <updated>2014-02-04T00:30:00-05:00</updated>
+    <id>http://blog.parkermoore.de/2014/02/04/fixing-common-mistakes-when-working-with-ec2</id>
+    <content type="html"><![CDATA[<p>I'm lucky enough this semester to be taking CS 5300 at Cornell, a class entitled
+"The Architecture of Large-Scale Information Systems." For this class, we will
+need to know our way around Amazon's Web Services. I learned a lot about AWS
+when I worked at 6Wunderkinder last year, so I was feeling up to the challenge.
+Little did I know that the tooling 6W had created around its ops was far
+superior to anything else out there.</p>
+
+<p>I already had an AWS account, so my first step was to find a good CLI. I did the
+logical thing, and asked Google. Turns out, Amazon ships its own <code>aws</code> client,
+written in Python and shipped via <code>pip</code>. Marvelous! I ran <code>pip install aws</code>,
+<code>aws configure</code> and presto, I was in business.</p>
+
+<p>Our first question asked us to launch an instance of the AMI <code>ami-bba18dd2</code>, a
+simple Fedora distribution. After asking for the man pages for <code>aws</code> in 6
+different ways, I got them. I discovered I would need to specify the instance
+type and security group as well. So I created a security group and went ahead:</p>
+
+<pre><code class="bash">$ aws ec2 run-instances \
+  --image-id ami-bba18dd2 \
+  --instance-type t1.micro \
+  --security-group-ids sg-sgsga888
+</code></pre>
+
+<p>Yay, it worked! Ok, now I need to ssh into this bad boy.</p>
+
+<pre><code class="bash">$ ssh ec2-la-la-la.amazonaws.com
+Access denied (publickey).
+</code></pre>
+
+<p>Huh? What's that all about? I had created a key pair from previous messing
+around with EC2. Hm... After a few minutes of puzzlement, I realized I needed
+to pass another option to my <code>aws ec2</code> command. Let's try this again:</p>
+
+<pre><code class="bash"># don't forget to terminate old instances!
+$ aws ec2 terminate-instances --instance-ids i-1111111
+# now, create the new one
+$ aws ec2 run-instances \
+  --image-id ami-bba18dd2 \
+  --instance-type t1.micro \
+  --security-group-ids sg-sgsga888 \
+  --key-name parker
+</code></pre>
+
+<p>Booted! Now, let's try to ssh again:</p>
+
+<pre><code class="bash">$ ssh ec2-li-la-le.amazonaws.com
+Access denied (publickey).
+</code></pre>
+
+<p>Bollocks! Looks like I am still missing something...</p>
+
+<p>Ah! After taking a look at a tutorial, I realize I need to login as <code>ec2-user</code>.
+Let's give this one more try:</p>
+
+<pre><code class="bash">$ ssh ec2-user@ec2-li-la-le.amazonaws.com
+Last login: Tue Feb  4 05:13:24 2014 from cpe-88-88-88-88.twcny.res.rr.com
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2013.09-release-notes/
+7 package(s) needed for security, out of 25 available
+Run "sudo yum update" to apply all updates.
+[ec2-user@ip-10-9-162-71 ~]$
+</code></pre>
+
+<p>YES! I did it. Ok, so lessons:</p>
+
+<ol>
+<li>Login as <code>ec2-user</code>, not as <code>albie</code> or any other name.</li>
+<li>Make sure you specify the <code>key-name</code> for the instance(s) you want to launch.</li>
+<li>Always err on the side of being more specific. Defaults can be bad.</li>
+<li>Always terminate once you're done using the box.</li>
+</ol>
+
+
+<p>Simple fixes for problems that seem so intractible.</p>
+]]></content>
+  </entry>
+  
+</feed>

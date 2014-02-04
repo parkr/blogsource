@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tech | Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/blog/categories/tech/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-01-18T22:28:41-08:00</updated>
+  <updated>2014-02-04T00:48:49-05:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Installing Command-T with OS X Maverick's Built-In Vim]]></title>
     <link href="http://blog.parkermoore.de/2014/01/02/installing-command-t-with-os-x-mavericks-built-in-vim/"/>
-    <updated>2014-01-02T01:03:00-08:00</updated>
+    <updated>2014-01-02T01:03:00-05:00</updated>
     <id>http://blog.parkermoore.de/2014/01/02/installing-command-t-with-os-x-mavericks-built-in-vim</id>
     <content type="html"><![CDATA[<p>I was fortunate enough to, just today, pick up a new computer. My first hardware
 in over 4 years, I had been holding off. Once my trusty MacBook Pro bit the dust
@@ -71,7 +71,7 @@ try again.</p>
   <entry>
     <title type="html"><![CDATA[Fixing Memory Issues in Dokku hosted on DigitalOcean 512MB Droplet]]></title>
     <link href="http://blog.parkermoore.de/2013/12/21/fixing-memory-issues-in-dokku-hosted-on-digitalocean-512mb-droplet/"/>
-    <updated>2013-12-21T12:23:00-08:00</updated>
+    <updated>2013-12-21T12:23:00-05:00</updated>
     <id>http://blog.parkermoore.de/2013/12/21/fixing-memory-issues-in-dokku-hosted-on-digitalocean-512mb-droplet</id>
     <content type="html"><![CDATA[<p>As many other Heroku customers, I rejoiced when <a href="https://github.com/progrium/dokku">Dokku</a> was released. To have
 complete freedom to host as many apps with whatever databases or other plugins
@@ -116,7 +116,7 @@ thought I'd share and preserve for my own benefit in the future.</p>
   <entry>
     <title type="html"><![CDATA[Taking Over Someone Else's Open-Source Project]]></title>
     <link href="http://blog.parkermoore.de/2013/11/04/taking-over-someone-elses-open-source-project/"/>
-    <updated>2013-11-04T21:23:00-08:00</updated>
+    <updated>2013-11-04T21:23:00-05:00</updated>
     <id>http://blog.parkermoore.de/2013/11/04/taking-over-someone-elses-open-source-project</id>
     <content type="html"><![CDATA[<p>Last December (2012), <a href="http://tom.preston-werner.com">Tom Preston-Werner</a> granted me <a href="/images/mojombo-added-parkr-to-jekyll.png">push &amp; pull access to
 mojombo/jekyll</a>. I had written a <a href="/2012/12/11/an-open-letter-to-tom-preston-werner/">letter to Tom about the future of Jekyll</a>
@@ -208,7 +208,7 @@ like Frankenstein, which, I will say, is a pretty cool feeling.</p>
   <entry>
     <title type="html"><![CDATA[Dealing with Distraction]]></title>
     <link href="http://blog.parkermoore.de/2013/05/30/dealing-with-distraction/"/>
-    <updated>2013-05-30T15:56:00-07:00</updated>
+    <updated>2013-05-30T15:56:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/05/30/dealing-with-distraction</id>
     <content type="html"><![CDATA[<p>Dealing with distraction for those of us who live with AD(H)D is a constant struggle, and
 can be especially difficult for those of us who must daily solve large, complex problems.
@@ -277,7 +277,7 @@ distracting stimuli goes a long way to achieving focus and increasing your produ
   <entry>
     <title type="html"><![CDATA[Jekyll 1.0 Released]]></title>
     <link href="http://blog.parkermoore.de/2013/05/06/jekyll-1-dot-0-released/"/>
-    <updated>2013-05-06T00:59:00-07:00</updated>
+    <updated>2013-05-06T00:59:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/05/06/jekyll-1-dot-0-released</id>
     <content type="html"><![CDATA[<p>Today, I'm proud to announce the release of Jekyll 1.0. There are a million
 goodies and fixes to enjoy, and we're (the still-active Jekyll core team

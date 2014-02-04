@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Fixing Common Mistakes when working with EC2 - Musings of Parker J. Moore</title>
+  <meta name="author" content="Parker J. Moore">
+
+  
+  <meta name="description" content="I&#8217;m lucky enough this semester to be taking CS 5300 at Cornell, a class entitled
+&#8220;The Architecture of Large-Scale Information Systems.&# &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.parkermoore.de/2014/02/04/fixing-common-mistakes-when-working-with-ec2/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Musings of Parker J. Moore" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24416132-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Musings of Parker J. Moore</a></h1>
+  
+    <h2>Developer, avid runner, photographer and musician.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.parkermoore.de" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Fixing Common Mistakes When Working With EC2</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-04T00:30:00-05:00" pubdate data-updated="true">Feb 4<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I&#8217;m lucky enough this semester to be taking CS 5300 at Cornell, a class entitled
+&#8220;The Architecture of Large-Scale Information Systems.&#8221; For this class, we will
+need to know our way around Amazon&#8217;s Web Services. I learned a lot about AWS
+when I worked at 6Wunderkinder last year, so I was feeling up to the challenge.
+Little did I know that the tooling 6W had created around its ops was far
+superior to anything else out there.</p>
+
+<p>I already had an AWS account, so my first step was to find a good CLI. I did the
+logical thing, and asked Google. Turns out, Amazon ships its own <code>aws</code> client,
+written in Python and shipped via <code>pip</code>. Marvelous! I ran <code>pip install aws</code>,
+<code>aws configure</code> and presto, I was in business.</p>
+
+<p>Our first question asked us to launch an instance of the AMI <code>ami-bba18dd2</code>, a
+simple Fedora distribution. After asking for the man pages for <code>aws</code> in 6
+different ways, I got them. I discovered I would need to specify the instance
+type and security group as well. So I created a security group and went ahead:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>aws ec2 run-instances <span class="se">\</span>
+</span><span class='line'>  --image-id ami-bba18dd2 <span class="se">\</span>
+</span><span class='line'>  --instance-type t1.micro <span class="se">\</span>
+</span><span class='line'>  --security-group-ids sg-sgsga888
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Yay, it worked! Ok, now I need to ssh into this bad boy.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ssh ec2-la-la-la.amazonaws.com
+</span><span class='line'>Access denied <span class="o">(</span>publickey<span class="o">)</span>.
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Huh? What&#8217;s that all about? I had created a key pair from previous messing
+around with EC2. Hm&#8230; After a few minutes of puzzlement, I realized I needed
+to pass another option to my <code>aws ec2</code> command. Let&#8217;s try this again:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># don&#39;t forget to terminate old instances!</span>
+</span><span class='line'><span class="nv">$ </span>aws ec2 terminate-instances --instance-ids i-1111111
+</span><span class='line'><span class="c"># now, create the new one</span>
+</span><span class='line'><span class="nv">$ </span>aws ec2 run-instances <span class="se">\</span>
+</span><span class='line'>  --image-id ami-bba18dd2 <span class="se">\</span>
+</span><span class='line'>  --instance-type t1.micro <span class="se">\</span>
+</span><span class='line'>  --security-group-ids sg-sgsga888 <span class="se">\</span>
+</span><span class='line'>  --key-name parker
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Booted! Now, let&#8217;s try to ssh again:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ssh ec2-li-la-le.amazonaws.com
+</span><span class='line'>Access denied <span class="o">(</span>publickey<span class="o">)</span>.
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Bollocks! Looks like I am still missing something&#8230;</p>
+
+<p>Ah! After taking a look at a tutorial, I realize I need to login as <code>ec2-user</code>.
+Let&#8217;s give this one more try:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ssh ec2-user@ec2-li-la-le.amazonaws.com
+</span><span class='line'>Last login: Tue Feb  4 05:13:24 2014 from cpe-88-88-88-88.twcny.res.rr.com
+</span><span class='line'>
+</span><span class='line'>       __<span class="p">|</span>  __<span class="p">|</span>_  <span class="o">)</span>
+</span><span class='line'>       _<span class="p">|</span>  <span class="o">(</span>     /   Amazon Linux AMI
+</span><span class='line'>      ___<span class="p">|</span><span class="se">\_</span>__<span class="p">|</span>___<span class="p">|</span>
+</span><span class='line'>
+</span><span class='line'>https://aws.amazon.com/amazon-linux-ami/2013.09-release-notes/
+</span><span class='line'>7 package<span class="o">(</span>s<span class="o">)</span> needed <span class="k">for </span>security, out of 25 available
+</span><span class='line'>Run <span class="s2">&quot;sudo yum update&quot;</span> to apply all updates.
+</span><span class='line'><span class="o">[</span>ec2-user@ip-10-9-162-71 ~<span class="o">]</span><span class="err">$</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>YES! I did it. Ok, so lessons:</p>
+
+<ol>
+<li>Login as <code>ec2-user</code>, not as <code>albie</code> or any other name.</li>
+<li>Make sure you specify the <code>key-name</code> for the instance(s) you want to launch.</li>
+<li>Always err on the side of being more specific. Defaults can be bad.</li>
+<li>Always terminate once you&#8217;re done using the box.</li>
+</ol>
+
+
+<p>Simple fixes for problems that seem so intractible.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Parker J. Moore</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-04T00:30:00-05:00" pubdate data-updated="true">Feb 4<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/aws/'>aws</a>, <a class='category' href='/blog/categories/ec2/'>ec2</a>, <a class='category' href='/blog/categories/ops/'>ops</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2014/01/02/installing-command-t-with-os-x-mavericks-built-in-vim/" title="Previous Post: Installing Command-T with OS X Maverick's Built-In Vim">&laquo; Installing Command-T with OS X Maverick's Built-In Vim</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2014/02/04/fixing-common-mistakes-when-working-with-ec2/">Fixing Common Mistakes when working with EC2</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2014/01/02/installing-command-t-with-os-x-mavericks-built-in-vim/">Installing Command-T with OS X Maverick's Built-In Vim</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/12/21/fixing-memory-issues-in-dokku-hosted-on-digitalocean-512mb-droplet/">Fixing Memory Issues in Dokku hosted on DigitalOcean 512MB Droplet</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/11/04/taking-over-someone-elses-open-source-project/">Taking Over Someone Else's Open-Source Project</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/10/22/fix-the-government-open-source-legislation/">Fix the Government: Open-Source Legislation</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li>
+      <a href="https://github.com/jekyll/jekyll">Jekyll</a>
+      <p>Jekyll is a blog-aware, static site generator in Ruby.</p>
+    </li>
+    <li>
+      <a href="https://github.com/parkr/centos-bootstrap">centos-bootstrap</a>
+      <p>Hassle-free way to bootstrap CentOS 6.3 with development packages.</p>
+    </li>
+    <li>
+      <a href="https://github.com/parkr/witness">witness</a>
+      <p>Chat log server for humans</p>
+    </li>
+    <li>
+      <a href="https://github.com/imathis/octopress">Octopress</a>
+      <p>Octopress is an obsessively designed framework for Jekyll blogging.</p>
+    </li>
+  </ul>
+  
+  <a href="https://github.com/parkr">@parkr</a> on GitHub
+  
+</section>
+
+
+<section>
+  
+    <p>Follow <a href="http://twitter.com/parkr">@parkr</a></p>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Parker J. Moore -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
