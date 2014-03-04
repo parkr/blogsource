@@ -3,15 +3,10 @@ require "bundler/setup"
 require "stringex"
 
 ## -- Rsync Deploy config -- ##
-# Be sure your public key is listed in your server's ~/.ssh/authorized_keys file
-ssh_user       = "user@domain.com"
-ssh_port       = "22"
-document_root  = "~/website.com/"
-rsync_delete   = false
 deploy_default = "push"
 
 # This will be configured for you when you run config_deploy
-deploy_branch  = "master"
+deploy_branch  = "gh-pages"
 
 ## -- Misc Configs -- ##
 
@@ -260,7 +255,7 @@ multitask :push do
     message = "Site updated on #{Time.now.utc}\n\nCorresponds to #{source_repo}/commit/#{latest_revision}"
     system "git commit -m \"#{message}\""
     puts "\n## Pushing generated #{deploy_dir} website"
-    system "git push origin #{deploy_branch} --force"
+    system "git push origin #{deploy_branch}"
     puts "\n## Github Pages deploy complete"
   end
 end
