@@ -202,15 +202,25 @@
         <loc>
             http://blog.parkermoore.de/2014/02/04/fixing-common-mistakes-when-working-with-ec2/
         </loc>
-        <lastmod>2014-02-04T00:48:24-05:00</lastmod>
+        <lastmod>2014-02-07T23:03:35-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.parkermoore.de/2014/02/06/validate-everything/</loc>
+        <lastmod>2014-02-06T11:13:18-05:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://blog.parkermoore.de/2014/03/05/negativity-and-ambivalence-in-software-development/
+        </loc>
+        <lastmod>2014-03-03T20:55:33-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.parkermoore.de/archive/archive/</loc>
-        <lastmod>2014-02-04T00:48:24-05:00</lastmod>
+        <lastmod>2014-03-03T20:55:33-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.parkermoore.de/blog/archives/blog/archives/</loc>
-        <lastmod>2014-02-04T00:48:24-05:00</lastmod>
+        <lastmod>2014-03-03T20:55:33-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.parkermoore.de/ideas.html</loc>
@@ -218,7 +228,7 @@
     </url>
     <url>
         <loc>http://blog.parkermoore.de/</loc>
-        <lastmod>2014-02-04T00:48:24-05:00</lastmod>
+        <lastmod>2014-03-03T20:55:33-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.parkermoore.de/life.html</loc>
