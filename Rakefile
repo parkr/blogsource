@@ -59,7 +59,9 @@ desc "Watch the site and regenerate when it changes"
 task :watch do
   raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
   puts "Starting to watch source with Jekyll and Compass."
-  system "compass compile --css-dir #{source_dir}/stylesheets" unless File.exist?("#{source_dir}/stylesheets/screen.css")
+  unless File.exist? File.join(source_dir, "stylesheets", "screen.css")
+    Compass::Exec::SubCommandUI.new("compile --css-dir #{source_dir}/stylesheets").run!
+  end
   jekyllPid = Process.spawn({"OCTOPRESS_ENV"=>"preview"}, "jekyll build --watch --trace")
   compassPid = Process.spawn("compass watch")
 
