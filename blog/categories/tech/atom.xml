@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tech | Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/blog/categories/tech/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-03-06T10:29:30-05:00</updated>
+  <updated>2014-04-03T23:32:56-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Always Moving Forward]]></title>
+    <link href="http://blog.parkermoore.de/2014/04/03/always-moving-forward/"/>
+    <updated>2014-04-03T20:28:07Z</updated>
+    <id>http://blog.parkermoore.de/2014/04/03/always-moving-forward</id>
+    <content type="html"><![CDATA[<p><img src="http://image.vsco.co/1/51c771649686d3572/52d5e979726708dc7c00040f/1024x768/vsco_011414_24.jpg" alt="Emeryville California" /></p>
+
+<p>Today, I'm proud to announce that I have accepted a job offer from <a href="https://vsco.co/">Visual
+Supply Co</a>, a small and happenin' start-up based in the Bay Area. Visual
+Supply Co, also known as VSCO, produces the well-loved <a href="https://vsco.co/vscocam">VSCO Cam</a> iPhone
+and Android apps, as well as <a href="https://vsco.co/film">VSCO Film</a>, <a href="https://grid.vsco.co">VSCO Grid</a>, and <a href="https://vsco.co/vscokeys">VSCO Keys</a>.
+I'll be working on all things web, including the Grid service and the API.</p>
+
+<p>Super stoked to begin this next chapter in my journey through life working
+on a slick series of products with a stellar team. Follow my adventure on
+<a href="https://parker.vsco.co">my grid</a>!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Installing Command-T with OS X Maverick's Built-In Vim]]></title>
@@ -271,53 +290,6 @@ distracting stimuli goes a long way to achieving focus and increasing your produ
 
 <p>If you have other suggestions, hit me up on <a href="http://alpha.app.net/parkr">ADN</a> or
 <a href="http://twitter.com/parkr">Twitter</a>. How do you cope with distractions?</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Jekyll 1.0 Released]]></title>
-    <link href="http://blog.parkermoore.de/2013/05/06/jekyll-1-dot-0-released/"/>
-    <updated>2013-05-06T00:59:00-04:00</updated>
-    <id>http://blog.parkermoore.de/2013/05/06/jekyll-1-dot-0-released</id>
-    <content type="html"><![CDATA[<p>Today, I'm proud to announce the release of Jekyll 1.0. There are a million
-goodies and fixes to enjoy, and we're (the still-active Jekyll core team
-members: Tom, Matt and I) really excited to share this first major release
-with you. Be sure to follow <a href="http://twitter.com/jekyllrb">@jekyllrb</a> for
-updates on future releases and links to cool plugins.</p>
-
-<p>Some quick highlights:</p>
-
-<ul>
-<li>New subcommands: new, build, serve, and import</li>
-<li>Amazing new docs at http://jekyllrb.com (thanks to @cobyism)</li>
-<li><code>jekyll new</code> creates a new scaffold so you can get blogging even faster</li>
-<li>Drafts, i.e. posts without dates</li>
-<li>New "excerpt" feature on posts</li>
-<li>Timezone configuration</li>
-<li>'gist' liquid tag</li>
-<li>Source directory protection</li>
-</ul>
-
-
-<p>... and <a href="https://github.com/mojombo/jekyll/blob/v1.0.0/History.txt">so much more</a>!</p>
-
-<p>We also have an <a href="http://jekyllrb.com/docs/upgrading/">Upgrading</a> page that clarifies
-some breaking changes and tips for upgrading to Jekyll 1.0.</p>
-
-<p>As many of you know, Jekyll lay mostly stagnant for quite some time. At 0.11.2 and
-0.12.0, it was pretty stable. It had some annoying bugs, but nothing much that
-couldn't be worked around or monkey-patched.</p>
-
-<p>After using Jekyll last summer to help build
-<a href="http://cals.cornell.edu">Cornell's College of Agriculture and Life Sciences website</a>,
-I took a renewed interest in seeing this project move forward. Last December,
-Tom answered my offers to help with the development of Jekyll by adding me as
-a contributor. I'm happy to say that it has come a long way since then, and
-I'm very proud to be a part of a team that has pushed this project to new heights.</p>
-
-<p>Thank you to everyone who submitted a pull request, and/or gave me advice along
-the way. It has been great fun so far, and I look forward to working with you
-all to push out future versions!</p>
 ]]></content>
   </entry>
   
