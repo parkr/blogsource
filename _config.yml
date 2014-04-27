@@ -15,11 +15,13 @@ description: "A web developer from Ithaca, NY. Cornell University Junior in Info
 # Additionally, %o will give you the ordinal representation of the day
 date_format: "ordinal"
 
+redcarpet:
+  extensions: [footnotes]
+
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
 subscribe_rss: /atom.xml
-subscribe_email:
 # RSS feeds can list your email address if you like
-email:
+email: parkrmoore@gmail.com
 
 # ----------------------- #
 #    Jekyll & Plugins     #
@@ -33,8 +35,8 @@ destination: public
 plugins: plugins
 code_dir: downloads/code
 category_dir: blog/categories
-markdown: rdiscount
-pygments: false # default python pygments have been replaced by pygments.rb
+markdown: redcarpet
+highlighter: rouge # default python pygments have been replaced by pygments.rb
 
 paginate: 10          # Posts per page on the blog index
 paginate_path: /page/:num  # Directory base for pagination URLs eg. /blog/page/2/
