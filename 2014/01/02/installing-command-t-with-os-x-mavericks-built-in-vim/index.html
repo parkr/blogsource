@@ -108,18 +108,18 @@ in over 4 years, I had been holding off. Once my trusty MacBook Pro &hellip;">
 in over 4 years, I had been holding off. Once my trusty MacBook Pro bit the dust
 last night and I found out the repair cost was extraordinary, I bit the bullet.</p>
 
-<p>So, you&#8217;re probably in a similar place. You relatively recently got a shiny new
-Macintosh and you&#8217;re so excited to start writing code and making a difference
+<p>So, you&#39;re probably in a similar place. You relatively recently got a shiny new
+Macintosh and you&#39;re so excited to start writing code and making a difference
 with those skillz of yours. Except one this is missing: <a href="https://github.com/wincent/Command-T">Command-T</a>.</p>
 
-<p>Lucky for you, sir, I am here to help. OS X Maverick&#8217;s built-in vim distribution
-comes with Ruby support already (which it needs for Command-T) so you&#8217;re good
+<p>Lucky for you, sir, I am here to help. OS X Maverick&#39;s built-in vim distribution
+comes with Ruby support already (which it needs for Command-T) so you&#39;re good
 there. Now you need to download and compile Command-T. Should be easy, right?
 Well, not quite.</p>
 
 <p>Mavericks was notable for Ruby users because it ships with Ruby 2.0. All
 previous versions that I had ever used shipped with 1.8.7 so this was a huge
-bonus. Problem is, your pre-installed vim wasn&#8217;t compiled with 2.0.0, it was
+bonus. Problem is, your pre-installed vim wasn&#39;t compiled with 2.0.0, it was
 compiled with 1.8.7.</p>
 
 <p>To check this, run the following in vim in NORMAL mode:</p>
@@ -128,7 +128,6 @@ compiled with 1.8.7.</p>
 </pre></td><td class='code'><pre><code class='text'><span class='line'>:ruby puts &quot;#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}&quot;
 </span></code></pre></td></tr></table></div></figure>
 
-
 <p>For me, that output <code>1.8.7-p358</code>. So that means the Ruby verison that vim is
 using is <code>1.8.7-p358</code>, and we need to compile Command-T with that version. To do
 so, install it:</p>
@@ -136,7 +135,6 @@ so, install it:</p>
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rbenv install 1.8.7-p358
 </span></code></pre></td></tr></table></div></figure>
-
 
 <p>Boom! Now download and install Command-T:</p>
 
@@ -156,9 +154,8 @@ so, install it:</p>
 </span><span class='line'><span class="nv">$ </span>bundle <span class="nb">exec </span>rake make
 </span></code></pre></td></tr></table></div></figure>
 
-
-<p>Aaaaand boom, you&#8217;re done. Open up <code>vim</code> and type your leaderkey then <code>t</code> (for
-me, that&#8217;s <code>,t</code>) to launch the prompt.</p>
+<p>Aaaaand boom, you&#39;re done. Open up <code>vim</code> and type your leaderkey then <code>t</code> (for
+me, that&#39;s <code>,t</code>) to launch the prompt.</p>
 
 <p>If you get a weird SIGTERM error when you launch <code>vim</code>, then you installed
 Command-T with the wrong Ruby version. Remove <code>ruby/command-t/ext.bundle</code> and
@@ -224,6 +221,10 @@ try again.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2014/04/27/clearing-up-confusion-around-baseurl/">Clearing Up Confusion Around baseurl</a>
+      </li>
+    
+      <li class="post">
         <a href="/2014/04/03/always-moving-forward/">Always Moving Forward</a>
       </li>
     
@@ -237,10 +238,6 @@ try again.</p>
     
       <li class="post">
         <a href="/2013/12/21/fixing-memory-issues-in-dokku-hosted-on-digitalocean-512mb-droplet/">Fixing Memory Issues in Dokku hosted on DigitalOcean 512MB Droplet</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2013/11/04/taking-over-someone-elses-open-source-project/">Taking Over Someone Else's Open-Source Project</a>
       </li>
     
   </ul>

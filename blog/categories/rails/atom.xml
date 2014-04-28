@@ -4,11 +4,11 @@
   <title><![CDATA[Category: rails | Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-04-04T00:03:38-04:00</updated>
+  <updated>2014-04-27T20:07:41-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
-    
+    <email><![CDATA[parkrmoore@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
@@ -18,31 +18,29 @@
     <link href="http://blog.parkermoore.de/2013/08/07/launching-a-rails-console-with-capistrano/"/>
     <updated>2013-08-07T20:36:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/08/07/launching-a-rails-console-with-capistrano</id>
-    <content type="html"><![CDATA[<p>If you're using the popular Capistrano web deployment framework, you will likely
+    <content type="html"><![CDATA[<p>If you&#39;re using the popular Capistrano web deployment framework, you will likely
 have wished you had an easy way to perform a quick task in the production rails
 console on one of your servers. Many thanks to
 <a href="https://github.com/colszowka">@colszowka</a> for <a href="https://gist.github.com/benedikt/1115513#comment-576015">this
 solution</a>:</p>
+<div class="highlight"><pre><code class="ruby language-ruby" data-lang="ruby"><span class="n">namespace</span> <span class="ss">:rails</span> <span class="k">do</span>
+  <span class="n">desc</span> <span class="s2">"Remote console"</span>
+  <span class="n">task</span> <span class="ss">:console</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span> <span class="k">do</span>
+    <span class="n">run_interactively</span> <span class="s2">"bundle exec rails console </span><span class="si">#{</span><span class="n">rails_env</span><span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
 
-<pre><code class="ruby">namespace :rails do
-  desc "Remote console"
-  task :console, :roles =&gt; :app do
-    run_interactively "bundle exec rails console #{rails_env}"
-  end
+  <span class="n">desc</span> <span class="s2">"Remote dbconsole"</span>
+  <span class="n">task</span> <span class="ss">:dbconsole</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span> <span class="k">do</span>
+    <span class="n">run_interactively</span> <span class="s2">"bundle exec rails dbconsole </span><span class="si">#{</span><span class="n">rails_env</span><span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 
-  desc "Remote dbconsole"
-  task :dbconsole, :roles =&gt; :app do
-    run_interactively "bundle exec rails dbconsole #{rails_env}"
-  end
-end
-
-def run_interactively(command, server=nil)
-  server ||= find_servers_for_task(current_task).first
-  exec %Q(ssh #{server.host} -t 'cd #{current_path} &amp;&amp; #{command}')
-end
-</code></pre>
-
-<p>And, <em>vòila</em>! Run <code>cap rails:console</code> and you're in business.</p>
+<span class="k">def</span> <span class="nf">run_interactively</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">server</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+  <span class="n">server</span> <span class="o">||=</span> <span class="n">find_servers_for_task</span><span class="p">(</span><span class="n">current_task</span><span class="p">).</span><span class="nf">first</span>
+  <span class="nb">exec</span> <span class="sx">%Q(ssh </span><span class="si">#{</span><span class="n">server</span><span class="p">.</span><span class="nf">host</span><span class="si">}</span><span class="sx"> -t 'cd </span><span class="si">#{</span><span class="n">current_path</span><span class="si">}</span><span class="sx"> &amp;&amp; </span><span class="si">#{</span><span class="n">command</span><span class="si">}</span><span class="sx">')</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>And, <em>vòila</em>! Run <code>cap rails:console</code> and you&#39;re in business.</p>
 ]]></content>
   </entry>
   

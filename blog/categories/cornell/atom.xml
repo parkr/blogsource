@@ -4,11 +4,11 @@
   <title><![CDATA[Category: cornell | Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/blog/categories/cornell/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-04-04T00:03:38-04:00</updated>
+  <updated>2014-04-27T20:07:41-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
-    
+    <email><![CDATA[parkrmoore@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
@@ -22,24 +22,24 @@
 &amp; Technology</a> taught by Professors <a href="http://infosci.cornell.edu/faculty/jeffrey-hancock">Jeff Hancock</a> and <a href="http://communication.cals.cornell.edu/people/drew-margolin">Drew Margolin</a> in
 Fall 2013. The course focuses heavily on design of technologies. The assignment
 asked for an evaluation of an online application or product based on the
-principles outlined in Donald Norman's <a href="http://www.amazon.com/Design-Everyday-Things-Donald-Norman/dp/0465067107">"The Design of Everyday Things"</a>. It's
-a very basic look at the technology, but I thought I'd share it anyhow.</p>
+principles outlined in Donald Norman&#39;s <a href="http://www.amazon.com/Design-Everyday-Things-Donald-Norman/dp/0465067107">&quot;The Design of Everyday Things&quot;</a>. It&#39;s
+a very basic look at the technology, but I thought I&#39;d share it anyhow.</p>
 
-<hr />
+<hr>
 
 <p>App.net is a social platform designed from the beginning to be nothing more than
 a platform for developers to build great social apps upon. This blog post will
 be about the very first application built upon App.net, called Alpha. App.net
-will henceforth be referred to as "ADN."</p>
+will henceforth be referred to as &quot;ADN.&quot;</p>
 
 <p>The main purpose of Alpha is to demonstrate the ADN API in a somewhat familiar
 way. Alpha behaves much the way Twitter does: a user creates posts, users can
 follow other users and interact with them in the familiar way. The divergence
-from Twitter (and other "microblogging" social applications) is twofold: a user
+from Twitter (and other &quot;microblogging&quot; social applications) is twofold: a user
 pays for his or her account, and the posts may be longer.</p>
 
 <p>By asking the user to pay for an ADN account (which is used by Alpha as the
-poster's identity), the normal business incentives shift from building an
+poster&#39;s identity), the normal business incentives shift from building an
 application (or platform) which optimizes for advertisement revenue to an
 application (or platform) which optimizes for the happiness of the user (if
 users like to use the service, they will continue to pay the $5/month or
@@ -49,13 +49,13 @@ advertisement revenue. This is not the case with ADN (and by extension, with
 Alpha).</p>
 
 <p>On Alpha, posts may be up to 256 characters long and users can choose to attach
-media to their posts. The "@" symbol is used to mention another user (the other
-user receives a notification when this happens) and the "#" is used to denote
+media to their posts. The &quot;@&quot; symbol is used to mention another user (the other
+user receives a notification when this happens) and the &quot;#&quot; is used to denote
 topics. With the longer character limit, one could easily surmise that Alpha is
 attempting to make having asynchronous, open conversations online a bit easier.
 The openness of being able to write anyone (divergence from Facebook) coupled
 with the 256 character limit (a physical constraint) (divergence from Facebook,
-and extension of Twitter's idea that a post should be "bite-sized") produce a
+and extension of Twitter&#39;s idea that a post should be &quot;bite-sized&quot;) produce a
 fantastic application for having chats with anyone about anything in a way
 conducive to conciseness and to expressiveness. One common frustration with
 Twitter is that conversations on it are very challenging, as 140 characters is
@@ -63,36 +63,36 @@ far too few to really say anything substantive. ADN hopes to remedy this
 problem, and in my experience, arguments (and general discussions, for that
 matter) have been incredibly easy and productive.</p>
 
-<p><img src="/images/app-net/app-net-alpha-feed.png" alt="Screenshot of alpha.app.net" /></p>
+<p><img src="/images/app-net/app-net-alpha-feed.png" alt="Screenshot of alpha.app.net"></p>
 
-<p>Above, you see the home screen of Alpha (namely, mine). This shows the user's
+<p>Above, you see the home screen of Alpha (namely, mine). This shows the user&#39;s
 stream. The search box and post box (based on their physical attributes) afford
-writing. The change of the "POST" button from grey to a nice deep red-orange
+writing. The change of the &quot;POST&quot; button from grey to a nice deep red-orange
 highlights a change of the mapping from a button that may not be pressed to one
 that may be pressed (I would consider the change itself feedback). As the user
-types in a post, the number (shown here as "256") decreases by one for each
+types in a post, the number (shown here as &quot;256&quot;) decreases by one for each
 character that is typed into the box above it, providing very valuable feedback
-about the user's actions. This number's presence also provides visibility for
+about the user&#39;s actions. This number&#39;s presence also provides visibility for
 the physical constraint placed on the size of the posts allowed in the service.
 The buttons on the right of each post afford clicking and change color
 (feedback) when clicked. All of the aforementioned design elements, in addition
 to the placement of the post box at the top, suggest that the application is
 trying to get the user to submit content to his or her stream. The feed below
 seems to indicate that the application wishes for perusal and interaction of
-other users' posts by the logged-in user.</p>
+other users&#39; posts by the logged-in user.</p>
 
-<p><img src="/images/app-net/app-net-alpha-post.png" alt="Screenshot of a singular post" /></p>
+<p><img src="/images/app-net/app-net-alpha-post.png" alt="Screenshot of a singular post"></p>
 
 <p>As you saw above, each post is given its own box. There are 5 interactions which
-only show up when the user mouses-over the post: "Discussion," "Reply," "via
-(app)," "Mute User," and "Report". In order to better facilitate the app's goal
-of interaction, it would make sense for the "Discussion" and "Reply" buttons to
+only show up when the user mouses-over the post: &quot;Discussion,&quot; &quot;Reply,&quot; &quot;via
+(app),&quot; &quot;Mute User,&quot; and &quot;Report&quot;. In order to better facilitate the app&#39;s goal
+of interaction, it would make sense for the &quot;Discussion&quot; and &quot;Reply&quot; buttons to
 always be shown. This would improve the visibility of the interaction paradigms
 and afford interaction without the user making the first move (to mouseover).</p>
 
-<hr />
+<hr>
 
-<p>That's it.</p>
+<p>That&#39;s it.</p>
 ]]></content>
   </entry>
   

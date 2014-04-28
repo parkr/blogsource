@@ -4,11 +4,11 @@
   <title><![CDATA[Category: vim | Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/blog/categories/vim/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-04-04T00:03:38-04:00</updated>
+  <updated>2014-04-27T20:07:41-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
-    
+    <email><![CDATA[parkrmoore@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
@@ -22,45 +22,39 @@
 in over 4 years, I had been holding off. Once my trusty MacBook Pro bit the dust
 last night and I found out the repair cost was extraordinary, I bit the bullet.</p>
 
-<p>So, you're probably in a similar place. You relatively recently got a shiny new
-Macintosh and you're so excited to start writing code and making a difference
+<p>So, you&#39;re probably in a similar place. You relatively recently got a shiny new
+Macintosh and you&#39;re so excited to start writing code and making a difference
 with those skillz of yours. Except one this is missing: <a href="https://github.com/wincent/Command-T">Command-T</a>.</p>
 
-<p>Lucky for you, sir, I am here to help. OS X Maverick's built-in vim distribution
-comes with Ruby support already (which it needs for Command-T) so you're good
+<p>Lucky for you, sir, I am here to help. OS X Maverick&#39;s built-in vim distribution
+comes with Ruby support already (which it needs for Command-T) so you&#39;re good
 there. Now you need to download and compile Command-T. Should be easy, right?
 Well, not quite.</p>
 
 <p>Mavericks was notable for Ruby users because it ships with Ruby 2.0. All
 previous versions that I had ever used shipped with 1.8.7 so this was a huge
-bonus. Problem is, your pre-installed vim wasn't compiled with 2.0.0, it was
+bonus. Problem is, your pre-installed vim wasn&#39;t compiled with 2.0.0, it was
 compiled with 1.8.7.</p>
 
 <p>To check this, run the following in vim in NORMAL mode:</p>
-
-<pre><code class="text">:ruby puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"
-</code></pre>
-
+<div class="highlight"><pre><code class="text language-text" data-lang="text">:ruby puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"
+</code></pre></div>
 <p>For me, that output <code>1.8.7-p358</code>. So that means the Ruby verison that vim is
 using is <code>1.8.7-p358</code>, and we need to compile Command-T with that version. To do
 so, install it:</p>
-
-<pre><code class="bash">$ rbenv install 1.8.7-p358
-</code></pre>
-
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><span class="gp">$ </span>rbenv install 1.8.7-p358
+</code></pre></div>
 <p>Boom! Now download and install Command-T:</p>
-
-<pre><code class="bash">$ git clone https://github.com/wincent/Command-T.git ~/.vim/bundle/Command-T
-$ cd ~/.vim/bundle/Command-T # for tpope's Pathogen
-$ rbenv local 1.8.7-p358
-$ rbenv rehash
-$ gem install bundler
-$ bundle install
-$ bundle exec rake make
-</code></pre>
-
-<p>Aaaaand boom, you're done. Open up <code>vim</code> and type your leaderkey then <code>t</code> (for
-me, that's <code>,t</code>) to launch the prompt.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><span class="gp">$ </span>git clone https://github.com/wincent/Command-T.git ~/.vim/bundle/Command-T
+<span class="gp">$ </span><span class="nb">cd</span> ~/.vim/bundle/Command-T <span class="c"># for tpope's Pathogen</span>
+<span class="gp">$ </span>rbenv <span class="nb">local </span>1.8.7-p358
+<span class="gp">$ </span>rbenv rehash
+<span class="gp">$ </span>gem install bundler
+<span class="gp">$ </span>bundle install
+<span class="gp">$ </span>bundle <span class="nb">exec </span>rake make
+</code></pre></div>
+<p>Aaaaand boom, you&#39;re done. Open up <code>vim</code> and type your leaderkey then <code>t</code> (for
+me, that&#39;s <code>,t</code>) to launch the prompt.</p>
 
 <p>If you get a weird SIGTERM error when you launch <code>vim</code>, then you installed
 Command-T with the wrong Ruby version. Remove <code>ruby/command-t/ext.bundle</code> and

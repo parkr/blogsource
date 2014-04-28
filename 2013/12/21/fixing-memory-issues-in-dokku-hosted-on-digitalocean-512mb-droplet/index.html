@@ -108,8 +108,8 @@ complete freedom to host as many apps with whatever databases or other &hellip;"
 complete freedom to host as many apps with whatever databases or other plugins
 I wanted &#8211; all for the cost of a small VM &#8211; was wonderful news.</p>
 
-<p>I decided, for cost&#8217;s sake, to boot up one of those famed $5 <a href="https://digitalocean.com">DigitalOcean</a>
-Droplets. I didn&#8217;t see that DigitalOcean provides an &#8220;app&#8221; for Dokku, so I
+<p>I decided, for cost&#39;s sake, to boot up one of those famed $5 <a href="https://digitalocean.com">DigitalOcean</a>
+Droplets. I didn&#39;t see that DigitalOcean provides an &quot;app&quot; for Dokku, so I
 created a vanilla box of Ubuntu 13.04 and pressed on. I got everything up and
 running and went to go deploy my first app, only to see this when I ran
 <code>git push</code>:</p>
@@ -120,8 +120,7 @@ running and went to go deploy my first app, only to see this when I ran
 </span><span class='line'>fatal error: runtime: cannot allocate heap metadata
 </span></code></pre></td></tr></table></div></figure>
 
-
-<p>Well, golly, that sure is unhelpful. Looks like 512MB doesn&#8217;t cut it. Luckily,
+<p>Well, golly, that sure is unhelpful. Looks like 512MB doesn&#39;t cut it. Luckily,
 we can avoid paying the extra $5/mo for the 1GB version by running the following
 as <code>root</code>:</p>
 
@@ -131,7 +130,6 @@ as <code>root</code>:</p>
 </span><span class='line'>mkswap /extraswap
 </span></code></pre></td></tr></table></div></figure>
 
-
 <p>Then adding the following to your <code>/etc/fstab</code> file so the swap persists between
 reboots:</p>
 
@@ -139,18 +137,16 @@ reboots:</p>
 </pre></td><td class='code'><pre><code class='text'><span class='line'>/extraswap         none            swap    sw                0       0
 </span></code></pre></td></tr></table></div></figure>
 
-
 <p>Then run this to enable <code>/extraswap</code> for swapping:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>swapon -a
 </span></code></pre></td></tr></table></div></figure>
 
-
-<p>Boom. Now re-run <code>git push</code> and you&#8217;re in business. Magic!</p>
+<p>Boom. Now re-run <code>git push</code> and you&#39;re in business. Magic!</p>
 
 <p>Credit goes to the brilliant <a href="https://github.com/dhassler">@dhassler</a> for <a href="https://github.com/dotcloud/docker/issues/1555#issuecomment-22874190">the idea and the code</a>. Just
-thought I&#8217;d share and preserve for my own benefit in the future.</p>
+thought I&#39;d share and preserve for my own benefit in the future.</p>
 </div>
 
 
@@ -212,6 +208,10 @@ thought I&#8217;d share and preserve for my own benefit in the future.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2014/04/27/clearing-up-confusion-around-baseurl/">Clearing Up Confusion Around baseurl</a>
+      </li>
+    
+      <li class="post">
         <a href="/2014/04/03/always-moving-forward/">Always Moving Forward</a>
       </li>
     
@@ -225,10 +225,6 @@ thought I&#8217;d share and preserve for my own benefit in the future.</p>
     
       <li class="post">
         <a href="/2013/12/21/fixing-memory-issues-in-dokku-hosted-on-digitalocean-512mb-droplet/">Fixing Memory Issues in Dokku hosted on DigitalOcean 512MB Droplet</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2013/11/04/taking-over-someone-elses-open-source-project/">Taking Over Someone Else's Open-Source Project</a>
       </li>
     
   </ul>

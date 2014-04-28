@@ -9,8 +9,8 @@
   <meta name="author" content="Parker J. Moore">
 
   
-  <meta name="description" content="I&#8217;m lucky enough this semester to be taking CS 5300 at Cornell, a class entitled
-&#8220;The Architecture of Large-Scale Information Systems.&# &hellip;">
+  <meta name="description" content="I&#39;m lucky enough this semester to be taking CS 5300 at Cornell, a class entitled
+&quot;The Architecture of Large-Scale Information Systems.&quot &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -104,9 +104,9 @@
   </header>
 
 
-<div class="entry-content"><p>I&#8217;m lucky enough this semester to be taking CS 5300 at Cornell, a class entitled
-&#8220;The Architecture of Large-Scale Information Systems.&#8221; For this class, we will
-need to know our way around Amazon&#8217;s Web Services. I learned a lot about AWS
+<div class="entry-content"><p>I&#39;m lucky enough this semester to be taking CS 5300 at Cornell, a class entitled
+&quot;The Architecture of Large-Scale Information Systems.&quot; For this class, we will
+need to know our way around Amazon&#39;s Web Services. I learned a lot about AWS
 when I worked at 6Wunderkinder last year, so I was feeling up to the challenge.
 Little did I know that the tooling 6W had created around its ops was far
 superior to anything else out there.</p>
@@ -131,7 +131,6 @@ type and security group as well. So I created a security group and went ahead:</
 </span><span class='line'>  --security-group-ids sg-sgsga888
 </span></code></pre></td></tr></table></div></figure>
 
-
 <p>Yay, it worked! Ok, now I need to ssh into this bad boy.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -140,10 +139,9 @@ type and security group as well. So I created a security group and went ahead:</
 </span><span class='line'>Access denied <span class="o">(</span>publickey<span class="o">)</span>.
 </span></code></pre></td></tr></table></div></figure>
 
-
-<p>Huh? What&#8217;s that all about? I had created a key pair from previous messing
+<p>Huh? What&#39;s that all about? I had created a key pair from previous messing
 around with EC2. Hm&#8230; After a few minutes of puzzlement, I realized I needed
-to pass another option to my <code>aws ec2</code> command. Let&#8217;s try this again:</p>
+to pass another option to my <code>aws ec2</code> command. Let&#39;s try this again:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -163,8 +161,7 @@ to pass another option to my <code>aws ec2</code> command. Let&#8217;s try this 
 </span><span class='line'>  --key-name parker
 </span></code></pre></td></tr></table></div></figure>
 
-
-<p>Booted! Now, let&#8217;s try to ssh again:</p>
+<p>Booted! Now, let&#39;s try to ssh again:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -172,11 +169,10 @@ to pass another option to my <code>aws ec2</code> command. Let&#8217;s try this 
 </span><span class='line'>Access denied <span class="o">(</span>publickey<span class="o">)</span>.
 </span></code></pre></td></tr></table></div></figure>
 
-
 <p>Bollocks! Looks like I am still missing something&#8230;</p>
 
 <p>Ah! After taking a look at a tutorial, I realize I need to login as <code>ec2-user</code>.
-Let&#8217;s give this one more try:</p>
+Let&#39;s give this one more try:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -202,16 +198,14 @@ Let&#8217;s give this one more try:</p>
 </span><span class='line'><span class="o">[</span>ec2-user@ip-10-9-162-71 ~<span class="o">]</span><span class="err">$</span>
 </span></code></pre></td></tr></table></div></figure>
 
-
 <p>YES! I did it. Ok, so lessons:</p>
 
 <ol>
 <li>Login as <code>ec2-user</code>, not as <code>albie</code> or any other name.</li>
 <li>Make sure you specify the <code>key-name</code> for the instance(s) you want to launch.</li>
 <li>Always err on the side of being more specific. Defaults can be bad.</li>
-<li>Always terminate once you&#8217;re done using the box.</li>
+<li>Always terminate once you&#39;re done using the box.</li>
 </ol>
-
 
 <p>Simple fixes for problems that seem so intractible.</p>
 </div>
@@ -275,6 +269,10 @@ Let&#8217;s give this one more try:</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2014/04/27/clearing-up-confusion-around-baseurl/">Clearing Up Confusion Around baseurl</a>
+      </li>
+    
+      <li class="post">
         <a href="/2014/04/03/always-moving-forward/">Always Moving Forward</a>
       </li>
     
@@ -288,10 +286,6 @@ Let&#8217;s give this one more try:</p>
     
       <li class="post">
         <a href="/2013/12/21/fixing-memory-issues-in-dokku-hosted-on-digitalocean-512mb-droplet/">Fixing Memory Issues in Dokku hosted on DigitalOcean 512MB Droplet</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2013/11/04/taking-over-someone-elses-open-source-project/">Taking Over Someone Else's Open-Source Project</a>
       </li>
     
   </ul>

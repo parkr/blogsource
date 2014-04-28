@@ -4,11 +4,11 @@
   <title><![CDATA[Category: berlin | Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/blog/categories/berlin/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-04-04T00:03:38-04:00</updated>
+  <updated>2014-04-27T20:07:41-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
-    
+    <email><![CDATA[parkrmoore@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
@@ -29,12 +29,10 @@ to my rescue. <a href="http://rafifyalda.id.au/">Rafif Yalda</a>, a former Wunde
 
 <p>So if you ever run into a problem with your mobile network, ensure that your APN settings are correct.
 In this case:</p>
-
-<pre><code>APN: internet.eplus.de
+<div class="highlight"><pre><code class=" language-" data-lang="">APN: internet.eplus.de
 username: simyo
 password: simyo
-</code></pre>
-
+</code></pre></div>
 <p>THANK YOU RAFIF. This surely saved me many hours of frustration.</p>
 ]]></content>
   </entry>

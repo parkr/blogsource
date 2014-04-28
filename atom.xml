@@ -4,27 +4,93 @@
   <title><![CDATA[Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-04-04T00:03:38-04:00</updated>
+  <updated>2014-04-27T20:07:41-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
-    
+    <email><![CDATA[parkrmoore@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
+    <title type="html"><![CDATA[Clearing Up Confusion Around baseurl]]></title>
+    <link href="http://blog.parkermoore.de/2014/04/27/clearing-up-confusion-around-baseurl/"/>
+    <updated>2014-04-27T16:52:54-04:00</updated>
+    <id>http://blog.parkermoore.de/2014/04/27/clearing-up-confusion-around-baseurl</id>
+    <content type="html"><![CDATA[<p>Hey, so there&#39;s been a bit of confusion about what the Jekyll configuration
+option called <code>baseurl</code> is. Part of the beauty of open-source and of Jekyll
+is that there&#39;s a lot of flexibility. Unfortunately, much of this
+flexibility doesn&#39;t apply to <code>baseurl</code>. Here&#39;s a quick distillation of its
+intentions, and how to use it.</p>
+
+<h2>Mimic GitHub Pages</h2>
+
+<p><code>baseurl</code> was <a href="https://github.com/jekyll/jekyll/commit/4a8fc1fa6e3fa5dc05c81ac5ac4ffed0b0818ac4">originally added back in 2010</a> to allow
+&quot;the user to test the website with the internal webserver under the same
+base url it will be deployed to on a production server&quot;.<sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup> </p>
+
+<h2>Example</h2>
+
+<p>So let&#39;s say I come up with a cool new project. I want to make
+documentation for a project I&#39;m working on called &quot;ubiqity&quot;, and I&#39;ll be
+deploying it to GitHub Pages as a repo under my username, &quot;@parkr&quot;. Its
+documentation will be available at the URL <code>http://parkr.github.io/ubiquity</code>.</p>
+
+<p>In this example, the term &quot;base URL&quot; refers to <code>ubiquity</code>. When I go to
+develop my website, I can set the <code>baseurl</code> key to equal <code>ubiquity</code> and
+navigate my website from <code>http://localhost:4000/ubiquity/</code>, as though it
+were hosted on GitHub Pages. Notice that the only difference here between
+development and production is the host: <code>parkr.github.io</code> vs.
+<code>localhost:4000</code>.<sup id="fnref2"><a href="#fn2" rel="footnote">2</a></sup></p>
+
+<h2>Configuring Your Site Properly</h2>
+
+<ol>
+<li>Set <code>baseurl</code> in your <code>_config.yml</code> to match the production URL without
+the host (e.g. <code>ubiquity</code>, <em>not</em> <code>http://parkr.github.io/ubiquity</code>).</li>
+<li>Run <code>jekyll serve -w</code> and go to <code>http://localhost:4000/your_baseurl/</code>,
+replacing <code>your_baseurl</code> with whatever you set <code>baseurl</code> to in your
+<code>_config.yml</code>, and not forgetting the trailing slash.</li>
+<li>Make sure everything works. Feel free to prepend your urls with
+<code>site.baseurl</code>.</li>
+<li>Push up to your host and see that everything works there, too!</li>
+</ol>
+
+<h2>Success!</h2>
+
+<p>You&#39;ve done it! You&#39;ve successfully used <code>baseurl</code> and the world is
+wonderful.</p>
+
+<div class="footnotes">
+<hr>
+<ol>
+
+<li id="fn1">
+<p>https://github.com/jekyll/jekyll/pull/235&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a></p>
+</li>
+
+<li id="fn2">
+<p>The port also differs, but that&#39;s not what&#39;s important here. The point is that everything after the <code>/</code> after the host is the same.&nbsp;<a href="#fnref2" rev="footnote">&#8617;</a></p>
+</li>
+
+</ol>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Always Moving Forward]]></title>
     <link href="http://blog.parkermoore.de/2014/04/03/always-moving-forward/"/>
-    <updated>2014-04-03T20:28:07Z</updated>
+    <updated>2014-04-03T16:28:07-04:00</updated>
     <id>http://blog.parkermoore.de/2014/04/03/always-moving-forward</id>
-    <content type="html"><![CDATA[<p><a href="https://parker.vsco.co"><img src="http://image.vsco.co/1/51c771649686d3572/52d5e979726708dc7c00040f/1024x768/vsco_011414_24.jpg" alt="Emeryville California" /></a></p>
+    <content type="html"><![CDATA[<p><a href="https://parker.vsco.co"><img src="http://image.vsco.co/1/51c771649686d3572/52d5e979726708dc7c00040f/1024x768/vsco_011414_24.jpg" alt="Emeryville California"></a></p>
 
-<p>Today, I&#8217;m proud to announce that I have accepted a job offer from <a href="https://vsco.co/">Visual Supply Co</a>,
-a small and happenin&#8217; start-up based in the Bay Area. Visual Supply Co,
+<p>Today, I&#39;m proud to announce that I have accepted a job offer from <a href="https://vsco.co/">Visual Supply Co</a>,
+a small and happenin&#39; start-up based in the Bay Area. Visual Supply Co,
 also known as VSCO, produces the well-loved <a href="https://vsco.co/vscocam">VSCO Cam</a> iPhone
 and Android apps, as well as <a href="https://vsco.co/film">VSCO Film</a>, <a href="https://grid.vsco.co">VSCO Grid</a>, and <a href="https://vsco.co/vscokeys">VSCO Keys</a>.
-I&#8217;ll be working on all things web, including the Grid service and the API.</p>
+I&#39;ll be working on all things web, including the Grid service and the API.</p>
 
 <p>Super stoked to begin this next chapter in my journey through life working
 on a slick series of products with a stellar team. Follow my adventure on
@@ -37,9 +103,9 @@ on a slick series of products with a stellar team. Follow my adventure on
     <link href="http://blog.parkermoore.de/2014/02/04/fixing-common-mistakes-when-working-with-ec2/"/>
     <updated>2014-02-04T00:30:00-05:00</updated>
     <id>http://blog.parkermoore.de/2014/02/04/fixing-common-mistakes-when-working-with-ec2</id>
-    <content type="html"><![CDATA[<p>I&#8217;m lucky enough this semester to be taking CS 5300 at Cornell, a class entitled
-&#8220;The Architecture of Large-Scale Information Systems.&#8221; For this class, we will
-need to know our way around Amazon&#8217;s Web Services. I learned a lot about AWS
+    <content type="html"><![CDATA[<p>I&#39;m lucky enough this semester to be taking CS 5300 at Cornell, a class entitled
+&quot;The Architecture of Large-Scale Information Systems.&quot; For this class, we will
+need to know our way around Amazon&#39;s Web Services. I learned a lot about AWS
 when I worked at 6Wunderkinder last year, so I was feeling up to the challenge.
 Little did I know that the tooling 6W had created around its ops was far
 superior to anything else out there.</p>
@@ -64,7 +130,6 @@ type and security group as well. So I created a security group and went ahead:</
 </span><span class='line'>  --security-group-ids sg-sgsga888
 </span></code></pre></td></tr></table></div></figure>
 
-
 <p>Yay, it worked! Ok, now I need to ssh into this bad boy.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -73,10 +138,9 @@ type and security group as well. So I created a security group and went ahead:</
 </span><span class='line'>Access denied <span class="o">(</span>publickey<span class="o">)</span>.
 </span></code></pre></td></tr></table></div></figure>
 
-
-<p>Huh? What&#8217;s that all about? I had created a key pair from previous messing
+<p>Huh? What&#39;s that all about? I had created a key pair from previous messing
 around with EC2. Hm&#8230; After a few minutes of puzzlement, I realized I needed
-to pass another option to my <code>aws ec2</code> command. Let&#8217;s try this again:</p>
+to pass another option to my <code>aws ec2</code> command. Let&#39;s try this again:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -96,8 +160,7 @@ to pass another option to my <code>aws ec2</code> command. Let&#8217;s try this 
 </span><span class='line'>  --key-name parker
 </span></code></pre></td></tr></table></div></figure>
 
-
-<p>Booted! Now, let&#8217;s try to ssh again:</p>
+<p>Booted! Now, let&#39;s try to ssh again:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -105,11 +168,10 @@ to pass another option to my <code>aws ec2</code> command. Let&#8217;s try this 
 </span><span class='line'>Access denied <span class="o">(</span>publickey<span class="o">)</span>.
 </span></code></pre></td></tr></table></div></figure>
 
-
 <p>Bollocks! Looks like I am still missing something&#8230;</p>
 
 <p>Ah! After taking a look at a tutorial, I realize I need to login as <code>ec2-user</code>.
-Let&#8217;s give this one more try:</p>
+Let&#39;s give this one more try:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -135,16 +197,14 @@ Let&#8217;s give this one more try:</p>
 </span><span class='line'><span class="o">[</span>ec2-user@ip-10-9-162-71 ~<span class="o">]</span><span class="err">$</span>
 </span></code></pre></td></tr></table></div></figure>
 
-
 <p>YES! I did it. Ok, so lessons:</p>
 
 <ol>
 <li>Login as <code>ec2-user</code>, not as <code>albie</code> or any other name.</li>
 <li>Make sure you specify the <code>key-name</code> for the instance(s) you want to launch.</li>
 <li>Always err on the side of being more specific. Defaults can be bad.</li>
-<li>Always terminate once you&#8217;re done using the box.</li>
+<li>Always terminate once you&#39;re done using the box.</li>
 </ol>
-
 
 <p>Simple fixes for problems that seem so intractible.</p>
 ]]></content>
@@ -159,18 +219,18 @@ Let&#8217;s give this one more try:</p>
 in over 4 years, I had been holding off. Once my trusty MacBook Pro bit the dust
 last night and I found out the repair cost was extraordinary, I bit the bullet.</p>
 
-<p>So, you&#8217;re probably in a similar place. You relatively recently got a shiny new
-Macintosh and you&#8217;re so excited to start writing code and making a difference
+<p>So, you&#39;re probably in a similar place. You relatively recently got a shiny new
+Macintosh and you&#39;re so excited to start writing code and making a difference
 with those skillz of yours. Except one this is missing: <a href="https://github.com/wincent/Command-T">Command-T</a>.</p>
 
-<p>Lucky for you, sir, I am here to help. OS X Maverick&#8217;s built-in vim distribution
-comes with Ruby support already (which it needs for Command-T) so you&#8217;re good
+<p>Lucky for you, sir, I am here to help. OS X Maverick&#39;s built-in vim distribution
+comes with Ruby support already (which it needs for Command-T) so you&#39;re good
 there. Now you need to download and compile Command-T. Should be easy, right?
 Well, not quite.</p>
 
 <p>Mavericks was notable for Ruby users because it ships with Ruby 2.0. All
 previous versions that I had ever used shipped with 1.8.7 so this was a huge
-bonus. Problem is, your pre-installed vim wasn&#8217;t compiled with 2.0.0, it was
+bonus. Problem is, your pre-installed vim wasn&#39;t compiled with 2.0.0, it was
 compiled with 1.8.7.</p>
 
 <p>To check this, run the following in vim in NORMAL mode:</p>
@@ -179,7 +239,6 @@ compiled with 1.8.7.</p>
 </pre></td><td class='code'><pre><code class='text'><span class='line'>:ruby puts &quot;#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}&quot;
 </span></code></pre></td></tr></table></div></figure>
 
-
 <p>For me, that output <code>1.8.7-p358</code>. So that means the Ruby verison that vim is
 using is <code>1.8.7-p358</code>, and we need to compile Command-T with that version. To do
 so, install it:</p>
@@ -187,7 +246,6 @@ so, install it:</p>
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rbenv install 1.8.7-p358
 </span></code></pre></td></tr></table></div></figure>
-
 
 <p>Boom! Now download and install Command-T:</p>
 
@@ -207,9 +265,8 @@ so, install it:</p>
 </span><span class='line'><span class="nv">$ </span>bundle <span class="nb">exec </span>rake make
 </span></code></pre></td></tr></table></div></figure>
 
-
-<p>Aaaaand boom, you&#8217;re done. Open up <code>vim</code> and type your leaderkey then <code>t</code> (for
-me, that&#8217;s <code>,t</code>) to launch the prompt.</p>
+<p>Aaaaand boom, you&#39;re done. Open up <code>vim</code> and type your leaderkey then <code>t</code> (for
+me, that&#39;s <code>,t</code>) to launch the prompt.</p>
 
 <p>If you get a weird SIGTERM error when you launch <code>vim</code>, then you installed
 Command-T with the wrong Ruby version. Remove <code>ruby/command-t/ext.bundle</code> and
@@ -226,8 +283,8 @@ try again.</p>
 complete freedom to host as many apps with whatever databases or other plugins
 I wanted &#8211; all for the cost of a small VM &#8211; was wonderful news.</p>
 
-<p>I decided, for cost&#8217;s sake, to boot up one of those famed $5 <a href="https://digitalocean.com">DigitalOcean</a>
-Droplets. I didn&#8217;t see that DigitalOcean provides an &#8220;app&#8221; for Dokku, so I
+<p>I decided, for cost&#39;s sake, to boot up one of those famed $5 <a href="https://digitalocean.com">DigitalOcean</a>
+Droplets. I didn&#39;t see that DigitalOcean provides an &quot;app&quot; for Dokku, so I
 created a vanilla box of Ubuntu 13.04 and pressed on. I got everything up and
 running and went to go deploy my first app, only to see this when I ran
 <code>git push</code>:</p>
@@ -238,8 +295,7 @@ running and went to go deploy my first app, only to see this when I ran
 </span><span class='line'>fatal error: runtime: cannot allocate heap metadata
 </span></code></pre></td></tr></table></div></figure>
 
-
-<p>Well, golly, that sure is unhelpful. Looks like 512MB doesn&#8217;t cut it. Luckily,
+<p>Well, golly, that sure is unhelpful. Looks like 512MB doesn&#39;t cut it. Luckily,
 we can avoid paying the extra $5/mo for the 1GB version by running the following
 as <code>root</code>:</p>
 
@@ -249,7 +305,6 @@ as <code>root</code>:</p>
 </span><span class='line'>mkswap /extraswap
 </span></code></pre></td></tr></table></div></figure>
 
-
 <p>Then adding the following to your <code>/etc/fstab</code> file so the swap persists between
 reboots:</p>
 
@@ -257,18 +312,16 @@ reboots:</p>
 </pre></td><td class='code'><pre><code class='text'><span class='line'>/extraswap         none            swap    sw                0       0
 </span></code></pre></td></tr></table></div></figure>
 
-
 <p>Then run this to enable <code>/extraswap</code> for swapping:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>swapon -a
 </span></code></pre></td></tr></table></div></figure>
 
-
-<p>Boom. Now re-run <code>git push</code> and you&#8217;re in business. Magic!</p>
+<p>Boom. Now re-run <code>git push</code> and you&#39;re in business. Magic!</p>
 
 <p>Credit goes to the brilliant <a href="https://github.com/dhassler">@dhassler</a> for <a href="https://github.com/dotcloud/docker/issues/1555#issuecomment-22874190">the idea and the code</a>. Just
-thought I&#8217;d share and preserve for my own benefit in the future.</p>
+thought I&#39;d share and preserve for my own benefit in the future.</p>
 ]]></content>
   </entry>
   
@@ -281,65 +334,65 @@ thought I&#8217;d share and preserve for my own benefit in the future.</p>
 mojombo/jekyll</a>. I had written a <a href="http://blog.parkermoore.de/2012/12/11/an-open-letter-to-tom-preston-werner/">letter to Tom about the future of Jekyll</a>
 and after a bit of persistence on my part, he relented:</p>
 
-<p><img src="http://blog.parkermoore.de/images/mojombo-added-parkr-to-jekyll.png" alt="mojombo added parkr to mojombo/jekyll" /></p>
+<p><img src="http://blog.parkermoore.de/images/mojombo-added-parkr-to-jekyll.png" alt="mojombo added parkr to mojombo/jekyll"></p>
 
 <p>After a somewhat lengthy (and <a href="http://blog.parkermoore.de/images/jekyll-shall-inherit-the-earth.png">amusing</a>) conversation via Skype, I knew what
-Tom&#8217;s priorities were for the project and where I could help. I started off
+Tom&#39;s priorities were for the project and where I could help. I started off
 trimming down the number of open issues. At the time, they numbered just over 300.
 After a quick visit to Buffalo to tackle some issues with <a href="http://quaran.to">Nick Quaranto</a> at a
 Buffalo <a href="http://openhack.github.io">OpenHack</a> meetup at <a href="http://coworkbuffalo.com">CoworkBuffalo</a>, we were down to fewer than 200
-open issues. I continued to work through them (much to my parents&#8217; dismay) all
+open issues. I continued to work through them (much to my parents&#39; dismay) all
 through Winter Break. I was making good progress in the triage process: I knew
 what many of the problems were with v0.12.1 and was formulating ideas about how
 we might go about fixing them.</p>
 
-<p><img src="http://blog.parkermoore.de/images/jekyll-shall-inherit-the-earth.png" alt="jekyll shall inherit the earth" /></p>
+<p><img src="http://blog.parkermoore.de/images/jekyll-shall-inherit-the-earth.png" alt="jekyll shall inherit the earth"></p>
 
 <p>In January, I flew out to San Francisco to visit my sister for a week. I setup a
 meeting with Tom to talk more about Jekyll and a plan for moving forward to a
-v1.0.0 release. After about an hour or so at GitHub&#8217;s office in SoMa, talking
-through various PR&#8217;s, Tom said I could start merging pull requests.</p>
+v1.0.0 release. After about an hour or so at GitHub&#39;s office in SoMa, talking
+through various PR&#39;s, Tom said I could start merging pull requests.</p>
 
 <p>Consultation with Tom was challenging (he runs a multi-million dollar company
 after all), as it was increasingly difficult for him to find time for Jekyll.
-Despite <a href="https://github.com/mojombo/jekyll/issues/578#issuecomment-11414645">announcing that he was going to commit some of his &#8220;20% time&#8221; to Jekyll</a>,
+Despite <a href="https://github.com/mojombo/jekyll/issues/578#issuecomment-11414645">announcing that he was going to commit some of his &quot;20% time&quot; to Jekyll</a>,
 he eventually abandoned that as impractical. As time went on, I received fewer
-replies to my emails and eventually stopped sending anything that didn&#8217;t
-absolutely <em>require</em> Tom&#8217;s input.</p>
+replies to my emails and eventually stopped sending anything that didn&#39;t
+absolutely <em>require</em> Tom&#39;s input.</p>
 
-<p>In March, I knew I needed more help. Tom wasn&#8217;t able to give much time and I
+<p>In March, I knew I needed more help. Tom wasn&#39;t able to give much time and I
 was trying to tackle this project alone. I had noticed that <a href="http://mattr.info">Matt Rogers</a>
 shared my vision for Jekyll, so I asked Tom to add him on as a contributor to
 the repo. By v1.0.3, he had started merging pull requests like a BAW$ and was
 the sanity to my ridiculously-obsessed, inexperienced mind. Since Matt joined, I
-haven&#8217;t really heard much from Tom. I write the occasional email and get the
-occasional reply but he&#8217;s essentially phased out of the normal development of
+haven&#39;t really heard much from Tom. I write the occasional email and get the
+occasional reply but he&#39;s essentially phased out of the normal development of
 Jekyll. Matt &amp; I have essentially taken over the project altogether.</p>
 
 <p>By May, we were ready to ship v1.0.0. With the help of all the amazing
 contributors, Matt, and my many mentors along the way, I finally ran
 <code>rake release</code> for 1.0. The project was ours.</p>
 
-<p>Since realizing that this product has few constraints outside of those I&#8217;ve
-constructed for it in my mind (no one is going to tell me, &#8220;No, you may not
-implement that feature or add that enhancement&#8221; without a valid argument as to
-my solution&#8217;s invalidity), I&#8217;ve been thinking about what it means to take over
-someone else&#8217;s project. <a href="https://github.com/mojombo/jekyll/commit/d189e05d236769c1e5594af9db4d6eacb86fc16e">Jekyll is 5 years old.</a> I wasn&#8217;t there in 2008 when
+<p>Since realizing that this product has few constraints outside of those I&#39;ve
+constructed for it in my mind (no one is going to tell me, &quot;No, you may not
+implement that feature or add that enhancement&quot; without a valid argument as to
+my solution&#39;s invalidity), I&#39;ve been thinking about what it means to take over
+someone else&#39;s project. <a href="https://github.com/mojombo/jekyll/commit/d189e05d236769c1e5594af9db4d6eacb86fc16e">Jekyll is 5 years old.</a> I wasn&#39;t there in 2008 when
 it was first born as <code>autoblog</code>. Jekyll has changed a lot, as has its vision and
-purpose. It&#8217;s used by lots of people now, whether via <a href="http://pages.github.com">GitHub Pages</a> or
+purpose. It&#39;s used by lots of people now, whether via <a href="http://pages.github.com">GitHub Pages</a> or
 locally.</p>
 
-<p>Taking over someone else&#8217;s project takes a deep understanding of what the
+<p>Taking over someone else&#39;s project takes a deep understanding of what the
 project is and what it should be. As much as I wish Jekyll could make me
-kräuterquark, that&#8217;s outside the scope of the project. Developing that lens is
-crucial when taking over someone else&#8217;s project.</p>
+kräuterquark, that&#39;s outside the scope of the project. Developing that lens is
+crucial when taking over someone else&#39;s project.</p>
 
 <p>Mentoring on the part of the original owner/previous maintainer(s) is
 exceedingly significant in the development of this critical lens. I am so
 grateful that I was able to meet up with Tom back in January and to have some
 amount of input from him as I understood what the project should be.</p>
 
-<p>It would be ill-advised to take over someone else&#8217;s project without a partner.
+<p>It would be ill-advised to take over someone else&#39;s project without a partner.
 Once Matt joined the team, Tom was able to step back into a much lesser role.
 If I had tried to do what I did without any guidance (or at least sanity
 checks), Jekyll v1.0.0 would have been a complete shit-show.</p>
@@ -347,12 +400,12 @@ checks), Jekyll v1.0.0 would have been a complete shit-show.</p>
 <p>Trust in the community must also be earned. If people highly doubted my ability
 to handle Jekyll, Tom would have likely removed me and found a replacement. I
 argued a lot and got into some pretty heated debates at the beginning. There
-were a couple people who didn&#8217;t share the vision that I had inherited from Tom
+were a couple people who didn&#39;t share the vision that I had inherited from Tom
 and stopped contributing to the project altogether. I feel like we now have a
 pretty great community around Jekyll and are able to help each other out and
 share cool plugins and sites that we made for/with Jekyll.</p>
 
-<p>Taking over someone else&#8217;s open-source project was new terrain for me in
+<p>Taking over someone else&#39;s open-source project was new terrain for me in
 December, and still is today. It can be successful with the right amount of
 mentoring and gradual removal of trusted feedback by the previous maintainer(s).</p>
 
@@ -360,7 +413,7 @@ mentoring and gradual removal of trusted feedback by the previous maintainer(s).
 torch, the new maintainers are able to experience the added bonus of feeling
 like Frankenstein, which, I will say, is a pretty cool feeling.</p>
 
-<p><img src="http://blog.parkermoore.de/images/it-lives.jpg" alt="igor" /></p>
+<p><img src="http://blog.parkermoore.de/images/it-lives.jpg" alt="igor"></p>
 ]]></content>
   </entry>
   
@@ -370,9 +423,9 @@ like Frankenstein, which, I will say, is a pretty cool feeling.</p>
     <updated>2013-10-22T19:45:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/10/22/fix-the-government-open-source-legislation</id>
     <content type="html"><![CDATA[<p><em>The following post was first written for a class at Cornell University taught
-by Phoebe Sengers called &#8220;Designing Technologies for Social Impact&#8221;.</em></p>
+by Phoebe Sengers called &quot;Designing Technologies for Social Impact&quot;.</em></p>
 
-<hr />
+<hr>
 
 <p>We have a rather significant problem in the U.S. Indeed, our government seems to
 be malfunctioning in a rather obvious and irresponsible way. The question of
@@ -391,24 +444,24 @@ provisions. What if the law were made out in the open, for everyone to see, the
 way open-source software is made? Version control and online access to bills
 in-the-works as well as laws would certainly improve transparency. The Library
 of Congress runs a system called THOMAS which is updated about daily, but the
-bills aren&#8217;t organized logically and the user interface is fair at best.</p>
+bills aren&#39;t organized logically and the user interface is fair at best.</p>
 
 <p>The open-source legislation system envisioned here is based on an open-source
 software system called GitHub. GitHub is setup like so: users and organizations
 own repositories of code, text or binary documents. Each repository contains the
-entire history of a particular set of documents as well as the &#8220;master&#8221; version,
+entire history of a particular set of documents as well as the &quot;master&quot; version,
 or the latest repository-owner(s)-approved version of the document(s). Each
 repository uses a version control system called git to keep track of the
 information about the documents it contains: current versions as well as
 previous versions. What is unique about this system, and the incredible strength
-it offers for open legislation, is the concept of a &#8220;diff&#8221;. A &#8220;diff&#8221; is simply
+it offers for open legislation, is the concept of a &quot;diff&quot;. A &quot;diff&quot; is simply
 the difference between a document at one point in time (referred to as a
-&#8220;revision&#8221;) and the same document at a different point in time. Each repository
-can be &#8220;forked&#8221; (cloned to a user&#8217;s own profile for editing) by a user; this
+&quot;revision&quot;) and the same document at a different point in time. Each repository
+can be &quot;forked&quot; (cloned to a user&#39;s own profile for editing) by a user; this
 offers the most significant freedom of open-source, which is that anyone has the
 freedom to modify a copy of the source and suggest changes to the main project
 based on those derivative works. In GitHub parlance, the suggestion for a change
-is called a &#8220;pull request,&#8221; but this term need not be adopted by this new
+is called a &quot;pull request,&quot; but this term need not be adopted by this new
 system.</p>
 
 <p>To illustrate the design of the ideal system:</p>
@@ -419,51 +472,50 @@ system.</p>
 <li>Offer input from anyone in any form (suggested changes or just comments)</li>
 <li>Do not make differentiation between users other than repository owner &amp;
 non-owner (those with direct access to the repository and those who can fork
-and suggest changes, but can&#8217;t incorporate those changes themselves)</li>
+and suggest changes, but can&#39;t incorporate those changes themselves)</li>
 <li><p>Each repository is a proposed bill owned by the deciding body at the given
 time during the legislative process as dictated by the U.S. Constitution.
 Each repository contains a text file for each sub-segment of the proposed
 bill as well as a rationale or goal, e.g.
-  . (root)
-  |
-  |&#8211; README.txt (rationale, goal(s) of bill, and other meta info)
-  |&#8211; section01.txt
-  |&#8211; section02.txt
-  |
-  &#8230;</p></li>
+ . (root)
+ |
+ |&#8211; README.txt (rationale, goal(s) of bill, and other meta info)
+ |&#8211; section01.txt
+ |&#8211; section02.txt
+ |
+ &#8230;</p></li>
 <li><p>The entire process of the creation and formulation of the law is public and
 open insofar as the culture can push for this</p></li>
-<li>Moderator of some sort to ensure comments are productive (usually repo
+<li><p>Moderator of some sort to ensure comments are productive (usually repo
 owner). All of the comments that are hidden still exist inline and can be
-shown by any reader of the comment thread</li>
-<li>Membership of individual lawmakers in committees and other larger bodies
+shown by any reader of the comment thread</p></li>
+<li><p>Membership of individual lawmakers in committees and other larger bodies
 reflected in membership of organization accounts on the platform, which gives
 them access to directly changing the legislation they have access to through
-their organizational memberships</li>
-<li>Offer &#8220;points of interest&#8221; as a means of discussion about a particular aspect
-of a bill without the need to suggest changes. Can ask anything from &#8220;why is
-this section worded this way?&#8221; to &#8220;what are the implications of this on
-agricultural development in Upstate New York?&#8221; No question is too dumb and
-all of them require an answer insofar as they are productive and relevant.</li>
-<li>Easy citation of preexisting laws and other bills to allow for discussion
-surrounding conflict or other interference</li>
-<li>Access to signing letters written by President (usually interpretations of
-pieces of the law for purposes of execution of the law)</li>
-<li>Easy viewing of votes on final versions of bills (who, when, did it pass?,
-etc)</li>
-<li>Means of mentioning lawmakers in a comment if comment is directed at them,
-or question is asked directly of them</li>
-<li>Links to more information about execution by Executive &amp; other related
-policy/law</li>
-<li>Comments and changes can only be created from user accounts, e.g. David
-Skorton can suggest a change, but Cornell University cannot.</li>
-<li>Users can subscribe to updates from a bill repository and receive all
-information about changes that are made and discussions that occur.</li>
+their organizational memberships</p></li>
+<li><p>Offer &quot;points of interest&quot; as a means of discussion about a particular aspect
+of a bill without the need to suggest changes. Can ask anything from &quot;why is
+this section worded this way?&quot; to &quot;what are the implications of this on
+agricultural development in Upstate New York?&quot; No question is too dumb and
+all of them require an answer insofar as they are productive and relevant.</p></li>
+<li><p>Easy citation of preexisting laws and other bills to allow for discussion
+surrounding conflict or other interference</p></li>
+<li><p>Access to signing letters written by President (usually interpretations of
+pieces of the law for purposes of execution of the law)</p></li>
+<li><p>Easy viewing of votes on final versions of bills (who, when, did it pass?,
+etc)</p></li>
+<li><p>Means of mentioning lawmakers in a comment if comment is directed at them,
+or question is asked directly of them</p></li>
+<li><p>Links to more information about execution by Executive &amp; other related
+policy/law</p></li>
+<li><p>Comments and changes can only be created from user accounts, e.g. David
+Skorton can suggest a change, but Cornell University cannot.</p></li>
+<li><p>Users can subscribe to updates from a bill repository and receive all
+information about changes that are made and discussions that occur.</p></li>
 </ol>
 
-
 <p>One negative aspect of this approach is volume and the issues that come
-therefrom (see: student&#8217;s answer on Piazza page linked to below). As the number
+therefrom (see: student&#39;s answer on Piazza page linked to below). As the number
 of collaborators grows, the ability for those with direct access to the bills to
 handle suggestions for modification is greatly diminished. How are the interests
 of the few vs. those of the many weighed (e.g. individual comment vs comment from
@@ -481,8 +533,8 @@ individuals with whom the maintainers of the bills will have to contend with in
 discussion about a bill and suggestions for change.</p>
 
 <p>Ultimately, this idea is predicated on the idea that citizens, when given the
-right tools, can reach compromise and have productive discussions to &#8220;get the
-job done&#8221; efficiently and accurately.</p>
+right tools, can reach compromise and have productive discussions to &quot;get the
+job done&quot; efficiently and accurately.</p>
 ]]></content>
   </entry>
   
@@ -495,24 +547,24 @@ job done&#8221; efficiently and accurately.</p>
 &amp; Technology</a> taught by Professors <a href="http://infosci.cornell.edu/faculty/jeffrey-hancock">Jeff Hancock</a> and <a href="http://communication.cals.cornell.edu/people/drew-margolin">Drew Margolin</a> in
 Fall 2013. The course focuses heavily on design of technologies. The assignment
 asked for an evaluation of an online application or product based on the
-principles outlined in Donald Norman&#8217;s <a href="http://www.amazon.com/Design-Everyday-Things-Donald-Norman/dp/0465067107">&#8220;The Design of Everyday Things&#8221;</a>. It&#8217;s
-a very basic look at the technology, but I thought I&#8217;d share it anyhow.</p>
+principles outlined in Donald Norman&#39;s <a href="http://www.amazon.com/Design-Everyday-Things-Donald-Norman/dp/0465067107">&quot;The Design of Everyday Things&quot;</a>. It&#39;s
+a very basic look at the technology, but I thought I&#39;d share it anyhow.</p>
 
-<hr />
+<hr>
 
 <p>App.net is a social platform designed from the beginning to be nothing more than
 a platform for developers to build great social apps upon. This blog post will
 be about the very first application built upon App.net, called Alpha. App.net
-will henceforth be referred to as &#8220;ADN.&#8221;</p>
+will henceforth be referred to as &quot;ADN.&quot;</p>
 
 <p>The main purpose of Alpha is to demonstrate the ADN API in a somewhat familiar
 way. Alpha behaves much the way Twitter does: a user creates posts, users can
 follow other users and interact with them in the familiar way. The divergence
-from Twitter (and other &#8220;microblogging&#8221; social applications) is twofold: a user
+from Twitter (and other &quot;microblogging&quot; social applications) is twofold: a user
 pays for his or her account, and the posts may be longer.</p>
 
 <p>By asking the user to pay for an ADN account (which is used by Alpha as the
-poster&#8217;s identity), the normal business incentives shift from building an
+poster&#39;s identity), the normal business incentives shift from building an
 application (or platform) which optimizes for advertisement revenue to an
 application (or platform) which optimizes for the happiness of the user (if
 users like to use the service, they will continue to pay the $5/month or
@@ -522,13 +574,13 @@ advertisement revenue. This is not the case with ADN (and by extension, with
 Alpha).</p>
 
 <p>On Alpha, posts may be up to 256 characters long and users can choose to attach
-media to their posts. The &#8220;@&#8221; symbol is used to mention another user (the other
-user receives a notification when this happens) and the &#8220;#&#8221; is used to denote
+media to their posts. The &quot;@&quot; symbol is used to mention another user (the other
+user receives a notification when this happens) and the &quot;#&quot; is used to denote
 topics. With the longer character limit, one could easily surmise that Alpha is
 attempting to make having asynchronous, open conversations online a bit easier.
 The openness of being able to write anyone (divergence from Facebook) coupled
 with the 256 character limit (a physical constraint) (divergence from Facebook,
-and extension of Twitter&#8217;s idea that a post should be &#8220;bite-sized&#8221;) produce a
+and extension of Twitter&#39;s idea that a post should be &quot;bite-sized&quot;) produce a
 fantastic application for having chats with anyone about anything in a way
 conducive to conciseness and to expressiveness. One common frustration with
 Twitter is that conversations on it are very challenging, as 140 characters is
@@ -536,36 +588,36 @@ far too few to really say anything substantive. ADN hopes to remedy this
 problem, and in my experience, arguments (and general discussions, for that
 matter) have been incredibly easy and productive.</p>
 
-<p><img src="http://blog.parkermoore.de/images/app-net/app-net-alpha-feed.png" alt="Screenshot of alpha.app.net" /></p>
+<p><img src="http://blog.parkermoore.de/images/app-net/app-net-alpha-feed.png" alt="Screenshot of alpha.app.net"></p>
 
-<p>Above, you see the home screen of Alpha (namely, mine). This shows the user&#8217;s
+<p>Above, you see the home screen of Alpha (namely, mine). This shows the user&#39;s
 stream. The search box and post box (based on their physical attributes) afford
-writing. The change of the &#8220;POST&#8221; button from grey to a nice deep red-orange
+writing. The change of the &quot;POST&quot; button from grey to a nice deep red-orange
 highlights a change of the mapping from a button that may not be pressed to one
 that may be pressed (I would consider the change itself feedback). As the user
-types in a post, the number (shown here as &#8220;256&#8221;) decreases by one for each
+types in a post, the number (shown here as &quot;256&quot;) decreases by one for each
 character that is typed into the box above it, providing very valuable feedback
-about the user&#8217;s actions. This number&#8217;s presence also provides visibility for
+about the user&#39;s actions. This number&#39;s presence also provides visibility for
 the physical constraint placed on the size of the posts allowed in the service.
 The buttons on the right of each post afford clicking and change color
 (feedback) when clicked. All of the aforementioned design elements, in addition
 to the placement of the post box at the top, suggest that the application is
 trying to get the user to submit content to his or her stream. The feed below
 seems to indicate that the application wishes for perusal and interaction of
-other users&#8217; posts by the logged-in user.</p>
+other users&#39; posts by the logged-in user.</p>
 
-<p><img src="http://blog.parkermoore.de/images/app-net/app-net-alpha-post.png" alt="Screenshot of a singular post" /></p>
+<p><img src="http://blog.parkermoore.de/images/app-net/app-net-alpha-post.png" alt="Screenshot of a singular post"></p>
 
 <p>As you saw above, each post is given its own box. There are 5 interactions which
-only show up when the user mouses-over the post: &#8220;Discussion,&#8221; &#8220;Reply,&#8221; &#8220;via
-(app),&#8221; &#8220;Mute User,&#8221; and &#8220;Report&#8221;. In order to better facilitate the app&#8217;s goal
-of interaction, it would make sense for the &#8220;Discussion&#8221; and &#8220;Reply&#8221; buttons to
+only show up when the user mouses-over the post: &quot;Discussion,&quot; &quot;Reply,&quot; &quot;via
+(app),&quot; &quot;Mute User,&quot; and &quot;Report&quot;. In order to better facilitate the app&#39;s goal
+of interaction, it would make sense for the &quot;Discussion&quot; and &quot;Reply&quot; buttons to
 always be shown. This would improve the visibility of the interaction paradigms
 and afford interaction without the user making the first move (to mouseover).</p>
 
-<hr />
+<hr>
 
-<p>That&#8217;s it.</p>
+<p>That&#39;s it.</p>
 ]]></content>
   </entry>
   
@@ -574,7 +626,7 @@ and afford interaction without the user making the first move (to mouseover).</p
     <link href="http://blog.parkermoore.de/2013/08/07/launching-a-rails-console-with-capistrano/"/>
     <updated>2013-08-07T20:36:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/08/07/launching-a-rails-console-with-capistrano</id>
-    <content type="html"><![CDATA[<p>If you&#8217;re using the popular Capistrano web deployment framework, you will likely
+    <content type="html"><![CDATA[<p>If you&#39;re using the popular Capistrano web deployment framework, you will likely
 have wished you had an easy way to perform a quick task in the production rails
 console on one of your servers. Many thanks to
 <a href="https://github.com/colszowka">@colszowka</a> for <a href="https://gist.github.com/benedikt/1115513#comment-576015">this
@@ -614,8 +666,7 @@ solution</a>:</p>
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
 
-
-<p>And, <em>vòila</em>! Run <code>cap rails:console</code> and you&#8217;re in business.</p>
+<p>And, <em>vòila</em>! Run <code>cap rails:console</code> and you&#39;re in business.</p>
 ]]></content>
   </entry>
   
@@ -625,18 +676,18 @@ solution</a>:</p>
     <updated>2013-06-26T12:48:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/06/26/carlin-was-right</id>
     <content type="html"><![CDATA[<p>The late comedian George Carlin was never skiddish about sharing his opinion of the
-country and of the human race. &#8220;It&#8217;s all going downhill,&#8221; he would say. The decline of
-objective rationality sewed our fate: we&#8217;re fucked.</p>
+country and of the human race. &quot;It&#39;s all going downhill,&quot; he would say. The decline of
+objective rationality sewed our fate: we&#39;re fucked.</p>
 
-<p>We&#8217;re fucked on foreign relations.<br />
-We&#8217;re fucked on domestic freedoms.<br />
-We&#8217;re fucked on freedom from discrimination.<br />
-We&#8217;re fucked on climate change.<br />
-We&#8217;re fucked on economic prosperity.<br />
-We&#8217;re fucked on everything, because objective rationality is dead.<br /></p>
+<p>We&#39;re fucked on foreign relations.<br />
+We&#39;re fucked on domestic freedoms.<br />
+We&#39;re fucked on freedom from discrimination.<br />
+We&#39;re fucked on climate change.<br />
+We&#39;re fucked on economic prosperity.<br />
+We&#39;re fucked on everything, because objective rationality is dead.<br /></p>
 
-<p>We haven&#8217;t done right by each other and we haven&#8217;t done right by our planet.
-We&#8217;re the scourge of the Earth and it&#8217;s weeks like this one that make me wish we had blown
+<p>We haven&#39;t done right by each other and we haven&#39;t done right by our planet.
+We&#39;re the scourge of the Earth and it&#39;s weeks like this one that make me wish we had blown
 ourselves to oblivion during the Cold War. The cockroaches would at least be better
 caretakers of this world than we are.</p>
 ]]></content>
@@ -649,7 +700,7 @@ caretakers of this world than we are.</p>
     <id>http://blog.parkermoore.de/2013/05/30/dealing-with-distraction</id>
     <content type="html"><![CDATA[<p>Dealing with distraction for those of us who live with AD(H)D is a constant struggle, and
 can be especially difficult for those of us who must daily solve large, complex problems.
-This post describes what it is like to be a programmer with ADD and some strategies I&#8217;ve
+This post describes what it is like to be a programmer with ADD and some strategies I&#39;ve
 developed to help make myself more effective.</p>
 
 <p>To solve complex problems by programmatic means, one needs to be able to focus. To find
@@ -659,7 +710,7 @@ worker is one who can focus.</p>
 <p>For those of us who live with the difficulties of AD(H)D every day, this fact - this
 dependence upon a kind of mental discipline - is glaringly obvious. Our constant struggle
 to focus means we are not as efficient as our non-ADD peers when asked to complete a
-single task. We get distracted by the sound of the wind, the tap of a colleague&#8217;s fingers
+single task. We get distracted by the sound of the wind, the tap of a colleague&#39;s fingers
 on his desk, or the sound of people talking walking past our window. The slightest noise
 or change (by a separate entity) in the visual landscape will cause us to loose our train
 of thought nearly immediately.</p>
@@ -668,13 +719,13 @@ of thought nearly immediately.</p>
 metaphor to help you understand a bit more of how it is it live with such an affliction.
 Imagine you are swimming in a lake with a basketball. The depth at which you swim is your
 level of concentration - the deeper you swim, the more focused you are and thus the less
-susceptible to distraction you are. Imagine further that a day&#8217;s worth of work is like
+susceptible to distraction you are. Imagine further that a day&#39;s worth of work is like
 swimming the length of the lake, and your goal is to swim as deeply as possible for as
 far as possible. The problem is that you have to do all this while holding onto the
 fully-inflated basketball. The longer you swim underwater, the harder it is to keep the
 ball (and yourself) deep underwater. During your swim from one end of the lake to the
 other, you are pulled up to the surface very frequently, only able to keep the ball
-underground for a short while at a time. This is what it&#8217;s like to live and work with ADD.</p>
+underground for a short while at a time. This is what it&#39;s like to live and work with ADD.</p>
 
 <p>The inability to focus on a given problem for more than a few minutes at a time causes
 severe problems for all employees with ADD, but especially for developers who have to
@@ -686,7 +737,7 @@ delve into a problem, process it, and produce a solution quickly and efficiently
 <li>Find a quiet, solitary place to work (avoid working in a place where people socialize)</li>
 <li>Turn off all notifications when working (fetch updates at will instead)</li>
 <li>Play calm, simple music without words, or work in a place where the background noise
-doesn&#8217;t change</li>
+doesn&#39;t change</li>
 <li>Keep the room cool in temperature</li>
 <li>Work on one thing at a time and work until it is completed</li>
 <li>Plan out finer details for a large project</li>
@@ -701,7 +752,6 @@ checking your Twitter feed on your phone at the same time</li>
 <li>Avoid depressants like alcohol</li>
 <li>Write or engage in a creative, exciting activity which asks for your full concentration</li>
 </ul>
-
 
 <p>Following all of these with ADD can even be a challenge, but limiting the frequency of
 distracting stimuli goes a long way to achieving focus and increasing your productivity.</p>
@@ -720,8 +770,8 @@ distracting stimuli goes a long way to achieving focus and increasing your produ
 February 1, 2012. This was the first time I had ever watched a Senate session
 from the beginning and, to my surprise, they began with a prayer.</p>
 
-<p>Hold up. A prayer? In a session of one of our government&#8217;s highest legislative
-bodies?! I suppose I shouldn&#8217;t be too surprised, what with the (often crazy)
+<p>Hold up. A prayer? In a session of one of our government&#39;s highest legislative
+bodies?! I suppose I shouldn&#39;t be too surprised, what with the (often crazy)
 Religious Right getting after the government with Bible-backed policies and
 all. It was nevertheless astonishing to see the institutionalization of religion
 in our government.</p>
@@ -731,9 +781,10 @@ I felt betrayed and undermined - like I was worth nothing to anyone in D.C.</p>
 
 <p>So I wrote to my senators:</p>
 
-<blockquote><p>Dear Senator,</p>
+<blockquote>
+<p>Dear Senator,</p>
 
-<p>I wish to ask for the Senator&#8217;s thoughts on the opening prayer which begins a
+<p>I wish to ask for the Senator&#39;s thoughts on the opening prayer which begins a
 Senate session. I have done my research and see that this prayer has been a
 part of Senate procedure since 1789 and was recommended by Benjamin Franklin
 about two years previous, but I question its place in our secular government.
@@ -749,9 +800,9 @@ our governments.</p>
 Prayer, for, while Mr. Franklin may have been right in 1789, he is most
 certainly wrong now. We have moved past a blind reliance on God, and it is,
 now more than ever, a hindrance on our Great Government.
-God&#8217;s interference in our government has forced limited civil rights for
+God&#39;s interference in our government has forced limited civil rights for
 minorities, was a rationale for slavery, and is still fighting against a
-Woman&#8217;s Right to Choose, a Citizen&#8217;s Right To Marry Whomever He or She Wishes,
+Woman&#39;s Right to Choose, a Citizen&#39;s Right To Marry Whomever He or She Wishes,
 Scientific Advancement in many fields and so on.</p>
 
 <p>It is our imperative as citizens to think of each other first and to respect
@@ -761,7 +812,8 @@ stopped.</p>
 
 <p>Thank you,<br />
 Parker Moore<br />
-Constituent</p></blockquote>
+Constituent</p>
+</blockquote>
 
 <p>If you care about religious freedom at all, I would urge you to do the same.</p>
 ]]></content>
@@ -772,8 +824,8 @@ Constituent</p></blockquote>
     <link href="http://blog.parkermoore.de/2013/05/06/jekyll-1-dot-0-released/"/>
     <updated>2013-05-06T00:59:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/05/06/jekyll-1-dot-0-released</id>
-    <content type="html"><![CDATA[<p>Today, I&#8217;m proud to announce the release of Jekyll 1.0. There are a million
-goodies and fixes to enjoy, and we&#8217;re (the still-active Jekyll core team
+    <content type="html"><![CDATA[<p>Today, I&#39;m proud to announce the release of Jekyll 1.0. There are a million
+goodies and fixes to enjoy, and we&#39;re (the still-active Jekyll core team
 members: Tom, Matt and I) really excited to share this first major release
 with you. Be sure to follow <a href="http://twitter.com/jekyllrb">@jekyllrb</a> for
 updates on future releases and links to cool plugins.</p>
@@ -785,12 +837,11 @@ updates on future releases and links to cool plugins.</p>
 <li>Amazing new docs at http://jekyllrb.com (thanks to @cobyism)</li>
 <li><code>jekyll new</code> creates a new scaffold so you can get blogging even faster</li>
 <li>Drafts, i.e. posts without dates</li>
-<li>New &#8220;excerpt&#8221; feature on posts</li>
+<li>New &quot;excerpt&quot; feature on posts</li>
 <li>Timezone configuration</li>
-<li>&#8216;gist&#8217; liquid tag</li>
+<li>&#39;gist&#39; liquid tag</li>
 <li>Source directory protection</li>
 </ul>
-
 
 <p>&#8230; and <a href="https://github.com/mojombo/jekyll/blob/v1.0.0/History.txt">so much more</a>!</p>
 
@@ -799,14 +850,14 @@ some breaking changes and tips for upgrading to Jekyll 1.0.</p>
 
 <p>As many of you know, Jekyll lay mostly stagnant for quite some time. At 0.11.2 and
 0.12.0, it was pretty stable. It had some annoying bugs, but nothing much that
-couldn&#8217;t be worked around or monkey-patched.</p>
+couldn&#39;t be worked around or monkey-patched.</p>
 
 <p>After using Jekyll last summer to help build
-<a href="http://cals.cornell.edu">Cornell&#8217;s College of Agriculture and Life Sciences website</a>,
+<a href="http://cals.cornell.edu">Cornell&#39;s College of Agriculture and Life Sciences website</a>,
 I took a renewed interest in seeing this project move forward. Last December,
 Tom answered my offers to help with the development of Jekyll by adding me as
-a contributor. I&#8217;m happy to say that it has come a long way since then, and
-I&#8217;m very proud to be a part of a team that has pushed this project to new heights.</p>
+a contributor. I&#39;m happy to say that it has come a long way since then, and
+I&#39;m very proud to be a part of a team that has pushed this project to new heights.</p>
 
 <p>Thank you to everyone who submitted a pull request, and/or gave me advice along
 the way. It has been great fun so far, and I look forward to working with you
@@ -820,8 +871,8 @@ all to push out future versions!</p>
     <updated>2013-04-30T19:00:00-04:00</updated>
     <id>http://blog.parkermoore.de/2013/04/30/an-afterlife</id>
     <content type="html"><![CDATA[<p>I am not a religious man, yet I find myself curious about the prospect of an afterlife. Is
-there something beyond this life, in this dimension, in this universe? While I don&#8217;t believe
-in the traditional conception of an afterlife (one&#8217;s soul ascends to a blissful place, where
+there something beyond this life, in this dimension, in this universe? While I don&#39;t believe
+in the traditional conception of an afterlife (one&#39;s soul ascends to a blissful place, where
 it inhabits all space and time for eternity), I do like to think we live on beyond the
 time we take our last breath.</p>
 
@@ -832,26 +883,26 @@ and asked profound questions about  life, spirituality, goodness, happiness, bea
 other similar topics.</p>
 
 <p>One day, we were discussing the afterlife. The normal answers dominated the conversation:
-&#8220;When one dies, one&#8217;s soul ascends into Heaven to be with one&#8217;s family members and with
-God,&#8221; and &#8220;We exist everywhere and with everyone. We watch over those we love and help
-them live good lives.&#8221; When the question came to me, I wasn&#8217;t sure how to respond. Can an
+&quot;When one dies, one&#39;s soul ascends into Heaven to be with one&#39;s family members and with
+God,&quot; and &quot;We exist everywhere and with everyone. We watch over those we love and help
+them live good lives.&quot; When the question came to me, I wasn&#39;t sure how to respond. Can an
 atheist believe in an afterlife? If so, did I?</p>
 
-<p>I hadn&#8217;t given it much thought before, but I pondered it for a moment and concluded, &#8220;An
-individual&#8217;s afterlife is the culmination of the memories others have of the individual.
+<p>I hadn&#39;t given it much thought before, but I pondered it for a moment and concluded, &quot;An
+individual&#39;s afterlife is the culmination of the memories others have of the individual.
 It is the legacy that individual leaves behind and the impact that individual had on those
-he or she encountered.&#8221;</p>
+he or she encountered.&quot;</p>
 
-<p>The more I thought about it, the more it made sense. If we don&#8217;t have souls, how do we
+<p>The more I thought about it, the more it made sense. If we don&#39;t have souls, how do we
 explain this legacy of the afterlife concretely? The afterlife is not something experienced
 by the deceased individual, but by everyone else he or she impacted.</p>
 
 <p><span class='pullquote-right' data-pullquote='&#8220;They say you die twice, once when your
 heart stops beating, and again when your name is said for the last time.&#8221;'>
-I have not yet met anyone else who holds this belief I hold, but I invite you to explore
+I have not yet met anyone else who holds this belief I hold, but I invite you to explore 
 it and see of you can reconcile it with your beliefs about the afterlife. Banksy once
-famously said (paraphrased by a friend): &#8220;They say you die twice, once when your
-heart stops beating, and again when your name is said for the last time.&#8221; I can&#8217;t
+famously said (paraphrased by a friend): &quot;They say you die twice, once when your
+heart stops beating, and again when your name is said for the last time.&quot; I can&#39;t
 believe there is something I will experience beyond my death, but I can believe that
 others will experience their memories of me beyond my departure from this world.
 </span></p>
@@ -903,7 +954,7 @@ much gnashing of teeth for what we believe in and what we know is right.</p>
 senators who do not support full marriage equality for gays and lesbians. This
 article is an absolute disgrace. <em>Upworthy</em> (and the <em>Huffington Post</em> for that
 matter) should not be singling out Democrats who do not believe in same-sex
-marriage as though it&#8217;s some unnatural digression from the widely-accepted
+marriage as though it&#39;s some unnatural digression from the widely-accepted
 democratic platform. No, they should be listing <strong>every</strong> senator that does
 not support same-sex marriage.</p>
 
@@ -922,11 +973,11 @@ law.</p>
     <id>http://blog.parkermoore.de/2013/02/11/downtime-is-good</id>
     <content type="html"><![CDATA[<p>I just started working as an intern at 6Wunderkinder a couple weeks ago.
 I am by no means an expert in devops (hell, I have only dabbled with a little
-sysadmin in the past - nothing too serious) and I don&#8217;t really know what goes
+sysadmin in the past - nothing too serious) and I don&#39;t really know what goes
 into keeping a huge series of server up and running. I can say, however, that
-I know the customer&#8217;s side of things. I know what it&#8217;s like to be a user of a
+I know the customer&#39;s side of things. I know what it&#39;s like to be a user of a
 service which periodically goes through downtimes of noticable lengths. (I know
-I&#8217;m not the only one here so you will probably relate to this observation as
+I&#39;m not the only one here so you will probably relate to this observation as
 well.</p>
 
 <p>So today there was a blip of downtime for Wunderlist, a really awesome task-
@@ -934,21 +985,21 @@ management application by 6Wunderkinder. During this downtime, it occurred to
 me: downtime can help the visibility of an application or service.</p>
 
 <p>Hear me out: when the service is running smoothly, few will actually talk about
-it. When it goes down, Twitter blows up with complaints and &#8220;ZOMG MY LIFE IS
-OVER&#8221; tweets. These tweets, in a way, promote the service. The more frustrated
+it. When it goes down, Twitter blows up with complaints and &quot;ZOMG MY LIFE IS
+OVER&quot; tweets. These tweets, in a way, promote the service. The more frustrated
 the tweet, the more apparent it is that the tweeter cares about this service.</p>
 
 <p>As one who sees these frustrated tweets often about many services, I can only
 conclude that a little downtime here and there is a great way for outsiders
 to gauge how awesome a service is: if it goes down and people are upset, then
 the service is probably worth trying out (once it goes back up again). If the
-service goes down and no one cares, then it probably isn&#8217;t worth your time.</p>
+service goes down and no one cares, then it probably isn&#39;t worth your time.</p>
 
 <p>So next time you see angry tweets, write down the name of that service and
 check it out once everything is back in order. In all likelihood, you will
-like the service, too, and you&#8217;ll be angrily tweeting next time it goes down.</p>
+like the service, too, and you&#39;ll be angrily tweeting next time it goes down.</p>
 
-<p>It&#8217;s all about perspective.</p>
+<p>It&#39;s all about perspective.</p>
 ]]></content>
   </entry>
   
@@ -957,10 +1008,10 @@ like the service, too, and you&#8217;ll be angrily tweeting next time it goes do
     <link href="http://blog.parkermoore.de/2013/02/06/install-rbenv-on-ubuntu-12-dot-04/"/>
     <updated>2013-02-06T21:31:00-05:00</updated>
     <id>http://blog.parkermoore.de/2013/02/06/install-rbenv-on-ubuntu-12-dot-04</id>
-    <content type="html"><![CDATA[<p>So, I&#8217;ll admit it: I absolutely adore rbenv.</p>
+    <content type="html"><![CDATA[<p>So, I&#39;ll admit it: I absolutely adore rbenv.</p>
 
-<p>In light of this, I&#8217;ve been using it at my work at 6Wunderkinder the past couple weeks.
-6W uses AWS like nobody&#8217;s business, and the Ubuntu EC2 instances I&#8217;ve been interacting
+<p>In light of this, I&#39;ve been using it at my work at 6Wunderkinder the past couple weeks.
+6W uses AWS like nobody&#39;s business, and the Ubuntu EC2 instances I&#39;ve been interacting
 with are really bare-bones. So I wanted to write this script for you, the Ubuntu &amp; Ruby
 user, in order for you to very quickly get up and running with rbenv &amp; the latest Ruby
 MRI. Just copy it and run it.</p>
@@ -992,9 +1043,6 @@ MRI. Just copy it and run it.</p>
 </span><span class='line'>rbenv rehash
 </span><span class='line'>rbenv global 1.9.3-p362
 </span></code></pre></td></tr></table></div></figure>
-
-
-
 ]]></content>
   </entry>
   
@@ -1022,7 +1070,6 @@ In this case:</p>
 </span><span class='line'>username: simyo
 </span><span class='line'>password: simyo</span></code></pre></td></tr></table></div></figure>
 
-
 <p>THANK YOU RAFIF. This surely saved me many hours of frustration.</p>
 ]]></content>
   </entry>
@@ -1032,10 +1079,10 @@ In this case:</p>
     <link href="http://blog.parkermoore.de/2013/01/03/my-favourite-apps-in-2012/"/>
     <updated>2013-01-03T01:36:00-05:00</updated>
     <id>http://blog.parkermoore.de/2013/01/03/my-favourite-apps-in-2012</id>
-    <content type="html"><![CDATA[<p>Below is a list of the apps I wouldn&#8217;t have wanted to live without this year.
-To be fair to everyone, I&#8217;ve listed them in alphabetical order.</p>
+    <content type="html"><![CDATA[<p>Below is a list of the apps I wouldn&#39;t have wanted to live without this year.
+To be fair to everyone, I&#39;ve listed them in alphabetical order.</p>
 
-<p>I know some apps are missing links to various versions, but if I didn&#8217;t use it,
+<p>I know some apps are missing links to various versions, but if I didn&#39;t use it,
 then I felt it was best not to include a link to it on this list.</p>
 
 <h3>101 Airborne (<a href="https://itunes.apple.com/us/app/101-airborne/id531317549?mt=8">iPhone</a>)</h3>
@@ -1059,7 +1106,7 @@ such as Box.com, and its native Mac application is far less intrusive, as well.<
 
 <h3>Google+ (<a href="https://itunes.apple.com/us/app/google+/id447119634?mt=8">iOS</a>)</h3>
 
-<p>I&#8217;m a social media weirdo. I have to try out every one that comes along. I even
+<p>I&#39;m a social media weirdo. I have to try out every one that comes along. I even
 tried out <a href="http://app.net">app.net</a> for a while (I still have an account there).
 I started using this app far more after the amazing redesign which happened
 right around Christmastime. It was indeed an enjoyable occasion. I use G+ to stay
@@ -1073,12 +1120,12 @@ Google Docs to collaborate.</p>
 
 <p>Chrome on the iPhone is something I had to warm up to a bit more. It behaves far
 differently than Safari on iOS and the controls are in completely different places.
-After some adjustment, I&#8217;ve come to appreciate its incredible flexibility and
+After some adjustment, I&#39;ve come to appreciate its incredible flexibility and
 strength in the mobile realm.</p>
 
 <h3>Google Maps (<a href="https://itunes.apple.com/us/app/google-maps/id585027354?mt=8">iOS</a>)</h3>
 
-<p>Apple Maps has yet to lead me to a hospital that isn&#8217;t there, or on a road that has
+<p>Apple Maps has yet to lead me to a hospital that isn&#39;t there, or on a road that has
 been demolished, but I still missed the Google Maps speed and accuracy. I have also
 found that Google Maps is far better for finding nearby amenities, such as coffee,
 gas, and food.</p>
@@ -1093,7 +1140,7 @@ causal conversation over Skype in German.</p>
 
 <p>As with G+ above, the redesign really did it for me. It was, all of a sudden,
 a reliable, beautiful, and agile experience, to use this app. It was incredibly
-buggy before (it seemed to be a product from Google&#8217;s insistence that online
+buggy before (it seemed to be a product from Google&#39;s insistence that online
 mobile apps will be dominant, over native apps), but it has come a long way.</p>
 
 <h3>iA Writer (<a href="https://itunes.apple.com/us/app/ia-writer/id392502056?mt=8">iOS</a>, <a href="https://itunes.apple.com/us/app/ia-writer/id439623248?mt=12">Mac</a>)</h3>
@@ -1105,14 +1152,14 @@ that iA Writer offers syncing through services like iCloud and Dropbox.</p>
 
 <p>I have even been known to write essays on my iPhone of 1000+ words while I walk
 between classes, to dinner in Collegetown, and to and from rehearsals. Two of the
-three &#8220;A&#8221; papers I wrote last year (one writes few papers when studying engineering)
+three &quot;A&quot; papers I wrote last year (one writes few papers when studying engineering)
 were written almost entirely in iA Writer for iOS.</p>
 
 <h3>Instapaper (<a href="https://itunes.apple.com/us/app/instapaper/id288545208?mt=8">iOS</a>)</h3>
 
 <p>After much consideration, I decided to include this app on my list. I have used
 Instapaper for many years now, and have truly enjoyed using it. It has,
-unforunately, become a repository for articles I&#8217;d like to read, but probably
+unforunately, become a repository for articles I&#39;d like to read, but probably
 never will. I found Instapaper very useful, however, to pass the time during
 long plane/car/bus rides, as well as long layovers between flights.</p>
 
@@ -1120,17 +1167,17 @@ long plane/car/bus rides, as well as long layovers between flights.</p>
 
 <p>Almost all of my development before May this year was done in Terminal.app.
 While I have appreciated its service, I decided to move on to iTerm2 upon a
-recommendation from a friend. iTerm2 is light and doesn&#8217;t have any weird &#8220;Mac
-baggage&#8221; which Terminal.app does. It&#8217;s simple to configure (though there are
+recommendation from a friend. iTerm2 is light and doesn&#39;t have any weird &quot;Mac
+baggage&quot; which Terminal.app does. It&#39;s simple to configure (though there are
 far too many configuration options, in my opinion), and easy to use.</p>
 
 <h3>Lightroom 4 (<a href="http://www.adobe.com/products/photoshop-lightroom.html">Mac</a>)</h3>
 
-<p>When I first got my Mac, I bought Apple&#8217;s Aperture to handle photo editing and
+<p>When I first got my Mac, I bought Apple&#39;s Aperture to handle photo editing and
 management. When Lightroom 1 came out, I gave it a try and really enjoyed how
-lightweight it felt. It&#8217;s incredibly easy to use, and its catalogs are quite
-small, relative to Aperture&#8217;s. It is easily extendible, with custom plugins
-for exporting photos and custom presets for one-click photo editing. I&#8217;ve since
+lightweight it felt. It&#39;s incredibly easy to use, and its catalogs are quite
+small, relative to Aperture&#39;s. It is easily extendible, with custom plugins
+for exporting photos and custom presets for one-click photo editing. I&#39;ve since
 stayed with Lightroom, and never looked back.</p>
 
 <h3>Netflix (<a href="https://itunes.apple.com/us/app/netflix/id363590051?mt=8">iOS</a>)</h3>
@@ -1147,8 +1194,8 @@ a few lab reports on Pages for iOS.</p>
 
 <h3>Paper (<a href="https://itunes.apple.com/us/app/pages/id361309726?mt=8">iPad</a>)</h3>
 
-<p>Paper by FiftyThree is pretty freakin&#8217; awesome. It&#8217;s incredibly agile, and very
-robust. While I am no artist, it&#8217;s great for drawing up a quick website mock-up
+<p>Paper by FiftyThree is pretty freakin&#39; awesome. It&#39;s incredibly agile, and very
+robust. While I am no artist, it&#39;s great for drawing up a quick website mock-up
 and sending it off to colleagues. I am still in search of the right stylus, however
 &mdash; I am using the Bamboo stylus from Wacom, but I need a tip which has more
 precision for use with Paper. Let me know if you know of one I should pick up.</p>
@@ -1156,8 +1203,8 @@ precision for use with Paper. Let me know if you know of one I should pick up.</
 <h3>Sparrow (<a href="https://itunes.apple.com/us/app/sparrow/id492573565?mt=8">iOS</a>, <a href="https://itunes.apple.com/us/app/sparrow/id417250177?mt=12">Mac</a>)</h3>
 
 <p>I have been using Sparrow since its private beta days, and I just love the thing.
-Sparrow for Mac is a beaut&#8217; and Sparrow for iOS makes managing my Gmail accounts
-so easy and painless, it&#8217;s almost too good to be true.</p>
+Sparrow for Mac is a beaut&#39; and Sparrow for iOS makes managing my Gmail accounts
+so easy and painless, it&#39;s almost too good to be true.</p>
 
 <h3>Spotify (<a href="https://itunes.apple.com/us/app/spotify/id324684580?mt=8">iOS</a>, <a href="http://www.spotify.com/us/download/mac/">Mac</a>)</h3>
 
@@ -1166,7 +1213,7 @@ one might expect of a poor college student. In my hopes to spend less on music,
 I signed up for Spotify and have just loved it. I have discovered several new
 artists that I have come to adore (can it get better than some Babyface or Marc
 Broussard??), and for that, I am thankful. Spotify for iOS is a bit weird when
-trying to initialize radio on a 3G connection, but it&#8217;s something I am willing
+trying to initialize radio on a 3G connection, but it&#39;s something I am willing
 to live with for the time being.</p>
 
 <h3>TextMate 2 Alpha (<a href="http://blog.macromates.com/2011/textmate-2-0-alpha/">Mac</a>)</h3>
@@ -1181,10 +1228,10 @@ my heart.</p>
 
 <h3>Things 2 (<a href="https://itunes.apple.com/us/app/spotify/id324684580?mt=8">iPhone</a>, <a href="https://itunes.apple.com/us/app/things/id407951449?mt=12">Mac</a>)</h3>
 
-<p>Pretty much the only reason I&#8217;ve been productive this year is due to Things.
+<p>Pretty much the only reason I&#39;ve been productive this year is due to Things.
 I was a beta tester for Things Cloud and Things 2 (both Mac and iOS) and was
 delighted to find that this task-management application suite so quickly synced
-all of my tasks, and <em>never</em> failed. I&#8217;ve never lost anything with Things Cloud,
+all of my tasks, and <em>never</em> failed. I&#39;ve never lost anything with Things Cloud,
 and that reliability is important, when it means the difference between getting
 someting done, and forgetting about it.</p>
 
@@ -1208,60 +1255,6 @@ redesign), but really wanted CloudApp support. Tweetbot was the natural alternat
 and everyone raved about it. After a couple weeks of using Tweetbot on a daily
 basis, I deleted Twitter for iPhone without hesitation. Tweetbot is the best
 way to interface with Twitter on any Apple device.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Immediate Future of Jekyll]]></title>
-    <link href="http://blog.parkermoore.de/2012/12/18/the-immediate-future-of-jekyll/"/>
-    <updated>2012-12-18T18:33:00-05:00</updated>
-    <id>http://blog.parkermoore.de/2012/12/18/the-immediate-future-of-jekyll</id>
-    <content type="html"><![CDATA[<p><a href="http://github.com/mojombo/jekyll">Jekyll</a> is a static blog generator created by <a href="https://github.com/mojombo">Tom Preston-Werner</a>, the
-current CEO of <a href="https://github.com">GitHub</a> and one of GitHub&#8217;s co-founders, and by <a href="https://github.com/qrush">Nick Quaranto</a>,
-who is now at 37signals. Jekyll is <a href="https://github.com/mojombo/jekyll/wiki/Sites">pretty freakin&#8217; popular</a> and it&#8217;s
-also the engine that drives <a href="http://pages.github.com/">GitHub Pages</a>.</p>
-
-<p>After an hour-long chat with Tom, I&#8217;m optimistic about the future of Jekyll. He&#8217;s
-really excited about where it&#8217;s headed and has a vision in mind about what he&#8217;d
-like it to become.
-Here&#8217;s what we ironed out during our conversation:</p>
-
-<p>Led by Tom, a Jekyll development team, of which I&#8217;m the first recruit, will
-be tackling the problems with Jekyll and continuously improving its functionality
-and ease-of-use. The focus will remain on making a tool that allows one to easily
-create and manage a static blog.</p>
-
-<p>Suuuper basic (unofficial) design principles:</p>
-
-<ol>
-<li>Keep it simple</li>
-<li>Easy to extend</li>
-<li>Solid safe mode (for GitHub Pages)</li>
-</ol>
-
-
-<p>What we need to tackle:</p>
-
-<ol>
-<li>Fix bugs (!!)</li>
-<li>Decrease build time (!!)</li>
-<li>Docs for site</li>
-<li>TomDoc everything</li>
-<li>Release new site</li>
-<li>Finish same site generator</li>
-<li>Include some faster LSI</li>
-</ol>
-
-
-<p>Want to help? Check out the <a href="http://git.io/jekyll-discussion">discussion label</a> and add in your two cents.<br>
-Want to contribute code? Check out the <a href="https://github.com/mojombo/jekyll/issues">issues</a> and submit a pull request with
-a fix.</p>
-
-<p>I&#8217;m really excited about the immediate future of Jekyll and what it will become
-in the next 6 months or so and the dev team takes on the issues outlined above.
-I hope you&#8217;re as excited as we are to get this project back on its feet.</p>
-
-<p>If you want to chat more or have any questions, you know <a href="http://twitter.com/parkr">where to find me</a>.</p>
 ]]></content>
   </entry>
   

@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Ruby and Rails - Musings of Parker J. Moore</title>
+  <title>Clearing Up Confusion Around baseurl - Musings of Parker J. Moore</title>
   <meta name="author" content="Parker J. Moore">
 
   
-  <meta name="description" content="So there's been a lot of hype about Ruby over the past several years. For those of you who are interested in programming and programming languages, &hellip;">
+  <meta name="description" content="Hey, so there&#39;s been a bit of confusion about what the Jekyll configuration
+option called baseurl is. Part of the beauty of open-source and of &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.parkermoore.de/2012/06/26/ruby-and-rails/">
+  <link rel="canonical" href="http://blog.parkermoore.de/2014/04/27/clearing-up-confusion-around-baseurl/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -80,7 +81,7 @@
   
   <header>
     
-      <h1 class="entry-title">Ruby and Rails</h1>
+      <h1 class="entry-title">Clearing Up Confusion Around Baseurl</h1>
     
     
       <p class="meta">
@@ -96,26 +97,71 @@
   
 
 
-<time datetime="2012-06-26T03:38:00Z" pubdate data-updated="true">Jun 26<span>th</span>, 2012</time>
+<time datetime="2014-04-27T16:52:54-04:00" pubdate data-updated="true">Apr 27<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>So there's been a lot of hype about <a href="http://www.ruby-lang.org/en/">Ruby</a> over the past several years. For those of you who are interested in programming and programming languages, you heard about it right from the start, as its beautiful syntax and ease of use lured many programmers into its use.</p>
+<div class="entry-content"><p>Hey, so there&#39;s been a bit of confusion about what the Jekyll configuration
+option called <code>baseurl</code> is. Part of the beauty of open-source and of Jekyll
+is that there&#39;s a lot of flexibility. Unfortunately, much of this
+flexibility doesn&#39;t apply to <code>baseurl</code>. Here&#39;s a quick distillation of its
+intentions, and how to use it.</p>
 
-<p>While Ruby is wonderful, it wouldn't be what it is today without the existence of <a href="http://rubyonrails.org/">Ruby on Rails</a>. This web framework posed the first real threat to PHP. Rails was powerful and agile, and helped web devs create incredbile web apps with incredible ease. The generators that came along with this gem made it possible to get a completely functional website up in a matter of <em>hours</em>, rather than days. That was incredible.</p>
+<h2>Mimic GitHub Pages</h2>
 
-<p>I used Rails on and off, switching between it and CakePHP. I didn't really understand Rails' routes and wanted something like CakePHP's <code>bake</code> functionality which creates an entire scaffold with styling and everything. I didn't object to the un-RESTful CakePHP nature of using just <code>GET</code> and <code>POST</code> requests, as I didn't need the RESTful functionality for any of the sites I was creating. I used Rails for a couple projects, but it always felt like I was coding more than was necessary.</p>
+<p><code>baseurl</code> was <a href="https://github.com/jekyll/jekyll/commit/4a8fc1fa6e3fa5dc05c81ac5ac4ffed0b0818ac4">originally added back in 2010</a> to allow
+&quot;the user to test the website with the internal webserver under the same
+base url it will be deployed to on a production server&quot;.<sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup> </p>
 
-<p>I started working at <a href="http://www.thinktopography.com">Think Topography</a> this summer and was tasked with building the new <a href="http://www.ithacahours.com">Ithaca Hours</a> mobile web app that would facilitate the use of Ithaca Hours. My boss had always used Rails and suggested that I use Rails for the API end of this project. It seemed like the best choice, given the requirements of the project, and so it began: I dove back into Rails.</p>
+<h2>Example</h2>
 
-<p>Once I wrapped my head around routes and the devise/warden authentication framework, I was truckin'. I was making huge progress on this API and learning gobs of information along the way. I was loving Rails and appreciating its incredible power. I was writing tests in rspec, which was a joy when combined with factory_girl.</p>
+<p>So let&#39;s say I come up with a cool new project. I want to make
+documentation for a project I&#39;m working on called &quot;ubiqity&quot;, and I&#39;ll be
+deploying it to GitHub Pages as a repo under my username, &quot;@parkr&quot;. Its
+documentation will be available at the URL <code>http://parkr.github.io/ubiquity</code>.</p>
 
-<p>I recently worked on a project for <a href="https://www.mhusa.com/contact-tools/login.asp?c">Moët &amp; Chandon USA</a> that was built upon the CakePHP framework, and I was not nearly as excited about returning to this framework as I expected to be, given my incredible comfort with the language and the framework.</p>
+<p>In this example, the term &quot;base URL&quot; refers to <code>ubiquity</code>. When I go to
+develop my website, I can set the <code>baseurl</code> key to equal <code>ubiquity</code> and
+navigate my website from <code>http://localhost:4000/ubiquity/</code>, as though it
+were hosted on GitHub Pages. Notice that the only difference here between
+development and production is the host: <code>parkr.github.io</code> vs.
+<code>localhost:4000</code>.<sup id="fnref2"><a href="#fn2" rel="footnote">2</a></sup></p>
 
-<p>But my work at Think Topography has changed me -- I'm a Rails guy for sure.</p>
+<h2>Configuring Your Site Properly</h2>
+
+<ol>
+<li>Set <code>baseurl</code> in your <code>_config.yml</code> to match the production URL without
+the host (e.g. <code>ubiquity</code>, <em>not</em> <code>http://parkr.github.io/ubiquity</code>).</li>
+<li>Run <code>jekyll serve -w</code> and go to <code>http://localhost:4000/your_baseurl/</code>,
+replacing <code>your_baseurl</code> with whatever you set <code>baseurl</code> to in your
+<code>_config.yml</code>, and not forgetting the trailing slash.</li>
+<li>Make sure everything works. Feel free to prepend your urls with
+<code>site.baseurl</code>.</li>
+<li>Push up to your host and see that everything works there, too!</li>
+</ol>
+
+<h2>Success!</h2>
+
+<p>You&#39;ve done it! You&#39;ve successfully used <code>baseurl</code> and the world is
+wonderful.</p>
+
+<div class="footnotes">
+<hr>
+<ol>
+
+<li id="fn1">
+<p>https://github.com/jekyll/jekyll/pull/235&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a></p>
+</li>
+
+<li id="fn2">
+<p>The port also differs, but that&#39;s not what&#39;s important here. The point is that everything after the <code>/</code> after the host is the same.&nbsp;<a href="#fnref2" rev="footnote">&#8617;</a></p>
+</li>
+
+</ol>
+</div>
 </div>
 
 
@@ -138,8 +184,14 @@
   
 
 
-<time datetime="2012-06-26T03:38:00Z" pubdate data-updated="true">Jun 26<span>th</span>, 2012</time>
+<time datetime="2014-04-27T16:52:54-04:00" pubdate data-updated="true">Apr 27<span>th</span>, 2014</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/jekyll/'>jekyll</a>
+  
+</span>
 
 
     </p>
@@ -153,10 +205,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/2012/06/03/uncomfortable/" title="Previous Post: Uncomfortable">&laquo; Uncomfortable</a>
+        <a class="basic-alignment left" href="/2014/04/03/always-moving-forward/" title="Previous Post: Always Moving Forward">&laquo; Always Moving Forward</a>
       
-      
-        <a class="basic-alignment right" href="/2012/08/05/maintaining-inbox-zero/" title="Next Post: Maintaining Inbox Zero">Maintaining Inbox Zero &raquo;</a>
       
     </p>
   </footer>
@@ -169,6 +219,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2014/04/27/clearing-up-confusion-around-baseurl/">Clearing Up Confusion Around baseurl</a>
+      </li>
     
       <li class="post">
         <a href="/2014/04/03/always-moving-forward/">Always Moving Forward</a>
@@ -184,10 +238,6 @@
     
       <li class="post">
         <a href="/2013/12/21/fixing-memory-issues-in-dokku-hosted-on-digitalocean-512mb-droplet/">Fixing Memory Issues in Dokku hosted on DigitalOcean 512MB Droplet</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2013/11/04/taking-over-someone-elses-open-source-project/">Taking Over Someone Else's Open-Source Project</a>
       </li>
     
   </ul>
