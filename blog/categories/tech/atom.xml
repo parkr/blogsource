@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tech | Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/blog/categories/tech/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-04-28T12:51:18-04:00</updated>
+  <updated>2014-05-06T23:39:53-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -56,15 +56,15 @@ bonus. Problem is, your pre-installed vim wasn&#39;t compiled with 2.0.0, it was
 compiled with 1.8.7.</p>
 
 <p>To check this, run the following in vim in NORMAL mode:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">:ruby puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"
+<div class="highlight"><pre><code class="language-text" data-lang="text">:ruby puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"
 </code></pre></div>
 <p>For me, that output <code>1.8.7-p358</code>. So that means the Ruby verison that vim is
 using is <code>1.8.7-p358</code>, and we need to compile Command-T with that version. To do
 so, install it:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><span class="gp">$ </span>rbenv install 1.8.7-p358
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>rbenv install 1.8.7-p358
 </code></pre></div>
 <p>Boom! Now download and install Command-T:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><span class="gp">$ </span>git clone https://github.com/wincent/Command-T.git ~/.vim/bundle/Command-T
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git clone https://github.com/wincent/Command-T.git ~/.vim/bundle/Command-T
 <span class="gp">$ </span><span class="nb">cd</span> ~/.vim/bundle/Command-T <span class="c"># for tpope's Pathogen</span>
 <span class="gp">$ </span>rbenv <span class="nb">local </span>1.8.7-p358
 <span class="gp">$ </span>rbenv rehash
@@ -95,21 +95,21 @@ Droplets. I didn&#39;t see that DigitalOcean provides an &quot;app&quot; for Dok
 created a vanilla box of Ubuntu 13.04 and pressed on. I got everything up and
 running and went to go deploy my first app, only to see this when I ran
 <code>git push</code>:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">runtime: panic before malloc heap initialized
+<div class="highlight"><pre><code class="language-text" data-lang="text">runtime: panic before malloc heap initialized
 fatal error: runtime: cannot allocate heap metadata
 </code></pre></div>
 <p>Well, golly, that sure is unhelpful. Looks like 512MB doesn&#39;t cut it. Luckily,
 we can avoid paying the extra $5/mo for the 1GB version by running the following
 as <code>root</code>:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/extraswap <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span>512
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/extraswap <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span>512
 mkswap /extraswap
 </code></pre></div>
 <p>Then adding the following to your <code>/etc/fstab</code> file so the swap persists between
 reboots:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">/extraswap         none            swap    sw                0       0
+<div class="highlight"><pre><code class="language-text" data-lang="text">/extraswap         none            swap    sw                0       0
 </code></pre></div>
 <p>Then run this to enable <code>/extraswap</code> for swapping:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">swapon -a
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">swapon -a
 </code></pre></div>
 <p>Boom. Now re-run <code>git push</code> and you&#39;re in business. Magic!</p>
 

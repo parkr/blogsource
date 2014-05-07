@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ops | Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/blog/categories/ops/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-04-28T12:51:18-04:00</updated>
+  <updated>2014-05-06T23:39:53-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -34,19 +34,19 @@ written in Python and shipped via <code>pip</code>. Marvelous! I ran <code>pip i
 simple Fedora distribution. After asking for the man pages for <code>aws</code> in 6
 different ways, I got them. I discovered I would need to specify the instance
 type and security group as well. So I created a security group and went ahead:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><span class="gp">$ </span>aws ec2 run-instances <span class="se">\</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>aws ec2 run-instances <span class="se">\</span>
   --image-id ami-bba18dd2 <span class="se">\</span>
   --instance-type t1.micro <span class="se">\</span>
   --security-group-ids sg-sgsga888
 </code></pre></div>
 <p>Yay, it worked! Ok, now I need to ssh into this bad boy.</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><span class="gp">$ </span>ssh ec2-la-la-la.amazonaws.com
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>ssh ec2-la-la-la.amazonaws.com
 Access denied <span class="o">(</span>publickey<span class="o">)</span>.
 </code></pre></div>
 <p>Huh? What&#39;s that all about? I had created a key pair from previous messing
 around with EC2. Hm... After a few minutes of puzzlement, I realized I needed
 to pass another option to my <code>aws ec2</code> command. Let&#39;s try this again:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><span class="c"># don't forget to terminate old instances!</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># don't forget to terminate old instances!</span>
 <span class="gp">$ </span>aws ec2 terminate-instances --instance-ids i-1111111
 <span class="c"># now, create the new one</span>
 <span class="gp">$ </span>aws ec2 run-instances <span class="se">\</span>
@@ -56,14 +56,14 @@ to pass another option to my <code>aws ec2</code> command. Let&#39;s try this ag
   --key-name parker
 </code></pre></div>
 <p>Booted! Now, let&#39;s try to ssh again:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><span class="gp">$ </span>ssh ec2-li-la-le.amazonaws.com
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>ssh ec2-li-la-le.amazonaws.com
 Access denied <span class="o">(</span>publickey<span class="o">)</span>.
 </code></pre></div>
 <p>Bollocks! Looks like I am still missing something...</p>
 
 <p>Ah! After taking a look at a tutorial, I realize I need to login as <code>ec2-user</code>.
 Let&#39;s give this one more try:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><span class="gp">$ </span>ssh ec2-user@ec2-li-la-le.amazonaws.com
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>ssh ec2-user@ec2-li-la-le.amazonaws.com
 Last login: Tue Feb  4 05:13:24 2014 from cpe-88-88-88-88.twcny.res.rr.com
 
        __|  __|_  <span class="o">)</span>

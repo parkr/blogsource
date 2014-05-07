@@ -4,7 +4,7 @@
   <title><![CDATA[Category: plugin | Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/blog/categories/plugin/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-04-28T12:51:18-04:00</updated>
+  <updated>2014-05-06T23:39:53-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -37,15 +37,15 @@ bonus. Problem is, your pre-installed vim wasn&#39;t compiled with 2.0.0, it was
 compiled with 1.8.7.</p>
 
 <p>To check this, run the following in vim in NORMAL mode:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">:ruby puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"
+<div class="highlight"><pre><code class="language-text" data-lang="text">:ruby puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"
 </code></pre></div>
 <p>For me, that output <code>1.8.7-p358</code>. So that means the Ruby verison that vim is
 using is <code>1.8.7-p358</code>, and we need to compile Command-T with that version. To do
 so, install it:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><span class="gp">$ </span>rbenv install 1.8.7-p358
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>rbenv install 1.8.7-p358
 </code></pre></div>
 <p>Boom! Now download and install Command-T:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><span class="gp">$ </span>git clone https://github.com/wincent/Command-T.git ~/.vim/bundle/Command-T
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git clone https://github.com/wincent/Command-T.git ~/.vim/bundle/Command-T
 <span class="gp">$ </span><span class="nb">cd</span> ~/.vim/bundle/Command-T <span class="c"># for tpope's Pathogen</span>
 <span class="gp">$ </span>rbenv <span class="nb">local </span>1.8.7-p358
 <span class="gp">$ </span>rbenv rehash
