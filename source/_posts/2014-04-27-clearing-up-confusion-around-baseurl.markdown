@@ -6,6 +6,8 @@ comments: false
 categories: jekyll
 ---
 
+**TL;DR: Don't use baseurl. It'll drive you crazy.**
+
 Hey, so there's been a bit of confusion about what the Jekyll configuration
 option called `baseurl` is. Part of the beauty of open-source and of Jekyll
 is that there's a lot of flexibility. Unfortunately, much of this
