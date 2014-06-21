@@ -9,6 +9,9 @@ author: Parker J. Moore
 simple_search: http://google.com/search
 description: "A web developer from Ithaca, NY. Cornell University Junior in Information Science."
 
+gems:
+- jekyll-sitemap
+
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
 # http://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime
@@ -36,7 +39,7 @@ plugins: plugins
 code_dir: downloads/code
 category_dir: blog/categories
 markdown: redcarpet
-highlighter: rouge # default python pygments have been replaced by pygments.rb
+highlighter: rouge
 
 paginate: 10          # Posts per page on the blog index
 paginate_path: /page/:num  # Directory base for pagination URLs eg. /blog/page/2/

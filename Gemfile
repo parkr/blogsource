@@ -2,7 +2,8 @@ source "http://rubygems.org"
 
 gem 'rake'
 gem 'rack'
-gem 'jekyll', '2.0.1'
+gem 'jekyll', '~> 2.0'
+gem 'jekyll-sitemap'
 gem 'liquid', '2.5.5'
 gem 'redcarpet'
 gem 'compass'
