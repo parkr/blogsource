@@ -1,6 +1,7 @@
 # Custom filters for Octopress
 require 'jekyll-page-hooks'
 require 'octopress-codefence'
+require 'octopress-codeblock'
 require 'octopress-gist'
 require './plugins/raw'
 
