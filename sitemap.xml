@@ -57,12 +57,6 @@
   </url>
   
   <url>
-    <loc>http://blog.parkermoore.de/2013/06/26/carlin-was-right/</loc>
-    <lastmod>2013-06-26T12:48:00-04:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.parkermoore.de/2013/05/30/dealing-with-distraction/</loc>
     <lastmod>2013-05-30T15:56:00-04:00</lastmod>
     <priority>0.8</priority>
@@ -89,12 +83,6 @@
   <url>
     <loc>http://blog.parkermoore.de/2013/04/22/we-mustnt-idle/</loc>
     <lastmod>2013-04-22T02:12:12-04:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.parkermoore.de/2013/04/01/do-not-single-out-the-democrats-equals-this-is-about-everyone/</loc>
-    <lastmod>2013-04-01T00:23:00-04:00</lastmod>
     <priority>0.8</priority>
   </url>
   
@@ -189,12 +177,6 @@
   </url>
   
   <url>
-    <loc>http://blog.parkermoore.de/2012/01/01/paul-irish-on-html-5/</loc>
-    <lastmod>2012-01-01T22:56:20-05:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.parkermoore.de/2011/12/20/how-to-write-passwords/</loc>
     <lastmod>2011-12-20T14:00:32-05:00</lastmod>
     <priority>0.8</priority>
@@ -203,12 +185,6 @@
   <url>
     <loc>http://blog.parkermoore.de/2011/12/20/improvements-for-instapaper/</loc>
     <lastmod>2011-12-20T07:44:36-05:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.parkermoore.de/2011/12/12/success-or-failure/</loc>
-    <lastmod>2011-12-12T11:14:24-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   
@@ -255,12 +231,6 @@
   </url>
   
   <url>
-    <loc>http://blog.parkermoore.de/2011/08/15/i-code-in-php/</loc>
-    <lastmod>2011-08-15T09:58:00-04:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.parkermoore.de/2011/07/07/google-plus-terms-of-service/</loc>
     <lastmod>2011-07-07T12:57:23-04:00</lastmod>
     <priority>0.8</priority>
@@ -275,28 +245,28 @@
   
   <url>
     <loc>http://blog.parkermoore.de/ideas.html</loc>
-    <lastmod>2014-06-23T13:29:13-04:00</lastmod>
+    <lastmod>2014-06-23T15:47:52-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://blog.parkermoore.de/archives/</loc>
-    <lastmod>2014-06-23T13:29:13-04:00</lastmod>
+    <lastmod>2014-06-23T15:47:52-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://blog.parkermoore.de/</loc>
-    <lastmod>2014-06-23T13:29:13-04:00</lastmod>
+    <lastmod>2014-06-23T15:47:52-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://blog.parkermoore.de/life.html</loc>
-    <lastmod>2014-06-23T13:29:13-04:00</lastmod>
+    <lastmod>2014-06-23T15:47:52-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -4,7 +4,7 @@
   <title><![CDATA[Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-06-23T13:29:13-04:00</updated>
+  <updated>2014-06-23T15:47:52-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -598,29 +598,6 @@ solution</a>:</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Carlin Was Right]]></title>
-    <link href="http://blog.parkermoore.de/2013/06/26/carlin-was-right/"/>
-    <updated>2013-06-26T12:48:00-04:00</updated>
-    <id>http://blog.parkermoore.de/2013/06/26/carlin-was-right</id>
-    <content type="html"><![CDATA[<p>The late comedian George Carlin was never skiddish about sharing his opinion of the
-country and of the human race. &quot;It&#39;s all going downhill,&quot; he would say. The decline of
-objective rationality sewed our fate: we&#39;re fucked.</p>
-
-<p>We&#39;re fucked on foreign relations.<br />
-We&#39;re fucked on domestic freedoms.<br />
-We&#39;re fucked on freedom from discrimination.<br />
-We&#39;re fucked on climate change.<br />
-We&#39;re fucked on economic prosperity.<br />
-We&#39;re fucked on everything, because objective rationality is dead.<br /></p>
-
-<p>We haven&#39;t done right by each other and we haven&#39;t done right by our planet.
-We&#39;re the scourge of the Earth and it&#39;s weeks like this one that make me wish we had blown
-ourselves to oblivion during the Cold War. The cockroaches would at least be better
-caretakers of this world than we are.</p>
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[Dealing with Distraction]]></title>
     <link href="http://blog.parkermoore.de/2013/05/30/dealing-with-distraction/"/>
     <updated>2013-05-30T15:56:00-04:00</updated>
@@ -869,27 +846,6 @@ much gnashing of teeth for what we believe in and what we know is right.</p>
 <p>This is the imperative of our generation. Let us act!</p>
 
 <p>This post was originally published on <a href="https://medium.com/i-m-h-o/d5bf40927b1a">Medium</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Do Not Single Out the Democrats - This is About Everyone]]></title>
-    <link href="http://blog.parkermoore.de/2013/04/01/do-not-single-out-the-democrats-equals-this-is-about-everyone/"/>
-    <updated>2013-04-01T00:23:00-04:00</updated>
-    <id>http://blog.parkermoore.de/2013/04/01/do-not-single-out-the-democrats-equals-this-is-about-everyone</id>
-    <content type="html"><![CDATA[<p>I just read an <a href="http://www.upworthy.com/omg-google-tucker-carlson-and-gay-marriage?c=fea">appalling story by <em>Upworthy</em></a> that singles out 10 Democratic
-senators who do not support full marriage equality for gays and lesbians. This
-article is an absolute disgrace. <em>Upworthy</em> (and the <em>Huffington Post</em> for that
-matter) should not be singling out Democrats who do not believe in same-sex
-marriage as though it&#39;s some unnatural digression from the widely-accepted
-democratic platform. No, they should be listing <strong>every</strong> senator that does
-not support same-sex marriage.</p>
-
-<p>It is not a fundamental tenant of the democratic platform. It is a fundamental
-tenant of reason, of American law, and of human equality. There is no good
-reason every congressperson should not support same-sex marriage. This is not
-about party lines. This is about human dignity and equality in the eyes of the
-law.</p>
 ]]></content>
   </entry>
   
@@ -1165,6 +1121,75 @@ redesign), but really wanted CloudApp support. Tweetbot was the natural alternat
 and everyone raved about it. After a couple weeks of using Tweetbot on a daily
 basis, I deleted Twitter for iPhone without hesitation. Tweetbot is the best
 way to interface with Twitter on any Apple device.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Immediate Future of Jekyll]]></title>
+    <link href="http://blog.parkermoore.de/2012/12/18/the-immediate-future-of-jekyll/"/>
+    <updated>2012-12-18T18:33:00-05:00</updated>
+    <id>http://blog.parkermoore.de/2012/12/18/the-immediate-future-of-jekyll</id>
+    <content type="html"><![CDATA[<p><a href="http://github.com/mojombo/jekyll">Jekyll</a> is a static blog generator created by <a href="https://github.com/mojombo">Tom Preston-Werner</a>, the
+current CEO of <a href="https://github.com">GitHub</a> and one of GitHub&#39;s co-founders, and by <a href="https://github.com/qrush">Nick Quaranto</a>,
+who is now at 37signals. Jekyll is <a href="https://github.com/mojombo/jekyll/wiki/Sites">pretty freakin&#39; popular</a> and it&#39;s
+also the engine that drives <a href="http://pages.github.com/">GitHub Pages</a>.</p>
+
+<p>After an hour-long chat with Tom, I&#39;m optimistic about the future of Jekyll. He&#39;s
+really excited about where it&#39;s headed and has a vision in mind about what he&#39;d
+like it to become.
+Here&#39;s what we ironed out during our conversation:</p>
+
+<p>Led by Tom, a Jekyll development team, of which I&#39;m the first recruit, will
+be tackling the problems with Jekyll and continuously improving its functionality
+and ease-of-use. The focus will remain on making a tool that allows one to easily
+create and manage a static blog.</p>
+
+<p>Suuuper basic (unofficial) design principles:</p>
+
+<ol>
+<li>Keep it simple</li>
+<li>Easy to extend</li>
+<li>Solid safe mode (for GitHub Pages)</li>
+</ol>
+
+<p>What we need to tackle:</p>
+
+<ol>
+<li>Fix bugs (!!)</li>
+<li>Decrease build time (!!)</li>
+<li>Docs for site</li>
+<li>TomDoc everything</li>
+<li>Release new site</li>
+<li>Finish same site generator</li>
+<li>Include some faster LSI</li>
+</ol>
+
+<p>Want to help? Check out the <a href="http://git.io/jekyll-discussion">discussion label</a> and add in your two cents.<br>
+Want to contribute code? Check out the <a href="https://github.com/mojombo/jekyll/issues">issues</a> and submit a pull request with
+a fix.</p>
+
+<p>I&#39;m really excited about the immediate future of Jekyll and what it will become
+in the next 6 months or so and the dev team takes on the issues outlined above.
+I hope you&#39;re as excited as we are to get this project back on its feet.</p>
+
+<p>If you want to chat more or have any questions, you know <a href="http://twitter.com/parkr">where to find me</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Email Notifications in Web Apps]]></title>
+    <link href="http://blog.parkermoore.de/2012/12/12/email-notifications-in-web-apps/"/>
+    <updated>2012-12-12T02:05:00-05:00</updated>
+    <id>http://blog.parkermoore.de/2012/12/12/email-notifications-in-web-apps</id>
+    <content type="html"><![CDATA[<p>Email notifications from web apps have been annoying us for months now. Ever since Twitter, Facebook and other notification-heavy apps began automatically sending notifications to us (alas, without our consent), public opinion seems to have developed a hatred for email notifications. But, I implore you, understand the flipside:</p>
+
+<p><a href="https://twitter.com/marcoarment/status/278705209507721217"><img src="http://blog.parkermoore.de/images/tweet-by-marco-arment.png" alt="Tweet by Marco Arment"></a></p>
+
+<p>Email notifications in web apps is a way of unifying one&#39;s virtual &quot;inbox&quot;. Dealing with too many is overwhelming.</p>
+
+<p>Keep email notifications around.</p>
+
+<p>(But, for pete&#39;s sake, <em>ask</em> your users whether they want email notifications before you activate them for their accounts.)</p>
 ]]></content>
   </entry>
   
