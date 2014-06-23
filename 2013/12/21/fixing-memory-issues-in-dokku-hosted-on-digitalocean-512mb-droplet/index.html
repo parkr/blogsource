@@ -106,7 +106,7 @@ complete freedom to host as many apps with whatever databases or other &hellip;"
 
 <div class="entry-content"><p>As many other Heroku customers, I rejoiced when <a href="https://github.com/progrium/dokku">Dokku</a> was released. To have
 complete freedom to host as many apps with whatever databases or other plugins
-I wanted &#8211; all for the cost of a small VM &#8211; was wonderful news.</p>
+I wanted -- all for the cost of a small VM -- was wonderful news.</p>
 
 <p>I decided, for cost&#39;s sake, to boot up one of those famed $5 <a href="https://digitalocean.com">DigitalOcean</a>
 Droplets. I didn&#39;t see that DigitalOcean provides an &quot;app&quot; for Dokku, so I
@@ -114,34 +114,24 @@ created a vanilla box of Ubuntu 13.04 and pressed on. I got everything up and
 running and went to go deploy my first app, only to see this when I ran
 <code>git push</code>:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>runtime: panic before malloc heap initialized
-</span><span class='line'>fatal error: runtime: cannot allocate heap metadata
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'>runtime: panic before malloc heap initialized
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'>fatal error: runtime: cannot allocate heap metadata</div></div></pre></div></figure>
 
 <p>Well, golly, that sure is unhelpful. Looks like 512MB doesn&#39;t cut it. Luckily,
 we can avoid paying the extra $5/mo for the 1GB version by running the following
 as <code>root</code>:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/extraswap <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span>512
-</span><span class='line'>mkswap /extraswap
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'>dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/extraswap <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span>512
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'>mkswap /extraswap</div></div></pre></div></figure>
 
 <p>Then adding the following to your <code>/etc/fstab</code> file so the swap persists between
 reboots:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>/extraswap         none            swap    sw                0       0
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'>/extraswap         none            swap    sw                0       0</div></div></pre></div></figure>
 
 <p>Then run this to enable <code>/extraswap</code> for swapping:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>swapon -a
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'>swapon -a</div></div></pre></div></figure>
 
 <p>Boom. Now re-run <code>git push</code> and you&#39;re in business. Magic!</p>
 

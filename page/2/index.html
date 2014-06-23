@@ -306,7 +306,7 @@ updates on future releases and links to cool plugins.</p>
 <li>Source directory protection</li>
 </ul>
 
-<p>&#8230; and <a href="https://github.com/mojombo/jekyll/blob/v1.0.0/History.txt">so much more</a>!</p>
+<p>... and <a href="https://github.com/mojombo/jekyll/blob/v1.0.0/History.txt">so much more</a>!</p>
 
 <p>We also have an <a href="http://jekyllrb.com/docs/upgrading/">Upgrading</a> page that clarifies
 some breaking changes and tips for upgrading to Jekyll 1.0.</p>
@@ -408,7 +408,7 @@ others will experience their memories of me beyond my departure from this world.
       
   <header>
     
-      <h1 class="entry-title"><a href="/2013/04/22/we-mustnt-idle/">We Mustn&#8217;t Idle</a></h1>
+      <h1 class="entry-title"><a href="/2013/04/22/we-mustnt-idle/">We Mustn't Idle</a></h1>
     
     
       <p class="meta">
@@ -614,33 +614,19 @@ with are really bare-bones. So I wanted to write this script for you, the Ubuntu
 user, in order for you to very quickly get up and running with rbenv &amp; the latest Ruby
 MRI. Just copy it and run it.</p>
 
-<figure class='code'><figcaption><span>Installing rbenv on Ubuntu 12.04</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install zlib1g-dev openssl libopenssl-ruby1.9.1 libssl-dev libruby1.9.1 libreadline-dev git-core make make-doc
-</span><span class='line'><span class="nb">cd</span> ~
-</span><span class='line'>git clone git://github.com/sstephenson/rbenv.git .rbenv
-</span><span class='line'><span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;&#39;</span> &gt;&gt; ~/.bashrc
-</span><span class='line'><span class="nb">echo</span> <span class="s1">&#39;eval &quot;$(rbenv init -)&quot;&#39;</span> &gt;&gt; ~/.bashrc
-</span><span class='line'><span class="nb">exec</span> <span class="nv">$SHELL</span> <span class="c"># Restart the shell</span>
-</span><span class='line'>mkdir -p ~/.rbenv/plugins
-</span><span class='line'><span class="nb">cd</span> ~/.rbenv/plugins
-</span><span class='line'>git clone git://github.com/sstephenson/ruby-build.git
-</span><span class='line'>git clone git://github.com/sstephenson/rbenv-gem-rehash.git
-</span><span class='line'>rbenv install 1.9.3-p362
-</span><span class='line'>rbenv rehash
-</span><span class='line'>rbenv global 1.9.3-p362
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><figcaption class='code-highlight-caption'><span class='code-highlight-caption-title'>Installing rbenv on Ubuntu 12.04</span></figcaption><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'>sudo apt-get install zlib1g-dev openssl libopenssl-ruby1.9.1 libssl-dev libruby1.9.1 libreadline-dev git-core make make-doc
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="nb">cd</span> ~
+</div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'>git clone git://github.com/sstephenson/rbenv.git .rbenv
+</div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="nb">echo</span> <span class="s1">'export PATH="$HOME/.rbenv/bin:$PATH"'</span> &gt;&gt; ~/.bashrc
+</div></div><div data-line='5' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="nb">echo</span> <span class="s1">'eval "$(rbenv init -)"'</span> &gt;&gt; ~/.bashrc
+</div></div><div data-line='6' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="nb">exec</span> <span class="nv">$SHELL</span> <span class="c"># Restart the shell</span>
+</div></div><div data-line='7' class='code-highlight-row numbered'><div class='code-highlight-line'>mkdir -p ~/.rbenv/plugins
+</div></div><div data-line='8' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="nb">cd</span> ~/.rbenv/plugins
+</div></div><div data-line='9' class='code-highlight-row numbered'><div class='code-highlight-line'>git clone git://github.com/sstephenson/ruby-build.git
+</div></div><div data-line='10' class='code-highlight-row numbered'><div class='code-highlight-line'>git clone git://github.com/sstephenson/rbenv-gem-rehash.git
+</div></div><div data-line='11' class='code-highlight-row numbered'><div class='code-highlight-line'>rbenv install 1.9.3-p362
+</div></div><div data-line='12' class='code-highlight-row numbered'><div class='code-highlight-line'>rbenv rehash
+</div></div><div data-line='13' class='code-highlight-row numbered'><div class='code-highlight-line'>rbenv global 1.9.3-p362</div></div></pre></div></figure>
 </div>
   
   
@@ -688,12 +674,9 @@ to my rescue. <a href="http://rafifyalda.id.au/">Rafif Yalda</a>, a former Wunde
 <p>So if you ever run into a problem with your mobile network, ensure that your APN settings are correct.
 In this case:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>APN: internet.eplus.de
-</span><span class='line'>username: simyo
-</span><span class='line'>password: simyo</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'>APN: internet.eplus.de
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'>username: simyo
+</div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'>password: simyo</div></div></pre></div></figure>
 
 <p>THANK YOU RAFIF. This surely saved me many hours of frustration.</p>
 </div>
@@ -943,7 +926,7 @@ way to interface with Twitter on any Apple device.</p>
       </li>
     
       <li class="post">
-        <a href="/2014/01/02/installing-command-t-with-os-x-mavericks-built-in-vim/">Installing Command-T with OS X Maverick&#8217;s Built-In Vim</a>
+        <a href="/2014/01/02/installing-command-t-with-os-x-mavericks-built-in-vim/">Installing Command-T with OS X Maverick's Built-In Vim</a>
       </li>
     
       <li class="post">

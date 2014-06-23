@@ -121,82 +121,48 @@ simple Fedora distribution. After asking for the man pages for <code>aws</code> 
 different ways, I got them. I discovered I would need to specify the instance
 type and security group as well. So I created a security group and went ahead:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>aws ec2 run-instances <span class="se">\</span>
-</span><span class='line'>  --image-id ami-bba18dd2 <span class="se">\</span>
-</span><span class='line'>  --instance-type t1.micro <span class="se">\</span>
-</span><span class='line'>  --security-group-ids sg-sgsga888
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>aws ec2 run-instances <span class="se">\</span>
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'>  --image-id ami-bba18dd2 <span class="se">\</span>
+</div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'>  --instance-type t1.micro <span class="se">\</span>
+</div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'>  --security-group-ids sg-sgsga888</div></div></pre></div></figure>
 
 <p>Yay, it worked! Ok, now I need to ssh into this bad boy.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ssh ec2-la-la-la.amazonaws.com
-</span><span class='line'>Access denied <span class="o">(</span>publickey<span class="o">)</span>.
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>ssh ec2-la-la-la.amazonaws.com
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'>Access denied <span class="o">(</span>publickey<span class="o">)</span>.</div></div></pre></div></figure>
 
 <p>Huh? What&#39;s that all about? I had created a key pair from previous messing
-around with EC2. Hm&#8230; After a few minutes of puzzlement, I realized I needed
+around with EC2. Hm... After a few minutes of puzzlement, I realized I needed
 to pass another option to my <code>aws ec2</code> command. Let&#39;s try this again:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># don&#39;t forget to terminate old instances!</span>
-</span><span class='line'><span class="nv">$ </span>aws ec2 terminate-instances --instance-ids i-1111111
-</span><span class='line'><span class="c"># now, create the new one</span>
-</span><span class='line'><span class="nv">$ </span>aws ec2 run-instances <span class="se">\</span>
-</span><span class='line'>  --image-id ami-bba18dd2 <span class="se">\</span>
-</span><span class='line'>  --instance-type t1.micro <span class="se">\</span>
-</span><span class='line'>  --security-group-ids sg-sgsga888 <span class="se">\</span>
-</span><span class='line'>  --key-name parker
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c"># don't forget to terminate old instances!</span>
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>aws ec2 terminate-instances --instance-ids i-1111111
+</div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c"># now, create the new one</span>
+</div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>aws ec2 run-instances <span class="se">\</span>
+</div></div><div data-line='5' class='code-highlight-row numbered'><div class='code-highlight-line'>  --image-id ami-bba18dd2 <span class="se">\</span>
+</div></div><div data-line='6' class='code-highlight-row numbered'><div class='code-highlight-line'>  --instance-type t1.micro <span class="se">\</span>
+</div></div><div data-line='7' class='code-highlight-row numbered'><div class='code-highlight-line'>  --security-group-ids sg-sgsga888 <span class="se">\</span>
+</div></div><div data-line='8' class='code-highlight-row numbered'><div class='code-highlight-line'>  --key-name parker</div></div></pre></div></figure>
 
 <p>Booted! Now, let&#39;s try to ssh again:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ssh ec2-li-la-le.amazonaws.com
-</span><span class='line'>Access denied <span class="o">(</span>publickey<span class="o">)</span>.
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>ssh ec2-li-la-le.amazonaws.com
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'>Access denied <span class="o">(</span>publickey<span class="o">)</span>.</div></div></pre></div></figure>
 
-<p>Bollocks! Looks like I am still missing something&#8230;</p>
+<p>Bollocks! Looks like I am still missing something...</p>
 
 <p>Ah! After taking a look at a tutorial, I realize I need to login as <code>ec2-user</code>.
 Let&#39;s give this one more try:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ssh ec2-user@ec2-li-la-le.amazonaws.com
-</span><span class='line'>Last login: Tue Feb  4 05:13:24 2014 from cpe-88-88-88-88.twcny.res.rr.com
-</span><span class='line'>
-</span><span class='line'>       __<span class="p">|</span>  __<span class="p">|</span>_  <span class="o">)</span>
-</span><span class='line'>       _<span class="p">|</span>  <span class="o">(</span>     /   Amazon Linux AMI
-</span><span class='line'>      ___<span class="p">|</span><span class="se">\_</span>__<span class="p">|</span>___<span class="p">|</span>
-</span><span class='line'>
-</span><span class='line'>https://aws.amazon.com/amazon-linux-ami/2013.09-release-notes/
-</span><span class='line'>7 package<span class="o">(</span>s<span class="o">)</span> needed <span class="k">for </span>security, out of 25 available
-</span><span class='line'>Run <span class="s2">&quot;sudo yum update&quot;</span> to apply all updates.
-</span><span class='line'><span class="o">[</span>ec2-user@ip-10-9-162-71 ~<span class="o">]</span><span class="err">$</span>
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>ssh ec2-user@ec2-li-la-le.amazonaws.com
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'>Last login: Tue Feb  4 05:13:24 2014 from cpe-88-88-88-88.twcny.res.rr.com
+</div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'>       __|  __|_  <span class="o">)</span>
+</div></div><div data-line='5' class='code-highlight-row numbered'><div class='code-highlight-line'>       _|  <span class="o">(</span>     /   Amazon Linux AMI
+</div></div><div data-line='6' class='code-highlight-row numbered'><div class='code-highlight-line'>      ___|<span class="se">\_</span>__|___|
+</div></div><div data-line='7' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='8' class='code-highlight-row numbered'><div class='code-highlight-line'>https://aws.amazon.com/amazon-linux-ami/2013.09-release-notes/
+</div></div><div data-line='9' class='code-highlight-row numbered'><div class='code-highlight-line'>7 package<span class="o">(</span>s<span class="o">)</span> needed <span class="k">for </span>security, out of 25 available
+</div></div><div data-line='10' class='code-highlight-row numbered'><div class='code-highlight-line'>Run <span class="s2">"sudo yum update"</span> to apply all updates.
+</div></div><div data-line='11' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="o">[</span>ec2-user@ip-10-9-162-71 ~]<span class="err">$</span></div></div></pre></div></figure>
 
 <p>YES! I did it. Ok, so lessons:</p>
 

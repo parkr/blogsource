@@ -110,39 +110,20 @@ console on one of your servers. Many thanks to
 <a href="https://github.com/colszowka">@colszowka</a> for <a href="https://gist.github.com/benedikt/1115513#comment-576015">this
 solution</a>:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">namespace</span> <span class="ss">:rails</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">desc</span> <span class="s2">&quot;Remote console&quot;</span>
-</span><span class='line'>  <span class="n">task</span> <span class="ss">:console</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span> <span class="k">do</span>
-</span><span class='line'>    <span class="n">run_interactively</span> <span class="s2">&quot;bundle exec rails console </span><span class="si">#{</span><span class="n">rails_env</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">desc</span> <span class="s2">&quot;Remote dbconsole&quot;</span>
-</span><span class='line'>  <span class="n">task</span> <span class="ss">:dbconsole</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span> <span class="k">do</span>
-</span><span class='line'>    <span class="n">run_interactively</span> <span class="s2">&quot;bundle exec rails dbconsole </span><span class="si">#{</span><span class="n">rails_env</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">run_interactively</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">server</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">server</span> <span class="o">||=</span> <span class="n">find_servers_for_task</span><span class="p">(</span><span class="n">current_task</span><span class="p">)</span><span class="o">.</span><span class="n">first</span>
-</span><span class='line'>  <span class="nb">exec</span> <span class="sx">%Q(ssh </span><span class="si">#{</span><span class="n">server</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="sx"> -t &#39;cd </span><span class="si">#{</span><span class="n">current_path</span><span class="si">}</span><span class="sx"> &amp;&amp; </span><span class="si">#{</span><span class="n">command</span><span class="si">}</span><span class="sx">&#39;)</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="n">namespace</span> <span class="ss">:rails</span> <span class="k">do</span>
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="n">desc</span> <span class="s2">"Remote console"</span>
+</div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="n">task</span> <span class="ss">:console</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span> <span class="k">do</span>
+</div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="n">run_interactively</span> <span class="s2">"bundle exec rails console </span><span class="si">#{</span><span class="n">rails_env</span><span class="si">}</span><span class="s2">"</span>
+</div></div><div data-line='5' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="k">end</span>
+</div></div><div data-line='6' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='7' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="n">desc</span> <span class="s2">"Remote dbconsole"</span>
+</div></div><div data-line='8' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="n">task</span> <span class="ss">:dbconsole</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span> <span class="k">do</span>
+</div></div><div data-line='9' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="n">run_interactively</span> <span class="s2">"bundle exec rails dbconsole </span><span class="si">#{</span><span class="n">rails_env</span><span class="si">}</span><span class="s2">"</span>
+</div></div><div data-line='10' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="k">end</span>
+</div></div><div data-line='11' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="k">end</span>
+</div></div><div data-line='12' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='13' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="k">def</span> <span class="nf">run_interactively</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">server</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+</div></div><div data-line='14' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="n">server</span> <span class="o">||=</span> <span class="n">find_servers_for_task</span><span class="p">(</span><span class="n">current_task</span><span class="p">).</span><span class="nf">first</span>
+</div></div><div data-line='15' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="nb">exec</span> <span class="sx">%Q(ssh </span><span class="si">#{</span><span class="n">server</span><span class="p">.</span><span class="nf">host</span><span class="si">}</span><span class="sx"> -t 'cd </span><span class="si">#{</span><span class="n">current_path</span><span class="si">}</span><span class="sx"> &amp;&amp; </span><span class="si">#{</span><span class="n">command</span><span class="si">}</span><span class="sx">')</span>
+</div></div><div data-line='16' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="k">end</span></div></div></pre></div></figure>
 
 <p>And, <em>vòila</em>! Run <code>cap rails:console</code> and you&#39;re in business.</p>
 </div>

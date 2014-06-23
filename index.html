@@ -265,82 +265,48 @@ simple Fedora distribution. After asking for the man pages for <code>aws</code> 
 different ways, I got them. I discovered I would need to specify the instance
 type and security group as well. So I created a security group and went ahead:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>aws ec2 run-instances <span class="se">\</span>
-</span><span class='line'>  --image-id ami-bba18dd2 <span class="se">\</span>
-</span><span class='line'>  --instance-type t1.micro <span class="se">\</span>
-</span><span class='line'>  --security-group-ids sg-sgsga888
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>aws ec2 run-instances <span class="se">\</span>
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'>  --image-id ami-bba18dd2 <span class="se">\</span>
+</div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'>  --instance-type t1.micro <span class="se">\</span>
+</div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'>  --security-group-ids sg-sgsga888</div></div></pre></div></figure>
 
 <p>Yay, it worked! Ok, now I need to ssh into this bad boy.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ssh ec2-la-la-la.amazonaws.com
-</span><span class='line'>Access denied <span class="o">(</span>publickey<span class="o">)</span>.
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>ssh ec2-la-la-la.amazonaws.com
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'>Access denied <span class="o">(</span>publickey<span class="o">)</span>.</div></div></pre></div></figure>
 
 <p>Huh? What&#39;s that all about? I had created a key pair from previous messing
-around with EC2. Hm&#8230; After a few minutes of puzzlement, I realized I needed
+around with EC2. Hm... After a few minutes of puzzlement, I realized I needed
 to pass another option to my <code>aws ec2</code> command. Let&#39;s try this again:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># don&#39;t forget to terminate old instances!</span>
-</span><span class='line'><span class="nv">$ </span>aws ec2 terminate-instances --instance-ids i-1111111
-</span><span class='line'><span class="c"># now, create the new one</span>
-</span><span class='line'><span class="nv">$ </span>aws ec2 run-instances <span class="se">\</span>
-</span><span class='line'>  --image-id ami-bba18dd2 <span class="se">\</span>
-</span><span class='line'>  --instance-type t1.micro <span class="se">\</span>
-</span><span class='line'>  --security-group-ids sg-sgsga888 <span class="se">\</span>
-</span><span class='line'>  --key-name parker
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c"># don't forget to terminate old instances!</span>
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>aws ec2 terminate-instances --instance-ids i-1111111
+</div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c"># now, create the new one</span>
+</div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>aws ec2 run-instances <span class="se">\</span>
+</div></div><div data-line='5' class='code-highlight-row numbered'><div class='code-highlight-line'>  --image-id ami-bba18dd2 <span class="se">\</span>
+</div></div><div data-line='6' class='code-highlight-row numbered'><div class='code-highlight-line'>  --instance-type t1.micro <span class="se">\</span>
+</div></div><div data-line='7' class='code-highlight-row numbered'><div class='code-highlight-line'>  --security-group-ids sg-sgsga888 <span class="se">\</span>
+</div></div><div data-line='8' class='code-highlight-row numbered'><div class='code-highlight-line'>  --key-name parker</div></div></pre></div></figure>
 
 <p>Booted! Now, let&#39;s try to ssh again:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ssh ec2-li-la-le.amazonaws.com
-</span><span class='line'>Access denied <span class="o">(</span>publickey<span class="o">)</span>.
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>ssh ec2-li-la-le.amazonaws.com
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'>Access denied <span class="o">(</span>publickey<span class="o">)</span>.</div></div></pre></div></figure>
 
-<p>Bollocks! Looks like I am still missing something&#8230;</p>
+<p>Bollocks! Looks like I am still missing something...</p>
 
 <p>Ah! After taking a look at a tutorial, I realize I need to login as <code>ec2-user</code>.
 Let&#39;s give this one more try:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ssh ec2-user@ec2-li-la-le.amazonaws.com
-</span><span class='line'>Last login: Tue Feb  4 05:13:24 2014 from cpe-88-88-88-88.twcny.res.rr.com
-</span><span class='line'>
-</span><span class='line'>       __<span class="p">|</span>  __<span class="p">|</span>_  <span class="o">)</span>
-</span><span class='line'>       _<span class="p">|</span>  <span class="o">(</span>     /   Amazon Linux AMI
-</span><span class='line'>      ___<span class="p">|</span><span class="se">\_</span>__<span class="p">|</span>___<span class="p">|</span>
-</span><span class='line'>
-</span><span class='line'>https://aws.amazon.com/amazon-linux-ami/2013.09-release-notes/
-</span><span class='line'>7 package<span class="o">(</span>s<span class="o">)</span> needed <span class="k">for </span>security, out of 25 available
-</span><span class='line'>Run <span class="s2">&quot;sudo yum update&quot;</span> to apply all updates.
-</span><span class='line'><span class="o">[</span>ec2-user@ip-10-9-162-71 ~<span class="o">]</span><span class="err">$</span>
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>ssh ec2-user@ec2-li-la-le.amazonaws.com
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'>Last login: Tue Feb  4 05:13:24 2014 from cpe-88-88-88-88.twcny.res.rr.com
+</div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'>       __|  __|_  <span class="o">)</span>
+</div></div><div data-line='5' class='code-highlight-row numbered'><div class='code-highlight-line'>       _|  <span class="o">(</span>     /   Amazon Linux AMI
+</div></div><div data-line='6' class='code-highlight-row numbered'><div class='code-highlight-line'>      ___|<span class="se">\_</span>__|___|
+</div></div><div data-line='7' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='8' class='code-highlight-row numbered'><div class='code-highlight-line'>https://aws.amazon.com/amazon-linux-ami/2013.09-release-notes/
+</div></div><div data-line='9' class='code-highlight-row numbered'><div class='code-highlight-line'>7 package<span class="o">(</span>s<span class="o">)</span> needed <span class="k">for </span>security, out of 25 available
+</div></div><div data-line='10' class='code-highlight-row numbered'><div class='code-highlight-line'>Run <span class="s2">"sudo yum update"</span> to apply all updates.
+</div></div><div data-line='11' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="o">[</span>ec2-user@ip-10-9-162-71 ~]<span class="err">$</span></div></div></pre></div></figure>
 
 <p>YES! I did it. Ok, so lessons:</p>
 
@@ -364,7 +330,7 @@ Let&#39;s give this one more try:</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/2014/01/02/installing-command-t-with-os-x-mavericks-built-in-vim/">Installing Command-T With OS X Maverick&#8217;s Built-In Vim</a></h1>
+      <h1 class="entry-title"><a href="/2014/01/02/installing-command-t-with-os-x-mavericks-built-in-vim/">Installing Command-T With OS X Maverick's Built-In Vim</a></h1>
     
     
       <p class="meta">
@@ -407,35 +373,23 @@ compiled with 1.8.7.</p>
 
 <p>To check this, run the following in vim in NORMAL mode:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>:ruby puts &quot;#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}&quot;
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'>:ruby puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"</div></div></pre></div></figure>
 
 <p>For me, that output <code>1.8.7-p358</code>. So that means the Ruby verison that vim is
 using is <code>1.8.7-p358</code>, and we need to compile Command-T with that version. To do
 so, install it:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rbenv install 1.8.7-p358
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>rbenv install 1.8.7-p358</div></div></pre></div></figure>
 
 <p>Boom! Now download and install Command-T:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git clone https://github.com/wincent/Command-T.git ~/.vim/bundle/Command-T
-</span><span class='line'><span class="nv">$ </span><span class="nb">cd</span> ~/.vim/bundle/Command-T <span class="c"># for tpope&#39;s Pathogen</span>
-</span><span class='line'><span class="nv">$ </span>rbenv <span class="nb">local </span>1.8.7-p358
-</span><span class='line'><span class="nv">$ </span>rbenv rehash
-</span><span class='line'><span class="nv">$ </span>gem install bundler
-</span><span class='line'><span class="nv">$ </span>bundle install
-</span><span class='line'><span class="nv">$ </span>bundle <span class="nb">exec </span>rake make
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>git clone https://github.com/wincent/Command-T.git ~/.vim/bundle/Command-T
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span><span class="nb">cd</span> ~/.vim/bundle/Command-T <span class="c"># for tpope's Pathogen</span>
+</div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>rbenv <span class="nb">local </span>1.8.7-p358
+</div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>rbenv rehash
+</div></div><div data-line='5' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>gem install bundler
+</div></div><div data-line='6' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>bundle install
+</div></div><div data-line='7' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>bundle <span class="nb">exec </span>rake make</div></div></pre></div></figure>
 
 <p>Aaaaand boom, you&#39;re done. Open up <code>vim</code> and type your leaderkey then <code>t</code> (for
 me, that&#39;s <code>,t</code>) to launch the prompt.</p>
@@ -480,7 +434,7 @@ try again.</p>
 
   <div class="entry-content"><p>As many other Heroku customers, I rejoiced when <a href="https://github.com/progrium/dokku">Dokku</a> was released. To have
 complete freedom to host as many apps with whatever databases or other plugins
-I wanted &#8211; all for the cost of a small VM &#8211; was wonderful news.</p>
+I wanted -- all for the cost of a small VM -- was wonderful news.</p>
 
 <p>I decided, for cost&#39;s sake, to boot up one of those famed $5 <a href="https://digitalocean.com">DigitalOcean</a>
 Droplets. I didn&#39;t see that DigitalOcean provides an &quot;app&quot; for Dokku, so I
@@ -488,34 +442,24 @@ created a vanilla box of Ubuntu 13.04 and pressed on. I got everything up and
 running and went to go deploy my first app, only to see this when I ran
 <code>git push</code>:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>runtime: panic before malloc heap initialized
-</span><span class='line'>fatal error: runtime: cannot allocate heap metadata
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'>runtime: panic before malloc heap initialized
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'>fatal error: runtime: cannot allocate heap metadata</div></div></pre></div></figure>
 
 <p>Well, golly, that sure is unhelpful. Looks like 512MB doesn&#39;t cut it. Luckily,
 we can avoid paying the extra $5/mo for the 1GB version by running the following
 as <code>root</code>:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/extraswap <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span>512
-</span><span class='line'>mkswap /extraswap
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'>dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/extraswap <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span>512
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'>mkswap /extraswap</div></div></pre></div></figure>
 
 <p>Then adding the following to your <code>/etc/fstab</code> file so the swap persists between
 reboots:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>/extraswap         none            swap    sw                0       0
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'>/extraswap         none            swap    sw                0       0</div></div></pre></div></figure>
 
 <p>Then run this to enable <code>/extraswap</code> for swapping:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>swapon -a
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'>swapon -a</div></div></pre></div></figure>
 
 <p>Boom. Now re-run <code>git push</code> and you&#39;re in business. Magic!</p>
 
@@ -533,7 +477,7 @@ thought I&#39;d share and preserve for my own benefit in the future.</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/2013/11/04/taking-over-someone-elses-open-source-project/">Taking Over Someone Else&#8217;s Open-Source Project</a></h1>
+      <h1 class="entry-title"><a href="/2013/11/04/taking-over-someone-elses-open-source-project/">Taking Over Someone Else's Open-Source Project</a></h1>
     
     
       <p class="meta">
@@ -732,11 +676,11 @@ Each repository contains a text file for each sub-segment of the proposed
 bill as well as a rationale or goal, e.g.
  . (root)
  |
- |&#8211; README.txt (rationale, goal(s) of bill, and other meta info)
- |&#8211; section01.txt
- |&#8211; section02.txt
+ |-- README.txt (rationale, goal(s) of bill, and other meta info)
+ |-- section01.txt
+ |-- section02.txt
  |
- &#8230;</p></li>
+ ...</p></li>
 <li><p>The entire process of the creation and formulation of the law is public and
 open insofar as the culture can push for this</p></li>
 <li><p>Moderator of some sort to ensure comments are productive (usually repo
@@ -800,7 +744,7 @@ job done&quot; efficiently and accurately.</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/2013/09/16/its-just-semantics-app-dot-net-alpha/">It&#8217;s Just Semantics: App.net Alpha</a></h1>
+      <h1 class="entry-title"><a href="/2013/09/16/its-just-semantics-app-dot-net-alpha/">It's Just Semantics: App.net Alpha</a></h1>
     
     
       <p class="meta">
@@ -939,39 +883,20 @@ console on one of your servers. Many thanks to
 <a href="https://github.com/colszowka">@colszowka</a> for <a href="https://gist.github.com/benedikt/1115513#comment-576015">this
 solution</a>:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">namespace</span> <span class="ss">:rails</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">desc</span> <span class="s2">&quot;Remote console&quot;</span>
-</span><span class='line'>  <span class="n">task</span> <span class="ss">:console</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span> <span class="k">do</span>
-</span><span class='line'>    <span class="n">run_interactively</span> <span class="s2">&quot;bundle exec rails console </span><span class="si">#{</span><span class="n">rails_env</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">desc</span> <span class="s2">&quot;Remote dbconsole&quot;</span>
-</span><span class='line'>  <span class="n">task</span> <span class="ss">:dbconsole</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span> <span class="k">do</span>
-</span><span class='line'>    <span class="n">run_interactively</span> <span class="s2">&quot;bundle exec rails dbconsole </span><span class="si">#{</span><span class="n">rails_env</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">run_interactively</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">server</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">server</span> <span class="o">||=</span> <span class="n">find_servers_for_task</span><span class="p">(</span><span class="n">current_task</span><span class="p">)</span><span class="o">.</span><span class="n">first</span>
-</span><span class='line'>  <span class="nb">exec</span> <span class="sx">%Q(ssh </span><span class="si">#{</span><span class="n">server</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="sx"> -t &#39;cd </span><span class="si">#{</span><span class="n">current_path</span><span class="si">}</span><span class="sx"> &amp;&amp; </span><span class="si">#{</span><span class="n">command</span><span class="si">}</span><span class="sx">&#39;)</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="n">namespace</span> <span class="ss">:rails</span> <span class="k">do</span>
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="n">desc</span> <span class="s2">"Remote console"</span>
+</div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="n">task</span> <span class="ss">:console</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span> <span class="k">do</span>
+</div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="n">run_interactively</span> <span class="s2">"bundle exec rails console </span><span class="si">#{</span><span class="n">rails_env</span><span class="si">}</span><span class="s2">"</span>
+</div></div><div data-line='5' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="k">end</span>
+</div></div><div data-line='6' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='7' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="n">desc</span> <span class="s2">"Remote dbconsole"</span>
+</div></div><div data-line='8' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="n">task</span> <span class="ss">:dbconsole</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span> <span class="k">do</span>
+</div></div><div data-line='9' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="n">run_interactively</span> <span class="s2">"bundle exec rails dbconsole </span><span class="si">#{</span><span class="n">rails_env</span><span class="si">}</span><span class="s2">"</span>
+</div></div><div data-line='10' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="k">end</span>
+</div></div><div data-line='11' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="k">end</span>
+</div></div><div data-line='12' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='13' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="k">def</span> <span class="nf">run_interactively</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">server</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+</div></div><div data-line='14' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="n">server</span> <span class="o">||=</span> <span class="n">find_servers_for_task</span><span class="p">(</span><span class="n">current_task</span><span class="p">).</span><span class="nf">first</span>
+</div></div><div data-line='15' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="nb">exec</span> <span class="sx">%Q(ssh </span><span class="si">#{</span><span class="n">server</span><span class="p">.</span><span class="nf">host</span><span class="si">}</span><span class="sx"> -t 'cd </span><span class="si">#{</span><span class="n">current_path</span><span class="si">}</span><span class="sx"> &amp;&amp; </span><span class="si">#{</span><span class="n">command</span><span class="si">}</span><span class="sx">')</span>
+</div></div><div data-line='16' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="k">end</span></div></div></pre></div></figure>
 
 <p>And, <em>vòila</em>! Run <code>cap rails:console</code> and you&#39;re in business.</p>
 </div>
@@ -1058,7 +983,7 @@ caretakers of this world than we are.</p>
       </li>
     
       <li class="post">
-        <a href="/2014/01/02/installing-command-t-with-os-x-mavericks-built-in-vim/">Installing Command-T with OS X Maverick&#8217;s Built-In Vim</a>
+        <a href="/2014/01/02/installing-command-t-with-os-x-mavericks-built-in-vim/">Installing Command-T with OS X Maverick's Built-In Vim</a>
       </li>
     
       <li class="post">

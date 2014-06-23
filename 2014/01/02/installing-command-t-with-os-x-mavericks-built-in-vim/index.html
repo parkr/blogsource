@@ -124,35 +124,23 @@ compiled with 1.8.7.</p>
 
 <p>To check this, run the following in vim in NORMAL mode:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>:ruby puts &quot;#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}&quot;
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'>:ruby puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"</div></div></pre></div></figure>
 
 <p>For me, that output <code>1.8.7-p358</code>. So that means the Ruby verison that vim is
 using is <code>1.8.7-p358</code>, and we need to compile Command-T with that version. To do
 so, install it:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rbenv install 1.8.7-p358
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>rbenv install 1.8.7-p358</div></div></pre></div></figure>
 
 <p>Boom! Now download and install Command-T:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git clone https://github.com/wincent/Command-T.git ~/.vim/bundle/Command-T
-</span><span class='line'><span class="nv">$ </span><span class="nb">cd</span> ~/.vim/bundle/Command-T <span class="c"># for tpope&#39;s Pathogen</span>
-</span><span class='line'><span class="nv">$ </span>rbenv <span class="nb">local </span>1.8.7-p358
-</span><span class='line'><span class="nv">$ </span>rbenv rehash
-</span><span class='line'><span class="nv">$ </span>gem install bundler
-</span><span class='line'><span class="nv">$ </span>bundle install
-</span><span class='line'><span class="nv">$ </span>bundle <span class="nb">exec </span>rake make
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>git clone https://github.com/wincent/Command-T.git ~/.vim/bundle/Command-T
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span><span class="nb">cd</span> ~/.vim/bundle/Command-T <span class="c"># for tpope's Pathogen</span>
+</div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>rbenv <span class="nb">local </span>1.8.7-p358
+</div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>rbenv rehash
+</div></div><div data-line='5' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>gem install bundler
+</div></div><div data-line='6' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>bundle install
+</div></div><div data-line='7' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="gp">$ </span>bundle <span class="nb">exec </span>rake make</div></div></pre></div></figure>
 
 <p>Aaaaand boom, you&#39;re done. Open up <code>vim</code> and type your leaderkey then <code>t</code> (for
 me, that&#39;s <code>,t</code>) to launch the prompt.</p>
