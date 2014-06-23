@@ -3,6 +3,7 @@ require 'jekyll-page-hooks'
 require 'octopress-codefence'
 require 'octopress-codeblock'
 require 'octopress-gist'
+require 'octopress-render-code'
 require './plugins/raw'
 
 module OctopressLiquidFilters
