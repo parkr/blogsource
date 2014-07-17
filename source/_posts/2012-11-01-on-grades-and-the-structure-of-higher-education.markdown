@@ -3,7 +3,7 @@ layout: post
 title: "On Grades &amp; the Structure of Higher Education"
 date: 2012-11-01 10:17
 comments: true
-categories:
+categories: school grades education
 ---
 
 Higher education is messed up. The incentives for learning and the structure of that learning is all wrong.
