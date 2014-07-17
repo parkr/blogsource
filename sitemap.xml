@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://blog.parkermoore.de/2014/07/16/dont-like-being-tracked/</loc>
+    <lastmod>2014-07-16T21:58:53-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.parkermoore.de/2014/04/27/clearing-up-confusion-around-baseurl/</loc>
     <lastmod>2014-04-27T16:52:54-04:00</lastmod>
     <priority>0.8</priority>
@@ -245,28 +251,28 @@
   
   <url>
     <loc>http://blog.parkermoore.de/ideas.html</loc>
-    <lastmod>2014-06-23T15:47:52-04:00</lastmod>
+    <lastmod>2014-07-16T22:32:06-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://blog.parkermoore.de/archives/</loc>
-    <lastmod>2014-06-23T15:47:52-04:00</lastmod>
+    <lastmod>2014-07-16T22:32:06-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://blog.parkermoore.de/</loc>
-    <lastmod>2014-06-23T15:47:52-04:00</lastmod>
+    <lastmod>2014-07-16T22:32:06-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://blog.parkermoore.de/life.html</loc>
-    <lastmod>2014-06-23T15:47:52-04:00</lastmod>
+    <lastmod>2014-07-16T22:32:06-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

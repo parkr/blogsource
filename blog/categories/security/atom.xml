@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: security | Musings of Parker J. Moore]]></title>
+  <link href="http://blog.parkermoore.de/blog/categories/security/atom.xml" rel="self"/>
+  <link href="http://blog.parkermoore.de/"/>
+  <updated>2014-07-16T22:32:06-04:00</updated>
+  <id>http://blog.parkermoore.de/</id>
+  <author>
+    <name><![CDATA[Parker J. Moore]]></name>
+    <email><![CDATA[parkrmoore@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Don't Like Being Tracked?]]></title>
+    <link href="http://blog.parkermoore.de/2014/07/16/dont-like-being-tracked/"/>
+    <updated>2014-07-16T21:58:53-04:00</updated>
+    <id>http://blog.parkermoore.de/2014/07/16/dont-like-being-tracked</id>
+    <content type="html"><![CDATA[<p>I don&#39;t like being tracked by Web giants when I&#39;m not on their websites. As
+more sites integrate Twitter, Facebook, and Google support, I can&#39;t help
+but be tracked on almost every site I visit.</p>
+
+<p>Luckily, the integrations for these three aforementioned companies is quite
+simple to subvert (at least partially). If you&#39;re running a unix-based
+machine, you can add just a few lines to your <code>/etc/hosts</code> file and you&#39;re
+well on your way to Web privacy.</p>
+
+<p>Open up a new tab, and open the Developer Console. Open the Network tab.
+Now navigate to your favourite blog, news site, etc. You&#39;ll see each
+individual network request that is made from that page listed in the
+Network pane of the Developer Console. Scroll through requests and make
+note of the domain names you wish to block.</p>
+
+<p>Once you have the list of domain names, simply use your <code>hosts</code> file to
+reroute those domains to your local server (<code>127.0.0.1</code>). Here&#39;s an example:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">127.0.0.1     connect.facebook.net
+127.0.0.1     google-analytics.com www.google-analytics.com
+127.0.0.1     platform.twitter.com
+127.0.0.1     adroll.com a.adroll.com d.adroll.com
+127.0.0.1     ib.adnxs.com
+127.0.0.1     googleadservices.com www.googleadservices.com
+</code></pre></div>
+<p>In this example, I&#39;ve blocked Facebook, Google Analytics, Twitter, Ad Roll,
+Google Ad Services and the unknown &quot;adnxs&quot; service.</p>
+
+<p>Preface each domain name with the address of your local server <code>127.0.0.1</code>
+and group each line based on the second-level domain (e.g. <code>adroll.com</code>).
+Add each of these lines to your <code>/etc/hosts</code> file (note: this will require
+root privileges). Don&#39;t forget to save it when you&#39;re done.</p>
+
+<p>Now navigate to that same site again, with the Network pane still open. You
+should now get 404&#39;s or 500&#39;s when you try to access those same domains you
+&#39;blocked&#39;.</p>
+
+<p>For a solution that doesn&#39;t require halting access to these hosts, check
+out the Tor project.</p>
+]]></content>
+  </entry>
+  
+</feed>

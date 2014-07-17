@@ -4,7 +4,7 @@
   <title><![CDATA[Musings of Parker J. Moore]]></title>
   <link href="http://blog.parkermoore.de/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-06-23T15:47:52-04:00</updated>
+  <updated>2014-07-16T22:32:06-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker J. Moore]]></name>
@@ -12,6 +12,53 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Don't Like Being Tracked?]]></title>
+    <link href="http://blog.parkermoore.de/2014/07/16/dont-like-being-tracked/"/>
+    <updated>2014-07-16T21:58:53-04:00</updated>
+    <id>http://blog.parkermoore.de/2014/07/16/dont-like-being-tracked</id>
+    <content type="html"><![CDATA[<p>I don&#39;t like being tracked by Web giants when I&#39;m not on their websites. As
+more sites integrate Twitter, Facebook, and Google support, I can&#39;t help
+but be tracked on almost every site I visit.</p>
+
+<p>Luckily, the integrations for these three aforementioned companies is quite
+simple to subvert (at least partially). If you&#39;re running a unix-based
+machine, you can add just a few lines to your <code>/etc/hosts</code> file and you&#39;re
+well on your way to Web privacy.</p>
+
+<p>Open up a new tab, and open the Developer Console. Open the Network tab.
+Now navigate to your favourite blog, news site, etc. You&#39;ll see each
+individual network request that is made from that page listed in the
+Network pane of the Developer Console. Scroll through requests and make
+note of the domain names you wish to block.</p>
+
+<p>Once you have the list of domain names, simply use your <code>hosts</code> file to
+reroute those domains to your local server (<code>127.0.0.1</code>). Here&#39;s an example:</p>
+
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'>127.0.0.1     connect.facebook.net
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'>127.0.0.1     google-analytics.com www.google-analytics.com
+</div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'>127.0.0.1     platform.twitter.com
+</div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'>127.0.0.1     adroll.com a.adroll.com d.adroll.com
+</div></div><div data-line='5' class='code-highlight-row numbered'><div class='code-highlight-line'>127.0.0.1     ib.adnxs.com
+</div></div><div data-line='6' class='code-highlight-row numbered'><div class='code-highlight-line'>127.0.0.1     googleadservices.com www.googleadservices.com</div></div></pre></div></figure>
+
+<p>In this example, I&#39;ve blocked Facebook, Google Analytics, Twitter, Ad Roll,
+Google Ad Services and the unknown &quot;adnxs&quot; service.</p>
+
+<p>Preface each domain name with the address of your local server <code>127.0.0.1</code>
+and group each line based on the second-level domain (e.g. <code>adroll.com</code>).
+Add each of these lines to your <code>/etc/hosts</code> file (note: this will require
+root privileges). Don&#39;t forget to save it when you&#39;re done.</p>
+
+<p>Now navigate to that same site again, with the Network pane still open. You
+should now get 404&#39;s or 500&#39;s when you try to access those same domains you
+&#39;blocked&#39;.</p>
+
+<p>For a solution that doesn&#39;t require halting access to these hosts, check
+out the Tor project.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Clearing Up Confusion Around baseurl]]></title>
@@ -803,7 +850,7 @@ by the deceased individual, but by everyone else he or she impacted.</p>
 
 <p><span class='pullquote-right' data-pullquote='&#8220;They say you die twice, once when your
 heart stops beating, and again when your name is said for the last time.&#8221;'>
-I have not yet met anyone else who holds this belief I hold, but I invite you to explore 
+I have not yet met anyone else who holds this belief I hold, but I invite you to explore
 it and see of you can reconcile it with your beliefs about the afterlife. Banksy once
 famously said (paraphrased by a friend): &quot;They say you die twice, once when your
 heart stops beating, and again when your name is said for the last time.&quot; I can&#39;t
@@ -1173,23 +1220,6 @@ in the next 6 months or so and the dev team takes on the issues outlined above.
 I hope you&#39;re as excited as we are to get this project back on its feet.</p>
 
 <p>If you want to chat more or have any questions, you know <a href="http://twitter.com/parkr">where to find me</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Email Notifications in Web Apps]]></title>
-    <link href="http://blog.parkermoore.de/2012/12/12/email-notifications-in-web-apps/"/>
-    <updated>2012-12-12T02:05:00-05:00</updated>
-    <id>http://blog.parkermoore.de/2012/12/12/email-notifications-in-web-apps</id>
-    <content type="html"><![CDATA[<p>Email notifications from web apps have been annoying us for months now. Ever since Twitter, Facebook and other notification-heavy apps began automatically sending notifications to us (alas, without our consent), public opinion seems to have developed a hatred for email notifications. But, I implore you, understand the flipside:</p>
-
-<p><a href="https://twitter.com/marcoarment/status/278705209507721217"><img src="http://blog.parkermoore.de/images/tweet-by-marco-arment.png" alt="Tweet by Marco Arment"></a></p>
-
-<p>Email notifications in web apps is a way of unifying one&#39;s virtual &quot;inbox&quot;. Dealing with too many is overwhelming.</p>
-
-<p>Keep email notifications around.</p>
-
-<p>(But, for pete&#39;s sake, <em>ask</em> your users whether they want email notifications before you activate them for their accounts.)</p>
 ]]></content>
   </entry>
   
