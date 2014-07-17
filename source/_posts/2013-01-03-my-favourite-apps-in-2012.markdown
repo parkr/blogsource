@@ -146,12 +146,14 @@ to live with for the time being.
 ### TextMate 2 Alpha ([Mac][textmate-2])
 
 As I mentioned above, I code endlessly. My trusty companion is TextMate 2. In 2006,
-[Nick Rowe](http://blog.dcxn.com) showed me what would become the text editor to
+[Nick Rowe][] showed me what would become the text editor to
 change my world. After learning all the key bindings, it was hard to switch when
 I started learning more about vim. So I stuck with TextMate. When TextMate 2 Alpha
 came out, I was never happier. Rebuilt from the ground up, it has all the memory
 management I could have hoped for out of TextMate 1. I love this app with all of
 my heart.
+
+[Nick Rowe]: https://web.archive.org/web/20140207135007/http://blog.dcxn.com/
 
 ### Things 2 ([iPhone][things-iphone], [Mac][things-mac])
 
