@@ -34,7 +34,7 @@ explain this legacy of the afterlife concretely? The afterlife is not something 
 by the deceased individual, but by everyone else he or she impacted.
 
 {% pullquote %}
-I have not yet met anyone else who holds this belief I hold, but I invite you to explore 
+I have not yet met anyone else who holds this belief I hold, but I invite you to explore
 it and see of you can reconcile it with your beliefs about the afterlife. Banksy once
 famously said (paraphrased by a friend): {""They say you die twice, once when your
 heart stops beating, and again when your name is said for the last time.""} I can't
