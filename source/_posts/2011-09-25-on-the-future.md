@@ -2,7 +2,7 @@
 layout: post
 title: On The Future
 date: 2011-09-25 12:11:10 EST
-categories: perspective cornell future work career linguistics tech
+categories: perspective cornell future work career linguistics tech education
 ---
 
 Following my arrival at Cornell, I began considering my future much more seriously. What would I like to see myself doing in 5 years? How will I get myself there?
