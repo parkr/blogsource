@@ -3,11 +3,11 @@
 # ----------------------- #
 
 url: http://blog.parkermoore.de
-title: Musings of Parker J. Moore
-subtitle: "Developer, avid runner, photographer and musician."
-author: Parker J. Moore
+title: Parker's
+subtitle: "Developer with a passion for music, photography, and open software."
+author: Parker Moore
 simple_search: http://google.com/search
-description: "A web developer from Ithaca, NY. Cornell University Junior in Information Science."
+description: "A developer from Ithaca, NY."
 
 gems:
 - jekyll-sitemap
@@ -37,7 +37,7 @@ source: source
 destination: public
 plugins: plugins
 code_dir: downloads/code
-category_dir: blog/categories
+category_dir: categories
 markdown: redcarpet
 highlighter: rouge
 
