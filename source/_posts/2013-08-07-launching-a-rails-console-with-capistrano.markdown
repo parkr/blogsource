@@ -16,6 +16,8 @@ console on one of your servers. Many thanks to
 [@colszowka](https://github.com/colszowka) for [this
 solution](https://gist.github.com/benedikt/1115513#comment-576015):
 
+**NOTE**: This is for Capistrano v2. Things are different for v3.
+
 ```ruby
 namespace :rails do
   desc "Remote console"
