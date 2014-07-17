@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: vsco | Parker's]]></title>
+  <link href="http://blog.parkermoore.de/categories/vsco/atom.xml" rel="self"/>
+  <link href="http://blog.parkermoore.de/"/>
+  <updated>2014-07-16T22:39:07-04:00</updated>
+  <id>http://blog.parkermoore.de/</id>
+  <author>
+    <name><![CDATA[Parker Moore]]></name>
+    <email><![CDATA[parkrmoore@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Always Moving Forward]]></title>
+    <link href="http://blog.parkermoore.de/2014/04/03/always-moving-forward/"/>
+    <updated>2014-04-03T16:28:07-04:00</updated>
+    <id>http://blog.parkermoore.de/2014/04/03/always-moving-forward</id>
+    <content type="html"><![CDATA[<p><a href="https://parker.vsco.co"><img src="http://image.vsco.co/1/51c771649686d3572/52d5e979726708dc7c00040f/1024x768/vsco_011414_24.jpg" alt="Emeryville California"></a></p>
+
+<p>Today, I&#39;m proud to announce that I have accepted a job offer from <a href="https://vsco.co/">Visual Supply Co</a>,
+a small and happenin&#39; start-up based in the Bay Area. Visual Supply Co,
+also known as VSCO, produces the well-loved <a href="https://vsco.co/vscocam">VSCO Cam</a> iPhone
+and Android apps, as well as <a href="https://vsco.co/film">VSCO Film</a>, <a href="https://grid.vsco.co">VSCO Grid</a>, and <a href="https://vsco.co/vscokeys">VSCO Keys</a>.
+I&#39;ll be working on all things web, including the Grid service and the API.</p>
+
+<p>Super stoked to begin this next chapter in my journey through life working
+on a slick series of products with a stellar team. Follow my adventure on
+<a href="https://parker.vsco.co">my grid</a>!</p>
+]]></content>
+  </entry>
+  
+</feed>

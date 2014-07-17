@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: capistrano | Parker's]]></title>
+  <link href="http://blog.parkermoore.de/categories/capistrano/atom.xml" rel="self"/>
+  <link href="http://blog.parkermoore.de/"/>
+  <updated>2014-07-16T22:39:07-04:00</updated>
+  <id>http://blog.parkermoore.de/</id>
+  <author>
+    <name><![CDATA[Parker Moore]]></name>
+    <email><![CDATA[parkrmoore@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Launching a Rails Console with Capistrano]]></title>
+    <link href="http://blog.parkermoore.de/2013/08/07/launching-a-rails-console-with-capistrano/"/>
+    <updated>2013-08-07T20:36:00-04:00</updated>
+    <id>http://blog.parkermoore.de/2013/08/07/launching-a-rails-console-with-capistrano</id>
+    <content type="html"><![CDATA[<p>If you&#39;re using the popular Capistrano web deployment framework, you will likely
+have wished you had an easy way to perform a quick task in the production rails
+console on one of your servers. Many thanks to
+<a href="https://github.com/colszowka">@colszowka</a> for <a href="https://gist.github.com/benedikt/1115513#comment-576015">this
+solution</a>:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">namespace</span> <span class="ss">:rails</span> <span class="k">do</span>
+  <span class="n">desc</span> <span class="s2">"Remote console"</span>
+  <span class="n">task</span> <span class="ss">:console</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span> <span class="k">do</span>
+    <span class="n">run_interactively</span> <span class="s2">"bundle exec rails console </span><span class="si">#{</span><span class="n">rails_env</span><span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s2">"Remote dbconsole"</span>
+  <span class="n">task</span> <span class="ss">:dbconsole</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span> <span class="k">do</span>
+    <span class="n">run_interactively</span> <span class="s2">"bundle exec rails dbconsole </span><span class="si">#{</span><span class="n">rails_env</span><span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">run_interactively</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">server</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+  <span class="n">server</span> <span class="o">||=</span> <span class="n">find_servers_for_task</span><span class="p">(</span><span class="n">current_task</span><span class="p">).</span><span class="nf">first</span>
+  <span class="nb">exec</span> <span class="sx">%Q(ssh </span><span class="si">#{</span><span class="n">server</span><span class="p">.</span><span class="nf">host</span><span class="si">}</span><span class="sx"> -t 'cd </span><span class="si">#{</span><span class="n">current_path</span><span class="si">}</span><span class="sx"> &amp;&amp; </span><span class="si">#{</span><span class="n">command</span><span class="si">}</span><span class="sx">')</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>And, <em>vòila</em>! Run <code>cap rails:console</code> and you&#39;re in business.</p>
+]]></content>
+  </entry>
+  
+</feed>

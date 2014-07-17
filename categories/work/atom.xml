@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: work | Parker's]]></title>
+  <link href="http://blog.parkermoore.de/categories/work/atom.xml" rel="self"/>
+  <link href="http://blog.parkermoore.de/"/>
+  <updated>2014-07-16T22:39:07-04:00</updated>
+  <id>http://blog.parkermoore.de/</id>
+  <author>
+    <name><![CDATA[Parker Moore]]></name>
+    <email><![CDATA[parkrmoore@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Dealing with Distraction]]></title>
+    <link href="http://blog.parkermoore.de/2013/05/30/dealing-with-distraction/"/>
+    <updated>2013-05-30T15:56:00-04:00</updated>
+    <id>http://blog.parkermoore.de/2013/05/30/dealing-with-distraction</id>
+    <content type="html"><![CDATA[<p>Dealing with distraction for those of us who live with AD(H)D is a constant struggle, and
+can be especially difficult for those of us who must daily solve large, complex problems.
+This post describes what it is like to be a programmer with ADD and some strategies I&#39;ve
+developed to help make myself more effective.</p>
+
+<p>To solve complex problems by programmatic means, one needs to be able to focus. To find
+the best solution to any problem, one needs to be able to focus. In short, an effective
+worker is one who can focus.</p>
+
+<p>For those of us who live with the difficulties of AD(H)D every day, this fact - this
+dependence upon a kind of mental discipline - is glaringly obvious. Our constant struggle
+to focus means we are not as efficient as our non-ADD peers when asked to complete a
+single task. We get distracted by the sound of the wind, the tap of a colleague&#39;s fingers
+on his desk, or the sound of people talking walking past our window. The slightest noise
+or change (by a separate entity) in the visual landscape will cause us to loose our train
+of thought nearly immediately.</p>
+
+<p>For those of you who can focus relatively easily in distracting environments, I offer this
+metaphor to help you understand a bit more of how it is it live with such an affliction.
+Imagine you are swimming in a lake with a basketball. The depth at which you swim is your
+level of concentration - the deeper you swim, the more focused you are and thus the less
+susceptible to distraction you are. Imagine further that a day&#39;s worth of work is like
+swimming the length of the lake, and your goal is to swim as deeply as possible for as
+far as possible. The problem is that you have to do all this while holding onto the
+fully-inflated basketball. The longer you swim underwater, the harder it is to keep the
+ball (and yourself) deep underwater. During your swim from one end of the lake to the
+other, you are pulled up to the surface very frequently, only able to keep the ball
+underground for a short while at a time. This is what it&#39;s like to live and work with ADD.</p>
+
+<p>The inability to focus on a given problem for more than a few minutes at a time causes
+severe problems for all employees with ADD, but especially for developers who have to
+delve into a problem, process it, and produce a solution quickly and efficiently.</p>
+
+<p>The effectiveness of various solutions will vary person to person, but these helped me:</p>
+
+<ul>
+<li>Find a quiet, solitary place to work (avoid working in a place where people socialize)</li>
+<li>Turn off all notifications when working (fetch updates at will instead)</li>
+<li>Play calm, simple music without words, or work in a place where the background noise
+doesn&#39;t change</li>
+<li>Keep the room cool in temperature</li>
+<li>Work on one thing at a time and work until it is completed</li>
+<li>Plan out finer details for a large project</li>
+<li>Get enough sleep</li>
+<li>Medicate with some sort of stimulant</li>
+<li>Keep your workspace empty of clutter and visual distraction</li>
+<li>Keep snacks by your desk (like almonds or dried fruits) to keep your energy up
+throughout the day</li>
+<li>Exercise to exhaustion at least every other day</li>
+<li>Consciously avoid doing several things at once, like listening to a YouTube Lecture and
+checking your Twitter feed on your phone at the same time</li>
+<li>Avoid depressants like alcohol</li>
+<li>Write or engage in a creative, exciting activity which asks for your full concentration</li>
+</ul>
+
+<p>Following all of these with ADD can even be a challenge, but limiting the frequency of
+distracting stimuli goes a long way to achieving focus and increasing your productivity.</p>
+
+<p>If you have other suggestions, hit me up on <a href="http://alpha.app.net/parkr">ADN</a> or
+<a href="http://twitter.com/parkr">Twitter</a>. How do you cope with distractions?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A Brief Adventure]]></title>
+    <link href="http://blog.parkermoore.de/2012/11/30/a-brief-adventure/"/>
+    <updated>2012-11-30T21:23:00-05:00</updated>
+    <id>http://blog.parkermoore.de/2012/11/30/a-brief-adventure</id>
+    <content type="html"><![CDATA[<p>I&#39;ve decided to take next semester off (Spring 2013) to pursue an internship at <a href="http://6wunderkinder.com">6Wunderkinder</a> in Berlin, Germany. I&#39;ll be starting work at the end of January and returning to the U.S. around the middle of August. I&#39;m very excited that 6Wunderkinder extended their offer for an internship to me and were down with a 6-7 month internship. I&#39;m pumped to be working with such awesome web and app devs.</p>
+
+<p>So how did this happen? It&#39;s a long story that I&#39;ll talk about later, but for now I&#39;ll give you the abridged version.</p>
+
+<p>In the bleak winter of 2011, I emailed 6W about the possibility of a 3-month summer internship (May, June, July) in 2013. They replied very kindly, basically saying that it was way too early to say whether that was a possibility.</p>
+
+<p>This Fall, I sent them a follow-up email asking if they were still interested. They replied saying that it was a definite possibility and asked that I send along some projects I had worked on. After reviewing my email &quot;project resume&quot;, they offered me an interview. Thanksgiving morning, I woke up bright and early to meet Ben on Skype. Great fun, and got to meet Isaac and Alex of the 6W API team, too. Ben followed up with an email offering a second interview.</p>
+
+<p>During the time between the first and second interviews, I decided that I needed a break from my studies - Cornell is a particularly rigorous place and has a tendency to be demoralizing. So it was time for a break so that I could return in the Fall with new energy and vigor. I shot Ben an email indicating my interest in starting to work for them as early as the end of January, and to my surprise, were very interested in having me earlier.</p>
+
+<p>During the second interview, I talked with Isaac and Ben more about what my role at 6Wunderkinder would be and how life in Berlin would look for me. All seemed really cool. When Ben officially made the offer to have me as an intern, I gladly accepted and we discussed logistics.</p>
+
+<p>So there it is! It&#39;s amazing what an email can do nowadays when you have congruent interests and a cool, responsive company like 6W.</p>
+
+<p>I&#39;m going to really miss <a href="http://theclassnotes.com">The Class Notes</a>, the <a href="http://gleeclub.com">Glee Club</a> (no, not like the show &quot;Glee&quot;), and my other friends here, and the ease of college life. That being said, I&#39;m really grateful for this amazing opportunity abroad with a one-of-a-kind start-up like 6W.</p>
+
+<p>Many thanks to Ben Braun, Isaac Wolkerstorfer, Alex Koppel, and the whole 6Wunderkinder team for giving me the opportunity. Thanks, guys!</p>
+]]></content>
+  </entry>
+  
+</feed>

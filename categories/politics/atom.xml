@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: politics | Parker's]]></title>
+  <link href="http://blog.parkermoore.de/categories/politics/atom.xml" rel="self"/>
+  <link href="http://blog.parkermoore.de/"/>
+  <updated>2014-07-16T22:39:07-04:00</updated>
+  <id>http://blog.parkermoore.de/</id>
+  <author>
+    <name><![CDATA[Parker Moore]]></name>
+    <email><![CDATA[parkrmoore@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Fix the Government: Open-Source Legislation]]></title>
+    <link href="http://blog.parkermoore.de/2013/10/22/fix-the-government-open-source-legislation/"/>
+    <updated>2013-10-22T19:45:00-04:00</updated>
+    <id>http://blog.parkermoore.de/2013/10/22/fix-the-government-open-source-legislation</id>
+    <content type="html"><![CDATA[<p><em>The following post was first written for a class at Cornell University taught
+by Phoebe Sengers called &quot;Designing Technologies for Social Impact&quot;.</em></p>
+
+<hr>
+
+<p>We have a rather significant problem in the U.S. Indeed, our government seems to
+be malfunctioning in a rather obvious and irresponsible way. The question of
+today is simply: can it be fixed? If so, how?</p>
+
+<p>One must first examine the problem and its root cause. The problem of
+malfunction is most basically the conflict of multiple competing interests
+without proper ideological or procedural basis for dialogue. The root cause of
+this is that the existing platforms for dialogue (meetings, letters, rallies,
+news spots) are severely outdated. What worked pre-internet is not passing the
+test of time.</p>
+
+<p>In particular, the legislative process is slow, dilapidated, and closed. This
+leads to laws with earmarks and loopholes, confusing language and unnecessary
+provisions. What if the law were made out in the open, for everyone to see, the
+way open-source software is made? Version control and online access to bills
+in-the-works as well as laws would certainly improve transparency. The Library
+of Congress runs a system called THOMAS which is updated about daily, but the
+bills aren&#39;t organized logically and the user interface is fair at best.</p>
+
+<p>The open-source legislation system envisioned here is based on an open-source
+software system called GitHub. GitHub is setup like so: users and organizations
+own repositories of code, text or binary documents. Each repository contains the
+entire history of a particular set of documents as well as the &quot;master&quot; version,
+or the latest repository-owner(s)-approved version of the document(s). Each
+repository uses a version control system called git to keep track of the
+information about the documents it contains: current versions as well as
+previous versions. What is unique about this system, and the incredible strength
+it offers for open legislation, is the concept of a &quot;diff&quot;. A &quot;diff&quot; is simply
+the difference between a document at one point in time (referred to as a
+&quot;revision&quot;) and the same document at a different point in time. Each repository
+can be &quot;forked&quot; (cloned to a user&#39;s own profile for editing) by a user; this
+offers the most significant freedom of open-source, which is that anyone has the
+freedom to modify a copy of the source and suggest changes to the main project
+based on those derivative works. In GitHub parlance, the suggestion for a change
+is called a &quot;pull request,&quot; but this term need not be adopted by this new
+system.</p>
+
+<p>To illustrate the design of the ideal system:</p>
+
+<ol>
+<li>Use git derivative for prose editing, rather than (line-by-line) code editing</li>
+<li>Be online, accessible by anyone</li>
+<li>Offer input from anyone in any form (suggested changes or just comments)</li>
+<li>Do not make differentiation between users other than repository owner &amp;
+non-owner (those with direct access to the repository and those who can fork
+and suggest changes, but can&#39;t incorporate those changes themselves)</li>
+<li><p>Each repository is a proposed bill owned by the deciding body at the given
+time during the legislative process as dictated by the U.S. Constitution.
+Each repository contains a text file for each sub-segment of the proposed
+bill as well as a rationale or goal, e.g.
+ . (root)
+ |
+ |-- README.txt (rationale, goal(s) of bill, and other meta info)
+ |-- section01.txt
+ |-- section02.txt
+ |
+ ...</p></li>
+<li><p>The entire process of the creation and formulation of the law is public and
+open insofar as the culture can push for this</p></li>
+<li><p>Moderator of some sort to ensure comments are productive (usually repo
+owner). All of the comments that are hidden still exist inline and can be
+shown by any reader of the comment thread</p></li>
+<li><p>Membership of individual lawmakers in committees and other larger bodies
+reflected in membership of organization accounts on the platform, which gives
+them access to directly changing the legislation they have access to through
+their organizational memberships</p></li>
+<li><p>Offer &quot;points of interest&quot; as a means of discussion about a particular aspect
+of a bill without the need to suggest changes. Can ask anything from &quot;why is
+this section worded this way?&quot; to &quot;what are the implications of this on
+agricultural development in Upstate New York?&quot; No question is too dumb and
+all of them require an answer insofar as they are productive and relevant.</p></li>
+<li><p>Easy citation of preexisting laws and other bills to allow for discussion
+surrounding conflict or other interference</p></li>
+<li><p>Access to signing letters written by President (usually interpretations of
+pieces of the law for purposes of execution of the law)</p></li>
+<li><p>Easy viewing of votes on final versions of bills (who, when, did it pass?,
+etc)</p></li>
+<li><p>Means of mentioning lawmakers in a comment if comment is directed at them,
+or question is asked directly of them</p></li>
+<li><p>Links to more information about execution by Executive &amp; other related
+policy/law</p></li>
+<li><p>Comments and changes can only be created from user accounts, e.g. David
+Skorton can suggest a change, but Cornell University cannot.</p></li>
+<li><p>Users can subscribe to updates from a bill repository and receive all
+information about changes that are made and discussions that occur.</p></li>
+</ol>
+
+<p>One negative aspect of this approach is volume and the issues that come
+therefrom (see: student&#39;s answer on Piazza page linked to below). As the number
+of collaborators grows, the ability for those with direct access to the bills to
+handle suggestions for modification is greatly diminished. How are the interests
+of the few vs. those of the many weighed (e.g. individual comment vs comment from
+organization such as NAACP)? From the perspective of the way government works
+already, aides of the legislators who have access to the repositories will also
+have mirrored access to accept and discuss changes and questions from citizens.
+As each law is its own repository, the load is distributed over the many
+hundreds of bill repositories being considered. Additionally, Nissenbaum &amp;
+Benkler discuss the idea of self-selection and volunteerism as an element of
+open-source. This applies very much so to the scalability of open-source
+legislation and responses to citizens. If a citizen is not interested in a
+particular bill, that citizen will not involve himself or herself with the
+creation of that bill. This self-selection will greatly reduce the number of
+individuals with whom the maintainers of the bills will have to contend with in
+discussion about a bill and suggestions for change.</p>
+
+<p>Ultimately, this idea is predicated on the idea that citizens, when given the
+right tools, can reach compromise and have productive discussions to &quot;get the
+job done&quot; efficiently and accurately.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Get Rid of Senate Prayer]]></title>
+    <link href="http://blog.parkermoore.de/2013/05/09/get-rid-of-senate-prayer/"/>
+    <updated>2013-05-09T18:17:00-04:00</updated>
+    <id>http://blog.parkermoore.de/2013/05/09/get-rid-of-senate-prayer</id>
+    <content type="html"><![CDATA[<p>Earlier today, I was watching a <a href="http://www.c-spanvideo.org/program/SenateSession4967">C-SPAN video</a> of a U.S. Senate session on
+February 1, 2012. This was the first time I had ever watched a Senate session
+from the beginning and, to my surprise, they began with a prayer.</p>
+
+<p>Hold up. A prayer? In a session of one of our government&#39;s highest legislative
+bodies?! I suppose I shouldn&#39;t be too surprised, what with the (often crazy)
+Religious Right getting after the government with Bible-backed policies and
+all. It was nevertheless astonishing to see the institutionalization of religion
+in our government.</p>
+
+<p>I generally like our government, but this changes everything. Man, I was angry.
+I felt betrayed and undermined - like I was worth nothing to anyone in D.C.</p>
+
+<p>So I wrote to my senators:</p>
+
+<blockquote>
+<p>Dear Senator,</p>
+
+<p>I wish to ask for the Senator&#39;s thoughts on the opening prayer which begins a
+Senate session. I have done my research and see that this prayer has been a
+part of Senate procedure since 1789 and was recommended by Benjamin Franklin
+about two years previous, but I question its place in our secular government.
+It is, frankly, inappropriate that any governmental body in our United States
+of America be so closely tied to one religious creed in a nation with many
+hundreds and thousands of religious belief systems. I will not deny that
+religion is a part of politics - a belief in a certain religious creed often
+results in an election win - but it has absolutely no place in governance.
+It is insulting to think that any one religion is given special treatment in
+our governments.</p>
+
+<p>I ask the Senator to introduce a bill which will put an end to this Senate
+Prayer, for, while Mr. Franklin may have been right in 1789, he is most
+certainly wrong now. We have moved past a blind reliance on God, and it is,
+now more than ever, a hindrance on our Great Government.
+God&#39;s interference in our government has forced limited civil rights for
+minorities, was a rationale for slavery, and is still fighting against a
+Woman&#39;s Right to Choose, a Citizen&#39;s Right To Marry Whomever He or She Wishes,
+Scientific Advancement in many fields and so on.</p>
+
+<p>It is our imperative as citizens to think of each other first and to respect
+the different viewpoints and beliefs of our fellow Americans. Honoring any
+religion on our Senate floor is a betrayal of this principle, and it must be
+stopped.</p>
+
+<p>Thank you,<br />
+Parker Moore<br />
+Constituent</p>
+</blockquote>
+
+<p>If you care about religious freedom at all, I would urge you to do the same.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[We Mustn't Idle]]></title>
+    <link href="http://blog.parkermoore.de/2013/04/22/we-mustnt-idle/"/>
+    <updated>2013-04-22T02:12:12-04:00</updated>
+    <id>http://blog.parkermoore.de/2013/04/22/we-mustnt-idle</id>
+    <content type="html"><![CDATA[<p>Our legacies on this Beautiful Earth are inextricably tied to the work we do, the
+principles we stand for and the messages we spread. The apathetic nature of many of my
+peers nowadays is heresy to the nth degree, and we can no longer stand idly by and watch
+young people refusing to talk about the hard issues. If we’re to make any progress and
+maintain this More Perfect Union, we had better get our act together and stand and fight
+for the things we believe in.</p>
+
+<p>It comes with a price, however. We must be informed. We must read the arguments of the
+other side, debate them and reformulate our stance given the new evidence. In the same
+way Newton used this inductive methods to formulate his three famous Natural Laws, we
+must start with a problem we observe in our society, generalize a solution in the form
+of legislation, judicial action or grassroots campaigning, and revise our message as new
+information becomes available.</p>
+
+<p>It is not enough to let Gov majors, English majors and law students run the country,
+making sweeping decisions about how we may live our lives. It is not enough to defer to
+those with means and wealth – those with the ability to run a traditional campaign for
+public office and influence those in public office – in fact, it is the worst offense to
+this Great Nation to allow the aristocracy of special interets to continue determining
+the rule of law. We must stand up, as citizens, and fight for what sparks fire in our
+bellies! We must stand up, as citizens, and say “enough is enough” to special interests
+and lobbyists who control Washington. Now is our time. If our country is to change for
+the better, it will be because we – the citizens – made our voices heard and fought with
+much gnashing of teeth for what we believe in and what we know is right.</p>
+
+<p>This is the imperative of our generation. Let us act!</p>
+
+<p>This post was originally published on <a href="https://medium.com/i-m-h-o/d5bf40927b1a">Medium</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

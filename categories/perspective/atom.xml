@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: perspective | Parker's]]></title>
+  <link href="http://blog.parkermoore.de/categories/perspective/atom.xml" rel="self"/>
+  <link href="http://blog.parkermoore.de/"/>
+  <updated>2014-07-16T22:39:07-04:00</updated>
+  <id>http://blog.parkermoore.de/</id>
+  <author>
+    <name><![CDATA[Parker Moore]]></name>
+    <email><![CDATA[parkrmoore@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Dealing with Distraction]]></title>
+    <link href="http://blog.parkermoore.de/2013/05/30/dealing-with-distraction/"/>
+    <updated>2013-05-30T15:56:00-04:00</updated>
+    <id>http://blog.parkermoore.de/2013/05/30/dealing-with-distraction</id>
+    <content type="html"><![CDATA[<p>Dealing with distraction for those of us who live with AD(H)D is a constant struggle, and
+can be especially difficult for those of us who must daily solve large, complex problems.
+This post describes what it is like to be a programmer with ADD and some strategies I&#39;ve
+developed to help make myself more effective.</p>
+
+<p>To solve complex problems by programmatic means, one needs to be able to focus. To find
+the best solution to any problem, one needs to be able to focus. In short, an effective
+worker is one who can focus.</p>
+
+<p>For those of us who live with the difficulties of AD(H)D every day, this fact - this
+dependence upon a kind of mental discipline - is glaringly obvious. Our constant struggle
+to focus means we are not as efficient as our non-ADD peers when asked to complete a
+single task. We get distracted by the sound of the wind, the tap of a colleague&#39;s fingers
+on his desk, or the sound of people talking walking past our window. The slightest noise
+or change (by a separate entity) in the visual landscape will cause us to loose our train
+of thought nearly immediately.</p>
+
+<p>For those of you who can focus relatively easily in distracting environments, I offer this
+metaphor to help you understand a bit more of how it is it live with such an affliction.
+Imagine you are swimming in a lake with a basketball. The depth at which you swim is your
+level of concentration - the deeper you swim, the more focused you are and thus the less
+susceptible to distraction you are. Imagine further that a day&#39;s worth of work is like
+swimming the length of the lake, and your goal is to swim as deeply as possible for as
+far as possible. The problem is that you have to do all this while holding onto the
+fully-inflated basketball. The longer you swim underwater, the harder it is to keep the
+ball (and yourself) deep underwater. During your swim from one end of the lake to the
+other, you are pulled up to the surface very frequently, only able to keep the ball
+underground for a short while at a time. This is what it&#39;s like to live and work with ADD.</p>
+
+<p>The inability to focus on a given problem for more than a few minutes at a time causes
+severe problems for all employees with ADD, but especially for developers who have to
+delve into a problem, process it, and produce a solution quickly and efficiently.</p>
+
+<p>The effectiveness of various solutions will vary person to person, but these helped me:</p>
+
+<ul>
+<li>Find a quiet, solitary place to work (avoid working in a place where people socialize)</li>
+<li>Turn off all notifications when working (fetch updates at will instead)</li>
+<li>Play calm, simple music without words, or work in a place where the background noise
+doesn&#39;t change</li>
+<li>Keep the room cool in temperature</li>
+<li>Work on one thing at a time and work until it is completed</li>
+<li>Plan out finer details for a large project</li>
+<li>Get enough sleep</li>
+<li>Medicate with some sort of stimulant</li>
+<li>Keep your workspace empty of clutter and visual distraction</li>
+<li>Keep snacks by your desk (like almonds or dried fruits) to keep your energy up
+throughout the day</li>
+<li>Exercise to exhaustion at least every other day</li>
+<li>Consciously avoid doing several things at once, like listening to a YouTube Lecture and
+checking your Twitter feed on your phone at the same time</li>
+<li>Avoid depressants like alcohol</li>
+<li>Write or engage in a creative, exciting activity which asks for your full concentration</li>
+</ul>
+
+<p>Following all of these with ADD can even be a challenge, but limiting the frequency of
+distracting stimuli goes a long way to achieving focus and increasing your productivity.</p>
+
+<p>If you have other suggestions, hit me up on <a href="http://alpha.app.net/parkr">ADN</a> or
+<a href="http://twitter.com/parkr">Twitter</a>. How do you cope with distractions?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Downtime is Good]]></title>
+    <link href="http://blog.parkermoore.de/2013/02/11/downtime-is-good/"/>
+    <updated>2013-02-11T22:43:00-05:00</updated>
+    <id>http://blog.parkermoore.de/2013/02/11/downtime-is-good</id>
+    <content type="html"><![CDATA[<p>I just started working as an intern at 6Wunderkinder a couple weeks ago.
+I am by no means an expert in devops (hell, I have only dabbled with a little
+sysadmin in the past - nothing too serious) and I don&#39;t really know what goes
+into keeping a huge series of server up and running. I can say, however, that
+I know the customer&#39;s side of things. I know what it&#39;s like to be a user of a
+service which periodically goes through downtimes of noticable lengths. (I know
+I&#39;m not the only one here so you will probably relate to this observation as
+well.</p>
+
+<p>So today there was a blip of downtime for Wunderlist, a really awesome task-
+management application by 6Wunderkinder. During this downtime, it occurred to
+me: downtime can help the visibility of an application or service.</p>
+
+<p>Hear me out: when the service is running smoothly, few will actually talk about
+it. When it goes down, Twitter blows up with complaints and &quot;ZOMG MY LIFE IS
+OVER&quot; tweets. These tweets, in a way, promote the service. The more frustrated
+the tweet, the more apparent it is that the tweeter cares about this service.</p>
+
+<p>As one who sees these frustrated tweets often about many services, I can only
+conclude that a little downtime here and there is a great way for outsiders
+to gauge how awesome a service is: if it goes down and people are upset, then
+the service is probably worth trying out (once it goes back up again). If the
+service goes down and no one cares, then it probably isn&#39;t worth your time.</p>
+
+<p>So next time you see angry tweets, write down the name of that service and
+check it out once everything is back in order. In all likelihood, you will
+like the service, too, and you&#39;ll be angrily tweeting next time it goes down.</p>
+
+<p>It&#39;s all about perspective.</p>
+]]></content>
+  </entry>
+  
+</feed>
