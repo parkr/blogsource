@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Life Without the Internet"
-date: 2011-11-16 01:13:08
+date: 2011-11-16 01:13:08 -0400
 categories: story perspective internet
 ---
 

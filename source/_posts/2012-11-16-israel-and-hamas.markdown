@@ -19,8 +19,9 @@ wrong. There is nothing morally justifiable about what either party is doing.
 
 Many have expressed sympathy with Israel and an acquaintance of mine even
 posted [a video produced by the Israel Defense Forces about why it has the
-right to retaliate]() on Facebook. There is absolutely no "right" to kill
-anyone. No one can justifiably kill anyone else.
+right to retaliate](https://www.youtube.com/watch?v=LxX6f5R4-3E) on Facebook.
+There is absolutely no "right" to kill anyone. No one can justifiably kill
+anyone else.
 
 Enter: moral excusability. While killing another human being is _never_ morally
 justifiable, it is often viewed as morally excusable. That is, it is not

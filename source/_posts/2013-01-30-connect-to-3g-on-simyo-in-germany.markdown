@@ -13,7 +13,7 @@ I was not subscribed to a mobile data network. Which was obviously false.
 So, I tweeted about it. Expecting a several-day delay in my support query from simyo, I totally resigned
 to wait on mobile data until they got back to me. But luckily this new 6W family & friends totally came
 to my rescue. [Rafif Yalda](http://rafifyalda.id.au/), a former Wunderkind, totally came to my rescue in
-[a tweet](https://twitter.com/rafifyalda/status/296664474885165056).
+a tweet (which has since been removed).
 
 So if you ever run into a problem with your mobile network, ensure that your APN settings are correct.
 In this case:
