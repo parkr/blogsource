@@ -3,7 +3,7 @@ layout: post
 title: "Always Moving Forward"
 date: 2014-04-03 16:28:07 -0400
 comments: false
-categories: vsco career tech
+categories: vsco career tech work
 ---
 
 [![Emeryville California](http://image.vsco.co/1/51c771649686d3572/52d5e979726708dc7c00040f/1024x768/vsco_011414_24.jpg)][my grid]

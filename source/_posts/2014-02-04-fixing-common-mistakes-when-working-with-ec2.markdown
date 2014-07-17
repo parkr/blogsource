@@ -3,7 +3,7 @@ layout: post
 title: "Fixing Common Mistakes when working with EC2"
 date: 2014-02-04 00:30
 comments: false
-categories: aws ec2 ops
+categories: aws ec2 ops howto
 ---
 
 I'm lucky enough this semester to be taking CS 5300 at Cornell, a class entitled

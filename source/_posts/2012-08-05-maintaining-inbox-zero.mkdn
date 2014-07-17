@@ -2,6 +2,7 @@
 layout: post
 title: Maintaining Inbox Zero
 date: 2012-08-05 18:18:00 -0400
+categories: gemmell email howto
 ---
 
 I just finished up reading [Matt Gemmell's post on email management](http://mattgemmell.com/2012/08/05/managing-email-realistically/). If you haven't read it, you'll want to do make sure you head over to his site and give it a quick read before continuing.

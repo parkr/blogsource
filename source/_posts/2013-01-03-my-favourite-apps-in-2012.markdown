@@ -3,7 +3,7 @@ layout: post
 title: "My Favourite Apps in 2012"
 date: 2013-01-03 01:36
 comments: false
-categories: tech
+categories: tech apps best-of
 ---
 
 Below is a list of the apps I wouldn't have wanted to live without this year.

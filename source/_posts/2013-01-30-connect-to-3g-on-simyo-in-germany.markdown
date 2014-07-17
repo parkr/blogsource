@@ -3,7 +3,7 @@ layout: post
 title: "Connect to 3G on simyo in Germany"
 date: 2013-01-30 18:10
 comments: false
-categories: berlin mobile documentation
+categories: berlin mobile documentation howto
 ---
 
 I recently signed up for simyo, a German cell provider. After installing the Nano SIM into my phone,

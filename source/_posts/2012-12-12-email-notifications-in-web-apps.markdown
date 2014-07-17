@@ -3,7 +3,7 @@ layout: post
 title: "Email Notifications in Web Apps"
 date: 2012-12-12 02:05
 comments: false
-categories: 
+categories: email web
 ---
 
 Email notifications from web apps have been annoying us for months now. Ever since Twitter, Facebook and other notification-heavy apps began automatically sending notifications to us (alas, without our consent), public opinion seems to have developed a hatred for email notifications. But, I implore you, understand the flipside:

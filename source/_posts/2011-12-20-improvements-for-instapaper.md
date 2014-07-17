@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Improvements For Instapaper"
-date: 2011-12-20 12:44:36 
+date: 2011-12-20 12:44:36
 published: true
-category: tech
+categories: tech instapaper feature-requests
 ---
 
 I am a heavy user of [Instapaper][], an app that allows one to save webpages to read later. I am a subscriber, and I have chosen to keep the ads turned on, to support the creator and sole developer, [Marco Arment][marco], because, well, he's a great guy and he deserves it. Marco works tirelessly to not only create something that he finds useful, but also something that might be useful to others. Thus far, Marco has done a fantastic job with Instapaper, as we have seen with his [4.0 release](http://www.marco.org/2011/10/17/instapaper-4-released). He has added much-asked-for features, and nixed features that customers didn't feel were useful, or downright hated. The [iPhone and iPad app][instapaper_ios] is absolutely fantastic, no doubt about that. Today, however, my gripe is with the [Instapaper Webapp][instapaper].

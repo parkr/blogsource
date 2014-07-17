@@ -1,9 +1,9 @@
 ---
-title: Google+'s Terms of Service
+title: "Google+'s Terms of Service"
 date: 2011-07-07 11:57:23 EST
 layout: post
 published: true
-excerpt: I'm very weary of Google+'s Terms of Service. I already gave my soul to Facebook - need I give it to Google as well?
+categories: google tech policy
 ---
 
 I was just reading through [Google+'s Terms of Service](http://www.google.com/accounts/TOS?hl=en&loc=US) because I was interested to see what was to happen to my images, should I upload them to Google+. I am weary to upload photos to [Facebook](http://www.facebook.com), because Facebook claims rights to my images and may do with them whatever it pleases. This bothers me, and I wanted to see if Google+ was going to be the same.
@@ -21,4 +21,4 @@ Well, I have an answer for you. From [TechTarget's definition](http://searchsoa.
 
 So Google or any of its affiliates who fall into the above category are allowed to disseminate my information across the Web.
 
-No thank you. I think I'll post them somewhere else, thanks.
+No, thank you. I think I'll post them somewhere else.

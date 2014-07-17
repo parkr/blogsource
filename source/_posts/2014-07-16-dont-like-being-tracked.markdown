@@ -3,7 +3,7 @@ layout: post
 title: "Don't Like Being Tracked?"
 date: 2014-07-16 21:58:53 -0400
 comments: false
-categories: linux security privacy
+categories: linux security privacy osx tech howto
 ---
 
 I don't like being tracked by Web giants when I'm not on their websites. As

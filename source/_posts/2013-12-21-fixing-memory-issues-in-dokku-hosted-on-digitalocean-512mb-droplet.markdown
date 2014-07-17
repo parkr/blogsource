@@ -3,7 +3,7 @@ layout: post
 title: "Fixing Memory Issues in Dokku hosted on DigitalOcean 512MB Droplet"
 date: 2013-12-21 12:23
 comments: false
-categories: tech dokku bugfix
+categories: tech dokku bugfix howto
 ---
 
 As many other Heroku customers, I rejoiced when [Dokku][] was released. To have

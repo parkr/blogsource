@@ -3,6 +3,7 @@ layout: post
 title: "Hacker Newsletter"
 date: 2011-11-28 03:55:04
 published: true
+categories: tech community newsletters
 ---
 
 As a diligent member of the Web Dev & Tech community, I have subscribed to a number of weekly newsletters that focus on a particular programming language (such as the much beloved [Ruby Weekly][rubyweekly]) or a particular occupation (e.g. Devops Weekly). Despite this great abundance of weekly tech newsletters, I look forward to no newsletter more than Hacker Newsletter.

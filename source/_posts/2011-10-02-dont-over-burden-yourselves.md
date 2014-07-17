@@ -2,7 +2,7 @@
 layout: post
 title: "Student Entrepreneurs: Don't Over-burden Yourselves"
 date: 2011-10-02 22:50:27
-excerpt: Wherein Parker argues against having a smartphone in class.
+categories: community entrepreneurs tech perspective
 ---
 
 I was reading _Teens in Tech_'s [blog post](http://teensintech.com/blog/2011/10/social-business-math-class/) about how student entrepreneurs ought to manage their business while they are at school and in class. I have to disagree a bit with what [Ben Paster](http://twitter.com/benpaster) advised we do.

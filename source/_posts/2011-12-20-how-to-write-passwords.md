@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "How To Write Passwords"
-date: 2011-12-20 19:00:32 
+date: 2011-12-20 19:00:32
 published: true
-category: tech
+categories: tech howto
 ---
 
 <img src="http://imgs.xkcd.com/comics/password_strength.png" title="To anyone who understands information theory and security and is in an infuriating argument with someone who does not (possibly involving mixed case), I sincerely apologize." alt="XKCD Password Comic" width="640">

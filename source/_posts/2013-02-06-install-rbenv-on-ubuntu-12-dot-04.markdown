@@ -3,7 +3,7 @@ layout: post
 title: "Install rbenv on Ubuntu 12.04"
 date: 2013-02-06 21:31
 comments: false
-categories: 
+categories: rbenv ruby howto
 ---
 
 So, I'll admit it: I absolutely adore rbenv.

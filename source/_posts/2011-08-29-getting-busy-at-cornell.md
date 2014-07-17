@@ -2,7 +2,7 @@
 layout: post
 date: 2011-08-30 14:21:56
 title: Getting Busy At Cornell
-excerpt: Gettin' busy, gettin' busy. Parker describes his life at Cornell U thus far.
+categories: cornell story
 ---
 
 I've been at [Cornell][cornell] for a little over a week and I can honestly admit I've never been this busy. Thanks to my time at McGill, I have been able to manage my time well, but this is a new level of busy for me!

@@ -2,7 +2,7 @@
 layout: post
 title: "Uncomfortable"
 date: 2012-06-03 15:10:34 EST
-category: story
+categories: story religion
 tags: musings, religion, glee club
 ---
 

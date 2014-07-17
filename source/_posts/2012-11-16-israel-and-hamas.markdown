@@ -3,10 +3,10 @@ layout: post
 title: "Israel &amp; Hamas"
 date: 2012-11-16 18:12
 comments: false
-categories: politics, violence
+categories: politics violence
 ---
 
-You may have heard about the recent eruption of violence in Israel and the 
+You may have heard about the recent eruption of violence in Israel and the
 Gaza Strip. You may have your opinions set, but just hear me out.
 
 So the way the story goes is that Gaza has been firing lots of rockets
@@ -23,7 +23,7 @@ right to retaliate]() on Facebook. There is absolutely no "right" to kill
 anyone. No one can justifiably kill anyone else.
 
 Enter: moral excusability. While killing another human being is _never_ morally
-justifiable, it is often viewed as morally excusable. That is, it is not 
+justifiable, it is often viewed as morally excusable. That is, it is not
 _right_ to kill another human being, but it isn't wrong (given the circumstances)
 either. Well, that's bullshit. If something isn't morally justifiable, don't do
 it.

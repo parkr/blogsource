@@ -3,7 +3,7 @@ layout: post
 title: "The Immediate Future of Jekyll"
 date: 2012-12-18 18:33
 comments: false
-categories: 
+categories: jekyll open-source github
 ---
 
 [Jekyll][] is a static blog generator created by [Tom Preston-Werner][], the
