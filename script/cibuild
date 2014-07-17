@@ -1,6 +1,6 @@
 #!/bin/bash
 command -v htmlproof || {
-  gem install html-proofer
+  gem install html-proofer -- --use-system-libraries
 }
 bundle exec rake generate
 htmlproof ./public
