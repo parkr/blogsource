@@ -1,2 +1,19 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+
+p, li {
+  code {
+    @extend .mono;
+    display: inline-block;
+    white-space: no-wrap;
+    background: #fff;
+    font-size: .8em;
+    line-height: 1.5em;
+    color: #555;
+    border: 1px solid #ddd;
+    @include border-radius(.4em);
+    padding: 0 .3em;
+    margin: -1px 0;
+  }
+  pre code { font-size: 1em; background: none; border: none; }
+}
