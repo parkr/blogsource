@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | Hey, I’m Parker.]]></title>
   <link href="http://blog.parkermoore.de/categories/ruby/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-07-17T00:34:09-04:00</updated>
+  <updated>2014-07-17T00:50:08-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker Moore]]></name>
@@ -108,7 +108,7 @@ rbenv global 1.9.3-p362
 
 <p>Once I wrapped my head around routes and the devise/warden authentication framework, I was truckin&#39;. I was making huge progress on this API and learning gobs of information along the way. I was loving Rails and appreciating its incredible power. I was writing tests in rspec, which was a joy when combined with factory_girl.</p>
 
-<p>I recently worked on a project for <a href="https://www.mhusa.com/contact-tools/login.asp?c">Moët &amp; Chandon USA</a> that was built upon the CakePHP framework, and I was not nearly as excited about returning to this framework as I expected to be, given my incredible comfort with the language and the framework.</p>
+<p>I recently worked on a project for <a href="http://us.moet.com">Moët &amp; Chandon USA</a> that was built upon the CakePHP framework, and I was not nearly as excited about returning to this framework as I expected to be, given my incredible comfort with the language and the framework.</p>
 
 <p>But my work at Think Topography has changed me -- I&#39;m a Rails guy for sure.</p>
 ]]></content>
