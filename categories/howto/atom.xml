@@ -4,7 +4,7 @@
   <title><![CDATA[Category: howto | Hey, I’m Parker.]]></title>
   <link href="http://blog.parkermoore.de/categories/howto/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-07-16T22:57:35-04:00</updated>
+  <updated>2014-07-16T23:33:43-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker Moore]]></name>
@@ -12,6 +12,164 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Don't Like Being Tracked?]]></title>
+    <link href="http://blog.parkermoore.de/2014/07/16/dont-like-being-tracked/"/>
+    <updated>2014-07-16T21:58:53-04:00</updated>
+    <id>http://blog.parkermoore.de/2014/07/16/dont-like-being-tracked</id>
+    <content type="html"><![CDATA[<p>I don&#39;t like being tracked by Web giants when I&#39;m not on their websites. As
+more sites integrate Twitter, Facebook, and Google support, I can&#39;t help
+but be tracked on almost every site I visit.</p>
+
+<p>Luckily, the integrations for these three aforementioned companies is quite
+simple to subvert (at least partially). If you&#39;re running a unix-based
+machine, you can add just a few lines to your <code>/etc/hosts</code> file and you&#39;re
+well on your way to Web privacy.</p>
+
+<p>Open up a new tab, and open the Developer Console. Open the Network tab.
+Now navigate to your favourite blog, news site, etc. You&#39;ll see each
+individual network request that is made from that page listed in the
+Network pane of the Developer Console. Scroll through requests and make
+note of the domain names you wish to block.</p>
+
+<p>Once you have the list of domain names, simply use your <code>hosts</code> file to
+reroute those domains to your local server (<code>127.0.0.1</code>). Here&#39;s an example:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">127.0.0.1     connect.facebook.net
+127.0.0.1     google-analytics.com www.google-analytics.com
+127.0.0.1     platform.twitter.com
+127.0.0.1     adroll.com a.adroll.com d.adroll.com
+127.0.0.1     ib.adnxs.com
+127.0.0.1     googleadservices.com www.googleadservices.com
+</code></pre></div>
+<p>In this example, I&#39;ve blocked Facebook, Google Analytics, Twitter, Ad Roll,
+Google Ad Services and the unknown &quot;adnxs&quot; service.</p>
+
+<p>Preface each domain name with the address of your local server <code>127.0.0.1</code>
+and group each line based on the second-level domain (e.g. <code>adroll.com</code>).
+Add each of these lines to your <code>/etc/hosts</code> file (note: this will require
+root privileges). Don&#39;t forget to save it when you&#39;re done.</p>
+
+<p>Now navigate to that same site again, with the Network pane still open. You
+should now get 404&#39;s or 500&#39;s when you try to access those same domains you
+&#39;blocked&#39;.</p>
+
+<p>For a solution that doesn&#39;t require halting access to these hosts, check
+out the Tor project.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Fixing Common Mistakes when working with EC2]]></title>
+    <link href="http://blog.parkermoore.de/2014/02/04/fixing-common-mistakes-when-working-with-ec2/"/>
+    <updated>2014-02-04T00:30:00-05:00</updated>
+    <id>http://blog.parkermoore.de/2014/02/04/fixing-common-mistakes-when-working-with-ec2</id>
+    <content type="html"><![CDATA[<p>I&#39;m lucky enough this semester to be taking CS 5300 at Cornell, a class entitled
+&quot;The Architecture of Large-Scale Information Systems.&quot; For this class, we will
+need to know our way around Amazon&#39;s Web Services. I learned a lot about AWS
+when I worked at 6Wunderkinder last year, so I was feeling up to the challenge.
+Little did I know that the tooling 6W had created around its ops was far
+superior to anything else out there.</p>
+
+<p>I already had an AWS account, so my first step was to find a good CLI. I did the
+logical thing, and asked Google. Turns out, Amazon ships its own <code>aws</code> client,
+written in Python and shipped via <code>pip</code>. Marvelous! I ran <code>pip install aws</code>,
+<code>aws configure</code> and presto, I was in business.</p>
+
+<p>Our first question asked us to launch an instance of the AMI <code>ami-bba18dd2</code>, a
+simple Fedora distribution. After asking for the man pages for <code>aws</code> in 6
+different ways, I got them. I discovered I would need to specify the instance
+type and security group as well. So I created a security group and went ahead:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>aws ec2 run-instances <span class="se">\</span>
+  --image-id ami-bba18dd2 <span class="se">\</span>
+  --instance-type t1.micro <span class="se">\</span>
+  --security-group-ids sg-sgsga888
+</code></pre></div>
+<p>Yay, it worked! Ok, now I need to ssh into this bad boy.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>ssh ec2-la-la-la.amazonaws.com
+Access denied <span class="o">(</span>publickey<span class="o">)</span>.
+</code></pre></div>
+<p>Huh? What&#39;s that all about? I had created a key pair from previous messing
+around with EC2. Hm... After a few minutes of puzzlement, I realized I needed
+to pass another option to my <code>aws ec2</code> command. Let&#39;s try this again:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># don't forget to terminate old instances!</span>
+<span class="gp">$ </span>aws ec2 terminate-instances --instance-ids i-1111111
+<span class="c"># now, create the new one</span>
+<span class="gp">$ </span>aws ec2 run-instances <span class="se">\</span>
+  --image-id ami-bba18dd2 <span class="se">\</span>
+  --instance-type t1.micro <span class="se">\</span>
+  --security-group-ids sg-sgsga888 <span class="se">\</span>
+  --key-name parker
+</code></pre></div>
+<p>Booted! Now, let&#39;s try to ssh again:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>ssh ec2-li-la-le.amazonaws.com
+Access denied <span class="o">(</span>publickey<span class="o">)</span>.
+</code></pre></div>
+<p>Bollocks! Looks like I am still missing something...</p>
+
+<p>Ah! After taking a look at a tutorial, I realize I need to login as <code>ec2-user</code>.
+Let&#39;s give this one more try:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>ssh ec2-user@ec2-li-la-le.amazonaws.com
+Last login: Tue Feb  4 05:13:24 2014 from cpe-88-88-88-88.twcny.res.rr.com
+
+       __|  __|_  <span class="o">)</span>
+       _|  <span class="o">(</span>     /   Amazon Linux AMI
+      ___|<span class="se">\_</span>__|___|
+
+https://aws.amazon.com/amazon-linux-ami/2013.09-release-notes/
+7 package<span class="o">(</span>s<span class="o">)</span> needed <span class="k">for </span>security, out of 25 available
+Run <span class="s2">"sudo yum update"</span> to apply all updates.
+<span class="o">[</span>ec2-user@ip-10-9-162-71 ~]<span class="err">$</span>
+</code></pre></div>
+<p>YES! I did it. Ok, so lessons:</p>
+
+<ol>
+<li>Login as <code>ec2-user</code>, not as <code>albie</code> or any other name.</li>
+<li>Make sure you specify the <code>key-name</code> for the instance(s) you want to launch.</li>
+<li>Always err on the side of being more specific. Defaults can be bad.</li>
+<li>Always terminate once you&#39;re done using the box.</li>
+</ol>
+
+<p>Simple fixes for problems that seem so intractible.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Fixing Memory Issues in Dokku hosted on DigitalOcean 512MB Droplet]]></title>
+    <link href="http://blog.parkermoore.de/2013/12/21/fixing-memory-issues-in-dokku-hosted-on-digitalocean-512mb-droplet/"/>
+    <updated>2013-12-21T12:23:00-05:00</updated>
+    <id>http://blog.parkermoore.de/2013/12/21/fixing-memory-issues-in-dokku-hosted-on-digitalocean-512mb-droplet</id>
+    <content type="html"><![CDATA[<p>As many other Heroku customers, I rejoiced when <a href="https://github.com/progrium/dokku">Dokku</a> was released. To have
+complete freedom to host as many apps with whatever databases or other plugins
+I wanted -- all for the cost of a small VM -- was wonderful news.</p>
+
+<p>I decided, for cost&#39;s sake, to boot up one of those famed $5 <a href="https://digitalocean.com">DigitalOcean</a>
+Droplets. I didn&#39;t see that DigitalOcean provides an &quot;app&quot; for Dokku, so I
+created a vanilla box of Ubuntu 13.04 and pressed on. I got everything up and
+running and went to go deploy my first app, only to see this when I ran
+<code>git push</code>:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">runtime: panic before malloc heap initialized
+fatal error: runtime: cannot allocate heap metadata
+</code></pre></div>
+<p>Well, golly, that sure is unhelpful. Looks like 512MB doesn&#39;t cut it. Luckily,
+we can avoid paying the extra $5/mo for the 1GB version by running the following
+as <code>root</code>:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/extraswap <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span>512
+mkswap /extraswap
+</code></pre></div>
+<p>Then adding the following to your <code>/etc/fstab</code> file so the swap persists between
+reboots:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/extraswap         none            swap    sw                0       0
+</code></pre></div>
+<p>Then run this to enable <code>/extraswap</code> for swapping:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">swapon -a
+</code></pre></div>
+<p>Boom. Now re-run <code>git push</code> and you&#39;re in business. Magic!</p>
+
+<p>Credit goes to the brilliant <a href="https://github.com/dhassler">@dhassler</a> for <a href="https://github.com/dotcloud/docker/issues/1555#issuecomment-22874190">the idea and the code</a>. Just
+thought I&#39;d share and preserve for my own benefit in the future.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Launching a Rails Console with Capistrano]]></title>
@@ -43,6 +201,37 @@ solution</a>:</p>
 <span class="k">end</span>
 </code></pre></div>
 <p>And, <em>vòila</em>! Run <code>cap rails:console</code> and you&#39;re in business.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Install rbenv on Ubuntu 12.04]]></title>
+    <link href="http://blog.parkermoore.de/2013/02/06/install-rbenv-on-ubuntu-12-dot-04/"/>
+    <updated>2013-02-06T21:31:00-05:00</updated>
+    <id>http://blog.parkermoore.de/2013/02/06/install-rbenv-on-ubuntu-12-dot-04</id>
+    <content type="html"><![CDATA[<p>So, I&#39;ll admit it: I absolutely adore rbenv.</p>
+
+<p>In light of this, I&#39;ve been using it at my work at 6Wunderkinder the past couple weeks.
+6W uses AWS like nobody&#39;s business, and the Ubuntu EC2 instances I&#39;ve been interacting
+with are really bare-bones. So I wanted to write this script for you, the Ubuntu &amp; Ruby
+user, in order for you to very quickly get up and running with rbenv &amp; the latest Ruby
+MRI. Just copy it and run it.</p>
+
+<p><code>bash Installing rbenv on Ubuntu 12.04
+sudo apt-get install zlib1g-dev openssl libopenssl-ruby1.9.1 libssl-dev libruby1.9.1 libreadline-dev git-core make make-doc
+cd ~
+git clone git://github.com/sstephenson/rbenv.git .rbenv
+echo &#39;export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;&#39; &gt;&gt; ~/.bashrc
+echo &#39;eval &quot;$(rbenv init -)&quot;&#39; &gt;&gt; ~/.bashrc
+exec $SHELL # Restart the shell
+mkdir -p ~/.rbenv/plugins
+cd ~/.rbenv/plugins
+git clone git://github.com/sstephenson/ruby-build.git
+git clone git://github.com/sstephenson/rbenv-gem-rehash.git
+rbenv install 1.9.3-p362
+rbenv rehash
+rbenv global 1.9.3-p362
+</code></p>
 ]]></content>
   </entry>
   

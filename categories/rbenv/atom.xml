@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: rbenv | Hey, I’m Parker.]]></title>
+  <link href="http://blog.parkermoore.de/categories/rbenv/atom.xml" rel="self"/>
+  <link href="http://blog.parkermoore.de/"/>
+  <updated>2014-07-16T23:33:43-04:00</updated>
+  <id>http://blog.parkermoore.de/</id>
+  <author>
+    <name><![CDATA[Parker Moore]]></name>
+    <email><![CDATA[parkrmoore@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Install rbenv on Ubuntu 12.04]]></title>
+    <link href="http://blog.parkermoore.de/2013/02/06/install-rbenv-on-ubuntu-12-dot-04/"/>
+    <updated>2013-02-06T21:31:00-05:00</updated>
+    <id>http://blog.parkermoore.de/2013/02/06/install-rbenv-on-ubuntu-12-dot-04</id>
+    <content type="html"><![CDATA[<p>So, I&#39;ll admit it: I absolutely adore rbenv.</p>
+
+<p>In light of this, I&#39;ve been using it at my work at 6Wunderkinder the past couple weeks.
+6W uses AWS like nobody&#39;s business, and the Ubuntu EC2 instances I&#39;ve been interacting
+with are really bare-bones. So I wanted to write this script for you, the Ubuntu &amp; Ruby
+user, in order for you to very quickly get up and running with rbenv &amp; the latest Ruby
+MRI. Just copy it and run it.</p>
+
+<p><code>bash Installing rbenv on Ubuntu 12.04
+sudo apt-get install zlib1g-dev openssl libopenssl-ruby1.9.1 libssl-dev libruby1.9.1 libreadline-dev git-core make make-doc
+cd ~
+git clone git://github.com/sstephenson/rbenv.git .rbenv
+echo &#39;export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;&#39; &gt;&gt; ~/.bashrc
+echo &#39;eval &quot;$(rbenv init -)&quot;&#39; &gt;&gt; ~/.bashrc
+exec $SHELL # Restart the shell
+mkdir -p ~/.rbenv/plugins
+cd ~/.rbenv/plugins
+git clone git://github.com/sstephenson/ruby-build.git
+git clone git://github.com/sstephenson/rbenv-gem-rehash.git
+rbenv install 1.9.3-p362
+rbenv rehash
+rbenv global 1.9.3-p362
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: web | Hey, I’m Parker.]]></title>
   <link href="http://blog.parkermoore.de/categories/web/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-07-16T22:57:35-04:00</updated>
+  <updated>2014-07-16T23:33:43-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker Moore]]></name>
@@ -43,6 +43,23 @@ solution</a>:</p>
 <span class="k">end</span>
 </code></pre></div>
 <p>And, <em>vòila</em>! Run <code>cap rails:console</code> and you&#39;re in business.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Email Notifications in Web Apps]]></title>
+    <link href="http://blog.parkermoore.de/2012/12/12/email-notifications-in-web-apps/"/>
+    <updated>2012-12-12T02:05:00-05:00</updated>
+    <id>http://blog.parkermoore.de/2012/12/12/email-notifications-in-web-apps</id>
+    <content type="html"><![CDATA[<p>Email notifications from web apps have been annoying us for months now. Ever since Twitter, Facebook and other notification-heavy apps began automatically sending notifications to us (alas, without our consent), public opinion seems to have developed a hatred for email notifications. But, I implore you, understand the flipside:</p>
+
+<p><a href="https://twitter.com/marcoarment/status/278705209507721217"><img src="/images/tweet-by-marco-arment.png" alt="Tweet by Marco Arment"></a></p>
+
+<p>Email notifications in web apps is a way of unifying one&#39;s virtual &quot;inbox&quot;. Dealing with too many is overwhelming.</p>
+
+<p>Keep email notifications around.</p>
+
+<p>(But, for pete&#39;s sake, <em>ask</em> your users whether they want email notifications before you activate them for their accounts.)</p>
 ]]></content>
   </entry>
   

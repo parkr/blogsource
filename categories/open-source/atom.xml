@@ -4,7 +4,7 @@
   <title><![CDATA[Category: open-source | Hey, I’m Parker.]]></title>
   <link href="http://blog.parkermoore.de/categories/open-source/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-07-16T22:57:35-04:00</updated>
+  <updated>2014-07-16T23:33:43-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker Moore]]></name>
@@ -269,6 +269,58 @@ I&#39;m very proud to be a part of a team that has pushed this project to new he
 <p>Thank you to everyone who submitted a pull request, and/or gave me advice along
 the way. It has been great fun so far, and I look forward to working with you
 all to push out future versions!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Immediate Future of Jekyll]]></title>
+    <link href="http://blog.parkermoore.de/2012/12/18/the-immediate-future-of-jekyll/"/>
+    <updated>2012-12-18T18:33:00-05:00</updated>
+    <id>http://blog.parkermoore.de/2012/12/18/the-immediate-future-of-jekyll</id>
+    <content type="html"><![CDATA[<p><a href="http://github.com/mojombo/jekyll">Jekyll</a> is a static blog generator created by <a href="https://github.com/mojombo">Tom Preston-Werner</a>, the
+current CEO of <a href="https://github.com">GitHub</a> and one of GitHub&#39;s co-founders, and by <a href="https://github.com/qrush">Nick Quaranto</a>,
+who is now at 37signals. Jekyll is <a href="https://github.com/mojombo/jekyll/wiki/Sites">pretty freakin&#39; popular</a> and it&#39;s
+also the engine that drives <a href="http://pages.github.com/">GitHub Pages</a>.</p>
+
+<p>After an hour-long chat with Tom, I&#39;m optimistic about the future of Jekyll. He&#39;s
+really excited about where it&#39;s headed and has a vision in mind about what he&#39;d
+like it to become.
+Here&#39;s what we ironed out during our conversation:</p>
+
+<p>Led by Tom, a Jekyll development team, of which I&#39;m the first recruit, will
+be tackling the problems with Jekyll and continuously improving its functionality
+and ease-of-use. The focus will remain on making a tool that allows one to easily
+create and manage a static blog.</p>
+
+<p>Suuuper basic (unofficial) design principles:</p>
+
+<ol>
+<li>Keep it simple</li>
+<li>Easy to extend</li>
+<li>Solid safe mode (for GitHub Pages)</li>
+</ol>
+
+<p>What we need to tackle:</p>
+
+<ol>
+<li>Fix bugs (!!)</li>
+<li>Decrease build time (!!)</li>
+<li>Docs for site</li>
+<li>TomDoc everything</li>
+<li>Release new site</li>
+<li>Finish same site generator</li>
+<li>Include some faster LSI</li>
+</ol>
+
+<p>Want to help? Check out the <a href="http://git.io/jekyll-discussion">discussion label</a> and add in your two cents.<br>
+Want to contribute code? Check out the <a href="https://github.com/mojombo/jekyll/issues">issues</a> and submit a pull request with
+a fix.</p>
+
+<p>I&#39;m really excited about the immediate future of Jekyll and what it will become
+in the next 6 months or so and the dev team takes on the issues outlined above.
+I hope you&#39;re as excited as we are to get this project back on its feet.</p>
+
+<p>If you want to chat more or have any questions, you know <a href="http://twitter.com/parkr">where to find me</a>.</p>
 ]]></content>
   </entry>
   

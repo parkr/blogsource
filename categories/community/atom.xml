@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: community | Hey, I’m Parker.]]></title>
+  <link href="http://blog.parkermoore.de/categories/community/atom.xml" rel="self"/>
+  <link href="http://blog.parkermoore.de/"/>
+  <updated>2014-07-16T23:33:43-04:00</updated>
+  <id>http://blog.parkermoore.de/</id>
+  <author>
+    <name><![CDATA[Parker Moore]]></name>
+    <email><![CDATA[parkrmoore@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hacker Newsletter]]></title>
+    <link href="http://blog.parkermoore.de/2011/11/27/hacker-newsletter/"/>
+    <updated>2011-11-27T22:55:04-05:00</updated>
+    <id>http://blog.parkermoore.de/2011/11/27/hacker-newsletter</id>
+    <content type="html"><![CDATA[<p>As a diligent member of the Web Dev &amp; Tech community, I have subscribed to a number of weekly newsletters that focus on a particular programming language (such as the much beloved <a href="http://rubyweekly.com/">Ruby Weekly</a>) or a particular occupation (e.g. Devops Weekly). Despite this great abundance of weekly tech newsletters, I look forward to no newsletter more than Hacker Newsletter.</p>
+
+<p>First and foremost, the newsletter is intelligently &amp; beautifully designed. It&#39;s very readable, very well-organized and simply perfect for my scatter-brained mind to parse through and enjoy. <a href="http://www.kaledavis.com/">Kale Davis</a>, the curator of Hacker Newsletter, does a spectacular job of rounding up important news stories, new &amp; noteworthy libraries &amp; such, and great examples of awesome things people are doing on the web.</p>
+
+<p>Austin, of MailChimp, <a href="http://blog.mailchimp.com/customer-love-hacker-newsletter/">couldn&#39;t have said it better</a>:</p>
+
+<blockquote>
+<p>In an age where information comes via an increasingly overwhelming deluge, Hacker Newsletter combines relevant tech topics with discerning curation. Founder and web-app builder Kale Davis does the work so you can catch up on all the important topics developers are talking about in one easily digestible email.</p>
+</blockquote>
+
+<p>If you haven&#39;t signed up for Hacker Newsletter yet, <a href="http://www.hackernewsletter.com/">do so immediately</a>! No time to waste!</p>
+
+<p>Brilliant job, Kale. Keep &#39;em coming!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Student Entrepreneurs: Don't Over-burden Yourselves]]></title>
+    <link href="http://blog.parkermoore.de/2011/10/02/dont-over-burden-yourselves/"/>
+    <updated>2011-10-02T18:50:27-04:00</updated>
+    <id>http://blog.parkermoore.de/2011/10/02/dont-over-burden-yourselves</id>
+    <content type="html"><![CDATA[<p>I was reading <em>Teens in Tech</em>&#39;s <a href="http://teensintech.com/blog/2011/10/social-business-math-class/">blog post</a> about how student entrepreneurs ought to manage their business while they are at school and in class. I have to disagree a bit with what <a href="http://twitter.com/benpaster">Ben Paster</a> advised we do.</p>
+
+<p>Ben implicitly encouraged the use of every moment of downtime to answer support tweets and emails and to purchase a smart phone to help do this on-the-go. Though this seems like a great idea on the surface, I would strongly advise <em>against</em> this. For one, you begin to allow these minor issues to follow you around. I opt to keep all of my business emails in a place that is, yes, readily accessible, but also out of sight. While at school, and especially in high school, the distraction of a smartphone certainly means that the student will not be fully absorbing all of the information he or she is being taught. Few students, even those of the entrepreneurial type, have the self-control to keep the phone out of sight, even during class. An entrepreneur may be brilliant and resourceful in his or her area of business, but may not grasp the meaning being extracted from <em>A Raisin&#39; In The Sun</em> or <em>Hamlet</em> during English class if he or she is also trying to answer support queries at the same time. I know from personal experience that a distracted student is usually not a very good one.</p>
+
+<p>I would also argue that the phone would be a distraction not only in class but also out of it. I see it all the time: two friends walking next to each other, one speaking, the other trying to listen and text at the same time. That will certainly put a damper on your relationships with friends. Same goes for the relationships with your family members. Trust me: the smartphone can be used for good, but will often just get in your way.</p>
+
+<p>So my advice to the student entrepreneur: find a way to be able to tuck the constant barrage of information away while enjoying life and learning. They don&#39;t need to be instantly answered - take the night off, go see a movie and enjoy being with your friends or family. You deserve it!</p>
+]]></content>
+  </entry>
+  
+</feed>

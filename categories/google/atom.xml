@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: google | Hey, I’m Parker.]]></title>
+  <link href="http://blog.parkermoore.de/categories/google/atom.xml" rel="self"/>
+  <link href="http://blog.parkermoore.de/"/>
+  <updated>2014-07-16T23:33:43-04:00</updated>
+  <id>http://blog.parkermoore.de/</id>
+  <author>
+    <name><![CDATA[Parker Moore]]></name>
+    <email><![CDATA[parkrmoore@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Google+'s Terms of Service]]></title>
+    <link href="http://blog.parkermoore.de/2011/07/07/google-plus-terms-of-service/"/>
+    <updated>2011-07-07T12:57:23-04:00</updated>
+    <id>http://blog.parkermoore.de/2011/07/07/google-plus-terms-of-service</id>
+    <content type="html"><![CDATA[<p>I was just reading through <a href="http://www.google.com/accounts/TOS?hl=en&amp;loc=US">Google+&#39;s Terms of Service</a> because I was interested to see what was to happen to my images, should I upload them to Google+. I am weary to upload photos to <a href="http://www.facebook.com">Facebook</a>, because Facebook claims rights to my images and may do with them whatever it pleases. This bothers me, and I wanted to see if Google+ was going to be the same.</p>
+
+<p>If you read Section 9, it states:</p>
+
+<blockquote>
+<p>9.4   Other than the limited license set forth in Section 11, Google acknowledges and agrees that it obtains no right, title or interest from you (or your licensors) under these Terms in or to any Content that you submit, post, transmit or display on, or through, the Services, including any intellectual property rights which subsist in that Content (whether those rights happen to be registered or not, and wherever in the world those rights may exist).</p>
+</blockquote>
+
+<p>Sounds peachy, doesn&#39;t it? I would propose that Google&#39;s betting you&#39;re lazy and, if you read the TOS at <em>all</em>, you sure as hell won&#39;t follow the references. Well, I did. Here&#39;s Section 11:</p>
+
+<blockquote>
+<p>11.2   You agree that this license includes a right for Google to make such Content available to other companies, organizations or individuals with whom Google has relationships for the provision of syndicated services, and to use such Content in connection with the provision of those services.</p>
+</blockquote>
+
+<p>Hm. Not so good. I would really prefer that the stated &quot;other companies, organizations or individuals&quot; <strong>not</strong> have access to my content. But there&#39;s that phrase where, if you&#39;re not in the business, you wouldn&#39;t understand: <em>syndicated services</em>. Hm. What <em>is</em> that?</p>
+
+<p>Well, I have an answer for you. From <a href="http://searchsoa.techtarget.com/definition/syndication">TechTarget&#39;s definition</a>:</p>
+
+<blockquote>
+<p>For many years mainly a feature of print media, today content syndication is the way a great deal of information is disseminated across the Web. Reuters, for example, provides online news content to over 900 Web sites and portals, such as Yahoo and America Online.</p>
+</blockquote>
+
+<p>So Google or any of its affiliates who fall into the above category are allowed to disseminate my information across the Web.</p>
+
+<p>No, thank you. I think I&#39;ll post them somewhere else.</p>
+]]></content>
+  </entry>
+  
+</feed>

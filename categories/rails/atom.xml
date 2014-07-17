@@ -4,7 +4,7 @@
   <title><![CDATA[Category: rails | Hey, I’m Parker.]]></title>
   <link href="http://blog.parkermoore.de/categories/rails/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-07-16T22:57:35-04:00</updated>
+  <updated>2014-07-16T23:33:43-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker Moore]]></name>
@@ -43,6 +43,27 @@ solution</a>:</p>
 <span class="k">end</span>
 </code></pre></div>
 <p>And, <em>vòila</em>! Run <code>cap rails:console</code> and you&#39;re in business.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby and Rails]]></title>
+    <link href="http://blog.parkermoore.de/2012/06/25/ruby-and-rails/"/>
+    <updated>2012-06-25T23:38:00-04:00</updated>
+    <id>http://blog.parkermoore.de/2012/06/25/ruby-and-rails</id>
+    <content type="html"><![CDATA[<p>So there&#39;s been a lot of hype about <a href="http://www.ruby-lang.org/en/">Ruby</a> over the past several years. For those of you who are interested in programming and programming languages, you heard about it right from the start, as its beautiful syntax and ease of use lured many programmers into its use.</p>
+
+<p>While Ruby is wonderful, it wouldn&#39;t be what it is today without the existence of <a href="http://rubyonrails.org/">Ruby on Rails</a>. This web framework posed the first real threat to PHP. Rails was powerful and agile, and helped web devs create incredible web apps with incredible ease. The generators that came along with this gem made it possible to get a completely functional website up in a matter of <em>hours</em>, rather than days. That was incredible.</p>
+
+<p>I used Rails on and off, switching between it and CakePHP. I didn&#39;t really understand Rails&#39; routes and wanted something like CakePHP&#39;s <code>bake</code> functionality which creates an entire scaffold with styling and everything. I didn&#39;t object to the un-RESTful CakePHP nature of using just <code>GET</code> and <code>POST</code> requests, as I didn&#39;t need the RESTful functionality for any of the sites I was creating. I used Rails for a couple projects, but it always felt like I was coding more than was necessary.</p>
+
+<p>I started working at <a href="http://www.thinktopography.com">Think Topography</a> this summer and was tasked with building the new <a href="http://www.ithacahours.com">Ithaca Hours</a> mobile web app that would facilitate the use of Ithaca Hours. My boss had always used Rails and suggested that I use Rails for the API end of this project. It seemed like the best choice, given the requirements of the project, and so it began: I dove back into Rails.</p>
+
+<p>Once I wrapped my head around routes and the devise/warden authentication framework, I was truckin&#39;. I was making huge progress on this API and learning gobs of information along the way. I was loving Rails and appreciating its incredible power. I was writing tests in rspec, which was a joy when combined with factory_girl.</p>
+
+<p>I recently worked on a project for <a href="https://www.mhusa.com/contact-tools/login.asp?c">Moët &amp; Chandon USA</a> that was built upon the CakePHP framework, and I was not nearly as excited about returning to this framework as I expected to be, given my incredible comfort with the language and the framework.</p>
+
+<p>But my work at Think Topography has changed me -- I&#39;m a Rails guy for sure.</p>
 ]]></content>
   </entry>
   

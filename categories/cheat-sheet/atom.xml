@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: cheat-sheet | Hey, I’m Parker.]]></title>
+  <link href="http://blog.parkermoore.de/categories/cheat-sheet/atom.xml" rel="self"/>
+  <link href="http://blog.parkermoore.de/"/>
+  <updated>2014-07-16T23:33:43-04:00</updated>
+  <id>http://blog.parkermoore.de/</id>
+  <author>
+    <name><![CDATA[Parker Moore]]></name>
+    <email><![CDATA[parkrmoore@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Git Cheat-Sheet]]></title>
+    <link href="http://blog.parkermoore.de/2011/05/30/git/"/>
+    <updated>2011-05-30T00:00:00-04:00</updated>
+    <id>http://blog.parkermoore.de/2011/05/30/git</id>
+    <content type="html"><![CDATA[<p>I was recently cleaning out my room at home (I&#39;m back from college for the summer) and found an old <code>git</code> cheat-sheet. I thought I would electronically log it for future reference (as though I don&#39;t use git every day or something...).</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git init
+git clone git://github.com/username/repo.git
+git add filename
+git status <span class="o">[</span>-s]
+git diff <span class="o">[</span>--cached] <span class="o">[</span>HEAD] <span class="o">[</span>--stat]
+git commit <span class="o">[</span>-a] <span class="o">[</span>-m <span class="s2">"commit message"</span><span class="o">]</span>
+git reset <span class="o">[</span>HEAD]
+git rm <span class="o">[</span>--cached] filename
+    <span class="c"># (by adding --cached, the file that's deleted</span>
+    <span class="c"># will be left in your local directory)</span>
+
+git branch branchname
+git checkout branchname
+git checkout -b branchname
+git branch -d branchname <span class="c"># (delete)</span>
+
+git merge branchname <span class="c"># (merges 'branchname' to current branch)</span>
+git mv file newfile
+git log <span class="o">[</span>--oneline] <span class="o">[</span>--graph] <span class="o">[</span>branchname] <span class="o">[</span>^compared_branch_name]
+git tag -a msg commit_shortcode
+
+git remote <span class="o">[</span>-v]
+git remote add <span class="nb">alias </span>git@github.com:username/repo.git
+git fetch <span class="nb">alias</span>
+</code></pre></div>]]></content>
+  </entry>
+  
+</feed>
