@@ -1,10 +1,9 @@
 # Custom filters for Octopress
-require 'jekyll-page-hooks'
 require 'octopress-codefence'
 require 'octopress-codeblock'
 require 'octopress-gist'
 require 'octopress-render-code'
-require './plugins/raw'
+require 'octopress-render-tag'
 
 module OctopressLiquidFilters
   include Octopress::Date
@@ -100,5 +99,5 @@ module OctopressLiquidFilters
   end
 
 end
-Liquid::Template.register_filter OctopressLiquidFilters
 
+Liquid::Template.register_filter OctopressLiquidFilters
