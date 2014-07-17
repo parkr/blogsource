@@ -1,4 +1,3 @@
 language: ruby
 cache:    bundler
-install:  travis_retry script/bootstrap
 script:   script/cibuild
