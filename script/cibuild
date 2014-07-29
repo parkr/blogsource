@@ -2,5 +2,7 @@
 command -v htmlproof || {
   gem install html-proofer -- --use-system-libraries
 }
+
+set -x
 bundle exec rake generate
 htmlproof ./public --href_ignore dustincurtis.com
