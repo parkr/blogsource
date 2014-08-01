@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: github-pages | Hey, I’m Parker.]]></title>
+  <link href="http://blog.parkermoore.de/categories/github-pages/atom.xml" rel="self"/>
+  <link href="http://blog.parkermoore.de/"/>
+  <updated>2014-08-01T15:24:19-04:00</updated>
+  <id>http://blog.parkermoore.de/</id>
+  <author>
+    <name><![CDATA[Parker Moore]]></name>
+    <email><![CDATA[parkrmoore@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A Hacker's Guide to Her Own GitHub Pages]]></title>
+    <link href="http://blog.parkermoore.de/2014/08/01/how-to-setup-your-own-github-pages/"/>
+    <updated>2014-08-01T14:42:58-04:00</updated>
+    <id>http://blog.parkermoore.de/2014/08/01/how-to-setup-your-own-github-pages</id>
+    <content type="html"><![CDATA[<p><a href="https://pages.github.com">GitHub Pages</a> is a wonderful free platform GitHub has created to build and host your Jekyll sites for you. You push up any valid Jekyll site to a repo (on a special branch), and it&#39;s built and published to a predictable URL. The only downside? You can&#39;t use any custom Ruby code, which means no custom plugins. So what&#39;s the best way to host a Jekyll site that requires plugins?</p>
+
+<p>Maybe you&#39;re writing a huge website for your employer, or just something small for yourself. Either way, you need a plugin or two to get it <em>just right</em>. You could build locally and push the compiled site up to GitHub Pages, but that requires that you install all the dependencies locally and write a script to compile and jostle things in just the right way to make it all work. What if you could have the same workflow – just <code>git push</code> – for sites with custom plugins?</p>
+
+<p>You can. I do it every day. In fact, my personal site (https://parkermoo.re) is published with this method. Here&#39;s a step-by-step guide to making your own GitHub Pages.</p>
+
+<h2>1. Install and Configure Dependencies</h2>
+
+<p>You&#39;ll need the following:</p>
+
+<ol>
+<li>A server with <code>root</code> access. I use a Rackspace CentOS 1GB Performance VM, but you can use any Linux system from any provider.</li>
+<li>A web server if you don&#39;t have one already (Apache/Nginx).</li>
+<li>Ruby and RubyGems with the proper permissions to install new gems.</li>
+<li>Git</li>
+<li><a href="https://github.com/sitaramc/gitolite">Gitolite</a></li>
+</ol>
+
+<p>First, <code>sudo su - root</code>. Then install Ruby. I suggest using <code>rbenv</code> to keep your Rubies organized. Then ensure RubyGems is installed, and install the <code>github-pages</code> gem.</p>
+
+<p>Next, ensure you have a daemonized web server installed, like <code>nginx</code> or <code>apache</code>.</p>
+
+<p>Then ensure git is installed and create a new <code>git</code> user. Run <code>su - git</code> and install <code>gitolite</code>.</p>
+
+<p>Once you have <code>gitolite</code> installed, go back to your local machine and configure <code>gitolite</code> as described. You&#39;ll need to add a new user for your SSH key and create the repo for your site.</p>
+
+<h2>2. Add the post-receive hook</h2>
+
+<p>Run <code>sudo su - git</code> and find the <code>post-receive</code> file in your repository. It&#39;s usually at <code>/home/git/repositories/MY_REPO.git/hooks/post-receive</code>. Edit it so it looks like this:</p>
+
+<p><div class="highlight"><pre><code class="bash"><span class="nb">set</span> -e <span class="c"># fail on error&lt;/p&gt;</span>
+
+&lt;h1&gt;ensure you have loaded git&amp;#39;s environment with rbenv/ruby/jekyll <span class="k">in </span>the path&lt;/h1&gt;
+
+&lt;p&gt;source /home/git/.bash_profile&lt;/p&gt;
+
+&lt;h1&gt;this is only <span class="k">if </span>you have rbenv installed&lt;/h1&gt;
+
+&lt;h1&gt;remove <span class="k">if </span>you&amp;#39;re using a stock ruby&lt;/h1&gt;
+
+&lt;p&gt;eval &amp;quot;<span class="k">$(</span>rbenv init -<span class="k">)</span>&amp;quot;&lt;/p&gt;
+
+&lt;h1&gt;this shows you where the Jekyll executable can be found&lt;/h1&gt;
+
+&lt;h1&gt;it will also fail <span class="k">if </span>jekyll can&amp;#39;t be found, halting the build.&lt;/h1&gt;
+
+&lt;p&gt;which jekyll&lt;/p&gt;
+
+&lt;h1&gt;this is the name of your repo, without the &lt;code&gt;.git&lt;/code&gt;&lt;/h1&gt;
+
+&lt;p&gt;REPO&lt;em&gt;NAME<span class="o">=</span>&amp;quot;MY&lt;/em&gt;REPO&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;GIT&lt;em&gt;REPO<span class="o">=</span><span class="nv">$HOME</span>/repositories/<span class="nv">$REPO</span>&lt;/em&gt;NAME.git
+TMP&lt;em&gt;GIT&lt;/em&gt;CLONE<span class="o">=</span>/tmp/<span class="nv">$REPO_NAME</span>&lt;/p&gt;
+
+&lt;h1&gt;Change this to wherever your server <span class="o">(</span>nginx/apache<span class="o">)</span> will look&lt;/h1&gt;
+
+&lt;h1&gt;for your compiled site. Usually called the document root.&lt;/h1&gt;
+
+&lt;p&gt;PUBLIC&lt;em&gt;WWW<span class="o">=</span>/var/www/<span class="nv">$REPO</span>&lt;/em&gt;NAME&lt;/p&gt;
+
+&lt;p&gt;git clone <span class="nv">$GIT</span>&lt;em&gt;REPO <span class="nv">$TMP</span>&lt;/em&gt;GIT_CLONE&lt;/p&gt;
+
+&lt;h1&gt;Run Jekyll!&lt;/h1&gt;
+
+&lt;p&gt;cd <span class="nv">$TMP</span>&lt;em&gt;GIT&lt;/em&gt;CLONE &amp;amp;&amp;amp; jekyll build -d <span class="nv">$PUBLIC</span>&lt;em&gt;WWW --trace
+rm -Rf <span class="nv">$TMP</span>&lt;/em&gt;GIT_CLONE
+<span class="nb">exit</span></code></pre></div></p>
+
+<p>This hook will clone your repo to <code>/tmp</code> and run <code>jekyll build</code> from your site source into the directory your server will serve from.</p>
+
+<h2>3. Add the git remote</h2>
+
+<p>Go back to your local site and add the remote:</p>
+
+<p><div class="highlight"><pre><code class="bash"><span class="gp">$ </span>git remote add publish git@example.org:MY_REPO.git</code></pre></div></p>
+
+<h2>4. Test</h2>
+
+<p>Now, to test, just push!</p>
+
+<p><div class="highlight"><pre><code class="bash"><span class="gp">$ </span>git push publish master</code></pre></div></p>
+
+<p>You should see all the output of the Jekyll process in your terminal. Once you see <code>...done.</code> and the process exits, you&#39;re done! Refresh your browser and admire your handiwork.</p>
+
+<p>If you get a <code>LoadError</code> from Jekyll, then you don&#39;t have a gem installed or it can&#39;t access the <code>_plugins</code> directory. To install new gems, just run <code>gem install GEM_NAME</code> as <code>root</code> on your VM.</p>
+]]></content>
+  </entry>
+  
+</feed>

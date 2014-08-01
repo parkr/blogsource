@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tech | Hey, I’m Parker.]]></title>
   <link href="http://blog.parkermoore.de/categories/tech/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-07-25T15:14:44-04:00</updated>
+  <updated>2014-08-01T15:24:19-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker Moore]]></name>
@@ -12,6 +12,100 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[A Hacker's Guide to Her Own GitHub Pages]]></title>
+    <link href="http://blog.parkermoore.de/2014/08/01/how-to-setup-your-own-github-pages/"/>
+    <updated>2014-08-01T14:42:58-04:00</updated>
+    <id>http://blog.parkermoore.de/2014/08/01/how-to-setup-your-own-github-pages</id>
+    <content type="html"><![CDATA[<p><a href="https://pages.github.com">GitHub Pages</a> is a wonderful free platform GitHub has created to build and host your Jekyll sites for you. You push up any valid Jekyll site to a repo (on a special branch), and it&#39;s built and published to a predictable URL. The only downside? You can&#39;t use any custom Ruby code, which means no custom plugins. So what&#39;s the best way to host a Jekyll site that requires plugins?</p>
+
+<p>Maybe you&#39;re writing a huge website for your employer, or just something small for yourself. Either way, you need a plugin or two to get it <em>just right</em>. You could build locally and push the compiled site up to GitHub Pages, but that requires that you install all the dependencies locally and write a script to compile and jostle things in just the right way to make it all work. What if you could have the same workflow – just <code>git push</code> – for sites with custom plugins?</p>
+
+<p>You can. I do it every day. In fact, my personal site (https://parkermoo.re) is published with this method. Here&#39;s a step-by-step guide to making your own GitHub Pages.</p>
+
+<h2>1. Install and Configure Dependencies</h2>
+
+<p>You&#39;ll need the following:</p>
+
+<ol>
+<li>A server with <code>root</code> access. I use a Rackspace CentOS 1GB Performance VM, but you can use any Linux system from any provider.</li>
+<li>A web server if you don&#39;t have one already (Apache/Nginx).</li>
+<li>Ruby and RubyGems with the proper permissions to install new gems.</li>
+<li>Git</li>
+<li><a href="https://github.com/sitaramc/gitolite">Gitolite</a></li>
+</ol>
+
+<p>First, <code>sudo su - root</code>. Then install Ruby. I suggest using <code>rbenv</code> to keep your Rubies organized. Then ensure RubyGems is installed, and install the <code>github-pages</code> gem.</p>
+
+<p>Next, ensure you have a daemonized web server installed, like <code>nginx</code> or <code>apache</code>.</p>
+
+<p>Then ensure git is installed and create a new <code>git</code> user. Run <code>su - git</code> and install <code>gitolite</code>.</p>
+
+<p>Once you have <code>gitolite</code> installed, go back to your local machine and configure <code>gitolite</code> as described. You&#39;ll need to add a new user for your SSH key and create the repo for your site.</p>
+
+<h2>2. Add the post-receive hook</h2>
+
+<p>Run <code>sudo su - git</code> and find the <code>post-receive</code> file in your repository. It&#39;s usually at <code>/home/git/repositories/MY_REPO.git/hooks/post-receive</code>. Edit it so it looks like this:</p>
+
+<p><div class="highlight"><pre><code class="bash"><span class="nb">set</span> -e <span class="c"># fail on error&lt;/p&gt;</span>
+
+&lt;h1&gt;ensure you have loaded git&amp;#39;s environment with rbenv/ruby/jekyll <span class="k">in </span>the path&lt;/h1&gt;
+
+&lt;p&gt;source /home/git/.bash_profile&lt;/p&gt;
+
+&lt;h1&gt;this is only <span class="k">if </span>you have rbenv installed&lt;/h1&gt;
+
+&lt;h1&gt;remove <span class="k">if </span>you&amp;#39;re using a stock ruby&lt;/h1&gt;
+
+&lt;p&gt;eval &amp;quot;<span class="k">$(</span>rbenv init -<span class="k">)</span>&amp;quot;&lt;/p&gt;
+
+&lt;h1&gt;this shows you where the Jekyll executable can be found&lt;/h1&gt;
+
+&lt;h1&gt;it will also fail <span class="k">if </span>jekyll can&amp;#39;t be found, halting the build.&lt;/h1&gt;
+
+&lt;p&gt;which jekyll&lt;/p&gt;
+
+&lt;h1&gt;this is the name of your repo, without the &lt;code&gt;.git&lt;/code&gt;&lt;/h1&gt;
+
+&lt;p&gt;REPO&lt;em&gt;NAME<span class="o">=</span>&amp;quot;MY&lt;/em&gt;REPO&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;GIT&lt;em&gt;REPO<span class="o">=</span><span class="nv">$HOME</span>/repositories/<span class="nv">$REPO</span>&lt;/em&gt;NAME.git
+TMP&lt;em&gt;GIT&lt;/em&gt;CLONE<span class="o">=</span>/tmp/<span class="nv">$REPO_NAME</span>&lt;/p&gt;
+
+&lt;h1&gt;Change this to wherever your server <span class="o">(</span>nginx/apache<span class="o">)</span> will look&lt;/h1&gt;
+
+&lt;h1&gt;for your compiled site. Usually called the document root.&lt;/h1&gt;
+
+&lt;p&gt;PUBLIC&lt;em&gt;WWW<span class="o">=</span>/var/www/<span class="nv">$REPO</span>&lt;/em&gt;NAME&lt;/p&gt;
+
+&lt;p&gt;git clone <span class="nv">$GIT</span>&lt;em&gt;REPO <span class="nv">$TMP</span>&lt;/em&gt;GIT_CLONE&lt;/p&gt;
+
+&lt;h1&gt;Run Jekyll!&lt;/h1&gt;
+
+&lt;p&gt;cd <span class="nv">$TMP</span>&lt;em&gt;GIT&lt;/em&gt;CLONE &amp;amp;&amp;amp; jekyll build -d <span class="nv">$PUBLIC</span>&lt;em&gt;WWW --trace
+rm -Rf <span class="nv">$TMP</span>&lt;/em&gt;GIT_CLONE
+<span class="nb">exit</span></code></pre></div></p>
+
+<p>This hook will clone your repo to <code>/tmp</code> and run <code>jekyll build</code> from your site source into the directory your server will serve from.</p>
+
+<h2>3. Add the git remote</h2>
+
+<p>Go back to your local site and add the remote:</p>
+
+<p><div class="highlight"><pre><code class="bash"><span class="gp">$ </span>git remote add publish git@example.org:MY_REPO.git</code></pre></div></p>
+
+<h2>4. Test</h2>
+
+<p>Now, to test, just push!</p>
+
+<p><div class="highlight"><pre><code class="bash"><span class="gp">$ </span>git push publish master</code></pre></div></p>
+
+<p>You should see all the output of the Jekyll process in your terminal. Once you see <code>...done.</code> and the process exits, you&#39;re done! Refresh your browser and admire your handiwork.</p>
+
+<p>If you get a <code>LoadError</code> from Jekyll, then you don&#39;t have a gem installed or it can&#39;t access the <code>_plugins</code> directory. To install new gems, just run <code>gem install GEM_NAME</code> as <code>root</code> on your VM.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Don’t Like Being Tracked?]]></title>
@@ -162,98 +256,6 @@ reboots:</p>
 
 <p>Credit goes to the brilliant <a href="https://github.com/dhassler">@dhassler</a> for <a href="https://github.com/dotcloud/docker/issues/1555#issuecomment-22874190">the idea and the code</a>. Just
 thought I&#39;d share and preserve for my own benefit in the future.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Taking Over Someone Else's Open-Source Project]]></title>
-    <link href="http://blog.parkermoore.de/2013/11/04/taking-over-someone-elses-open-source-project/"/>
-    <updated>2013-11-04T21:23:00-05:00</updated>
-    <id>http://blog.parkermoore.de/2013/11/04/taking-over-someone-elses-open-source-project</id>
-    <content type="html"><![CDATA[<p>Last December (2012), <a href="http://tom.preston-werner.com">Tom Preston-Werner</a> granted me <a href="/images/mojombo-added-parkr-to-jekyll.png">push &amp; pull access to
-mojombo/jekyll</a>. I had written a <a href="/2012/12/11/an-open-letter-to-tom-preston-werner/">letter to Tom about the future of Jekyll</a>
-and after a bit of persistence on my part, he relented:</p>
-
-<p><img src="/images/mojombo-added-parkr-to-jekyll.png" alt="mojombo added parkr to mojombo/jekyll"></p>
-
-<p>After a somewhat lengthy (and <a href="/images/jekyll-shall-inherit-the-earth.png">amusing</a>) conversation via Skype, I knew what
-Tom&#39;s priorities were for the project and where I could help. I started off
-trimming down the number of open issues. At the time, they numbered just over 300.
-After a quick visit to Buffalo to tackle some issues with <a href="http://quaran.to">Nick Quaranto</a> at a
-Buffalo <a href="http://openhack.github.io">OpenHack</a> meetup at <a href="http://coworkbuffalo.com">CoworkBuffalo</a>, we were down to fewer than 200
-open issues. I continued to work through them (much to my parents&#39; dismay) all
-through Winter Break. I was making good progress in the triage process: I knew
-what many of the problems were with v0.12.1 and was formulating ideas about how
-we might go about fixing them.</p>
-
-<p><img src="/images/jekyll-shall-inherit-the-earth.png" alt="jekyll shall inherit the earth"></p>
-
-<p>In January, I flew out to San Francisco to visit my sister for a week. I setup a
-meeting with Tom to talk more about Jekyll and a plan for moving forward to a
-v1.0.0 release. After about an hour or so at GitHub&#39;s office in SoMa, talking
-through various PR&#39;s, Tom said I could start merging pull requests.</p>
-
-<p>Consultation with Tom was challenging (he runs a multi-million dollar company
-after all), as it was increasingly difficult for him to find time for Jekyll.
-Despite <a href="https://github.com/mojombo/jekyll/issues/578#issuecomment-11414645">announcing that he was going to commit some of his &quot;20% time&quot; to Jekyll</a>,
-he eventually abandoned that as impractical. As time went on, I received fewer
-replies to my emails and eventually stopped sending anything that didn&#39;t
-absolutely <em>require</em> Tom&#39;s input.</p>
-
-<p>In March, I knew I needed more help. Tom wasn&#39;t able to give much time and I
-was trying to tackle this project alone. I had noticed that <a href="http://mattr.info">Matt Rogers</a>
-shared my vision for Jekyll, so I asked Tom to add him on as a contributor to
-the repo. By v1.0.3, he had started merging pull requests like a BAW$ and was
-the sanity to my ridiculously-obsessed, inexperienced mind. Since Matt joined, I
-haven&#39;t really heard much from Tom. I write the occasional email and get the
-occasional reply but he&#39;s essentially phased out of the normal development of
-Jekyll. Matt &amp; I have essentially taken over the project altogether.</p>
-
-<p>By May, we were ready to ship v1.0.0. With the help of all the amazing
-contributors, Matt, and my many mentors along the way, I finally ran
-<code>rake release</code> for 1.0. The project was ours.</p>
-
-<p>Since realizing that this product has few constraints outside of those I&#39;ve
-constructed for it in my mind (no one is going to tell me, &quot;No, you may not
-implement that feature or add that enhancement&quot; without a valid argument as to
-my solution&#39;s invalidity), I&#39;ve been thinking about what it means to take over
-someone else&#39;s project. <a href="https://github.com/mojombo/jekyll/commit/d189e05d236769c1e5594af9db4d6eacb86fc16e">Jekyll is 5 years old.</a> I wasn&#39;t there in 2008 when
-it was first born as <code>autoblog</code>. Jekyll has changed a lot, as has its vision and
-purpose. It&#39;s used by lots of people now, whether via <a href="http://pages.github.com">GitHub Pages</a> or
-locally.</p>
-
-<p>Taking over someone else&#39;s project takes a deep understanding of what the
-project is and what it should be. As much as I wish Jekyll could make me
-kräuterquark, that&#39;s outside the scope of the project. Developing that lens is
-crucial when taking over someone else&#39;s project.</p>
-
-<p>Mentoring on the part of the original owner/previous maintainer(s) is
-exceedingly significant in the development of this critical lens. I am so
-grateful that I was able to meet up with Tom back in January and to have some
-amount of input from him as I understood what the project should be.</p>
-
-<p>It would be ill-advised to take over someone else&#39;s project without a partner.
-Once Matt joined the team, Tom was able to step back into a much lesser role.
-If I had tried to do what I did without any guidance (or at least sanity
-checks), Jekyll v1.0.0 would have been a complete shit-show.</p>
-
-<p>Trust in the community must also be earned. If people highly doubted my ability
-to handle Jekyll, Tom would have likely removed me and found a replacement. I
-argued a lot and got into some pretty heated debates at the beginning. There
-were a couple people who didn&#39;t share the vision that I had inherited from Tom
-and stopped contributing to the project altogether. I feel like we now have a
-pretty great community around Jekyll and are able to help each other out and
-share cool plugins and sites that we made for/with Jekyll.</p>
-
-<p>Taking over someone else&#39;s open-source project was new terrain for me in
-December, and still is today. It can be successful with the right amount of
-mentoring and gradual removal of trusted feedback by the previous maintainer(s).</p>
-
-<p>With some old projects that are brought back to life by the passing of the
-torch, the new maintainers are able to experience the added bonus of feeling
-like Frankenstein, which, I will say, is a pretty cool feeling.</p>
-
-<p><img src="/images/it-lives.jpg" alt="igor"></p>
 ]]></content>
   </entry>
   

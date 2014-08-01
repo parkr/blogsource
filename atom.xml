@@ -4,7 +4,7 @@
   <title><![CDATA[Hey, I’m Parker.]]></title>
   <link href="http://blog.parkermoore.de/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-07-25T15:14:44-04:00</updated>
+  <updated>2014-08-01T15:24:19-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker Moore]]></name>
@@ -12,6 +12,91 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[A Hacker's Guide to Her Own GitHub Pages]]></title>
+    <link href="http://blog.parkermoore.de/2014/08/01/how-to-setup-your-own-github-pages/"/>
+    <updated>2014-08-01T14:42:58-04:00</updated>
+    <id>http://blog.parkermoore.de/2014/08/01/how-to-setup-your-own-github-pages</id>
+    <content type="html"><![CDATA[<p><a href="https://pages.github.com">GitHub Pages</a> is a wonderful free platform GitHub has created to build and host your Jekyll sites for you. You push up any valid Jekyll site to a repo (on a special branch), and it&#39;s built and published to a predictable URL. The only downside? You can&#39;t use any custom Ruby code, which means no custom plugins. So what&#39;s the best way to host a Jekyll site that requires plugins?</p>
+
+<p>Maybe you&#39;re writing a huge website for your employer, or just something small for yourself. Either way, you need a plugin or two to get it <em>just right</em>. You could build locally and push the compiled site up to GitHub Pages, but that requires that you install all the dependencies locally and write a script to compile and jostle things in just the right way to make it all work. What if you could have the same workflow – just <code>git push</code> – for sites with custom plugins?</p>
+
+<p>You can. I do it every day. In fact, my personal site (https://parkermoo.re) is published with this method. Here&#39;s a step-by-step guide to making your own GitHub Pages.</p>
+
+<h2>1. Install and Configure Dependencies</h2>
+
+<p>You&#39;ll need the following:</p>
+
+<ol>
+<li>A server with <code>root</code> access. I use a Rackspace CentOS 1GB Performance VM, but you can use any Linux system from any provider.</li>
+<li>A web server if you don&#39;t have one already (Apache/Nginx).</li>
+<li>Ruby and RubyGems with the proper permissions to install new gems.</li>
+<li>Git</li>
+<li><a href="https://github.com/sitaramc/gitolite">Gitolite</a></li>
+</ol>
+
+<p>First, <code>sudo su - root</code>. Then install Ruby. I suggest using <code>rbenv</code> to keep your Rubies organized. Then ensure RubyGems is installed, and install the <code>github-pages</code> gem.</p>
+
+<p>Next, ensure you have a daemonized web server installed, like <code>nginx</code> or <code>apache</code>.</p>
+
+<p>Then ensure git is installed and create a new <code>git</code> user. Run <code>su - git</code> and install <code>gitolite</code>.</p>
+
+<p>Once you have <code>gitolite</code> installed, go back to your local machine and configure <code>gitolite</code> as described. You&#39;ll need to add a new user for your SSH key and create the repo for your site.</p>
+
+<h2>2. Add the post-receive hook</h2>
+
+<p>Run <code>sudo su - git</code> and find the <code>post-receive</code> file in your repository. It&#39;s usually at <code>/home/git/repositories/MY_REPO.git/hooks/post-receive</code>. Edit it so it looks like this:</p>
+
+<div class="highlight"><pre><code class="bash"><span class="nb">set</span> -e <span class="c"># fail on error</span>
+
+<span class="c"># ensure you have loaded git's environment with rbenv/ruby/jekyll in the path</span>
+<span class="nb">source</span> /home/git/.bash_profile
+
+<span class="c"># this is only if you have rbenv installed</span>
+<span class="c"># remove if you're using a stock ruby</span>
+<span class="nb">eval</span> <span class="s2">"</span><span class="k">$(</span>rbenv init -<span class="k">)</span><span class="s2">"</span>
+
+<span class="c"># this shows you where the Jekyll executable can be found</span>
+<span class="c"># it will also fail if jekyll can't be found, halting the build.</span>
+which jekyll
+
+<span class="c"># this is the name of your repo, without the `.git`</span>
+<span class="nv">REPO_NAME</span><span class="o">=</span><span class="s2">"MY_REPO"</span>
+
+<span class="nv">GIT_REPO</span><span class="o">=</span><span class="nv">$HOME</span>/repositories/<span class="nv">$REPO_NAME</span>.git
+<span class="nv">TMP_GIT_CLONE</span><span class="o">=</span>/tmp/<span class="nv">$REPO_NAME</span>
+
+<span class="c"># Change this to wherever your server (nginx/apache) will look</span>
+<span class="c"># for your compiled site. Usually called the document root.</span>
+<span class="nv">PUBLIC_WWW</span><span class="o">=</span>/var/www/<span class="nv">$REPO_NAME</span>
+
+git clone <span class="nv">$GIT_REPO</span> <span class="nv">$TMP_GIT_CLONE</span>
+
+<span class="c"># Run Jekyll!</span>
+<span class="nb">cd</span> <span class="nv">$TMP_GIT_CLONE</span> <span class="o">&amp;&amp;</span> jekyll build -d <span class="nv">$PUBLIC_WWW</span> --trace
+rm -Rf <span class="nv">$TMP_GIT_CLONE</span>
+<span class="nb">exit</span></code></pre></div>
+
+<p>This hook will clone your repo to <code>/tmp</code> and run <code>jekyll build</code> from your site source into the directory your server will serve from.</p>
+
+<h2>3. Add the git remote</h2>
+
+<p>Go back to your local site and add the remote:</p>
+
+<div class="highlight"><pre><code class="bash"><span class="gp">$ </span>git remote add publish git@example.org:MY_REPO.git</code></pre></div>
+
+<h2>4. Test</h2>
+
+<p>Now, to test, just push!</p>
+
+<div class="highlight"><pre><code class="bash"><span class="gp">$ </span>git push publish master</code></pre></div>
+
+<p>You should see all the output of the Jekyll process in your terminal. Once you see <code>...done.</code> and the process exits, you&#39;re done! Refresh your browser and admire your handiwork.</p>
+
+<p>If you get a <code>LoadError</code> from Jekyll, then you don&#39;t have a gem installed or it can&#39;t access the <code>_plugins</code> directory. To install new gems, just run <code>gem install GEM_NAME</code> as <code>root</code> on your VM.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Don’t Like Being Tracked?]]></title>
@@ -251,7 +336,7 @@ compiled with 1.8.7.</p>
 
 <p>To check this, run the following in vim in NORMAL mode:</p>
 
-<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'>:ruby puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"</div></div></pre></div></figure>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'>:ruby puts "#&#x7b;RUBY_VERSION&#x7d;-p#&#x7b;RUBY_PATCHLEVEL&#x7d;"</div></div></pre></div></figure>
 
 <p>For me, that output <code>1.8.7-p358</code>. So that means the Ruby verison that vim is
 using is <code>1.8.7-p358</code>, and we need to compile Command-T with that version. To do
@@ -631,16 +716,16 @@ solution</a>:</p>
 <figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="n">namespace</span> <span class="ss">:rails</span> <span class="k">do</span>
 </div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="n">desc</span> <span class="s2">"Remote console"</span>
 </div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="n">task</span> <span class="ss">:console</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span> <span class="k">do</span>
-</div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="n">run_interactively</span> <span class="s2">"bundle exec rails console </span><span class="si">#{</span><span class="n">rails_env</span><span class="si">}</span><span class="s2">"</span>
+</div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="n">run_interactively</span> <span class="s2">"bundle exec rails console </span><span class="si">#&#x7b;</span><span class="n">rails_env</span><span class="si">&#x7d;</span><span class="s2">"</span>
 </div></div><div data-line='5' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="k">end</span>
 </div></div><div data-line='6' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='7' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="n">desc</span> <span class="s2">"Remote dbconsole"</span>
 </div></div><div data-line='8' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="n">task</span> <span class="ss">:dbconsole</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span> <span class="k">do</span>
-</div></div><div data-line='9' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="n">run_interactively</span> <span class="s2">"bundle exec rails dbconsole </span><span class="si">#{</span><span class="n">rails_env</span><span class="si">}</span><span class="s2">"</span>
+</div></div><div data-line='9' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="n">run_interactively</span> <span class="s2">"bundle exec rails dbconsole </span><span class="si">#&#x7b;</span><span class="n">rails_env</span><span class="si">&#x7d;</span><span class="s2">"</span>
 </div></div><div data-line='10' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="k">end</span>
 </div></div><div data-line='11' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="k">end</span>
 </div></div><div data-line='12' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='13' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="k">def</span> <span class="nf">run_interactively</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">server</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
 </div></div><div data-line='14' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="n">server</span> <span class="o">||=</span> <span class="n">find_servers_for_task</span><span class="p">(</span><span class="n">current_task</span><span class="p">).</span><span class="nf">first</span>
-</div></div><div data-line='15' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="nb">exec</span> <span class="sx">%Q(ssh </span><span class="si">#{</span><span class="n">server</span><span class="p">.</span><span class="nf">host</span><span class="si">}</span><span class="sx"> -t 'cd </span><span class="si">#{</span><span class="n">current_path</span><span class="si">}</span><span class="sx"> &amp;&amp; </span><span class="si">#{</span><span class="n">command</span><span class="si">}</span><span class="sx">')</span>
+</div></div><div data-line='15' class='code-highlight-row numbered'><div class='code-highlight-line'>  <span class="nb">exec</span> <span class="sx">%Q(ssh </span><span class="si">#&#x7b;</span><span class="n">server</span><span class="p">.</span><span class="nf">host</span><span class="si">&#x7d;</span><span class="sx"> -t 'cd </span><span class="si">#&#x7b;</span><span class="n">current_path</span><span class="si">&#x7d;</span><span class="sx"> &amp;&amp; </span><span class="si">#&#x7b;</span><span class="n">command</span><span class="si">&#x7d;</span><span class="sx">')</span>
 </div></div><div data-line='16' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="k">end</span></div></div></pre></div></figure>
 
 <p>And, <em>vòila</em>! Run <code>cap rails:console</code> and you&#39;re in business.</p>
@@ -1171,58 +1256,6 @@ redesign), but really wanted CloudApp support. Tweetbot was the natural alternat
 and everyone raved about it. After a couple weeks of using Tweetbot on a daily
 basis, I deleted Twitter for iPhone without hesitation. Tweetbot is the best
 way to interface with Twitter on any Apple device.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Immediate Future of Jekyll]]></title>
-    <link href="http://blog.parkermoore.de/2012/12/18/the-immediate-future-of-jekyll/"/>
-    <updated>2012-12-18T18:33:00-05:00</updated>
-    <id>http://blog.parkermoore.de/2012/12/18/the-immediate-future-of-jekyll</id>
-    <content type="html"><![CDATA[<p><a href="http://github.com/mojombo/jekyll">Jekyll</a> is a static blog generator created by <a href="https://github.com/mojombo">Tom Preston-Werner</a>, the
-current CEO of <a href="https://github.com">GitHub</a> and one of GitHub&#39;s co-founders, and by <a href="https://github.com/qrush">Nick Quaranto</a>,
-who is now at 37signals. Jekyll is <a href="https://github.com/mojombo/jekyll/wiki/Sites">pretty freakin&#39; popular</a> and it&#39;s
-also the engine that drives <a href="http://pages.github.com/">GitHub Pages</a>.</p>
-
-<p>After an hour-long chat with Tom, I&#39;m optimistic about the future of Jekyll. He&#39;s
-really excited about where it&#39;s headed and has a vision in mind about what he&#39;d
-like it to become.
-Here&#39;s what we ironed out during our conversation:</p>
-
-<p>Led by Tom, a Jekyll development team, of which I&#39;m the first recruit, will
-be tackling the problems with Jekyll and continuously improving its functionality
-and ease-of-use. The focus will remain on making a tool that allows one to easily
-create and manage a static blog.</p>
-
-<p>Suuuper basic (unofficial) design principles:</p>
-
-<ol>
-<li>Keep it simple</li>
-<li>Easy to extend</li>
-<li>Solid safe mode (for GitHub Pages)</li>
-</ol>
-
-<p>What we need to tackle:</p>
-
-<ol>
-<li>Fix bugs (!!)</li>
-<li>Decrease build time (!!)</li>
-<li>Docs for site</li>
-<li>TomDoc everything</li>
-<li>Release new site</li>
-<li>Finish same site generator</li>
-<li>Include some faster LSI</li>
-</ol>
-
-<p>Want to help? Check out the <a href="http://git.io/jekyll-discussion">discussion label</a> and add in your two cents.<br>
-Want to contribute code? Check out the <a href="https://github.com/mojombo/jekyll/issues">issues</a> and submit a pull request with
-a fix.</p>
-
-<p>I&#39;m really excited about the immediate future of Jekyll and what it will become
-in the next 6 months or so and the dev team takes on the issues outlined above.
-I hope you&#39;re as excited as we are to get this project back on its feet.</p>
-
-<p>If you want to chat more or have any questions, you know <a href="http://twitter.com/parkr">where to find me</a>.</p>
 ]]></content>
   </entry>
   
