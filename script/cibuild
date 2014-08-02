@@ -3,4 +3,4 @@ command -v htmlproof || {
   gem install html-proofer -- --use-system-libraries
 }
 bundle exec rake generate
-htmlproof ./public --href_ignore dustincurtis.com
+script/proof
