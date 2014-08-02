@@ -4,7 +4,7 @@
   <title><![CDATA[Hey, I’m Parker.]]></title>
   <link href="http://blog.parkermoore.de/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-08-01T15:24:19-04:00</updated>
+  <updated>2014-08-01T23:48:13-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker Moore]]></name>
@@ -12,6 +12,111 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Header Anchor Links in Vanilla JavaScript for GitHub Pages and Jekyll]]></title>
+    <link href="http://blog.parkermoore.de/2014/08/01/header-anchor-links-in-vanilla-javascript-for-github-pages-and-jekyll/"/>
+    <updated>2014-08-01T23:36:54-04:00</updated>
+    <id>http://blog.parkermoore.de/2014/08/01/header-anchor-links-in-vanilla-javascript-for-github-pages-and-jekyll</id>
+    <content type="html"><![CDATA[<p>The venerable <a href="http://ben.balter.com">Ben Balter, Esq.</a> wrote earlier this year about <a href="http://ben.balter.com/2014/03/13/pages-anchor-links/">how to add anchor links for headers in Jekyll.</a>. I thought I&#39;d follow up that post with one of my own, as I take a slightly different approach.</p>
+
+<p>This solution is vanilla JavaScript with a little CSS and the Font Awesome web font.</p>
+
+<h2>Font Awesome</h2>
+
+<p><a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a> is, well, awesome. It&#39;s a font of icons that comes with a handy set of CSS classes.</p>
+
+<p>Download the Font Awesome distribution and pull out just the font files. They&#39;re the files that end in <code>.ttf</code>, <code>.woff</code>, <code>.svg</code>, <code>.otf</code>, and <code>.eot</code>. Grab them all and put them in <code>fonts/</code> in your Jekyll site.</p>
+
+<h2>The JavaScript</h2>
+
+<p>Add this JavaScript wherever is convenient:</p>
+
+<div class="highlight"><pre><code class="js"><span class="kd">var</span> <span class="nx">anchorForId</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">anchor</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
+  <span class="nx">anchor</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">"header-link"</span><span class="p">;</span>
+  <span class="nx">anchor</span><span class="p">.</span><span class="nx">href</span>      <span class="o">=</span> <span class="s2">"#"</span> <span class="o">+</span> <span class="nx">id</span><span class="p">;</span>
+  <span class="nx">anchor</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">"&lt;i class=\"fa fa-link\"&gt;&lt;/i&gt;"</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">anchor</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">linkifyAnchors</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">level</span><span class="p">,</span> <span class="nx">containingElement</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">headers</span> <span class="o">=</span> <span class="nx">containingElement</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">"h"</span> <span class="o">+</span> <span class="nx">level</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">h</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">h</span> <span class="o">&lt;</span> <span class="nx">headers</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">h</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">header</span> <span class="o">=</span> <span class="nx">headers</span><span class="p">[</span><span class="nx">h</span><span class="p">];</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">header</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="s2">"undefined"</span> <span class="o">&amp;&amp;</span> <span class="nx">header</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="s2">""</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">header</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">anchorForId</span><span class="p">(</span><span class="nx">header</span><span class="p">.</span><span class="nx">id</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="s2">"complete"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">contentBlock</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"docs"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"news"</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">contentBlock</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">level</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">level</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">;</span> <span class="nx">level</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">linkifyAnchors</span><span class="p">(</span><span class="nx">level</span><span class="p">,</span> <span class="nx">contentBlock</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span></code></pre></div>
+
+<h2>The CSS</h2>
+
+<p>Last, add this CSS to the <code>css</code> or <code>_scss</code> folder:</p>
+
+<div class="highlight"><pre><code class="css"><span class="c">/*!
+ *  Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */</span>
+<span class="k">@font-face</span> <span class="p">{</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'FontAwesome'</span><span class="p">;</span>
+  <span class="nl">src</span><span class="p">:</span> <span class="sx">url('../fonts/fontawesome-webfont.eot?v=4.1.0')</span><span class="p">;</span>
+  <span class="nl">src</span><span class="p">:</span> <span class="sx">url('../fonts/fontawesome-webfont.eot?#iefix&amp;v=4.1.0')</span> <span class="n">format</span><span class="p">(</span><span class="s2">'embedded-opentype'</span><span class="p">),</span> <span class="sx">url('../fonts/fontawesome-webfont.woff?v=4.1.0')</span> <span class="n">format</span><span class="p">(</span><span class="s2">'woff'</span><span class="p">),</span> <span class="sx">url('../fonts/fontawesome-webfont.ttf?v=4.1.0')</span> <span class="n">format</span><span class="p">(</span><span class="s2">'truetype'</span><span class="p">),</span> <span class="sx">url('../fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular')</span> <span class="n">format</span><span class="p">(</span><span class="s2">'svg'</span><span class="p">);</span>
+  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+  <span class="nl">font-style</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.fa</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="n">FontAwesome</span><span class="p">;</span>
+  <span class="nl">font-style</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+  <span class="nl">-webkit-font-smoothing</span><span class="p">:</span> <span class="n">antialiased</span><span class="p">;</span>
+  <span class="nl">-moz-osx-font-smoothing</span><span class="p">:</span> <span class="n">grayscale</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.fa-link</span><span class="nd">:before</span> <span class="p">{</span>
+  <span class="nl">content</span><span class="p">:</span> <span class="s1">"\f0c1"</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c">/*
+ * This code is courtesy Ben Balter, modified by Parker Moore for jekyllrb.com
+ * http://ben.balter.com/2014/03/13/pages-anchor-links/
+ */</span>
+<span class="nc">.header-link</span> <span class="p">{</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+  <span class="nl">left</span><span class="p">:</span> <span class="m">0.5em</span><span class="p">;</span>
+  <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">0.8em</span><span class="p">;</span>
+
+  <span class="nl">-webkit-transition</span><span class="p">:</span> <span class="n">opacity</span> <span class="m">0.2s</span> <span class="n">ease-in-out</span> <span class="m">0.1s</span><span class="p">;</span>
+  <span class="nl">-moz-transition</span><span class="p">:</span> <span class="n">opacity</span> <span class="m">0.2s</span> <span class="n">ease-in-out</span> <span class="m">0.1s</span><span class="p">;</span>
+  <span class="nl">-ms-transition</span><span class="p">:</span> <span class="n">opacity</span> <span class="m">0.2s</span> <span class="n">ease-in-out</span> <span class="m">0.1s</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">h2</span><span class="nd">:hover</span> <span class="nc">.header-link</span><span class="o">,</span>
+<span class="nt">h3</span><span class="nd">:hover</span> <span class="nc">.header-link</span><span class="o">,</span>
+<span class="nt">h4</span><span class="nd">:hover</span> <span class="nc">.header-link</span><span class="o">,</span>
+<span class="nt">h5</span><span class="nd">:hover</span> <span class="nc">.header-link</span><span class="o">,</span>
+<span class="nt">h6</span><span class="nd">:hover</span> <span class="nc">.header-link</span> <span class="p">{</span>
+  <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<h2>Enjoy the Magic</h2>
+
+<p>Now refresh your site and voilà! It&#39;s like magic. See it in action in the <a href="http://jekyllrb.com/docs/home/">Jekyll docs</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[A Hacker's Guide to Her Own GitHub Pages]]></title>
@@ -1072,190 +1177,6 @@ In this case:</p>
 </div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'>password: simyo</div></div></pre></div></figure>
 
 <p>THANK YOU RAFIF. This surely saved me many hours of frustration.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[My Favourite Apps in 2012]]></title>
-    <link href="http://blog.parkermoore.de/2013/01/03/my-favourite-apps-in-2012/"/>
-    <updated>2013-01-03T01:36:00-05:00</updated>
-    <id>http://blog.parkermoore.de/2013/01/03/my-favourite-apps-in-2012</id>
-    <content type="html"><![CDATA[<p>Below is a list of the apps I wouldn&#39;t have wanted to live without this year.
-To be fair to everyone, I&#39;ve listed them in alphabetical order.</p>
-
-<p>I know some apps are missing links to various versions, but if I didn&#39;t use it,
-then I felt it was best not to include a link to it on this list.</p>
-
-<h3>101 Airborne (<a href="https://itunes.apple.com/us/app/101-airborne/id531317549?mt=8">iPhone</a>)</h3>
-
-<p>At this moment, this is one of only two games which I have installed on my iPhone.
-I have thoroughly enjoyed playing this game, and it is incredibly well-done,
-to boot.</p>
-
-<h3>Diet Coda (<a href="https://itunes.apple.com/us/app/diet-coda/id500906297?mt=8">iOS</a>)</h3>
-
-<p>When I had to have the logic board in my MacBook Pro replaced, I had to hand in
-my computer for a week. I am practically addicted to development, and this app
-by Panic, Inc. of Portland, Oregon, served me well during those tough times.</p>
-
-<h3>Dropbox (<a href="https://itunes.apple.com/us/app/dropbox/id327630330?mt=8">iOS</a>, <a href="https://www.dropbox.com/install">Mac</a>)</h3>
-
-<p>Dropbox gives me the freedom to aimlessly roam between devices without losing
-any progress. I can work on my mac for a bit, then pick up my iPad and resume
-my work right then and there. Dropbox far surpasses the ease-of-use of competitors
-such as Box.com, and its native Mac application is far less intrusive, as well.</p>
-
-<h3>Google+ (<a href="https://itunes.apple.com/us/app/google+/id447119634?mt=8">iOS</a>)</h3>
-
-<p>I&#39;m a social media weirdo. I have to try out every one that comes along. I even
-tried out <a href="http://app.net">app.net</a> for a while (I still have an account there).
-I started using this app far more after the amazing redesign which happened
-right around Christmastime. It was indeed an enjoyable occasion. I use G+ to stay
-in contact with friends who now work at Google and with friends of mine who insist
-on Google-only living: an Android phone, Google+ to communicate (Messenger), and
-Google Docs to collaborate.</p>
-
-<h3>Google Chrome (<a href="https://itunes.apple.com/us/app/chrome/id535886823?mt=8">iOS</a>, <a href="https://www.google.com/intl/en/chrome/browser/">Mac</a>)</h3>
-
-<p>Chrome on Mac is absolutely awesome. I use it obsessively.</p>
-
-<p>Chrome on the iPhone is something I had to warm up to a bit more. It behaves far
-differently than Safari on iOS and the controls are in completely different places.
-After some adjustment, I&#39;ve come to appreciate its incredible flexibility and
-strength in the mobile realm.</p>
-
-<h3>Google Maps (<a href="https://itunes.apple.com/us/app/google-maps/id585027354?mt=8">iOS</a>)</h3>
-
-<p>Apple Maps has yet to lead me to a hospital that isn&#39;t there, or on a road that has
-been demolished, but I still missed the Google Maps speed and accuracy. I have also
-found that Google Maps is far better for finding nearby amenities, such as coffee,
-gas, and food.</p>
-
-<h3>Google Translate (<a href="https://itunes.apple.com/us/app/google-translate/id414706506?mt=8">iOS</a>)</h3>
-
-<p>While I am relatively proficient in the language, learning German is a process.
-I have found this app very helpful during my studies and even when having a
-causal conversation over Skype in German.</p>
-
-<h3>Gmail (<a href="https://itunes.apple.com/us/app/gmail-email-from-google/id422689480?mt=8">iOS</a>)</h3>
-
-<p>As with G+ above, the redesign really did it for me. It was, all of a sudden,
-a reliable, beautiful, and agile experience, to use this app. It was incredibly
-buggy before (it seemed to be a product from Google&#39;s insistence that online
-mobile apps will be dominant, over native apps), but it has come a long way.</p>
-
-<h3>iA Writer (<a href="https://itunes.apple.com/us/app/ia-writer/id392502056?mt=8">iOS</a>, <a href="https://itunes.apple.com/us/app/ia-writer/id439623248?mt=12">Mac</a>)</h3>
-
-<p>Whenever I have a thought that I want to remember and ponder later, I write it
-down in a note. This usually happens while I am on-the-go. I will then come
-back later and review my thoughts and ideas in iA Writer for Mac. I am so thankful
-that iA Writer offers syncing through services like iCloud and Dropbox.</p>
-
-<p>I have even been known to write essays on my iPhone of 1000+ words while I walk
-between classes, to dinner in Collegetown, and to and from rehearsals. Two of the
-three &quot;A&quot; papers I wrote last year (one writes few papers when studying engineering)
-were written almost entirely in iA Writer for iOS.</p>
-
-<h3>Instapaper (<a href="https://itunes.apple.com/us/app/instapaper/id288545208?mt=8">iOS</a>)</h3>
-
-<p>After much consideration, I decided to include this app on my list. I have used
-Instapaper for many years now, and have truly enjoyed using it. It has,
-unforunately, become a repository for articles I&#39;d like to read, but probably
-never will. I found Instapaper very useful, however, to pass the time during
-long plane/car/bus rides, as well as long layovers between flights.</p>
-
-<h3>iTerm2 (<a href="http://www.iterm2.com/">Mac</a>)</h3>
-
-<p>Almost all of my development before May this year was done in Terminal.app.
-While I have appreciated its service, I decided to move on to iTerm2 upon a
-recommendation from a friend. iTerm2 is light and doesn&#39;t have any weird &quot;Mac
-baggage&quot; which Terminal.app does. It&#39;s simple to configure (though there are
-far too many configuration options, in my opinion), and easy to use.</p>
-
-<h3>Lightroom 4 (<a href="http://www.adobe.com/products/photoshop-lightroom.html">Mac</a>)</h3>
-
-<p>When I first got my Mac, I bought Apple&#39;s Aperture to handle photo editing and
-management. When Lightroom 1 came out, I gave it a try and really enjoyed how
-lightweight it felt. It&#39;s incredibly easy to use, and its catalogs are quite
-small, relative to Aperture&#39;s. It is easily extendible, with custom plugins
-for exporting photos and custom presets for one-click photo editing. I&#39;ve since
-stayed with Lightroom, and never looked back.</p>
-
-<h3>Netflix (<a href="https://itunes.apple.com/us/app/netflix/id363590051?mt=8">iOS</a>)</h3>
-
-<p>I have a slight obsession with Star Trek: The Next Generation, and, more
-recently, with Star Trek: Voyager. Netflix has been a wonderful means of
-distraction when I need to escape to the twenty-fourth century for some R &amp; R.</p>
-
-<h3>Pages (<a href="https://itunes.apple.com/us/app/pages/id361309726?mt=8">iOS</a>, <a href="https://itunes.apple.com/us/app/pages/id409201541?mt=12">Mac</a>)</h3>
-
-<p>Pages is similar to iA Writer, but built for presentation-geared reports and
-papers. If the formatting matters, Pages is there to save the day. I wrote quite
-a few lab reports on Pages for iOS.</p>
-
-<h3>Paper (<a href="https://itunes.apple.com/us/app/pages/id361309726?mt=8">iPad</a>)</h3>
-
-<p>Paper by FiftyThree is pretty freakin&#39; awesome. It&#39;s incredibly agile, and very
-robust. While I am no artist, it&#39;s great for drawing up a quick website mock-up
-and sending it off to colleagues. I am still in search of the right stylus, however
-&mdash; I am using the Bamboo stylus from Wacom, but I need a tip which has more
-precision for use with Paper. Let me know if you know of one I should pick up.</p>
-
-<h3>Sparrow (<a href="https://itunes.apple.com/us/app/sparrow/id492573565?mt=8">iOS</a>, <a href="https://itunes.apple.com/us/app/sparrow/id417250177?mt=12">Mac</a>)</h3>
-
-<p>I have been using Sparrow since its private beta days, and I just love the thing.
-Sparrow for Mac is a beaut&#39; and Sparrow for iOS makes managing my Gmail accounts
-so easy and painless, it&#39;s almost too good to be true.</p>
-
-<h3>Spotify (<a href="https://itunes.apple.com/us/app/spotify/id324684580?mt=8">iOS</a>, <a href="http://www.spotify.com/us/download/mac/">Mac</a>)</h3>
-
-<p>Unfortunately, I am not made of money, and my bank account resembles that which
-one might expect of a poor college student. In my hopes to spend less on music,
-I signed up for Spotify and have just loved it. I have discovered several new
-artists that I have come to adore (can it get better than some Babyface or Marc
-Broussard??), and for that, I am thankful. Spotify for iOS is a bit weird when
-trying to initialize radio on a 3G connection, but it&#39;s something I am willing
-to live with for the time being.</p>
-
-<h3>TextMate 2 Alpha (<a href="http://blog.macromates.com/2011/textmate-2-0-alpha/">Mac</a>)</h3>
-
-<p>As I mentioned above, I code endlessly. My trusty companion is TextMate 2. In 2006,
-<a href="https://web.archive.org/web/20140207135007/http://blog.dcxn.com/">Nick Rowe</a> showed me what would become the text editor to
-change my world. After learning all the key bindings, it was hard to switch when
-I started learning more about vim. So I stuck with TextMate. When TextMate 2 Alpha
-came out, I was never happier. Rebuilt from the ground up, it has all the memory
-management I could have hoped for out of TextMate 1. I love this app with all of
-my heart.</p>
-
-<h3>Things 2 (<a href="https://itunes.apple.com/us/app/spotify/id324684580?mt=8">iPhone</a>, <a href="https://itunes.apple.com/us/app/things/id407951449?mt=12">Mac</a>)</h3>
-
-<p>Pretty much the only reason I&#39;ve been productive this year is due to Things.
-I was a beta tester for Things Cloud and Things 2 (both Mac and iOS) and was
-delighted to find that this task-management application suite so quickly synced
-all of my tasks, and <em>never</em> failed. I&#39;ve never lost anything with Things Cloud,
-and that reliability is important, when it means the difference between getting
-someting done, and forgetting about it.</p>
-
-<h3>TuneIn Radio (<a href="https://itunes.apple.com/us/app/tunein-radio-pro-listen-to/id319295332?mt=8">iOS</a>)</h3>
-
-<p>The BBC World Service News station is one that I have grown to love, many thanks
-to TuneIn Radio. It gives the user the opportunity to listen to radio stations
-being broadcast all around the world &mdash; even in different languages. I have
-learned a great deal of German, listening to Deutsche-Welle Nachrichten in this
-app. It works beautifully over 3G, too, which makes long car rides all the more
-pleasant.</p>
-
-<h3>Tweetbot for (<a href="https://itunes.apple.com/us/app/tweetbot-for-twitter-iphone/id428851691?mt=8">iPhone</a>, <a href="https://itunes.apple.com/us/app/tweetbot-for-twitter-ipad/id498801050?mt=8">iPad</a>, and <a href="https://itunes.apple.com/us/app/tweetbot-for-twitter/id557168941?mt=12">Mac</a>)</h3>
-
-<p>Last, but certainly not least, I must acknowledge my addiction to Twitter. When
-I wake in the morning, I never fail to reach over, grab my iPhone, check my email,
-then check my Twitter feed. It usually takes a long breakfast to get through
-all of them, but I am able to change devices, due to syncing of my position via
-Tweet Marker. Before Tweetbot, I used Twitter for iPhone 3.5.1 (before that horrid
-redesign), but really wanted CloudApp support. Tweetbot was the natural alternative
-and everyone raved about it. After a couple weeks of using Tweetbot on a daily
-basis, I deleted Twitter for iPhone without hesitation. Tweetbot is the best
-way to interface with Twitter on any Apple device.</p>
 ]]></content>
   </entry>
   

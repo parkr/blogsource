@@ -4,7 +4,7 @@
   <title><![CDATA[Category: jekyll | Hey, I’m Parker.]]></title>
   <link href="http://blog.parkermoore.de/categories/jekyll/atom.xml" rel="self"/>
   <link href="http://blog.parkermoore.de/"/>
-  <updated>2014-08-01T15:24:19-04:00</updated>
+  <updated>2014-08-01T23:48:13-04:00</updated>
   <id>http://blog.parkermoore.de/</id>
   <author>
     <name><![CDATA[Parker Moore]]></name>
@@ -12,6 +12,111 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Header Anchor Links in Vanilla JavaScript for GitHub Pages and Jekyll]]></title>
+    <link href="http://blog.parkermoore.de/2014/08/01/header-anchor-links-in-vanilla-javascript-for-github-pages-and-jekyll/"/>
+    <updated>2014-08-01T23:36:54-04:00</updated>
+    <id>http://blog.parkermoore.de/2014/08/01/header-anchor-links-in-vanilla-javascript-for-github-pages-and-jekyll</id>
+    <content type="html"><![CDATA[<p>The venerable <a href="http://ben.balter.com">Ben Balter, Esq.</a> wrote earlier this year about <a href="http://ben.balter.com/2014/03/13/pages-anchor-links/">how to add anchor links for headers in Jekyll.</a>. I thought I&#39;d follow up that post with one of my own, as I take a slightly different approach.</p>
+
+<p>This solution is vanilla JavaScript with a little CSS and the Font Awesome web font.</p>
+
+<h2>Font Awesome</h2>
+
+<p><a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a> is, well, awesome. It&#39;s a font of icons that comes with a handy set of CSS classes.</p>
+
+<p>Download the Font Awesome distribution and pull out just the font files. They&#39;re the files that end in <code>.ttf</code>, <code>.woff</code>, <code>.svg</code>, <code>.otf</code>, and <code>.eot</code>. Grab them all and put them in <code>fonts/</code> in your Jekyll site.</p>
+
+<h2>The JavaScript</h2>
+
+<p>Add this JavaScript wherever is convenient:</p>
+
+<p><div class="highlight"><pre><code class="js"><span class="kd">var</span> <span class="nx">anchorForId</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">anchor</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">quot</span><span class="p">;</span><span class="nx">a</span><span class="o">&amp;</span><span class="nx">quot</span><span class="p">;);</span>
+  <span class="nx">anchor</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="o">&amp;</span><span class="nx">quot</span><span class="p">;</span><span class="nx">header</span><span class="o">-</span><span class="nx">link</span><span class="o">&amp;</span><span class="nx">quot</span><span class="p">;;</span>
+  <span class="nx">anchor</span><span class="p">.</span><span class="nx">href</span>      <span class="o">=</span> <span class="o">&amp;</span><span class="nx">quot</span><span class="p">;</span><span class="err">#</span><span class="o">&amp;</span><span class="nx">quot</span><span class="p">;</span> <span class="o">+</span> <span class="nx">id</span><span class="p">;</span>
+  <span class="nx">anchor</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="o">&amp;</span><span class="nx">quot</span><span class="p">;</span><span class="o">&lt;</span><span class="nx">i</span> <span class="kr">class</span><span class="o">=</span><span class="err">\</span><span class="s2">"fa fa-link\"&gt;&lt;/i&gt;&amp;quot;;
+  return anchor;
+};&lt;/p&gt;
+
+&lt;p&gt;var linkifyAnchors = function (level, containingElement) {
+  var headers = containingElement.getElementsByTagName(&amp;quot;h&amp;quot; + level);
+  for (var h = 0; h &amp;lt; headers.length; h++) {
+    var header = headers[h];&lt;/p&gt;
+&lt;div class="</span><span class="nx">highlight</span><span class="s2">"&gt;&lt;pre&gt;&lt;code class="</span><span class="nx">language</span><span class="o">-</span><span class="s2">" data-lang=""&gt;if (typeof header.id !== "</span><span class="kc">undefined</span><span class="s2">" &amp;amp;&amp;amp; header.id !== "</span><span class="err">"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">header</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">anchorForId</span><span class="p">(</span><span class="nx">header</span><span class="p">.</span><span class="nx">id</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">}</span>
+<span class="p">};</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nb">document</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="o">&amp;</span><span class="nx">quot</span><span class="p">;</span><span class="nx">complete</span><span class="o">&amp;</span><span class="nx">quot</span><span class="p">;)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">contentBlock</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">quot</span><span class="p">;</span><span class="nx">docs</span><span class="o">&amp;</span><span class="nx">quot</span><span class="p">;)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">quot</span><span class="p">;</span><span class="nx">news</span><span class="o">&amp;</span><span class="nx">quot</span><span class="p">;)[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">contentBlock</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">level</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">level</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="o">=</span> <span class="mi">6</span><span class="p">;</span> <span class="nx">level</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">linkifyAnchors</span><span class="p">(</span><span class="nx">level</span><span class="p">,</span> <span class="nx">contentBlock</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span></code></pre></div></p>
+
+<h2>The CSS</h2>
+
+<p>Last, add this CSS to the <code>css</code> or <code>_scss</code> folder:</p>
+
+<p><div class="highlight"><pre><code class="css"><span class="o">/&lt;</span><span class="nt">em</span><span class="o">&gt;!</span>
+ <span class="o">*</span>  <span class="nt">Font</span> <span class="nt">Awesome</span> <span class="nt">4</span><span class="nc">.1.0</span> <span class="nt">by</span> <span class="k">@davegandy</span> <span class="n">-</span> <span class="n">http</span><span class="p">://</span><span class="n">fontawesome</span><span class="p">.</span><span class="n">io</span> <span class="n">-</span> <span class="err">@</span><span class="n">fontawesome</span>
+ <span class="err">*</span>  <span class="n">License</span> <span class="n">-</span> <span class="n">http</span><span class="p">://</span><span class="n">fontawesome</span><span class="p">.</span><span class="n">io</span><span class="p">/</span><span class="n">license</span> <span class="p">(</span><span class="n">Font</span><span class="p">:</span> <span class="n">SIL</span> <span class="n">OFL</span> <span class="m">1.1</span><span class="p">,</span> <span class="n">CSS</span><span class="p">:</span> <span class="n">MIT</span> <span class="n">License</span><span class="p">)</span>
+ <span class="err">*</span><span class="p">/</span>
+<span class="err">@</span><span class="n">font-face</span> <span class="p">{</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="err">&amp;</span><span class="m">#39</span><span class="p">;</span><span class="err">FontAwesome&amp;#39;;</span>
+  <span class="nl">src</span><span class="p">:</span> <span class="sx">url(&amp;#39;../fonts/fontawesome-webfont.eot?v=4.1.0&amp;#39;)</span><span class="p">;</span>
+  <span class="nl">src</span><span class="p">:</span> <span class="sx">url(&amp;#39;../fonts/fontawesome-webfont.eot?#iefix&amp;amp;v=4.1.0&amp;#39;)</span> <span class="n">format</span><span class="p">(</span><span class="err">&amp;</span><span class="m">#39</span><span class="p">;</span><span class="err">embedded-opentype&amp;#39;),</span> <span class="err">url(&amp;#39;../fonts/fontawesome-webfont.woff?v=4.1.0&amp;#39;)</span> <span class="err">format(&amp;#39;woff&amp;#39;),</span> <span class="err">url(&amp;#39;../fonts/fontawesome-webfont.ttf?v=4.1.0&amp;#39;)</span> <span class="err">format(&amp;#39;truetype&amp;#39;),</span> <span class="err">url(&amp;#39;../fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular&amp;#39;)</span> <span class="err">format(&amp;#39;svg&amp;#39;);</span>
+  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+  <span class="nl">font-style</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.fa</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="n">FontAwesome</span><span class="p">;</span>
+  <span class="nl">font-style</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+  <span class="nl">-webkit-font-smoothing</span><span class="p">:</span> <span class="n">antialiased</span><span class="p">;</span>
+  <span class="nl">-moz-osx-font-smoothing</span><span class="p">:</span> <span class="n">grayscale</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.fa-link</span><span class="nd">:before</span> <span class="p">{</span>
+  <span class="nl">content</span><span class="p">:</span> <span class="err">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="err">\f0c1&amp;quot;;</span>
+<span class="p">}</span>
+<span class="o">/&lt;/</span><span class="nt">em</span><span class="o">&gt;</span>
+ <span class="o">*</span> <span class="nt">This</span> <span class="nt">code</span> <span class="nt">is</span> <span class="nt">courtesy</span> <span class="nt">Ben</span> <span class="nt">Balter</span><span class="o">,</span> <span class="nt">modified</span> <span class="nt">by</span> <span class="nt">Parker</span> <span class="nt">Moore</span> <span class="nt">for</span> <span class="nt">jekyllrb</span><span class="nc">.com</span>
+ <span class="o">*</span> <span class="nt">http</span><span class="o">://</span><span class="nt">ben</span><span class="nc">.balter.com</span><span class="o">/</span><span class="nt">2014</span><span class="o">/</span><span class="nt">03</span><span class="o">/</span><span class="nt">13</span><span class="o">/</span><span class="nt">pages-anchor-links</span><span class="o">/</span>
+ <span class="o">*/</span>
+<span class="nc">.header-link</span> <span class="p">{</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+  <span class="nl">left</span><span class="p">:</span> <span class="m">0.5em</span><span class="p">;</span>
+  <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">0.8em</span><span class="p">;</span><span class="err">&lt;/p&gt;</span>
+
+<span class="err">&lt;p&gt;</span><span class="nl">-webkit-transition</span><span class="p">:</span> <span class="n">opacity</span> <span class="m">0.2s</span> <span class="n">ease-in-out</span> <span class="m">0.1s</span><span class="p">;</span>
+  <span class="nl">-moz-transition</span><span class="p">:</span> <span class="n">opacity</span> <span class="m">0.2s</span> <span class="n">ease-in-out</span> <span class="m">0.1s</span><span class="p">;</span>
+  <span class="nl">-ms-transition</span><span class="p">:</span> <span class="n">opacity</span> <span class="m">0.2s</span> <span class="n">ease-in-out</span> <span class="m">0.1s</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">h2</span><span class="nd">:hover</span> <span class="nc">.header-link</span><span class="o">,</span>
+<span class="nt">h3</span><span class="nd">:hover</span> <span class="nc">.header-link</span><span class="o">,</span>
+<span class="nt">h4</span><span class="nd">:hover</span> <span class="nc">.header-link</span><span class="o">,</span>
+<span class="nt">h5</span><span class="nd">:hover</span> <span class="nc">.header-link</span><span class="o">,</span>
+<span class="nt">h6</span><span class="nd">:hover</span> <span class="nc">.header-link</span> <span class="p">{</span>
+  <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div></p>
+
+<h2>Enjoy the Magic</h2>
+
+<p>Now refresh your site and voilà! It&#39;s like magic. See it in action in the <a href="http://jekyllrb.com/docs/home/">Jekyll docs</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[A Hacker's Guide to Her Own GitHub Pages]]></title>
@@ -310,58 +415,6 @@ I&#39;m very proud to be a part of a team that has pushed this project to new he
 <p>Thank you to everyone who submitted a pull request, and/or gave me advice along
 the way. It has been great fun so far, and I look forward to working with you
 all to push out future versions!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Immediate Future of Jekyll]]></title>
-    <link href="http://blog.parkermoore.de/2012/12/18/the-immediate-future-of-jekyll/"/>
-    <updated>2012-12-18T18:33:00-05:00</updated>
-    <id>http://blog.parkermoore.de/2012/12/18/the-immediate-future-of-jekyll</id>
-    <content type="html"><![CDATA[<p><a href="http://github.com/mojombo/jekyll">Jekyll</a> is a static blog generator created by <a href="https://github.com/mojombo">Tom Preston-Werner</a>, the
-current CEO of <a href="https://github.com">GitHub</a> and one of GitHub&#39;s co-founders, and by <a href="https://github.com/qrush">Nick Quaranto</a>,
-who is now at 37signals. Jekyll is <a href="https://github.com/mojombo/jekyll/wiki/Sites">pretty freakin&#39; popular</a> and it&#39;s
-also the engine that drives <a href="http://pages.github.com/">GitHub Pages</a>.</p>
-
-<p>After an hour-long chat with Tom, I&#39;m optimistic about the future of Jekyll. He&#39;s
-really excited about where it&#39;s headed and has a vision in mind about what he&#39;d
-like it to become.
-Here&#39;s what we ironed out during our conversation:</p>
-
-<p>Led by Tom, a Jekyll development team, of which I&#39;m the first recruit, will
-be tackling the problems with Jekyll and continuously improving its functionality
-and ease-of-use. The focus will remain on making a tool that allows one to easily
-create and manage a static blog.</p>
-
-<p>Suuuper basic (unofficial) design principles:</p>
-
-<ol>
-<li>Keep it simple</li>
-<li>Easy to extend</li>
-<li>Solid safe mode (for GitHub Pages)</li>
-</ol>
-
-<p>What we need to tackle:</p>
-
-<ol>
-<li>Fix bugs (!!)</li>
-<li>Decrease build time (!!)</li>
-<li>Docs for site</li>
-<li>TomDoc everything</li>
-<li>Release new site</li>
-<li>Finish same site generator</li>
-<li>Include some faster LSI</li>
-</ol>
-
-<p>Want to help? Check out the <a href="http://git.io/jekyll-discussion">discussion label</a> and add in your two cents.<br>
-Want to contribute code? Check out the <a href="https://github.com/mojombo/jekyll/issues">issues</a> and submit a pull request with
-a fix.</p>
-
-<p>I&#39;m really excited about the immediate future of Jekyll and what it will become
-in the next 6 months or so and the dev team takes on the issues outlined above.
-I hope you&#39;re as excited as we are to get this project back on its feet.</p>
-
-<p>If you want to chat more or have any questions, you know <a href="http://twitter.com/parkr">where to find me</a>.</p>
 ]]></content>
   </entry>
   
